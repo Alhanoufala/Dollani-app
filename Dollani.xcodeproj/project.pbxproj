@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		57D7AE222943D83B00EAEAB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D7AE212943D83B00EAEAB5 /* AppDelegate.swift */; };
 		57D7AE242943D83B00EAEAB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D7AE232943D83B00EAEAB5 /* SceneDelegate.swift */; };
-		57D7AE262943D83B00EAEAB5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D7AE252943D83B00EAEAB5 /* ViewController.swift */; };
+		57D7AE262943D83B00EAEAB5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D7AE252943D83B00EAEAB5 /* LoginViewController.swift */; };
 		57D7AE292943D83B00EAEAB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D7AE272943D83B00EAEAB5 /* Main.storyboard */; };
 		57D7AE2B2943D83D00EAEAB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D7AE2A2943D83D00EAEAB5 /* Assets.xcassets */; };
 		57D7AE2E2943D83D00EAEAB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D7AE2C2943D83D00EAEAB5 /* LaunchScreen.storyboard */; };
 		57D7AE392943D83D00EAEAB5 /* DollaniTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D7AE382943D83D00EAEAB5 /* DollaniTests.swift */; };
 		57D7AE432943D83D00EAEAB5 /* DollaniUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D7AE422943D83D00EAEAB5 /* DollaniUITests.swift */; };
 		57D7AE452943D83D00EAEAB5 /* DollaniUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D7AE442943D83D00EAEAB5 /* DollaniUITestsLaunchTests.swift */; };
+		57D7AE532943DB0900EAEAB5 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D7AE522943DB0900EAEAB5 /* SignupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,7 @@
 		57D7AE1E2943D83B00EAEAB5 /* Dollani.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dollani.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D7AE212943D83B00EAEAB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57D7AE232943D83B00EAEAB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		57D7AE252943D83B00EAEAB5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		57D7AE252943D83B00EAEAB5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		57D7AE282943D83B00EAEAB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57D7AE2A2943D83D00EAEAB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57D7AE2D2943D83D00EAEAB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		57D7AE3E2943D83D00EAEAB5 /* DollaniUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DollaniUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D7AE422943D83D00EAEAB5 /* DollaniUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DollaniUITests.swift; sourceTree = "<group>"; };
 		57D7AE442943D83D00EAEAB5 /* DollaniUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DollaniUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		57D7AE522943DB0900EAEAB5 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +103,7 @@
 			children = (
 				57D7AE212943D83B00EAEAB5 /* AppDelegate.swift */,
 				57D7AE232943D83B00EAEAB5 /* SceneDelegate.swift */,
-				57D7AE252943D83B00EAEAB5 /* ViewController.swift */,
+				57D7AE512943DABC00EAEAB5 /* View */,
 				57D7AE272943D83B00EAEAB5 /* Main.storyboard */,
 				57D7AE2A2943D83D00EAEAB5 /* Assets.xcassets */,
 				57D7AE2C2943D83D00EAEAB5 /* LaunchScreen.storyboard */,
@@ -125,6 +127,15 @@
 				57D7AE442943D83D00EAEAB5 /* DollaniUITestsLaunchTests.swift */,
 			);
 			path = DollaniUITests;
+			sourceTree = "<group>";
+		};
+		57D7AE512943DABC00EAEAB5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				57D7AE252943D83B00EAEAB5 /* LoginViewController.swift */,
+				57D7AE522943DB0900EAEAB5 /* SignupViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,8 +269,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57D7AE262943D83B00EAEAB5 /* ViewController.swift in Sources */,
+				57D7AE262943D83B00EAEAB5 /* LoginViewController.swift in Sources */,
 				57D7AE222943D83B00EAEAB5 /* AppDelegate.swift in Sources */,
+				57D7AE532943DB0900EAEAB5 /* SignupViewController.swift in Sources */,
 				57D7AE242943D83B00EAEAB5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
