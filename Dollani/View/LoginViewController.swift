@@ -6,9 +6,11 @@
 //
 
 import UIKit
-
-class ViewController: UIViewController {
-
+import Firebase
+class LoginViewController: UIViewController {
+    @IBOutlet weak var email: UITextField!
+    
+    @IBOutlet weak var password: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,6 +19,19 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func loginClicked(_ sender: Any) {
+        guard let email = email.text else {return}
+        guard let password = password.text else {return}
+        
+        Auth.auth().signIn(withEmail: email, password: password){firebaseResult,error in
+            if let e = error{
+                print(e.localizedDescription)
+            }
+            else{
+                self.performSegue(withIdentifier: "goToHomeScreen", sender: self)
+            }
+        }
+    }
+    
 }
 
