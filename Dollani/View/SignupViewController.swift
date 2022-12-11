@@ -95,7 +95,8 @@ class SignupViewController: UIViewController {
             if(value == "" || value.trimmingCharacters(in: .whitespaces) == ""){
                 return "مطلوب"
             }
-            if !containsDigit(value)
+            let set = CharacterSet(charactersIn: value)
+            if CharacterSet.decimalDigits.isSuperset(of: set)
             {
                 return "يجب ان يتكون الاسم من احرف فقط"
             }
@@ -263,19 +264,35 @@ class SignupViewController: UIViewController {
     }
     
     @IBAction func signupClicked(_ sender: Any) {
-        guard let name = name.text else {return}
-        guard let email = email.text else {return}
-        guard let phone = phoneNum.text else {return}
-        guard let password = password.text else {return}
-        guard let category = category.text else {return}
+        guard let Name = name.text else {return}
+        guard let Email = email.text else {return}
+        guard let Phone = phoneNum.text else {return}
+        guard let Password = password.text else {return}
+        guard let Category = category.text else {return}
         
         
-        Auth.auth().createUser(withEmail: email, password: password){firebaseResult,error in
+        Auth.auth().createUser(withEmail: Email, password: Password){firebaseResult,error in
             if let e = error{
                 print(e.localizedDescription)
+                if(e.localizedDescription  == "The email address is already in use by another account."){
+                  //Alert message
+                    let sendMailErrorAlert = UIAlertController(title: "خطاء", message: "يوجد حساب مسبق", preferredStyle: .alert)
+                        let cancelAction = UIAlertAction(title:"تم", style: .cancel, handler: nil)
+
+                        sendMailErrorAlert.addAction(cancelAction)
+                    self.present(sendMailErrorAlert, animated: true, completion: nil)
+                }
             }
             else{
-                self.db.collection("users").addDocument(data: ["name" : name,"phoneNum":phone,"email":email,"password":password,"category":category])
+                self.db.collection("users").addDocument(data: ["name" : Name,"phoneNum":Phone,"email":Email,"password":Password,"category":Category])
+                
+                self.name.text = ""
+                self.email.text = ""
+                self.phoneNum.text = ""
+                self.password.text = ""
+                self.conformedPassword.text = ""
+                self.category.text = ""
+                
                 self.performSegue(withIdentifier: "goToHomeScreen", sender: self)
             }
         }
