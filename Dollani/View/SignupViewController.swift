@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 
+
+
 class SignupViewController: UIViewController {
     //Text fields
     @IBOutlet weak var name: UITextField!
@@ -28,6 +30,9 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var passwordError: UILabel!
     @IBOutlet weak var conformedPasswordError: UILabel!
     @IBOutlet weak var categoryError: UILabel!
+    
+    //Database reference
+    let db = Firestore.firestore()
     
     let categoryList = ["ذوي اعاقة بصرية","مرافق"]
     var pickerView = UIPickerView()
@@ -258,14 +263,19 @@ class SignupViewController: UIViewController {
     }
     
     @IBAction func signupClicked(_ sender: Any) {
+        guard let name = name.text else {return}
         guard let email = email.text else {return}
+        guard let phone = phoneNum.text else {return}
         guard let password = password.text else {return}
+        guard let category = category.text else {return}
+        
         
         Auth.auth().createUser(withEmail: email, password: password){firebaseResult,error in
             if let e = error{
                 print(e.localizedDescription)
             }
             else{
+                self.db.collection("users").addDocument(data: ["name" : name,"phoneNum":phone,"email":email,"password":password,"category":category])
                 self.performSegue(withIdentifier: "goToHomeScreen", sender: self)
             }
         }
