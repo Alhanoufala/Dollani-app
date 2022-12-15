@@ -240,7 +240,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQd-ie-kI3">
-                                <rect key="frame" x="145" y="550" width="124" height="35"/>
+                                <rect key="frame" x="107" y="543" width="201" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="انشاء حساب">
@@ -252,7 +252,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ss-iH-HDL">
-                                <rect key="frame" x="145" y="466" width="124" height="35"/>
+                                <rect key="frame" x="107" y="458" width="201" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="تسجيل الدخول">
@@ -348,7 +348,7 @@
             </objects>
             <point key="canvasLocation" x="1527.536231884058" y="-56.919642857142854"/>
         </scene>
-        <!--View Controller-->
+        <!--الخريطة-->
         <scene sceneID="xuL-GI-YXT">
             <objects>
                 <viewController id="FZK-uP-mPq" sceneMemberID="viewController">
@@ -372,7 +372,7 @@
                         <viewLayoutGuide key="safeArea" id="4Na-ip-HdF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ucy-AC-LYy"/>
+                    <navigationItem key="navigationItem" title="الخريطة" id="Ucy-AC-LYy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OVM-2t-MAD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -403,7 +403,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gE8-eA-9ji">
-                                <rect key="frame" x="95" y="285" width="225" height="51"/>
+                                <rect key="frame" x="80" y="279" width="254" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="الخريطة">
@@ -416,7 +416,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wbe-ce-LwY">
-                                <rect key="frame" x="95" y="520" width="225" height="51"/>
+                                <rect key="frame" x="80" y="396" width="254" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="طلب مساعدة">
@@ -428,7 +428,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgt-5q-asi">
-                                <rect key="frame" x="95" y="409" width="225" height="51"/>
+                                <rect key="frame" x="80" y="514" width="254" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="المفضلة">
@@ -447,7 +447,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RM4-Ur-u5X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1858" y="1990"/>
+            <point key="canvasLocation" x="1857.9710144927537" y="1989.5089285714284"/>
         </scene>
         <!--الحساب-->
         <scene sceneID="jFG-Ws-0NT">
