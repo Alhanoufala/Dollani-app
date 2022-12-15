@@ -199,10 +199,10 @@
             </objects>
             <point key="canvasLocation" x="1527.536231884058" y="624.10714285714278"/>
         </scene>
-        <!--Container View Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="kur-hg-Icu">
             <objects>
-                <tabBarController id="HEC-Yj-28L" customClass="VIContainerViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="HEC-Yj-28L" customClass="TabBarController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="dhU-WL-rxf"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5h9-bT-uis">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
@@ -218,100 +218,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZO2-bc-0qd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2396" y="623"/>
-        </scene>
-        <!--الحساب-->
-        <scene sceneID="GL9-de-Gpc">
-            <objects>
-                <viewController id="QAR-BA-PQy" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xiQ-FF-VMa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Gam-R4-VJl"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="الحساب" image="person.circle.fill" catalog="system" id="cSU-3E-lHd"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JFl-pE-xvl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2743" y="1272"/>
-        </scene>
-        <!--الاشعارات -->
-        <scene sceneID="oo9-De-9yR">
-            <objects>
-                <viewController id="jjj-ez-r0q" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vuB-OK-a3h">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="JIp-9h-3Bf"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="الاشعارات " image="bell" catalog="system" badgeValue="2" id="8ie-3Y-czj"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aDG-sJ-UMk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3506" y="1272"/>
-        </scene>
-        <!--الرئيسية-->
-        <scene sceneID="8Xy-bD-6zY">
-            <objects>
-                <viewController id="skv-Zb-h3t" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="s52-Dh-tQI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="g69-Pc-vXV">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHJ-o1-IcS">
-                                <rect key="frame" x="81" y="522" width="253" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="جهات الاتصال">
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvT-b3-kY7">
-                                <rect key="frame" x="81" y="654" width="253" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="الخريطة">
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="map" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3J2-V5-R1f">
-                                <rect key="frame" x="90" y="669.5" width="72" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.68677028187867462" green="0.74241515163195881" blue="0.55557672074916775" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="person.3.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="v6M-sH-Tnk">
-                                <rect key="frame" x="90" y="541.5" width="57" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RUY-Li-CvK">
-                                <rect key="frame" x="211" y="74" width="214" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="barTintColor" red="0.82352948189999997" green="0.86666667460000002" blue="0.94901961089999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <items>
-                                    <navigationItem title="مرحباً بك " id="lYc-iw-Gcy"/>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="8JV-8b-yxv"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="الرئيسية" image="homekit" catalog="system" id="sIc-CA-2kR"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZXs-5b-eM7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4324.6376811594209" y="1270.9821428571429"/>
+            <point key="canvasLocation" x="2263.768115942029" y="461.38392857142856"/>
         </scene>
         <!--Selction View Controller-->
         <scene sceneID="x7T-kJ-dlI">
@@ -322,18 +229,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Dolanilogo" translatesAutoresizingMaskIntoConstraints="NO" id="ybE-gT-Sj0">
-                                <rect key="frame" x="-12" y="99" width="439" height="283"/>
+                                <rect key="frame" x="87" y="175" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اهلا بك في دلني" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhh-cz-0Vl">
-                                <rect key="frame" x="113" y="361" width="189" height="57"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اهلا بك في دلني" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhh-cz-0Vl">
+                                <rect key="frame" x="137" y="334" width="141" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQd-ie-kI3">
-                                <rect key="frame" x="86" y="559" width="245" height="57"/>
+                                <rect key="frame" x="107" y="543" width="201" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="انشاء حساب">
@@ -345,7 +252,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ss-iH-HDL">
-                                <rect key="frame" x="85" y="461" width="245" height="58"/>
+                                <rect key="frame" x="107" y="458" width="201" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="تسجيل الدخول">
@@ -411,7 +318,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="loginClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v14-bA-C3j"/>
-                                    <segue destination="kJw-PX-xD7" kind="show" id="UUi-JL-qdj"/>
+                                    <segue destination="HEC-Yj-28L" kind="show" identifier="goToHomeScreen" id="897-l3-va0"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IRu-WL-73e">
@@ -476,9 +383,7 @@
                         <viewLayoutGuide key="safeArea" id="4Na-ip-HdF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="الخريطة" id="Ucy-AC-LYy">
-                        <barButtonItem key="backBarButtonItem" title="رجوع" id="FtI-VL-0z6"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="الخريطة" id="Ucy-AC-LYy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OVM-2t-MAD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -500,7 +405,7 @@
             </objects>
             <point key="canvasLocation" x="1174" y="1990"/>
         </scene>
-        <!--مرحبًا بك -->
+        <!--Home Page View Controller-->
         <scene sceneID="CHz-08-ezI">
             <objects>
                 <viewController id="2mQ-sa-5fA" customClass="VIHomePageViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
@@ -509,10 +414,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gE8-eA-9ji">
-                                <rect key="frame" x="70" y="363" width="275" height="71"/>
+                                <rect key="frame" x="80" y="279" width="254" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="الخريطة" subtitle="">
+                                <buttonConfiguration key="configuration" style="filled" title="الخريطة">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" red="0.1889090836" green="0.25569909810000002" blue="0.54120320079999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
@@ -522,7 +427,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wbe-ce-LwY">
-                                <rect key="frame" x="70" y="506" width="275" height="71"/>
+                                <rect key="frame" x="80" y="396" width="254" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="طلب مساعدة">
@@ -534,7 +439,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgt-5q-asi">
-                                <rect key="frame" x="70" y="649" width="275" height="71"/>
+                                <rect key="frame" x="80" y="514" width="254" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="المفضلة">
@@ -545,15 +450,11 @@
                                     <action selector="signupClicked:" destination="Zbf-s3-05P" eventType="touchUpInside" id="EwB-6r-xHr"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Dolanilogo 1" translatesAutoresizingMaskIntoConstraints="NO" id="ikm-gd-50n">
-                                <rect key="frame" x="81" y="128" width="257" height="194"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vYw-Bb-2IU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="مرحبًا بك " id="UrG-EW-omf"/>
+                    <navigationItem key="navigationItem" id="UrG-EW-omf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RM4-Ur-u5X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -579,7 +480,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p81-d2-fYv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1174" y="1373"/>
+            <point key="canvasLocation" x="1174" y="1272"/>
         </scene>
         <!--الرئيسية-->
         <scene sceneID="Ddn-FJ-ksO">
@@ -601,7 +502,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jXS-oJ-obl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1858" y="1373"/>
+            <point key="canvasLocation" x="1858" y="1272"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="O2z-QU-Ja7">
@@ -620,61 +521,16 @@
             </objects>
             <point key="canvasLocation" x="-457.97101449275368" y="137.27678571428569"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="9JF-Ou-sle">
-            <objects>
-                <viewController id="BbC-c9-r2M" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mHz-hG-Yw0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="jki-Z5-eeF"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rv6-gy-nXJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="861" y="-536"/>
-        </scene>
-        <!--Cg Container View Controller-->
-        <scene sceneID="HKe-RU-UaF">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="kJw-PX-xD7" customClass="CgContainerViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="fko-JX-QNu"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bQV-ts-ev6">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <color key="selectedImageTintColor" red="0.1215686351" green="0.20784312490000001" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="QAR-BA-PQy" kind="relationship" relationship="viewControllers" id="a0L-G8-ukE"/>
-                        <segue destination="jjj-ez-r0q" kind="relationship" relationship="viewControllers" id="QfZ-mf-mxT"/>
-                        <segue destination="skv-Zb-h3t" kind="relationship" relationship="viewControllers" id="WVC-wg-X6y"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IOx-Pz-iXS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3505.7971014492755" y="461.38392857142856"/>
-        </scene>
     </scenes>
-<<<<<<< Updated upstream
     <inferredMetricsTieBreakers>
         <segue reference="31T-4a-eEM"/>
     </inferredMetricsTieBreakers>
-=======
->>>>>>> Stashed changes
     <color key="tintColor" red="0.1889090836" green="0.25569909810000002" blue="0.54120320079999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
-        <image name="1" width="414" height="896"/>
         <image name="Dolanilogo" width="500" height="500"/>
-        <image name="Dolanilogo 1" width="500" height="500"/>
-        <image name="bell" catalog="system" width="125" height="128"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="map" width="880" height="1200"/>
-        <image name="map" catalog="system" width="128" height="112"/>
-        <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="person.circle" catalog="system" width="128" height="123"/>
-        <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
