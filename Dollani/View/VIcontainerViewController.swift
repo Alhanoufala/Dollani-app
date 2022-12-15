@@ -1,5 +1,5 @@
 //
-//  CGcontainerViewController.swift
+//  VIcontainerViewController.swift
 //  Dollani
 //
 //  Created by Layan Alwadie on 22/05/1444 AH.
@@ -7,11 +7,12 @@
 
 import UIKit
 
-class CGcontainerViewController: UITabBarController {
+class VIcontainerViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-selectedIndex = 2
+        selectedIndex = 1
+    
         // Do any additional setup after loading the view.
     }
     

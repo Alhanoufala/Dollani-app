@@ -29,6 +29,7 @@
 		57E8D23429454FE600B26DDC /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 57E8D23329454FE600B26DDC /* FirebaseStorage */; };
 		57E8D236294A2B6800B26DDC /* VIHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E8D235294A2B6800B26DDC /* VIHomePageViewController.swift */; };
 		8BF2D74E294BCDB900DEAB42 /* CGcontainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D74D294BCDB900DEAB42 /* CGcontainerViewController.swift */; };
+		8BF2D750294BCDE500DEAB42 /* VIcontainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D74F294BCDE500DEAB42 /* VIcontainerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		57D7AE562943E7DE00EAEAB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		57E8D235294A2B6800B26DDC /* VIHomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIHomePageViewController.swift; sourceTree = "<group>"; };
 		8BF2D74D294BCDB900DEAB42 /* CGcontainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGcontainerViewController.swift; sourceTree = "<group>"; };
+		8BF2D74F294BCDE500DEAB42 /* VIcontainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIcontainerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				57D7AE542943E5F300EAEAB5 /* SelectionViewController.swift */,
 				57E8D235294A2B6800B26DDC /* VIHomePageViewController.swift */,
 				8BF2D74D294BCDB900DEAB42 /* CGcontainerViewController.swift */,
+				8BF2D74F294BCDE500DEAB42 /* VIcontainerViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				57D7AE552943E5F300EAEAB5 /* SelectionViewController.swift in Sources */,
 				57D7AE262943D83B00EAEAB5 /* LoginViewController.swift in Sources */,
 				57D7AE222943D83B00EAEAB5 /* AppDelegate.swift in Sources */,
+				8BF2D750294BCDE500DEAB42 /* VIcontainerViewController.swift in Sources */,
 				57E8D236294A2B6800B26DDC /* VIHomePageViewController.swift in Sources */,
 				8BF2D74E294BCDB900DEAB42 /* CGcontainerViewController.swift in Sources */,
 				57D7AE532943DB0900EAEAB5 /* SignupViewController.swift in Sources */,
