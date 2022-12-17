@@ -284,6 +284,7 @@ class SignupViewController: UIViewController {
                 }
             }
             else{
+                self.performSegue(withIdentifier: "goToHomeScreen", sender: self)
                 self.db.collection("users").addDocument(data: ["name" : Name,"phoneNum":Phone,"email":Email,"password":Password,"category":Category])
                 
                 self.name.text = ""
@@ -293,7 +294,7 @@ class SignupViewController: UIViewController {
                 self.conformedPassword.text = ""
                 self.category.text = ""
                 
-                self.performSegue(withIdentifier: "goToHomeScreen", sender: self)
+               
             }
         }
     }
