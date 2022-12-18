@@ -299,6 +299,13 @@ class SignupViewController: UIViewController {
         }
     }
     
+    @IBAction func loginTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "login")
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
+    
 }
 
 extension SignupViewController: UIPickerViewDelegate,UIPickerViewDataSource{

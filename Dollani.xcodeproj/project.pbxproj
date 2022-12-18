@@ -137,7 +137,6 @@
 				57D7AE232943D83B00EAEAB5 /* SceneDelegate.swift */,
 				57D7AE512943DABC00EAEAB5 /* View */,
 				57D7AE272943D83B00EAEAB5 /* Main.storyboard */,
-				56D4FC25294E9749004E4998 /* CGprofileViewController.swift */,
 				57D7AE2A2943D83D00EAEAB5 /* Assets.xcassets */,
 				57D7AE2C2943D83D00EAEAB5 /* LaunchScreen.storyboard */,
 				57D7AE2F2943D83D00EAEAB5 /* Info.plist */,
@@ -174,6 +173,7 @@
 				8BF2D74D294BCDB900DEAB42 /* CGcontainerViewController.swift */,
 				8BF2D74F294BCDE500DEAB42 /* VIcontainerViewController.swift */,
 				79387F9C294F3D3F009DE768 /* ForgetPassViewController.swift */,
+				56D4FC25294E9749004E4998 /* CGprofileViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
