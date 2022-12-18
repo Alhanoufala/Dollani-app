@@ -331,14 +331,6 @@
                                 <color key="textColor" red="0.19262874129999999" green="0.25584411620000003" blue="0.53728133440000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zfb-lu-CDK">
-                                <rect key="frame" x="137" y="554" width="152" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="نسيت كلمة المرور؟">
-                                    <color key="baseForegroundColor" red="0.19262874129999999" green="0.25584411620000003" blue="0.53728133440000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHn-gK-xen">
                                 <rect key="frame" x="137" y="677" width="145" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -375,6 +367,17 @@
                                     <segue destination="Zbf-s3-05P" kind="show" id="dhU-b1-W8w"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zfb-lu-CDK">
+                                <rect key="frame" x="149" y="538" width="152" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="نسيت كلمة المرور؟">
+                                    <color key="baseForegroundColor" red="0.19262874129999999" green="0.25584411620000003" blue="0.53728133440000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="forgetpassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fl2-Wr-raW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -385,11 +388,12 @@
                         <outlet property="password" destination="IRu-WL-73e" id="8vW-xn-8dQ"/>
                         <segue destination="ipR-CT-vpw" kind="show" identifier="GoToCGHomePage" id="sLD-gc-HR4"/>
                         <segue destination="HEC-Yj-28L" kind="show" identifier="GoToVIHomePage" id="FgU-SV-Fer"/>
+                        <segue destination="e9g-yP-x1z" kind="show" identifier="resetpassword" id="Ot4-Ej-XCa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1527.536231884058" y="-56.919642857142854"/>
+            <point key="canvasLocation" x="1437.68115942029" y="-72.321428571428569"/>
         </scene>
         <!--الخريطة-->
         <scene sceneID="xuL-GI-YXT">
@@ -664,11 +668,71 @@
             </objects>
             <point key="canvasLocation" x="4753.6231884057979" y="809.59821428571422"/>
         </scene>
+        <!--Forget Pass View Controller-->
+        <scene sceneID="POb-Qb-NKB">
+            <objects>
+                <viewController id="e9g-yP-x1z" customClass="ForgetPassViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PB6-dp-3dt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="22W-OG-CuV">
+                                <rect key="frame" x="52" y="291" width="310" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4s-dQ-wU0">
+                                <rect key="frame" x="72" y="732" width="275" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="ليس لديك حساب؟ أنشئ حساب جديد">
+                                    <color key="baseForegroundColor" red="0.19262874129999999" green="0.25584411620000003" blue="0.53728133440000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اعادة تعيين كلمة المرور " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9p-Io-G0o">
+                                <rect key="frame" x="118" y="91" width="190" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <color key="textColor" red="0.19262874129999999" green="0.25584411620000003" blue="0.53728133440000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIT-Ii-ZRz">
+                                <rect key="frame" x="135" y="402" width="145" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="اعادة تعيين ">
+                                    <color key="baseBackgroundColor" red="0.19262874129999999" green="0.25584411620000003" blue="0.53728133440000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="forgetpassword:" destination="e9g-yP-x1z" eventType="touchUpInside" id="LgL-y2-Lzp"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ادخل البريد الالكتروني ...." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGn-2O-uCr">
+                                <rect key="frame" x="181" y="212" width="166" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.19262874129999999" green="0.25584411620000003" blue="0.53728133440000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="h3N-Fu-KYW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="A0k-Ap-n1M"/>
+                    <connections>
+                        <outlet property="email" destination="22W-OG-CuV" id="Hdv-QW-Ios"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xfm-UU-Up1" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2264" y="-652"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Jbt-yj-8Dx"/>
         <segue reference="FgU-SV-Fer"/>
-        <segue reference="ED5-uI-pri"/>
+        <segue reference="dhU-b1-W8w"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.1889090836" green="0.25569909810000002" blue="0.54120320079999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>

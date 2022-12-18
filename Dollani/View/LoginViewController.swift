@@ -58,6 +58,9 @@ class LoginViewController: UIViewController {
     
     
     
+    @IBAction func forgetpassword(_ sender: Any) {
+        self.performSegue(withIdentifier: "resetpassword", sender: nil)
+    }
     
     
 }
