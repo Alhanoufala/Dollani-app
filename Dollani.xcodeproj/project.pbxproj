@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56D4FC24294E91C5004E4998 /* VIprofileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4FC23294E91C5004E4998 /* VIprofileViewController.swift */; };
+		56D4FC26294E9749004E4998 /* CGprofileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4FC25294E9749004E4998 /* CGprofileViewController.swift */; };
 		57D7AE222943D83B00EAEAB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D7AE212943D83B00EAEAB5 /* AppDelegate.swift */; };
 		57D7AE242943D83B00EAEAB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D7AE232943D83B00EAEAB5 /* SceneDelegate.swift */; };
 		57D7AE262943D83B00EAEAB5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D7AE252943D83B00EAEAB5 /* LoginViewController.swift */; };
@@ -50,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		56D4FC23294E91C5004E4998 /* VIprofileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIprofileViewController.swift; sourceTree = "<group>"; };
+		56D4FC25294E9749004E4998 /* CGprofileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGprofileViewController.swift; sourceTree = "<group>"; };
 		57D7AE1E2943D83B00EAEAB5 /* Dollani.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dollani.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D7AE212943D83B00EAEAB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57D7AE232943D83B00EAEAB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 				57D7AE232943D83B00EAEAB5 /* SceneDelegate.swift */,
 				57D7AE512943DABC00EAEAB5 /* View */,
 				57D7AE272943D83B00EAEAB5 /* Main.storyboard */,
+				56D4FC25294E9749004E4998 /* CGprofileViewController.swift */,
 				57D7AE2A2943D83D00EAEAB5 /* Assets.xcassets */,
 				57D7AE2C2943D83D00EAEAB5 /* LaunchScreen.storyboard */,
 				57D7AE2F2943D83D00EAEAB5 /* Info.plist */,
@@ -161,6 +166,7 @@
 			children = (
 				57D7AE252943D83B00EAEAB5 /* LoginViewController.swift */,
 				57D7AE522943DB0900EAEAB5 /* SignupViewController.swift */,
+				56D4FC23294E91C5004E4998 /* VIprofileViewController.swift */,
 				57D7AE542943E5F300EAEAB5 /* SelectionViewController.swift */,
 				57E8D235294A2B6800B26DDC /* VIHomePageViewController.swift */,
 				8BF2D74D294BCDB900DEAB42 /* CGcontainerViewController.swift */,
@@ -322,6 +328,8 @@
 				8BF2D74E294BCDB900DEAB42 /* CGcontainerViewController.swift in Sources */,
 				57D7AE532943DB0900EAEAB5 /* SignupViewController.swift in Sources */,
 				57D7AE242943D83B00EAEAB5 /* SceneDelegate.swift in Sources */,
+				56D4FC26294E9749004E4998 /* CGprofileViewController.swift in Sources */,
+				56D4FC24294E91C5004E4998 /* VIprofileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

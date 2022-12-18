@@ -28,7 +28,13 @@ class LoginViewController: UIViewController {
         Auth.auth().signIn(withEmail: email, password: password){firebaseResult,error in
             if let e = error{
                 print(e.localizedDescription)
-                self.performSegue(withIdentifier: "GoToLoginError", sender: self)
+                //Alert message
+                  let sendMailErrorAlert = UIAlertController(title: "خطاء", message: "البريد الإلكتروني أو كلمة المرور غير صحيحة", preferredStyle: .alert)
+                      let cancelAction = UIAlertAction(title:"تم", style: .cancel, handler: nil)
+
+                      sendMailErrorAlert.addAction(cancelAction)
+                  self.present(sendMailErrorAlert, animated: true, completion: nil)
+              
             }
             else{
                 //check
