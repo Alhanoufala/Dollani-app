@@ -68,7 +68,10 @@ class VIprofileViewController: UIViewController {
             
             do {
                 try Auth.auth().signOut()
-                self.performSegue(withIdentifier: "GoToSelection", sender: self)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(identifier: "selection")
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
                 //what happens? we need to present some kind of login controller
                 
             } catch let signOutErr {

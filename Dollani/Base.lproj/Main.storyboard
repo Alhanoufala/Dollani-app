@@ -265,7 +265,7 @@
         <!--Selction View Controller-->
         <scene sceneID="x7T-kJ-dlI">
             <objects>
-                <viewController id="0jp-UC-Pje" customClass="SelctionViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="selection" id="0jp-UC-Pje" customClass="SelctionViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EtT-fM-6Hb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -505,7 +505,6 @@
                         <outlet property="email" destination="Knp-EL-C3M" id="pIf-3I-5yy"/>
                         <outlet property="name" destination="r6k-iy-oaa" id="yV9-rO-xRR"/>
                         <outlet property="phoneNum" destination="fxZ-Fa-IiB" id="krD-9k-lGL"/>
-                        <segue destination="0jp-UC-Pje" kind="show" identifier="GoToSelection" id="Jbt-yj-8Dx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gbb-QW-j1L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -796,9 +795,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Jbt-yj-8Dx"/>
+        <segue reference="YcH-m1-A2h"/>
+        <segue reference="AXo-74-DRT"/>
         <segue reference="31T-4a-eEM"/>
-        <segue reference="dhU-b1-W8w"/>
+        <segue reference="ED5-uI-pri"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.1889090836" green="0.25569909810000002" blue="0.54120320079999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
