@@ -7,7 +7,7 @@
 
 import UIKit
 import Firebase
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController , UITextFieldDelegate {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
@@ -15,8 +15,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        password.delegate = self
+        email.delegate = self
         
         // Do any additional setup after loading the view.
     }
@@ -64,6 +64,10 @@ class LoginViewController: UIViewController {
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
      
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     

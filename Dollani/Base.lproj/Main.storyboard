@@ -30,7 +30,7 @@
                                 <color key="textColor" red="0.1889090836" green="0.25569909810000002" blue="0.54120320079999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MYp-xr-esm">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="sara@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MYp-xr-esm">
                                 <rect key="frame" x="52" y="375" width="310" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -71,7 +71,7 @@
                                 <color key="textColor" red="0.200240314" green="0.2558471262" blue="0.53728133440000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sBn-3n-uUs">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0548297283" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sBn-3n-uUs">
                                 <rect key="frame" x="52" y="280" width="310" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -240,7 +240,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Npg-cO-2pJ">
-                                <rect key="frame" x="0.0" y="48" width="412" height="44"/>
+                                <rect key="frame" x="-1" y="48" width="413" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </navigationBar>
                         </subviews>
@@ -694,7 +694,7 @@
                                 <color key="tintColor" red="0.6867702819" green="0.74241515160000005" blue="0.55557672069999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3b6-ch-dFd">
-                                <rect key="frame" x="221" y="71" width="191" height="44"/>
+                                <rect key="frame" x="220" y="71" width="191" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.82352948189999997" green="0.86666667460000002" blue="0.94901961089999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.1215686351" green="0.20784312490000001" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -785,8 +785,8 @@
         <image name="backgroundCG" width="414" height="896"/>
         <image name="bell" catalog="system" width="125" height="128"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
-        <image name="map" width="880" height="1200"/>
         <image name="map" catalog="system" width="128" height="112"/>
+        <image name="map" width="880" height="1200"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">

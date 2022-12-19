@@ -11,7 +11,7 @@ import Firebase
 
 
 
-class SignupViewController: UIViewController {
+class SignupViewController: UIViewController, UITextFieldDelegate  {
     //Text fields
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var phoneNum: UITextField!
@@ -39,6 +39,12 @@ class SignupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        name.delegate = self
+        phoneNum.delegate = self
+        email.delegate = self
+        password.delegate = self
+        conformedPassword.delegate = self
+        category.delegate = self
         
         pickerView.delegate = self
         pickerView.dataSource = self
@@ -121,21 +127,23 @@ class SignupViewController: UIViewController {
     func invalidPhoneNumber(_ value: String) -> String?
         {
             
-            let set = CharacterSet(charactersIn: value)
             if(value == "" || value.trimmingCharacters(in: .whitespaces) == ""){
                 return "مطلوب"
             }
-            if !CharacterSet.decimalDigits.isSuperset(of: set)
+            if !validatePhoneNum(value: value)
             {
-                return "يجب أن يحتوي رقم الهاتف على أرقام فقط"
+                return "رقم الهاتف غير صحيح"
             }
             
-            if value.count != 10
-            {
-                return "يجب أن يكون طول رقم الهاتف ١٠ أرقام"
-            }
+           
             return nil
         }
+    func validatePhoneNum(value: String) -> Bool {
+        let PHONE_REGEX = "^((05))[0-9]{8}$"
+        let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
+        let result =  phoneTest.evaluate(with: value)
+        return result
+    }
     @IBAction func emailChanged(_ sender: Any) {
         if let email = email.text
                 {
@@ -308,6 +316,11 @@ class SignupViewController: UIViewController {
         let vc = storyboard.instantiateViewController(identifier: "login")
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
 }
