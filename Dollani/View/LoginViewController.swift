@@ -52,10 +52,11 @@ class LoginViewController: UIViewController , UITextFieldDelegate {
                 let q = self.db.collection("users").whereField("email", isEqualTo: email).whereField("category", isEqualTo: "ذوي اعاقة بصرية")
                 
                 if q != nil {
-                    self.performSegue(withIdentifier: "GoToVIHomePage", sender: self)
+                    self.performSegue(withIdentifier: "GoToCGHomePage", sender: self)
+                    
                 }
                 else {
-                    self.performSegue(withIdentifier: "GoToCGHomePage", sender: self)}
+                    self.performSegue(withIdentifier: "GoToVIHomePage", sender: self)}
             }
         }
     }

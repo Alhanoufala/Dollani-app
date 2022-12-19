@@ -10,12 +10,47 @@ import Firebase
 
 class CGprofileViewController: UIViewController {
 
+    @IBOutlet weak var name: UITextView!
+    @IBOutlet weak var phoneNum: UITextView!
+    @IBOutlet weak var email: UITextView!
     override func viewDidLoad() {
+        name.textAlignment = .right
+        phoneNum.textAlignment = .right
+        email.textAlignment = .right
         super.viewDidLoad()
-
+        retriveUserInfo()
         setupLogOutButton()
     }
-    
+    func retriveUserInfo(){
+        let user = Auth.auth().currentUser
+        if let user = user {
+        
+          let currentEmail = user.email
+            print(currentEmail! )
+            Firestore.firestore().collection("users").whereField("email",isEqualTo:currentEmail!).getDocuments { snapshot, error in
+                if  error != nil {
+                           // ERROR
+                       }
+                       else {
+                           if(snapshot?.count != 0){
+                            
+                               let userName = snapshot?.documents.first?.get("name") as! String
+                               let userPhoneNum = snapshot?.documents.first?.get("phoneNum") as! String
+                               let userEmail = snapshot?.documents.first?.get("email") as! String
+                               
+                               //Set textView
+                               self.name.text = userName
+                               self.phoneNum.text = userPhoneNum
+                               self.email.text = userEmail
+                           }
+                       }
+                   }
+       
+          // ...
+        }
+               
+       
+    }
     fileprivate func setupLogOutButton() {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Logout").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleLogOut))
     }
@@ -27,7 +62,10 @@ class CGprofileViewController: UIViewController {
             
             do {
                 try Auth.auth().signOut()
-                self.performSegue(withIdentifier: "GoToSelection", sender: self)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(identifier: "selection")
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
                 //what happens? we need to present some kind of login controller
                 
             } catch let signOutErr {
