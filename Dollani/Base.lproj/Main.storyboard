@@ -50,9 +50,10 @@
                                 <rect key="frame" x="52" y="466" width="310" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="passwordChanged:" destination="Zbf-s3-05P" eventType="editingChanged" id="Bbd-E2-axK"/>
+                                    <action selector="showHide" destination="Zbf-s3-05P" eventType="editingDidEnd" id="OgP-Kr-AHP"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YQo-ol-GHW">
@@ -98,9 +99,10 @@
                                 <rect key="frame" x="52" y="561" width="310" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="confirmedPasswordChanged:" destination="Zbf-s3-05P" eventType="editingChanged" id="B2i-cC-iBw"/>
+                                    <action selector="showHide2" destination="Zbf-s3-05P" eventType="editingDidEnd" id="Zm9-Da-2vh"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="الفئة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pv1-eK-iwk">
@@ -185,6 +187,24 @@
                                     <action selector="loginTapped:" destination="Zbf-s3-05P" eventType="touchUpInside" id="iFl-3M-YQS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgq-sL-36s">
+                                <rect key="frame" x="63" y="476" width="24" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="showHide" destination="Zbf-s3-05P" eventType="touchUpInside" id="u5c-Th-yrj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kC-dX-chK">
+                                <rect key="frame" x="63" y="571" width="24" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="showHide2" destination="Zbf-s3-05P" eventType="touchUpInside" id="9Hd-gv-b8C"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="43r-gs-ZlS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -203,6 +223,8 @@
                         <outlet property="passwordError" destination="JhB-0j-uWf" id="8zy-47-9oM"/>
                         <outlet property="phoneNum" destination="sBn-3n-uUs" id="HfN-lh-qQF"/>
                         <outlet property="phoneNumError" destination="yzu-PL-CcS" id="4JY-d8-Ri8"/>
+                        <outlet property="showHideButton" destination="Sgq-sL-36s" id="ZTo-dh-HOU"/>
+                        <outlet property="showHideButton2" destination="4kC-dX-chK" id="D0Z-D0-lXt"/>
                         <outlet property="signupButton" destination="5GK-ag-FTH" id="NWk-gB-ELE"/>
                     </connections>
                 </viewController>
@@ -389,7 +411,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZE-Fn-2c8">
-                                <rect key="frame" x="77" y="420" width="24" height="14"/>
+                                <rect key="frame" x="61" y="419" width="24" height="14"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
@@ -795,8 +817,8 @@
         <image name="backgroundCG" width="414" height="896"/>
         <image name="bell" catalog="system" width="125" height="128"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
-        <image name="map" catalog="system" width="128" height="112"/>
         <image name="map" width="880" height="1200"/>
+        <image name="map" catalog="system" width="128" height="112"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">

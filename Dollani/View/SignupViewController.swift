@@ -31,14 +31,21 @@ class SignupViewController: UIViewController, UITextFieldDelegate  {
     @IBOutlet weak var conformedPasswordError: UILabel!
     @IBOutlet weak var categoryError: UILabel!
     
+    @IBOutlet weak var showHideButton: UIButton!
+ 
+    @IBOutlet weak var showHideButton2: UIButton!
     //Database reference
     let db = Firestore.firestore()
+    var passwordVisible: Bool = true
+    var passwordVisible2: Bool = true
     
     let categoryList = ["ذوي اعاقة بصرية","مرافق"]
     var pickerView = UIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureView()
+        
         name.delegate = self
         phoneNum.delegate = self
         email.delegate = self
@@ -79,7 +86,37 @@ class SignupViewController: UIViewController, UITextFieldDelegate  {
                 signupButton.isEnabled = false
             }
         }
-    
+    func configureView(){
+        conformedPassword.isSecureTextEntry = true
+        conformedPassword.clearsOnBeginEditing = false
+        
+            password.isSecureTextEntry = true
+            password.clearsOnBeginEditing = false
+            showHideButton.setImage(UIImage(named: "icons8-hide-48"), for: .normal)
+          showHideButton2.setImage(UIImage(named: "icons8-hide-48"), for: .normal)
+        }
+    @IBAction func showHide() {
+            if passwordVisible {
+                password.isSecureTextEntry = false
+                showHideButton.setImage(UIImage(named: "icons8-eye-48"), for: .normal)
+                passwordVisible = false
+            } else {
+                password.isSecureTextEntry = true
+                showHideButton.setImage(UIImage(named: "icons8-hide-48"), for: .normal)
+                passwordVisible = true
+            }
+        }
+    @IBAction func showHide2() {
+            if passwordVisible2 {
+                conformedPassword.isSecureTextEntry = false
+                showHideButton2.setImage(UIImage(named: "icons8-eye-48"), for: .normal)
+                passwordVisible2 = false
+            } else {
+                conformedPassword.isSecureTextEntry = true
+                showHideButton2.setImage(UIImage(named: "icons8-hide-48"), for: .normal)
+                passwordVisible2 = true
+            }
+        }
     
     @IBAction func nameChanged(_ sender: Any) {
         if let name = name.text
