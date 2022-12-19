@@ -284,8 +284,12 @@ class SignupViewController: UIViewController {
                 }
             }
             else{
-                self.performSegue(withIdentifier: "goToHomeScreen", sender: self)
-                self.db.collection("users").addDocument(data: ["name" : Name,"phoneNum":Phone,"email":Email,"password":Password,"category":Category])
+               
+                self.db.collection("users").addDocument(data: ["name" : Name,"phoneNum":Phone,"email":Email.lowercased(),"password":Password,"category":Category])
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(identifier: "login")
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
                 
                 self.name.text = ""
                 self.email.text = ""

@@ -17,10 +17,17 @@ class ForgetPassViewController: UIViewController {
     
     }
     
+    @IBAction func signUpTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "SignUp")
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
     @IBAction func forgetpassword(_ sender: Any) {
         let auth = Auth.auth()
                
                auth.sendPasswordReset(withEmail: email.text!)
+        
         
 //        { (error) in
 //                   if let error = error {
