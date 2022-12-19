@@ -388,6 +388,15 @@
                                     <action selector="forgetpassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fl2-Wr-raW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZE-Fn-2c8">
+                                <rect key="frame" x="77" y="420" width="24" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="showHide" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vl6-OK-S8h"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -396,6 +405,7 @@
                     <connections>
                         <outlet property="email" destination="yFl-RW-gZJ" id="lJL-0o-dwO"/>
                         <outlet property="password" destination="IRu-WL-73e" id="8vW-xn-8dQ"/>
+                        <outlet property="showHideLabel" destination="FZE-Fn-2c8" id="YVx-h2-zTH"/>
                         <segue destination="ipR-CT-vpw" kind="show" identifier="GoToCGHomePage" id="sLD-gc-HR4"/>
                         <segue destination="HEC-Yj-28L" kind="show" identifier="GoToVIHomePage" id="FgU-SV-Fer"/>
                     </connections>

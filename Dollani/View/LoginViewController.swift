@@ -18,7 +18,9 @@ class LoginViewController: UIViewController , UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        password.textAlignment = .right
+        email.textAlignment = .right
+        
         password.delegate = self
         email.delegate = self
 
