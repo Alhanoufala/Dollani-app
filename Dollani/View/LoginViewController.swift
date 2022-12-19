@@ -10,13 +10,22 @@ import Firebase
 class LoginViewController: UIViewController , UITextFieldDelegate {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var showHideLabel: UIButton!
+    
+    var passwordVisible: Bool = true
     
     let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         password.delegate = self
         email.delegate = self
+
+        configureView()
+        
+
+
         
         // Do any additional setup after loading the view.
     }
@@ -70,6 +79,24 @@ class LoginViewController: UIViewController , UITextFieldDelegate {
         return false
     }
     
+    //toggle between show and hide password
+    func configureView(){
+            password.isSecureTextEntry = true
+            password.clearsOnBeginEditing = false
+            showHideLabel.setImage(UIImage(named: "icons8-hide-48"), for: .normal)
+        }
+    
+    @IBAction func showHide() {
+            if passwordVisible {
+                password.isSecureTextEntry = false
+                showHideLabel.setImage(UIImage(named: "icons8-eye-48"), for: .normal)
+                passwordVisible = false
+            } else {
+                password.isSecureTextEntry = true
+                showHideLabel.setImage(UIImage(named: "icons8-hide-48"), for: .normal)
+                passwordVisible = true
+            }
+        }
+    
     
 }
-
