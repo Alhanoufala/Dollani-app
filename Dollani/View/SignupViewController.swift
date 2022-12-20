@@ -329,8 +329,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate  {
                 }
             }
             else{
-               
-                self.db.collection("users").addDocument(data: ["name" : Name,"phoneNum":Phone,"email":Email.lowercased(),"password":Password,"category":Category])
+            
+                self.db.collection("users").document(Email).setData(["name" : Name,"phoneNum":Phone,"email":Email.lowercased(),"password":Password,"category":Category])
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(identifier: "login")
                 vc.modalPresentationStyle = .overFullScreen

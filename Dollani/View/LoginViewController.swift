@@ -48,15 +48,39 @@ class LoginViewController: UIViewController , UITextFieldDelegate {
               
             }
             else{
-                //check
-                let q = self.db.collection("users").whereField("email", isEqualTo: email).whereField("category", isEqualTo: "ذوي اعاقة بصرية")
+                var category = ""
                 
-                if q != nil {
-                    self.performSegue(withIdentifier: "GoToCGHomePage", sender: self)
-                    
-                }
-                else {
-                    self.performSegue(withIdentifier: "GoToVIHomePage", sender: self)}
+                Firestore.firestore().collection("users").whereField("email",isEqualTo: email).getDocuments { snapshot, error in
+                    if  error != nil {
+                               // ERROR
+                           }
+                           else {
+                               if(snapshot?.count != 0){
+                                
+                                category = snapshot?.documents.first?.get("category") as! String
+                                   print(category)
+                                   
+                                   if category == "مرافق" {
+                                       let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                                       let vc = storyboard.instantiateViewController(identifier: "CGcontainer")
+                                       vc.modalPresentationStyle = .overFullScreen
+                                       self.present(vc, animated: true)
+                                       
+                                       
+                                   }
+                                   else {
+                                       let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                                       let vc = storyboard.instantiateViewController(identifier: "VIcontainer")
+                                       vc.modalPresentationStyle = .overFullScreen
+                                       self.present(vc, animated: true)
+                                       
+                                   }
+                                   
+                              
+                               }
+                           }
+                       }
+                
             }
         }
     }
