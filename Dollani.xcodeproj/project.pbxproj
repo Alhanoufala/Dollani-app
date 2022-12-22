@@ -33,7 +33,6 @@
 		79387F9D294F3D3F009DE768 /* ForgetPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79387F9C294F3D3F009DE768 /* ForgetPassViewController.swift */; };
 		8BF2D74E294BCDB900DEAB42 /* CGcontainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D74D294BCDB900DEAB42 /* CGcontainerViewController.swift */; };
 		8BF2D750294BCDE500DEAB42 /* VIcontainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D74F294BCDE500DEAB42 /* VIcontainerViewController.swift */; };
-		DECD16984048C3426BFE4223 /* libPods-Dollani.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8C8169F4656B18133A6B2B /* libPods-Dollani.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +55,6 @@
 /* Begin PBXFileReference section */
 		56D4FC23294E91C5004E4998 /* VIprofileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIprofileViewController.swift; sourceTree = "<group>"; };
 		56D4FC25294E9749004E4998 /* CGprofileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGprofileViewController.swift; sourceTree = "<group>"; };
-		57783D502953258600A18C3F /* ObjCBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBridge.h; sourceTree = "<group>"; };
 		57D7AE1E2943D83B00EAEAB5 /* Dollani.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dollani.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D7AE212943D83B00EAEAB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57D7AE232943D83B00EAEAB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,9 +75,6 @@
 		79387F9C294F3D3F009DE768 /* ForgetPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassViewController.swift; sourceTree = "<group>"; };
 		8BF2D74D294BCDB900DEAB42 /* CGcontainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGcontainerViewController.swift; sourceTree = "<group>"; };
 		8BF2D74F294BCDE500DEAB42 /* VIcontainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIcontainerViewController.swift; sourceTree = "<group>"; };
-		8ED2DEF1100DC5105911CFFC /* Pods-Dollani.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dollani.release.xcconfig"; path = "Target Support Files/Pods-Dollani/Pods-Dollani.release.xcconfig"; sourceTree = "<group>"; };
-		D3BA122C74B64401C1129B45 /* Pods-Dollani.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dollani.debug.xcconfig"; path = "Target Support Files/Pods-Dollani/Pods-Dollani.debug.xcconfig"; sourceTree = "<group>"; };
-		ED8C8169F4656B18133A6B2B /* libPods-Dollani.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Dollani.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +90,6 @@
 				57E8D23429454FE600B26DDC /* FirebaseStorage in Frameworks */,
 				57E8D22829454FE600B26DDC /* FirebaseDatabase in Frameworks */,
 				57E8D22629454FE600B26DDC /* FirebaseAuth in Frameworks */,
-				DECD16984048C3426BFE4223 /* libPods-Dollani.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,15 +110,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		059251CD3732B3F945E27779 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D3BA122C74B64401C1129B45 /* Pods-Dollani.debug.xcconfig */,
-				8ED2DEF1100DC5105911CFFC /* Pods-Dollani.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		57D7AE152943D83B00EAEAB5 = {
 			isa = PBXGroup;
 			children = (
@@ -132,8 +117,6 @@
 				57D7AE372943D83D00EAEAB5 /* DollaniTests */,
 				57D7AE412943D83D00EAEAB5 /* DollaniUITests */,
 				57D7AE1F2943D83B00EAEAB5 /* Products */,
-				059251CD3732B3F945E27779 /* Pods */,
-				C18E412D6241B54D54FCB038 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,7 +141,6 @@
 				57D7AE2C2943D83D00EAEAB5 /* LaunchScreen.storyboard */,
 				57D7AE2F2943D83D00EAEAB5 /* Info.plist */,
 				57D7AE562943E7DE00EAEAB5 /* GoogleService-Info.plist */,
-				57783D502953258600A18C3F /* ObjCBridge.h */,
 			);
 			path = Dollani;
 			sourceTree = "<group>";
@@ -196,14 +178,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		C18E412D6241B54D54FCB038 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				ED8C8169F4656B18133A6B2B /* libPods-Dollani.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -211,11 +185,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57D7AE482943D83D00EAEAB5 /* Build configuration list for PBXNativeTarget "Dollani" */;
 			buildPhases = (
-				7156E38F3436202B5BDC8ED0 /* [CP] Check Pods Manifest.lock */,
 				57D7AE1A2943D83B00EAEAB5 /* Sources */,
 				57D7AE1B2943D83B00EAEAB5 /* Frameworks */,
 				57D7AE1C2943D83B00EAEAB5 /* Resources */,
-				74533400D791CADE33D2C549 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -345,48 +317,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		7156E38F3436202B5BDC8ED0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Dollani-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		74533400D791CADE33D2C549 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Dollani/Pods-Dollani-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Dollani/Pods-Dollani-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dollani/Pods-Dollani-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		57D7AE1A2943D83B00EAEAB5 /* Sources */ = {
@@ -577,7 +507,6 @@
 		};
 		57D7AE492943D83D00EAEAB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3BA122C74B64401C1129B45 /* Pods-Dollani.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -599,7 +528,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Dollani.Dollani;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = Dollani/ObjCBridge.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -607,7 +535,6 @@
 		};
 		57D7AE4A2943D83D00EAEAB5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8ED2DEF1100DC5105911CFFC /* Pods-Dollani.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -629,7 +556,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Dollani.Dollani;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = Dollani/ObjCBridge.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
