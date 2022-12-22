@@ -9,13 +9,46 @@ import UIKit
 import Firebase
 
 class ContactViewController: UIViewController,ObservableObject {
+    @IBOutlet weak var tableView: UITableView!
+    
+   @Published var users = [User]()
+    private var db = Firestore.firestore()
+    
+    let user = Auth.auth().currentUser
     
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate =  self
+        tableView.dataSource = self
+        fetchData()
         
+           }
+
+       
         // Do any additional setup after loading the view.
-    }
+    
+    func fetchData() {
+        let user = Auth.auth().currentUser
+        let CGemail = user?.email
+        db.collection("users").whereField("CGEmail", isEqualTo: CGemail!).addSnapshotListener { (querySnapshot, error) in
+                guard let documents = querySnapshot?.documents else {
+                    print("No documents")
+                    return
+                }
+                 
+                self.users = documents.map { (queryDocumentSnapshot) -> User in
+                    let data = queryDocumentSnapshot.data()
+                    let name = data["name"] as? String ?? ""
+                    let email = data["email"] as? String ?? ""
+                    let phoneNum = data["phoneNum"] as? String ?? ""
+                    let category = data["category"] as? String ?? ""
+                    let CGEmail = data["CGEmail"] as? String ?? ""
+                    
+                    return User(name: name, email: email,phoneNum: phoneNum,category:category,CGEmail:CGEmail)
+                }
+            }
+        }
     
     @IBAction func AddVI(_ sender: Any) {
         // create the actual alert controller view that will be the pop-up
@@ -56,4 +89,36 @@ class ContactViewController: UIViewController,ObservableObject {
         
         
         
-    }}
+    }
+    
+    @IBAction func backButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "CGHomePage")
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
+}
+
+extension ContactViewController : UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("cell tapped")
+    }
+}
+
+extension ContactViewController : UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        users.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
+       
+        
+        cell.textLabel?.textAlignment = .right
+        cell.textLabel?.text = users[indexPath.row].name
+        return cell
+    }
+}
