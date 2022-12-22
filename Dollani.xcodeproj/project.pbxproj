@@ -12,6 +12,9 @@
 		5705FA46295459D300E37FD5 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5705FA45295459D300E37FD5 /* NavigationViewController.swift */; };
 		57C9B20A2954651C000A60D7 /* EstimoteUWB.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5705FA4329544A0300E37FD5 /* EstimoteUWB.xcframework */; };
 		57C9B20B2954651C000A60D7 /* EstimoteUWB.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5705FA4329544A0300E37FD5 /* EstimoteUWB.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		57C9B20E29546F80000A60D7 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C9B20D29546F7F000A60D7 /* ContactViewController.swift */; };
+		57C9B2102954806F000A60D7 /* CGHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C9B20F2954806E000A60D7 /* CGHomePageViewController.swift */; };
+		57C9B21329548F5B000A60D7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C9B21229548F5B000A60D7 /* User.swift */; };
 		57D7AE222943D83B00EAEAB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D7AE212943D83B00EAEAB5 /* AppDelegate.swift */; };
 		57D7AE242943D83B00EAEAB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D7AE232943D83B00EAEAB5 /* SceneDelegate.swift */; };
 		57D7AE262943D83B00EAEAB5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D7AE252943D83B00EAEAB5 /* LoginViewController.swift */; };
@@ -74,6 +77,9 @@
 		56D4FC25294E9749004E4998 /* CGprofileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGprofileViewController.swift; sourceTree = "<group>"; };
 		5705FA4329544A0300E37FD5 /* EstimoteUWB.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = EstimoteUWB.xcframework; path = ../../../Desktop/framework/EstimoteUWB.xcframework; sourceTree = "<group>"; };
 		5705FA45295459D300E37FD5 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		57C9B20D29546F7F000A60D7 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		57C9B20F2954806E000A60D7 /* CGHomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGHomePageViewController.swift; sourceTree = "<group>"; };
+		57C9B21229548F5B000A60D7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		57D7AE1E2943D83B00EAEAB5 /* Dollani.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dollani.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D7AE212943D83B00EAEAB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57D7AE232943D83B00EAEAB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +144,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		57C9B21129548F31000A60D7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				57C9B21229548F5B000A60D7 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		57D7AE152943D83B00EAEAB5 = {
 			isa = PBXGroup;
 			children = (
@@ -164,10 +178,11 @@
 			children = (
 				57D7AE212943D83B00EAEAB5 /* AppDelegate.swift */,
 				57D7AE232943D83B00EAEAB5 /* SceneDelegate.swift */,
+				57C9B21129548F31000A60D7 /* Model */,
 				57D7AE512943DABC00EAEAB5 /* View */,
 				57D7AE272943D83B00EAEAB5 /* Main.storyboard */,
-				57D7AE2A2943D83D00EAEAB5 /* Assets.xcassets */,
 				57D7AE2C2943D83D00EAEAB5 /* LaunchScreen.storyboard */,
+				57D7AE2A2943D83D00EAEAB5 /* Assets.xcassets */,
 				57D7AE2F2943D83D00EAEAB5 /* Info.plist */,
 				57D7AE562943E7DE00EAEAB5 /* GoogleService-Info.plist */,
 			);
@@ -200,10 +215,12 @@
 				56D4FC23294E91C5004E4998 /* VIprofileViewController.swift */,
 				56D4FC25294E9749004E4998 /* CGprofileViewController.swift */,
 				57E8D235294A2B6800B26DDC /* VIHomePageViewController.swift */,
+				57C9B20F2954806E000A60D7 /* CGHomePageViewController.swift */,
 				8BF2D74F294BCDE500DEAB42 /* VIcontainerViewController.swift */,
 				8BF2D74D294BCDB900DEAB42 /* CGcontainerViewController.swift */,
 				79387F9C294F3D3F009DE768 /* ForgetPassViewController.swift */,
 				5705FA45295459D300E37FD5 /* NavigationViewController.swift */,
+				57C9B20D29546F7F000A60D7 /* ContactViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -356,13 +373,16 @@
 			files = (
 				57D7AE552943E5F300EAEAB5 /* SelectionViewController.swift in Sources */,
 				5705FA46295459D300E37FD5 /* NavigationViewController.swift in Sources */,
+				57C9B20E29546F80000A60D7 /* ContactViewController.swift in Sources */,
 				57D7AE262943D83B00EAEAB5 /* LoginViewController.swift in Sources */,
 				57D7AE222943D83B00EAEAB5 /* AppDelegate.swift in Sources */,
 				8BF2D750294BCDE500DEAB42 /* VIcontainerViewController.swift in Sources */,
 				57E8D236294A2B6800B26DDC /* VIHomePageViewController.swift in Sources */,
 				8BF2D74E294BCDB900DEAB42 /* CGcontainerViewController.swift in Sources */,
+				57C9B21329548F5B000A60D7 /* User.swift in Sources */,
 				57D7AE532943DB0900EAEAB5 /* SignupViewController.swift in Sources */,
 				79387F9D294F3D3F009DE768 /* ForgetPassViewController.swift in Sources */,
+				57C9B2102954806F000A60D7 /* CGHomePageViewController.swift in Sources */,
 				57D7AE242943D83B00EAEAB5 /* SceneDelegate.swift in Sources */,
 				56D4FC26294E9749004E4998 /* CGprofileViewController.swift in Sources */,
 				56D4FC24294E91C5004E4998 /* VIprofileViewController.swift in Sources */,

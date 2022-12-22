@@ -11,7 +11,7 @@ class CGcontainerViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-selectedIndex = 2
+       selectedIndex = 2
         // Do any additional setup after loading the view.
     }
     
