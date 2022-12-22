@@ -1,66 +1,57 @@
 //
-//  ContentView.swift
-//  uwbtestapp
+//  NavigationViewController.swift
+//  Dollani
 //
-//  Created by DJ HAYDEN on 1/14/22.
+//  Created by Alhanouf Alawwad on 28/05/1444 AH.
 //
-
+import UIKit
 import SwiftUI
 import EstimoteUWB
 
-struct ContentView: View {
-    let uwb = UWBManagerExample()
-    
-    var body: some View {
-        Text("Hello, world!")
-            .padding()
-    }
-}
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
-
-class UWBManagerExample {
+class NavigationViewController: UIViewController {
+    @IBOutlet weak var theContainer:UIView!
     private var uwbManager: EstimoteUWBManager?
-    
-    init() {
+    override func viewDidLoad() {
+        super.viewDidLoad()
         setupUWB()
+        
+      
+        // Do any additional setup after loading the view.
     }
-    
-    private func setupUWB() {
+ func setupUWB() {
         uwbManager = EstimoteUWBManager(positioningObserver: self, discoveryObserver: self, beaconRangingObserver: self)
         uwbManager?.startScanning()
     }
+    
 }
 
 // REQUIRED PROTOCOL
-extension UWBManagerExample: UWBPositioningObserver {
+extension NavigationViewController: UWBPositioningObserver {
     func didUpdatePosition(for device: UWBDevice) {
         print("position updated for device: \(device)")
     }
 }
 
 // OPTIONAL PROTOCOL FOR BEACON BLE RANGING
-extension UWBManagerExample: BeaconRangingObserver {
+extension NavigationViewController: BeaconRangingObserver {
     func didRange(for beacon: BLEDevice) {
-        print("beacon did range: \(beacon)")
+//        print("beacon did range: \(beacon)")
     }
 }
 
 // OPTIONAL PROTOCOL FOR DISCOVERY AND CONNECTIVITY CONTROL
-extension UWBManagerExample: UWBDiscoveryObserver {
-    func didDiscover(device: EstimoteUWB.UWBIdentifable, with rssi: NSNumber, from manager: EstimoteUWB.EstimoteUWBManager) {
-        print("Discovered Device: \(device.publicId)  rssi: \(rssi)")
-    }
-    
+extension NavigationViewController: UWBDiscoveryObserver {
     var shouldConnectAutomatically: Bool {
         return true // set this to false if you want to manage when and what devices to connect to for positioning updates
     }
     
- 
+    func didDiscover(device: UWBIdentifable, with rssi: NSNumber,from manager: EstimoteUWBManager) {
+        print("Discovered Device: \(device.publicId) rssi: \(rssi)")
+        
+        // if shouldConnectAutomatically is set to false - then you could call manager.connect(to: device)
+        // additionally you can globally call discoonect from the scope where you have inititated EstimoteUWBManager -> disconnect(from: device) or disconnect(from: publicId)
+    }
     
     func didConnect(to device: UWBIdentifable) {
         print("Successfully Connected to: \(device.publicId)")
@@ -74,4 +65,5 @@ extension UWBManagerExample: UWBDiscoveryObserver {
         print("Failed to conenct to: \(device.publicId) - error: \(String(describing: error))")
     }
 }
+
 
