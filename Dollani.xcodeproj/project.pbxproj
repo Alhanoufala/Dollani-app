@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0135B78629543ADB002A7DE7 /* EstimoteUWB.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0135B78529543ADB002A7DE7 /* EstimoteUWB.xcframework */; };
+		0135B78829543C1F002A7DE7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0135B78729543C1F002A7DE7 /* ContentView.swift */; };
 		56D4FC24294E91C5004E4998 /* VIprofileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4FC23294E91C5004E4998 /* VIprofileViewController.swift */; };
 		56D4FC26294E9749004E4998 /* CGprofileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4FC25294E9749004E4998 /* CGprofileViewController.swift */; };
 		57D7AE222943D83B00EAEAB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D7AE212943D83B00EAEAB5 /* AppDelegate.swift */; };
@@ -53,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0135B78529543ADB002A7DE7 /* EstimoteUWB.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = EstimoteUWB.xcframework; sourceTree = "<group>"; };
+		0135B78729543C1F002A7DE7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		56D4FC23294E91C5004E4998 /* VIprofileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIprofileViewController.swift; sourceTree = "<group>"; };
 		56D4FC25294E9749004E4998 /* CGprofileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGprofileViewController.swift; sourceTree = "<group>"; };
 		57D7AE1E2943D83B00EAEAB5 /* Dollani.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dollani.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +87,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57E8D22E29454FE600B26DDC /* FirebaseFirestoreSwift in Frameworks */,
+				0135B78629543ADB002A7DE7 /* EstimoteUWB.xcframework in Frameworks */,
 				57E8D22A29454FE600B26DDC /* FirebaseDatabaseSwift in Frameworks */,
 				57E8D23229454FE600B26DDC /* FirebaseMessaging in Frameworks */,
 				57E8D22C29454FE600B26DDC /* FirebaseFirestore in Frameworks */,
@@ -115,6 +120,7 @@
 			children = (
 				57D7AE202943D83B00EAEAB5 /* Dollani */,
 				57D7AE372943D83D00EAEAB5 /* DollaniTests */,
+				0135B78529543ADB002A7DE7 /* EstimoteUWB.xcframework */,
 				57D7AE412943D83D00EAEAB5 /* DollaniUITests */,
 				57D7AE1F2943D83B00EAEAB5 /* Products */,
 			);
@@ -174,6 +180,7 @@
 				8BF2D74F294BCDE500DEAB42 /* VIcontainerViewController.swift */,
 				8BF2D74D294BCDB900DEAB42 /* CGcontainerViewController.swift */,
 				79387F9C294F3D3F009DE768 /* ForgetPassViewController.swift */,
+				0135B78729543C1F002A7DE7 /* ContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -325,6 +332,7 @@
 			files = (
 				57D7AE552943E5F300EAEAB5 /* SelectionViewController.swift in Sources */,
 				57D7AE262943D83B00EAEAB5 /* LoginViewController.swift in Sources */,
+				0135B78829543C1F002A7DE7 /* ContentView.swift in Sources */,
 				57D7AE222943D83B00EAEAB5 /* AppDelegate.swift in Sources */,
 				8BF2D750294BCDE500DEAB42 /* VIcontainerViewController.swift in Sources */,
 				57E8D236294A2B6800B26DDC /* VIHomePageViewController.swift in Sources */,
