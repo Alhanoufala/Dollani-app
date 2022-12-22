@@ -5,12 +5,10 @@
 //  Created by Alhanouf Alawwad on 28/05/1444 AH.
 //
 import UIKit
-import SwiftUI
 import EstimoteUWB
 
 
 class NavigationViewController: UIViewController {
-    @IBOutlet weak var theContainer:UIView!
     private var uwbManager: EstimoteUWBManager?
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -410,23 +410,7 @@
         <scene sceneID="xuL-GI-YXT">
             <objects>
                 <viewController id="FZK-uP-mPq" customClass="NavigationViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="r2U-8d-npK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S3p-Wo-dix">
-                                <rect key="frame" x="0.0" y="44" width="414" height="750"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="4Na-ip-HdF"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
                     <navigationItem key="navigationItem" title="التنقل" id="Ucy-AC-LYy"/>
-                    <connections>
-                        <outlet property="theContainer" destination="S3p-Wo-dix" id="MtC-jP-KbZ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OVM-2t-MAD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
