@@ -16,12 +16,16 @@ class ContactViewController: UIViewController,ObservableObject {
     
     let user = Auth.auth().currentUser
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        fetchData()
+    }
    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate =  self
         tableView.dataSource = self
-        fetchData()
+        
         
            }
 
@@ -53,12 +57,13 @@ class ContactViewController: UIViewController,ObservableObject {
     @IBAction func AddVI(_ sender: Any) {
         // create the actual alert controller view that will be the pop-up
         let alertController = UIAlertController(title: "اضافة جهة اتصال جديدة", message: "", preferredStyle: .alert)
+       
         
         alertController.addTextField { (textField) in
             // configure the properties of the text field
             textField.placeholder = "الايميل"
         }
-      
+        
         
         // add the buttons/actions to the view controller
         let cancelAction = UIAlertAction(title: "الغاء", style: .cancel, handler: nil)
@@ -68,32 +73,51 @@ class ContactViewController: UIViewController,ObservableObject {
             let VIemail = alertController.textFields![0].text!
             let CGemail = user?.email
             // this code runs when the user hits the "save" button
-            Firestore.firestore().collection("users").document(VIemail).setData(["CGEmail": CGemail!], merge: true) { error in
-                if  error != nil {
-                    print(error!.localizedDescription)
+            //Validation
+            Firestore.firestore().collection("users").whereField("email",isEqualTo:VIemail).getDocuments { snapshot, error in
+                if  (snapshot?.count == 0 ){
+                    let innerAlert = UIAlertController(title: nil, message:"تأكد من ادخال ايميل صحيح", preferredStyle: .alert)
+                    innerAlert.addAction(UIAlertAction(title:  "الغاء", style: .default, handler:nil))
+                    self.present(innerAlert, animated: true, completion: nil)
                 }
-                else{
-                    print("it works")
+                else {
+                    Firestore.firestore().collection("users").document(VIemail).setData(["CGEmail": CGemail!], merge: true) { error in
+                        if  error != nil {
+                            print(error!.localizedDescription)
+                        }
+                        else{
+                            self.tableView.reloadData()
+                            let innerAlert = UIAlertController(title: nil, message:"تمت عملية الاضافة بنجاح", preferredStyle: .alert)
+                            innerAlert.addAction(UIAlertAction(title:  "الغاء", style: .default, handler:nil))
+                            self.present(innerAlert, animated: true, completion: nil)
+                            
+                          
+                        }
+                        
+                        
+                        
+                        
+                        
+                    }
                 }
-                
-                
-                
-                
-                
             }
         }
-        alertController.addAction(cancelAction)
-        alertController.addAction(saveAction)
+            
+            
+            alertController.addAction(cancelAction)
+            alertController.addAction(saveAction)
+            
         
-        present(alertController, animated: true, completion: nil)
-        
-        
-        
-    }
+            
+            present(alertController, animated: true, completion: nil)
+            
+            
+            
+        }
     
     @IBAction func backButton(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "CGHomePage")
+        let vc = storyboard.instantiateViewController(identifier: "CGcontainer")
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }
