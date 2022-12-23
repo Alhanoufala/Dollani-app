@@ -36,5 +36,98 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "063BA2A5-6201-443C-89FC-CA5D2A26F449"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Dollani/View/AskForHelpViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "AskForHelpViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "063BA2A5-6201-443C-89FC-CA5D2A26F449 - 342dba7d575f0c58"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Dollani.AskForHelpViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Dollani.AskForHelpViewController"
+                  moduleName = "Dollani"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alhanoufalawwad/Documents/GitHub/Dollani-app/Dollani/View/AskForHelpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "31">
+               </Location>
+               <Location
+                  uuid = "063BA2A5-6201-443C-89FC-CA5D2A26F449 - 3f192533778a7f8b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Dollani.AskForHelpViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Dollani.AskForHelpViewController"
+                  moduleName = "Dollani"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alhanoufalawwad/Documents/GitHub/Dollani-app/Dollani/View/AskForHelpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "192">
+               </Location>
+               <Location
+                  uuid = "063BA2A5-6201-443C-89FC-CA5D2A26F449 - d646069b2320c4c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Dollani.AskForHelpViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Dollani.AskForHelpViewController&gt;"
+                  moduleName = "Dollani"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alhanoufalawwad/Documents/GitHub/Dollani-app/Dollani/View/AskForHelpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  uuid = "063BA2A5-6201-443C-89FC-CA5D2A26F449 - 6fad1df6fef923a8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Dollani.AskForHelpViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Dollani.AskForHelpViewController&gt;"
+                  moduleName = "Dollani"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alhanoufalawwad/Documents/GitHub/Dollani-app/Dollani/View/AskForHelpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "146">
+               </Location>
+               <Location
+                  uuid = "063BA2A5-6201-443C-89FC-CA5D2A26F449 - ad576b0f8d826075"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Dollani.AskForHelpViewController.__deallocating_deinit"
+                  moduleName = "Dollani"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alhanoufalawwad/Documents/GitHub/Dollani-app/Dollani/View/AskForHelpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

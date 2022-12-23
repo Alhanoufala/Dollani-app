@@ -13,6 +13,6 @@ struct User:Identifiable{
     var email:String
     var phoneNum:String
     var category:String
-    var CGEmail:String?
+    var CGEmail:[String]?
     
 }

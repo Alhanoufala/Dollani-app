@@ -16,7 +16,8 @@ class CGHomePageViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+   
+    
     @IBAction func contactTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "contact")

@@ -15,6 +15,7 @@ class ContactViewController: UIViewController,ObservableObject {
     private var db = Firestore.firestore()
     
     let user = Auth.auth().currentUser
+    var CGEmailList = [String] ()
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,8 +35,9 @@ class ContactViewController: UIViewController,ObservableObject {
     
     func fetchData() {
         let user = Auth.auth().currentUser
-        let CGemail = user?.email
-        db.collection("users").whereField("CGEmail", isEqualTo: CGemail!).addSnapshotListener { (querySnapshot, error) in
+        let CGemail = [user?.email]
+        
+        db.collection("users").whereField("CGEmail", arrayContainsAny:  CGemail as [Any] ).addSnapshotListener { (querySnapshot, error) in
                 guard let documents = querySnapshot?.documents else {
                     print("No documents")
                     return
@@ -47,10 +49,11 @@ class ContactViewController: UIViewController,ObservableObject {
                     let email = data["email"] as? String ?? ""
                     let phoneNum = data["phoneNum"] as? String ?? ""
                     let category = data["category"] as? String ?? ""
-                    let CGEmail = data["CGEmail"] as? String ?? ""
+                  
                     
-                    return User(name: name, email: email,phoneNum: phoneNum,category:category,CGEmail:CGEmail)
+                    return User(name: name, email: email,phoneNum: phoneNum,category:category)
                 }
+            self.tableView.reloadData()
             }
         }
     
@@ -71,7 +74,7 @@ class ContactViewController: UIViewController,ObservableObject {
             let user = Auth.auth().currentUser
             
             let VIemail = alertController.textFields![0].text!
-            let CGemail = user?.email
+         
             // this code runs when the user hits the "save" button
             //Validation
             Firestore.firestore().collection("users").whereField("email",isEqualTo:VIemail).getDocuments { snapshot, error in
@@ -81,7 +84,10 @@ class ContactViewController: UIViewController,ObservableObject {
                     self.present(innerAlert, animated: true, completion: nil)
                 }
                 else {
-                    Firestore.firestore().collection("users").document(VIemail).setData(["CGEmail": CGemail!], merge: true) { error in
+                    let CGEmailListBefore = snapshot!.documents.first!.get("CGEmail") as! [String] 
+                    self.CGEmailList.append(contentsOf: CGEmailListBefore )
+                        self.CGEmailList.append((user?.email!)!)
+                    Firestore.firestore().collection("users").document(VIemail).setData(["CGEmail": self.CGEmailList], merge: true) { error in
                         if  error != nil {
                             print(error!.localizedDescription)
                         }
@@ -95,7 +101,7 @@ class ContactViewController: UIViewController,ObservableObject {
                         }
                         
                         
-                        
+                        self.CGEmailList = []
                         
                         
                     }
