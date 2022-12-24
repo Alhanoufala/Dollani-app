@@ -64,6 +64,7 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favListCell", for: indexPath)
+        cell.textLabel?.textAlignment = .right
         cell.textLabel?.text = favPlaceList[indexPath.row]
         return cell
     }
