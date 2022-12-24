@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		56D4FC24294E91C5004E4998 /* VIprofileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4FC23294E91C5004E4998 /* VIprofileViewController.swift */; };
 		56D4FC26294E9749004E4998 /* CGprofileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4FC25294E9749004E4998 /* CGprofileViewController.swift */; };
+		5705FA46295459D300E37FD5 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5705FA45295459D300E37FD5 /* NavigationViewController.swift */; };
 		574E708E2955EE570064C5FB /* AskForHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574E708D2955EE570064C5FB /* AskForHelpViewController.swift */; };
 		574E709029563E150064C5FB /* AskForhelpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574E708F29563E150064C5FB /* AskForhelpTableViewCell.swift */; };
 		574E709229565FC30064C5FB /* CGHelpRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574E709129565FC20064C5FB /* CGHelpRequestsViewController.swift */; };
 		57BA58292957148000EABF66 /* HelpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA58282957148000EABF66 /* HelpRequest.swift */; };
 		57BA582B2957229A00EABF66 /* HelpRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA582A2957229A00EABF66 /* HelpRequestTableViewCell.swift */; };
 		57BA582D29572C8400EABF66 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA582C29572C8400EABF66 /* ContactTableViewCell.swift */; };
+		57C9B20A2954651C000A60D7 /* EstimoteUWB.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5705FA4329544A0300E37FD5 /* EstimoteUWB.xcframework */; };
+		57C9B20B2954651C000A60D7 /* EstimoteUWB.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5705FA4329544A0300E37FD5 /* EstimoteUWB.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		57C9B20E29546F80000A60D7 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C9B20D29546F7F000A60D7 /* ContactViewController.swift */; };
 		57C9B2102954806F000A60D7 /* CGHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C9B20F2954806E000A60D7 /* CGHomePageViewController.swift */; };
 		57C9B21329548F5B000A60D7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C9B21229548F5B000A60D7 /* User.swift */; };
@@ -68,6 +71,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				57C9B20B2954651C000A60D7 /* EstimoteUWB.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,6 +81,8 @@
 /* Begin PBXFileReference section */
 		56D4FC23294E91C5004E4998 /* VIprofileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIprofileViewController.swift; sourceTree = "<group>"; };
 		56D4FC25294E9749004E4998 /* CGprofileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGprofileViewController.swift; sourceTree = "<group>"; };
+		5705FA4329544A0300E37FD5 /* EstimoteUWB.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = EstimoteUWB.xcframework; path = ../../../Desktop/framework/EstimoteUWB.xcframework; sourceTree = "<group>"; };
+		5705FA45295459D300E37FD5 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		574E708D2955EE570064C5FB /* AskForHelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskForHelpViewController.swift; sourceTree = "<group>"; };
 		574E708F29563E150064C5FB /* AskForhelpTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskForhelpTableViewCell.swift; sourceTree = "<group>"; };
 		574E709129565FC20064C5FB /* CGHelpRequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGHelpRequestsViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57E8D22E29454FE600B26DDC /* FirebaseFirestoreSwift in Frameworks */,
+				57C9B20A2954651C000A60D7 /* EstimoteUWB.xcframework in Frameworks */,
 				57E8D22A29454FE600B26DDC /* FirebaseDatabaseSwift in Frameworks */,
 				57E8D23229454FE600B26DDC /* FirebaseMessaging in Frameworks */,
 				57E8D22C29454FE600B26DDC /* FirebaseFirestore in Frameworks */,
@@ -141,6 +148,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5705FA4229544A0300E37FD5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5705FA4329544A0300E37FD5 /* EstimoteUWB.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		57C9B21129548F31000A60D7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +172,7 @@
 				57D7AE372943D83D00EAEAB5 /* DollaniTests */,
 				57D7AE412943D83D00EAEAB5 /* DollaniUITests */,
 				57D7AE1F2943D83B00EAEAB5 /* Products */,
+				5705FA4229544A0300E37FD5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -216,6 +232,7 @@
 				8BF2D74F294BCDE500DEAB42 /* VIcontainerViewController.swift */,
 				8BF2D74D294BCDB900DEAB42 /* CGcontainerViewController.swift */,
 				79387F9C294F3D3F009DE768 /* ForgetPassViewController.swift */,
+				5705FA45295459D300E37FD5 /* NavigationViewController.swift */,
 				57C9B20D29546F7F000A60D7 /* ContactViewController.swift */,
 				57BA582C29572C8400EABF66 /* ContactTableViewCell.swift */,
 				574E708D2955EE570064C5FB /* AskForHelpViewController.swift */,
@@ -373,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57D7AE552943E5F300EAEAB5 /* SelectionViewController.swift in Sources */,
+				5705FA46295459D300E37FD5 /* NavigationViewController.swift in Sources */,
 				57C9B20E29546F80000A60D7 /* ContactViewController.swift in Sources */,
 				574E709229565FC30064C5FB /* CGHelpRequestsViewController.swift in Sources */,
 				57D7AE262943D83B00EAEAB5 /* LoginViewController.swift in Sources */,
