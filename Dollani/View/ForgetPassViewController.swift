@@ -26,18 +26,22 @@ class ForgetPassViewController: UIViewController {
     @IBAction func forgetpassword(_ sender: Any) {
         let auth = Auth.auth()
                
-               auth.sendPasswordReset(withEmail: email.text!)
-        
-        
-//        { (error) in
-//                   if let error = error {
-//                       let alert = Service.createAlertController(title: "Error", message: error.localizedDescription)
-//                       self.present(alert, animated: true, completion: nil)
-//                       return
-//                   }
+               auth.sendPasswordReset(withEmail: email.text!) { (error)  in
+                   if let error = error {
+                       let alert = UIAlertController(title: "Error", message: "لم تدخل بريدك الالكتروني بالشكل الصحيح", preferredStyle: .alert)
+                       alert.addAction(UIAlertAction(title: "حسنًا", style: UIAlertAction.Style.default, handler: nil))
+
+                       self.present(alert, animated: true, completion: nil)
+                       
+                       return
+                  }
+                   let alert = UIAlertController(title: "Success", message: "تم ارسال الرابط لبريدك الالكتروني", preferredStyle: .alert)
+                   alert.addAction(UIAlertAction(title: "حسنًا", style: UIAlertAction.Style.default, handler: nil))
+
+                   self.present(alert, animated: true, completion: nil)
 //
 //                   let alert = Service.createAlertController(title: "Hurray", message: "A password reset email has been sent!")
 //                   self.present(alert, animated: true, completion: nil)
-//               }
+             }
     }
 }
