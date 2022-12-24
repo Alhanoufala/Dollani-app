@@ -14,7 +14,13 @@ class VIHomePageViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    @IBAction func FavListTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "FavList")
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
+    
     @IBAction func navigationTapped(_ sender: Any) {
       //  let storyboard = UIStoryboard(name: "Main", bundle: nil)
         //let vc = storyboard.instantiateViewController(identifier: "navigation")
