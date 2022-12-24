@@ -1,15 +1,15 @@
 //
-//  CustomTableViewCell.swift
+//  ContactTableViewCell.swift
 //  Dollani
 //
-//  Created by Alhanouf Alawwad on 29/05/1444 AH.
+//  Created by Alhanouf Alawwad on 30/05/1444 AH.
 //
 
 import UIKit
 
-class CustomTableViewCell: UITableViewCell {
+class ContactTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var sendHelp: UIButton!
+    @IBOutlet weak var label: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -131,7 +131,7 @@ extension AskForHelpViewController : UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCellVi", for: indexPath) as! CustomTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCellVi", for: indexPath) as! AskForhelpTableViewCell
        
         
         cell.textLabel?.textAlignment = .right

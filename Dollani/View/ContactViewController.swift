@@ -133,6 +133,9 @@ extension ContactViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("cell tapped")
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80.0
+    }
 }
 
 extension ContactViewController : UITableViewDataSource{
@@ -144,11 +147,11 @@ extension ContactViewController : UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! ContactTableViewCell
        
         
-        cell.textLabel?.textAlignment = .right
-        cell.textLabel?.text = users[indexPath.row].name
+        cell.label?.textAlignment = .right
+        cell.label?.text = users[indexPath.row].name
         return cell
     }
 }
