@@ -519,7 +519,6 @@
                                     <color key="baseBackgroundColor" red="0.1889090836" green="0.25569909810000002" blue="0.54120320079999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="FavListTapped:" destination="2mQ-sa-5fA" eventType="touchUpInside" id="iQs-ku-vee"/>
                                     <action selector="signupClicked:" destination="Zbf-s3-05P" eventType="touchUpInside" id="EwB-6r-xHr"/>
                                 </connections>
                             </button>
@@ -559,11 +558,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ie-lm-ODW">
-<<<<<<< Updated upstream
                                 <rect key="frame" x="0.0" y="36" width="412" height="44"/>
-=======
-                                <rect key="frame" x="-2" y="36" width="413" height="44"/>
->>>>>>> Stashed changes
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="    طلب المساعدة     " id="nzu-bO-VfC">
@@ -625,76 +620,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JuV-8L-wad" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1335" y="2642"/>
-        </scene>
-        <!--Favorites List View Controller-->
-        <scene sceneID="5z8-t3-vjC">
-            <objects>
-                <viewController storyboardIdentifier="FavList" id="Rh6-xy-tAe" customClass="FavoritesListViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="cm5-WK-bQ9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eG9-1k-Xte">
-                                <rect key="frame" x="0.0" y="80" width="414" height="782"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="favListCell" id="i7E-dr-HAI">
-                                        <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i7E-dr-HAI" id="t1w-nQ-l7q">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyR-hK-Tsk">
-                                <rect key="frame" x="0.0" y="36" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="المفضلة" id="hOY-sT-Dgx"/>
-                                </items>
-                            </navigationBar>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SRr-8u-spm">
-                                <rect key="frame" x="0.0" y="426" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Title" id="Ae0-r3-K8P" userLabel="BackButton"/>
-                                </items>
-                            </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qwd-WC-NlF" userLabel="BButton">
-                                <rect key="frame" x="169" y="430" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="backButtonTapped:" destination="Rh6-xy-tAe" eventType="touchUpInside" id="ZeW-7G-b82"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="esl-Qn-rcD"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="kyR-hK-Tsk" firstAttribute="trailing" secondItem="esl-Qn-rcD" secondAttribute="trailing" id="1M8-4O-nua"/>
-                            <constraint firstItem="eG9-1k-Xte" firstAttribute="bottom" secondItem="esl-Qn-rcD" secondAttribute="bottom" id="6Sd-NW-ogB"/>
-                            <constraint firstItem="eG9-1k-Xte" firstAttribute="leading" secondItem="esl-Qn-rcD" secondAttribute="leading" id="Kaa-b6-bUa"/>
-                            <constraint firstItem="eG9-1k-Xte" firstAttribute="trailing" secondItem="esl-Qn-rcD" secondAttribute="trailing" id="Mfe-FW-cp7"/>
-                            <constraint firstItem="kyR-hK-Tsk" firstAttribute="leading" secondItem="esl-Qn-rcD" secondAttribute="leading" id="PuY-Ip-Q5e"/>
-                            <constraint firstItem="esl-Qn-rcD" firstAttribute="bottom" secondItem="eG9-1k-Xte" secondAttribute="bottom" id="XbI-bH-Uzh"/>
-                            <constraint firstItem="eG9-1k-Xte" firstAttribute="top" secondItem="esl-Qn-rcD" secondAttribute="top" constant="32" id="YMp-0c-fla"/>
-                            <constraint firstItem="kyR-hK-Tsk" firstAttribute="top" secondItem="cm5-WK-bQ9" secondAttribute="top" constant="36" id="ZZV-Js-fuX"/>
-                            <constraint firstItem="eG9-1k-Xte" firstAttribute="leading" secondItem="esl-Qn-rcD" secondAttribute="leading" id="aSX-S6-4aC"/>
-                            <constraint firstItem="esl-Qn-rcD" firstAttribute="trailing" secondItem="eG9-1k-Xte" secondAttribute="trailing" id="pDV-pp-Wh5"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="backButton" destination="Ae0-r3-K8P" id="g2z-T3-g4g"/>
-                        <outlet property="tableView" destination="eG9-1k-Xte" id="y89-Y8-SiK"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mlj-HU-2kW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2502.898550724638" y="2625.6696428571427"/>
+            <point key="canvasLocation" x="1496" y="2693"/>
         </scene>
         <!--الحساب-->
         <scene sceneID="jFG-Ws-0NT">
@@ -874,7 +800,7 @@
                                 <color key="tintColor" red="0.6867702819" green="0.74241515160000005" blue="0.55557672069999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3b6-ch-dFd">
-                                <rect key="frame" x="216" y="71" width="190" height="44"/>
+                                <rect key="frame" x="217" y="71" width="190" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.82352948189999997" green="0.86666667460000002" blue="0.94901961089999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.1215686351" green="0.20784312490000001" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -903,11 +829,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FoY-w8-j0p">
-<<<<<<< Updated upstream
                                 <rect key="frame" x="-1" y="48" width="412" height="44"/>
-=======
-                                <rect key="frame" x="-1" y="48" width="413" height="44"/>
->>>>>>> Stashed changes
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="جهات الاتصال" id="cdk-iq-AQb">
@@ -1001,7 +923,7 @@
                                     <color key="baseForegroundColor" red="0.19262874129999999" green="0.25584411620000003" blue="0.53728133440000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="signUpTapped:" destination="e9g-yP-x1z" eventType="touchUpInside" id="cj6-4T-ADW"/>
+                                    <action selector="signUpTapped:" destination="e9g-yP-x1z" eventType="touchUpInside" id="xjj-u2-EQy"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اعادة تعيين كلمة المرور " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9p-Io-G0o">
