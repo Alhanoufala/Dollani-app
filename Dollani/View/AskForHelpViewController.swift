@@ -14,10 +14,11 @@ class AskForHelpViewController: UIViewController,ObservableObject {
     @IBOutlet weak var tableView: UITableView!
     @Published var CGUsers = [User]()
     var CGEmailList = [String] ()
-    
-    let user = Auth.auth().currentUser
+    var VIPhoneNum = ""
+    var VIName = ""
     override func viewWillAppear(_ animated: Bool) {
         getCGEmails()
+      
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,7 @@ class AskForHelpViewController: UIViewController,ObservableObject {
         
         
     }
+    
     func getCGEmails() {
         let user = Auth.auth().currentUser
         let VIEmail = user?.email
@@ -38,9 +40,11 @@ class AskForHelpViewController: UIViewController,ObservableObject {
                 print(error!.localizedDescription)
             }
             else{
-                self.CGEmailList = snapshot?.documents.first?.get("CGEmail") as! [String]
+              CGEmailList = snapshot?.documents.first?.get("CGEmail") as! [String]
                 print(CGEmailList)
-                
+                VIPhoneNum = snapshot?.documents.first?.get("phoneNum") as! String
+                VIName = snapshot?.documents.first?.get("name") as! String
+               
                 fetchData()
                 
                 
@@ -96,7 +100,7 @@ class AskForHelpViewController: UIViewController,ObservableObject {
         let CGPhoneNum = CGUsers[rowIndex].phoneNum
         let VIEmail =  user?.email
        
-        Firestore.firestore().collection("helpRequests").document(VIEmail!+"-"+CGEmail).setData(["CGName" : CGName,"CGEmail":CGEmail,"CGPhoneNum":CGPhoneNum,"VIEmail":VIEmail!,"status":"new"])
+        Firestore.firestore().collection("helpRequests").document(VIEmail!+"-"+CGEmail).setData(["CGName" : CGName,"CGEmail":CGEmail,"CGPhoneNum":CGPhoneNum,"VIEmail":VIEmail!,"VIName":VIName,"VIPhoneNum":VIPhoneNum,"status":"new"])
             
          //alert
         let alert = UIAlertController(title: nil, message:"تم ارسال الطلب بنجاج", preferredStyle: .alert)

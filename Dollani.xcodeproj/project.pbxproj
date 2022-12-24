@@ -13,6 +13,8 @@
 		574E708E2955EE570064C5FB /* AskForHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574E708D2955EE570064C5FB /* AskForHelpViewController.swift */; };
 		574E709029563E150064C5FB /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574E708F29563E150064C5FB /* CustomTableViewCell.swift */; };
 		574E709229565FC30064C5FB /* CGHelpRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574E709129565FC20064C5FB /* CGHelpRequestsViewController.swift */; };
+		57BA58292957148000EABF66 /* HelpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA58282957148000EABF66 /* HelpRequest.swift */; };
+		57BA582B2957229A00EABF66 /* HelpRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA582A2957229A00EABF66 /* HelpRequestTableViewCell.swift */; };
 		57C9B20A2954651C000A60D7 /* EstimoteUWB.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5705FA4329544A0300E37FD5 /* EstimoteUWB.xcframework */; };
 		57C9B20B2954651C000A60D7 /* EstimoteUWB.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5705FA4329544A0300E37FD5 /* EstimoteUWB.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		57C9B20E29546F80000A60D7 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C9B20D29546F7F000A60D7 /* ContactViewController.swift */; };
@@ -83,6 +85,8 @@
 		574E708D2955EE570064C5FB /* AskForHelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskForHelpViewController.swift; sourceTree = "<group>"; };
 		574E708F29563E150064C5FB /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		574E709129565FC20064C5FB /* CGHelpRequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGHelpRequestsViewController.swift; sourceTree = "<group>"; };
+		57BA58282957148000EABF66 /* HelpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpRequest.swift; sourceTree = "<group>"; };
+		57BA582A2957229A00EABF66 /* HelpRequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpRequestTableViewCell.swift; sourceTree = "<group>"; };
 		57C9B20D29546F7F000A60D7 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		57C9B20F2954806E000A60D7 /* CGHomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGHomePageViewController.swift; sourceTree = "<group>"; };
 		57C9B21229548F5B000A60D7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				57C9B21229548F5B000A60D7 /* User.swift */,
+				57BA58282957148000EABF66 /* HelpRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -230,6 +235,7 @@
 				574E708D2955EE570064C5FB /* AskForHelpViewController.swift */,
 				574E708F29563E150064C5FB /* CustomTableViewCell.swift */,
 				574E709129565FC20064C5FB /* CGHelpRequestsViewController.swift */,
+				57BA582A2957229A00EABF66 /* HelpRequestTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -397,6 +403,8 @@
 				57C9B2102954806F000A60D7 /* CGHomePageViewController.swift in Sources */,
 				57D7AE242943D83B00EAEAB5 /* SceneDelegate.swift in Sources */,
 				56D4FC26294E9749004E4998 /* CGprofileViewController.swift in Sources */,
+				57BA58292957148000EABF66 /* HelpRequest.swift in Sources */,
+				57BA582B2957229A00EABF66 /* HelpRequestTableViewCell.swift in Sources */,
 				56D4FC24294E91C5004E4998 /* VIprofileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
