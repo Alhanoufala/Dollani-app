@@ -406,16 +406,6 @@
             </objects>
             <point key="canvasLocation" x="1437.68115942029" y="-72.321428571428569"/>
         </scene>
-        <!--التنقل-->
-        <scene sceneID="xuL-GI-YXT">
-            <objects>
-                <viewController storyboardIdentifier="navigation" id="FZK-uP-mPq" customClass="NavigationViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="التنقل" id="Ucy-AC-LYy"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OVM-2t-MAD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2371" y="2693"/>
-        </scene>
         <!--الحساب-->
         <scene sceneID="wjK-jp-cad">
             <objects>
