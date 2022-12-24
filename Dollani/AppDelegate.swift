@@ -9,7 +9,7 @@ import UIKit
 import FirebaseCore
 import FirebaseFirestore
 import FirebaseAuth
-
+import EstimoteUWB
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
