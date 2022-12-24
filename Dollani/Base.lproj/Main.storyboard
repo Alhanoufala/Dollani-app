@@ -509,6 +509,7 @@
                                     <color key="baseBackgroundColor" red="0.1889090836" green="0.25569909810000002" blue="0.54120320079999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="FavListTapped:" destination="2mQ-sa-5fA" eventType="touchUpInside" id="Q2o-Ei-RYW"/>
                                     <action selector="signupClicked:" destination="Zbf-s3-05P" eventType="touchUpInside" id="EwB-6r-xHr"/>
                                 </connections>
                             </button>
@@ -548,7 +549,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ie-lm-ODW">
-                                <rect key="frame" x="-4" y="36" width="412" height="44"/>
+                                <rect key="frame" x="-6" y="36" width="413" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="    طلب المساعدة     " id="nzu-bO-VfC">
@@ -562,7 +563,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="63I-vY-p5Y">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Bav-H1-wCt">
-                                                <rect key="frame" x="292" y="5" width="100" height="34.5"/>
+                                                <rect key="frame" x="293" y="5" width="100" height="34.5"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system"/>
@@ -790,7 +791,7 @@
                                 <color key="tintColor" red="0.6867702819" green="0.74241515160000005" blue="0.55557672069999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3b6-ch-dFd">
-                                <rect key="frame" x="212" y="71" width="190" height="44"/>
+                                <rect key="frame" x="210" y="71" width="191" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.82352948189999997" green="0.86666667460000002" blue="0.94901961089999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.1215686351" green="0.20784312490000001" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -819,7 +820,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FoY-w8-j0p">
-                                <rect key="frame" x="-6" y="48" width="414" height="44"/>
+                                <rect key="frame" x="-7" y="48" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="جهات الاتصال" id="cdk-iq-AQb">
@@ -1089,7 +1090,7 @@
                                 <items>
                                     <navigationItem title="المفضلة" id="Hqs-bQ-c8J">
                                         <barButtonItem key="rightBarButtonItem" image="arrow.up.heart" catalog="system" style="plain" id="VnM-xU-acu">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="bpi-sT-tud">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="bpi-sT-tud">
                                                 <rect key="frame" x="294" y="5" width="100" height="34.5"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <rect key="contentStretch" x="0.10000000000000001" y="0.14999999999999999" width="1" height="1"/>
@@ -1119,7 +1120,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="NYs-0u-qxc" id="cQ7-M1-npy"/>
+                        <outlet property="tableView" destination="NYs-0u-qxc" id="ua0-Jb-piF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D9R-gY-z6P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
