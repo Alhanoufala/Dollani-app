@@ -6,12 +6,26 @@
 //
 
 import UIKit
+import Firebase
 
 class CategoryPlacesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var arrCategory = ["مدرجات","قاعات دراسية "," مكاتب"," دورات مياه"]
-    
+    var listOfCategory  = [String] ()
+    var db = Firestore.firestore()
 
     @IBOutlet weak var tableView: UITableView!
+    override func viewWillAppear(_ animated: Bool) {
+        db.collection("categories").getDocuments { [self] snapshot, error in
+            if  error != nil {
+                print(error!.localizedDescription)
+            }
+        
+            else{
+                listOfCategory = snapshot?.documents.first?.get("categoriesP") as? [String] ?? []
+                
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -20,13 +34,13 @@ class CategoryPlacesViewController: UIViewController, UITableViewDelegate, UITab
         // Do any additional setup after loading the view.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrCategory.count
+        return listOfCategory.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath)
         cell.textLabel?.textAlignment = .right
-        cell.textLabel?.text = arrCategory[indexPath.row]
+        cell.textLabel?.text = listOfCategory[indexPath.row]
         return cell
     }
  
