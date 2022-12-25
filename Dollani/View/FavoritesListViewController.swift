@@ -61,7 +61,14 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favPlaceList.count
     }
+    @IBAction func forwardTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "details")
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
 
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favListCell", for: indexPath)
         cell.textLabel?.textAlignment = .right

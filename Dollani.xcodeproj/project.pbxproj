@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		010B57552957571600542D83 /* FavoritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B57542957571600542D83 /* FavoritesListViewController.swift */; };
+		0132FD9729587FDE0069C7D9 /* placeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0132FD9629587FDE0069C7D9 /* placeDetailsViewController.swift */; };
 		56D4FC24294E91C5004E4998 /* VIprofileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4FC23294E91C5004E4998 /* VIprofileViewController.swift */; };
 		56D4FC26294E9749004E4998 /* CGprofileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4FC25294E9749004E4998 /* CGprofileViewController.swift */; };
 		574E708E2955EE570064C5FB /* AskForHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574E708D2955EE570064C5FB /* AskForHelpViewController.swift */; };
@@ -78,6 +79,7 @@
 
 /* Begin PBXFileReference section */
 		010B57542957571600542D83 /* FavoritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewController.swift; sourceTree = "<group>"; };
+		0132FD9629587FDE0069C7D9 /* placeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = placeDetailsViewController.swift; sourceTree = "<group>"; };
 		56D4FC23294E91C5004E4998 /* VIprofileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIprofileViewController.swift; sourceTree = "<group>"; };
 		56D4FC25294E9749004E4998 /* CGprofileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGprofileViewController.swift; sourceTree = "<group>"; };
 		574E708D2955EE570064C5FB /* AskForHelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskForHelpViewController.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				57BA582A2957229A00EABF66 /* HelpRequestTableViewCell.swift */,
 				010B57542957571600542D83 /* FavoritesListViewController.swift */,
 				8B6644EF2957BEBB00A8D6BB /* CategoryPlacesViewController.swift */,
+				0132FD9629587FDE0069C7D9 /* placeDetailsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0132FD9729587FDE0069C7D9 /* placeDetailsViewController.swift in Sources */,
 				57D7AE552943E5F300EAEAB5 /* SelectionViewController.swift in Sources */,
 				57C9B20E29546F80000A60D7 /* ContactViewController.swift in Sources */,
 				574E709229565FC30064C5FB /* CGHelpRequestsViewController.swift in Sources */,

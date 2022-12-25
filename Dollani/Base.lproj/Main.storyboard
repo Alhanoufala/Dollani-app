@@ -540,6 +540,51 @@
             </objects>
             <point key="canvasLocation" x="1857.9710144927537" y="1989.5089285714284"/>
         </scene>
+        <!--Place Details View Controller-->
+        <scene sceneID="X5B-Fi-KpI">
+            <objects>
+                <viewController storyboardIdentifier="details" id="sf2-Pe-c4q" customClass="placeDetailsViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5F6-f8-tVP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qKN-AS-dgk">
+                                <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="تفاصيل الموقع " id="d7F-AU-FkC">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="m1y-Le-egp">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Tzi-e9-hTi">
+                                                <rect key="frame" x="345" y="5" width="49" height="34.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="arrow.forward" catalog="system"/>
+                                                <connections>
+                                                    <action selector="backButtonTapped:" destination="sf2-Pe-c4q" eventType="touchUpInside" id="xBO-p3-1Yb"/>
+                                                </connections>
+                                            </button>
+                                            <connections>
+                                                <action selector="backTapped:" destination="sf2-Pe-c4q" id="IvG-7R-d8d"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7xv-bE-rle"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qKN-AS-dgk" firstAttribute="leading" secondItem="7xv-bE-rle" secondAttribute="leading" id="Lqe-C8-Fx0"/>
+                            <constraint firstItem="qKN-AS-dgk" firstAttribute="top" secondItem="7xv-bE-rle" secondAttribute="top" id="RJN-Td-doO"/>
+                            <constraint firstItem="qKN-AS-dgk" firstAttribute="trailing" secondItem="7xv-bE-rle" secondAttribute="trailing" id="Rcu-HT-R7l"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fy0-Qs-0yD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2183" y="3380"/>
+        </scene>
         <!--Ask For Help View Controller-->
         <scene sceneID="GHh-7j-2Nl">
             <objects>
@@ -549,7 +594,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ie-lm-ODW">
-                                <rect key="frame" x="-6" y="36" width="413" height="44"/>
+                                <rect key="frame" x="-7" y="36" width="413" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="    طلب المساعدة     " id="nzu-bO-VfC">
@@ -820,7 +865,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FoY-w8-j0p">
-                                <rect key="frame" x="-8" y="48" width="415" height="44"/>
+                                <rect key="frame" x="-8" y="48" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="جهات الاتصال" id="cdk-iq-AQb">
@@ -837,7 +882,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="LFO-ku-HKf">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="F3d-h5-P9H">
-                                                <rect key="frame" x="290" y="4.5" width="105" height="35"/>
+                                                <rect key="frame" x="289" y="4.5" width="105" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system"/>
@@ -1081,6 +1126,17 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ADk-j8-xYB" id="IMp-Ig-xzC">
                                             <rect key="frame" x="0.0" y="0.0" width="422" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hv-oZ-Oh6">
+                                                    <rect key="frame" x="18" y="5" width="40" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="forwardTapped:" destination="Jas-Q3-Xt4" eventType="touchUpInside" id="bqz-eV-igS"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -1192,10 +1248,12 @@
         <image name="Dolanilogo" width="500" height="500"/>
         <image name="Dolanilogo 1" width="500" height="500"/>
         <image name="Logout" width="24" height="24"/>
+        <image name="arrow.forward" catalog="system" width="128" height="95"/>
         <image name="arrow.right" catalog="system" width="128" height="95"/>
         <image name="arrow.up.heart" catalog="system" width="128" height="107"/>
         <image name="backgroundCG" width="414" height="896"/>
         <image name="bell" catalog="system" width="125" height="128"/>
+        <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="map" catalog="system" width="128" height="112"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
