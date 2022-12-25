@@ -1132,20 +1132,13 @@
         <scene sceneID="Ue6-C6-jZt">
             <objects>
                 <viewController storyboardIdentifier="places" id="ciS-L7-x05" customClass="CategoryPlacesViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="80m-SU-4Pk">
+                    <view key="view" contentMode="scaleToFill" id="80m-SU-4Pk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bWV-O3-qIn">
-                                <rect key="frame" x="0.0" y="110" width="414" height="757"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bWV-O3-qIn">
+                                <rect key="frame" x="0.0" y="82" width="414" height="780"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="422" id="3qU-lq-fmP"/>
-                                    <constraint firstAttribute="width" constant="422" id="79l-aX-qCR"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="770" id="AmS-R5-GdB"/>
-                                    <constraint firstAttribute="height" constant="770" id="cQ2-Kk-u2O"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="422" id="doc-r6-80A"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="categoryCell" id="q3n-CO-I8a">
                                         <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
@@ -1174,15 +1167,15 @@
                         <viewLayoutGuide key="safeArea" id="8Bn-sx-Eny"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="8Bn-sx-Eny" firstAttribute="trailing" secondItem="bWV-O3-qIn" secondAttribute="trailing" constant="8" id="73Q-vv-DX8"/>
-                            <constraint firstItem="bWV-O3-qIn" firstAttribute="top" secondItem="8Bn-sx-Eny" secondAttribute="top" constant="10" id="AT1-4N-UP6"/>
-                            <constraint firstItem="8Bn-sx-Eny" firstAttribute="bottom" secondItem="bWV-O3-qIn" secondAttribute="bottom" id="clK-wt-36z"/>
+                            <constraint firstItem="bWV-O3-qIn" firstAttribute="leading" secondItem="8Bn-sx-Eny" secondAttribute="leading" id="1Iw-65-8B0"/>
+                            <constraint firstItem="bWV-O3-qIn" firstAttribute="top" secondItem="8Bn-sx-Eny" secondAttribute="top" constant="34" id="AT1-4N-UP6"/>
+                            <constraint firstItem="bWV-O3-qIn" firstAttribute="trailing" secondItem="8Bn-sx-Eny" secondAttribute="trailing" id="GfT-XO-igS"/>
                             <constraint firstItem="bWV-O3-qIn" firstAttribute="leading" secondItem="8Bn-sx-Eny" secondAttribute="leading" id="hQ4-9g-Duv"/>
                             <constraint firstItem="8Bn-sx-Eny" firstAttribute="bottom" secondItem="bWV-O3-qIn" secondAttribute="bottom" id="hu5-RX-Y0Q"/>
-                            <constraint firstItem="8Bn-sx-Eny" firstAttribute="trailing" secondItem="bWV-O3-qIn" secondAttribute="trailing" constant="-8" id="iTX-KP-6mo"/>
+                            <constraint firstItem="bWV-O3-qIn" firstAttribute="top" secondItem="8Bn-sx-Eny" secondAttribute="top" constant="34" id="lBT-zZ-0Kb"/>
                             <constraint firstItem="bWV-O3-qIn" firstAttribute="leading" secondItem="8Bn-sx-Eny" secondAttribute="leading" id="nyy-Bn-v63"/>
-                            <constraint firstItem="bWV-O3-qIn" firstAttribute="top" secondItem="8Bn-sx-Eny" secondAttribute="top" constant="10" id="q94-Uj-7Hf"/>
-                            <constraint firstItem="8Bn-sx-Eny" firstAttribute="trailing" secondItem="bWV-O3-qIn" secondAttribute="trailing" constant="-8" id="wNc-gn-70d"/>
+                            <constraint firstItem="bWV-O3-qIn" firstAttribute="top" secondItem="8Bn-sx-Eny" secondAttribute="top" constant="34" id="q94-Uj-7Hf"/>
+                            <constraint firstItem="bWV-O3-qIn" firstAttribute="bottom" secondItem="8Bn-sx-Eny" secondAttribute="bottom" id="yoe-xk-RQ5"/>
                         </constraints>
                     </view>
                     <connections>
