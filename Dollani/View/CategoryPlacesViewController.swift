@@ -13,14 +13,23 @@ class CategoryPlacesViewController: UIViewController, UITableViewDelegate, UITab
     var db = Firestore.firestore()
 
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewWillAppear(_ animated: Bool) {
-        db.collection("categories").getDocuments { [self] snapshot, error in
+        fetchData()
+       
+    }
+    
+    func fetchData(){
+      
+        Firestore.firestore().collection("categories ").getDocuments { snapshot, error in
             if  error != nil {
                 print(error!.localizedDescription)
             }
         
             else{
-                listOfCategory = snapshot?.documents.first?.get("categoriesP") as? [String] ?? []
+                print(self.listOfCategory.count)
+                self.listOfCategory = snapshot?.documents.first?.get("categoriesP") as? [String] ?? []
+                self.tableView.reloadData()
                 
             }
         }
@@ -30,7 +39,7 @@ class CategoryPlacesViewController: UIViewController, UITableViewDelegate, UITab
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-
+     
         // Do any additional setup after loading the view.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
