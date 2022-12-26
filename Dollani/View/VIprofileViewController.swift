@@ -57,6 +57,16 @@ class VIprofileViewController: UIViewController {
        
     }
     
+    
+    @IBAction func editTapped(_ sender: Any) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "editProfile")
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true)
+
+        
+    }
+    
     fileprivate func setupLogOutButton() {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Logout").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleLogOut))
     }

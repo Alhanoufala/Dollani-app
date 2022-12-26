@@ -1,25 +1,34 @@
 //
-//  CGprofileViewController.swift
+//  EditVIprofileViewController.swift
 //  Dollani
 //
-//  Created by Sara on 18/12/2022.
+//  Created by Sara on 26/12/2022.
 //
 
 import UIKit
 import Firebase
+import SwiftUI
 
-class CGprofileViewController: UIViewController {
+class EditVIprofileViewController: UIViewController {
+    
+    var name: String?
 
+/*
     @IBOutlet weak var name: UITextView!
+    
+    
     @IBOutlet weak var phoneNum: UITextView!
+    
     @IBOutlet weak var email: UITextView!
+ */
     override func viewDidLoad() {
+        super.viewDidLoad()
+        /*
         name.textAlignment = .right
         phoneNum.textAlignment = .right
         email.textAlignment = .right
-        super.viewDidLoad()
+        */
         retriveUserInfo()
-        setupLogOutButton()
     }
     func retriveUserInfo(){
         let user = Auth.auth().currentUser
@@ -34,14 +43,16 @@ class CGprofileViewController: UIViewController {
                        else {
                            if(snapshot?.count != 0){
                             
-                               let userName = snapshot?.documents.first?.get("name") as! String
+                               self.name = snapshot?.documents.first?.get("name") as? String
                                let userPhoneNum = snapshot?.documents.first?.get("phoneNum") as! String
                                let userEmail = snapshot?.documents.first?.get("email") as! String
                                
+                               /*
                                //Set textView
                                self.name.text = userName
                                self.phoneNum.text = userPhoneNum
                                self.email.text = userEmail
+                                */
                            }
                        }
                    }
@@ -51,43 +62,36 @@ class CGprofileViewController: UIViewController {
                
        
     }
-    fileprivate func setupLogOutButton() {
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Logout").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleLogOut))
+    
+   
+
+    
+    @IBAction func nameField(_ sender: Any) {
+       // TextField("", text: name)
     }
     
-    @objc func handleLogOut() {
-        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        
-        alertController.addAction(UIAlertAction(title: "تسجيل الخروج", style: .destructive, handler: { (_) in
-            
-            do {
-                try Auth.auth().signOut()
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewController(identifier: "selection")
-                vc.modalPresentationStyle = .overFullScreen
-                self.present(vc, animated: true)
-                //what happens? we need to present some kind of login controller
-                
-            } catch let signOutErr {
-                print("Failed to sign out:", signOutErr)
-            }
-            
-            
-        }))
-        
-        alertController.addAction(UIAlertAction(title: "تراجع", style: .cancel, handler: nil))
-        
-        present(alertController, animated: true, completion: nil)
+
+
+    @IBAction func phoneField(_ sender: Any) {
     }
     
     
+    @IBAction func emailField(_ sender: Any) {
+    }
     
-    @IBAction func editTapped(_ sender: Any) {
+
+    @IBAction func saveTapped(_ sender: Any) {
+    }
+    
+    @IBAction func cancelTapped(_ sender: Any) {
+    }
+    
+    
+    @IBAction func backButton(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "editCGProfile")
+        let vc = storyboard.instantiateViewController(identifier: "VIprofile")
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
-
     }
     
     // Do any additional setup after loading the view.
