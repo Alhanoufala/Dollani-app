@@ -45,6 +45,7 @@
 		57E8D23429454FE600B26DDC /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 57E8D23329454FE600B26DDC /* FirebaseStorage */; };
 		57E8D236294A2B6800B26DDC /* VIHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E8D235294A2B6800B26DDC /* VIHomePageViewController.swift */; };
 		79387F9D294F3D3F009DE768 /* ForgetPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79387F9C294F3D3F009DE768 /* ForgetPassViewController.swift */; };
+		799EA94C295B4E410011E27E /* NFCHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EA94B295B4E410011E27E /* NFCHelper.swift */; };
 		8B6644F02957BEBB00A8D6BB /* CategoryPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6644EF2957BEBB00A8D6BB /* CategoryPlacesViewController.swift */; };
 		8BF2D74E294BCDB900DEAB42 /* CGcontainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D74D294BCDB900DEAB42 /* CGcontainerViewController.swift */; };
 		8BF2D750294BCDE500DEAB42 /* VIcontainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D74F294BCDE500DEAB42 /* VIcontainerViewController.swift */; };
@@ -116,6 +117,7 @@
 		57D7AE562943E7DE00EAEAB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		57E8D235294A2B6800B26DDC /* VIHomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIHomePageViewController.swift; sourceTree = "<group>"; };
 		79387F9C294F3D3F009DE768 /* ForgetPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassViewController.swift; sourceTree = "<group>"; };
+		799EA94B295B4E410011E27E /* NFCHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCHelper.swift; sourceTree = "<group>"; };
 		8B6644EF2957BEBB00A8D6BB /* CategoryPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPlacesViewController.swift; sourceTree = "<group>"; };
 		8BF2D74D294BCDB900DEAB42 /* CGcontainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGcontainerViewController.swift; sourceTree = "<group>"; };
 		8BF2D74F294BCDE500DEAB42 /* VIcontainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIcontainerViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			children = (
 				57C9B21229548F5B000A60D7 /* User.swift */,
 				57BA58282957148000EABF66 /* HelpRequest.swift */,
+				799EA94B295B4E410011E27E /* NFCHelper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				8BF2D74E294BCDB900DEAB42 /* CGcontainerViewController.swift in Sources */,
 				574E709029563E150064C5FB /* AskForhelpTableViewCell.swift in Sources */,
 				57C9B21329548F5B000A60D7 /* User.swift in Sources */,
+				799EA94C295B4E410011E27E /* NFCHelper.swift in Sources */,
 				57D7AE532943DB0900EAEAB5 /* SignupViewController.swift in Sources */,
 				57A29C5B2959F5D500BC87C7 /* NavigationViewController.swift in Sources */,
 				010B57552957571600542D83 /* FavoritesListViewController.swift in Sources */,
