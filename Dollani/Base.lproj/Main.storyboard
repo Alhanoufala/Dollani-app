@@ -409,7 +409,7 @@
         <!--الحساب-->
         <scene sceneID="wjK-jp-cad">
             <objects>
-                <viewController storyboardIdentifier="VIprofile" id="Hfu-Sl-xnB" customClass="VIprofileViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Hfu-Sl-xnB" customClass="VIprofileViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jgu-II-h4G" customClass="VIprofileController">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -796,7 +796,7 @@
         <!--الحساب-->
         <scene sceneID="jFG-Ws-0NT">
             <objects>
-                <navigationController id="r6O-dU-8qf" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="VIprofile" id="r6O-dU-8qf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="الحساب" image="person.circle.fill" catalog="system" id="R4M-Q4-DlD">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
@@ -1155,7 +1155,7 @@
         <!--الحساب-->
         <scene sceneID="bUz-zd-fB8">
             <objects>
-                <navigationController id="N2v-9a-Zdc" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CGprofile" id="N2v-9a-Zdc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="الحساب" image="person.circle.fill" catalog="system" id="T1n-O7-4Ct"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EhN-O9-vbt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>

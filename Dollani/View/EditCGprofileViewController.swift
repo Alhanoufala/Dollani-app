@@ -86,7 +86,7 @@ class EditCGprofileViewController: UIViewController {
     
     @IBAction func backButton(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "VIprofile")
+        let vc = storyboard.instantiateViewController(identifier: "CGprofile")
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }
