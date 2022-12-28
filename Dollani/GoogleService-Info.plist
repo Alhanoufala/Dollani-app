@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>696354841698-0egrskbd4g7u0r16ntdtqlma0jmagbs2.apps.googleusercontent.com</string>
+	<string>3404171949-2i420ttss83ebsdbc25v49hp863sllfk.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.696354841698-0egrskbd4g7u0r16ntdtqlma0jmagbs2</string>
+	<string>com.googleusercontent.apps.3404171949-2i420ttss83ebsdbc25v49hp863sllfk</string>
 	<key>API_KEY</key>
-	<string>AIzaSyC0xxyLKmExj4d4lB53d653xGSDrjvSl84</string>
+	<string>AIzaSyDJzCfLfGEdI6T50CBtq45wLczt9fa4stc</string>
 	<key>GCM_SENDER_ID</key>
-	<string>696354841698</string>
+	<string>3404171949</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.Dollani.Dollani</string>
+	<string>com.Dollani1.Dollani</string>
 	<key>PROJECT_ID</key>
-	<string>dollani-581a1</string>
+	<string>dollani-app</string>
 	<key>STORAGE_BUCKET</key>
-	<string>dollani-581a1.appspot.com</string>
+	<string>dollani-app.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:696354841698:ios:ecd44173cb6db9b8219d3b</string>
+	<string>1:3404171949:ios:96221d850fbe852a31d424</string>
 </dict>
 </plist>
