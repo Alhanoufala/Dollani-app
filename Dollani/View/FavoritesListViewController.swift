@@ -13,6 +13,7 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
     
     @IBOutlet weak var tableView: UITableView!
     @Published var users = [User]()
+    
     var favPlaceList  = [String] ()
     var db = Firestore.firestore()
     
@@ -22,11 +23,15 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
                 print(error!.localizedDescription)
             }
             else{
-                 favPlaceList = snapshot?.documents.first?.get("favPlace") as! [String]
+                favPlaceList = snapshot?.documents.first?.get("favPlace") as! [String]
                 fetchData()
+                
             }
-        }
-    }
+            if (error == nil) {
+                print("no fav places :)")
+            }
+        }}
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
