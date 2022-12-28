@@ -13,9 +13,9 @@
 		560D5D7A2959747A000F39FF /* EditCGprofileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560D5D792959747A000F39FF /* EditCGprofileViewController.swift */; };
 		56D4FC24294E91C5004E4998 /* VIprofileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4FC23294E91C5004E4998 /* VIprofileViewController.swift */; };
 		56D4FC26294E9749004E4998 /* CGprofileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4FC25294E9749004E4998 /* CGprofileViewController.swift */; };
-		572BE1DD295B80B30034D52F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 572BE1DC295B80B30034D52F /* GoogleService-Info.plist */; };
 		572BE1E2295B88F80034D52F /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE1E1295B88F80034D52F /* PushNotificationManager.swift */; };
 		572BE1E4295B8D930034D52F /* PushNotificationSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE1E3295B8D930034D52F /* PushNotificationSender.swift */; };
+		572BE1E6295CC9C60034D52F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 572BE1E5295CC9C50034D52F /* GoogleService-Info.plist */; };
 		574E708E2955EE570064C5FB /* AskForHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574E708D2955EE570064C5FB /* AskForHelpViewController.swift */; };
 		574E709029563E150064C5FB /* AskForhelpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574E708F29563E150064C5FB /* AskForhelpTableViewCell.swift */; };
 		574E709229565FC30064C5FB /* CGHelpRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574E709129565FC20064C5FB /* CGHelpRequestsViewController.swift */; };
@@ -91,10 +91,10 @@
 		560D5D792959747A000F39FF /* EditCGprofileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCGprofileViewController.swift; sourceTree = "<group>"; };
 		56D4FC23294E91C5004E4998 /* VIprofileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIprofileViewController.swift; sourceTree = "<group>"; };
 		56D4FC25294E9749004E4998 /* CGprofileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGprofileViewController.swift; sourceTree = "<group>"; };
-		572BE1DC295B80B30034D52F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		572BE1DE295B885E0034D52F /* Dollani.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dollani.entitlements; sourceTree = "<group>"; };
 		572BE1E1295B88F80034D52F /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		572BE1E3295B8D930034D52F /* PushNotificationSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationSender.swift; sourceTree = "<group>"; };
+		572BE1E5295CC9C50034D52F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		574E708D2955EE570064C5FB /* AskForHelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskForHelpViewController.swift; sourceTree = "<group>"; };
 		574E708F29563E150064C5FB /* AskForhelpTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskForhelpTableViewCell.swift; sourceTree = "<group>"; };
 		574E709129565FC20064C5FB /* CGHelpRequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGHelpRequestsViewController.swift; sourceTree = "<group>"; };
@@ -219,7 +219,7 @@
 				57D7AE2C2943D83D00EAEAB5 /* LaunchScreen.storyboard */,
 				57D7AE2A2943D83D00EAEAB5 /* Assets.xcassets */,
 				57D7AE2F2943D83D00EAEAB5 /* Info.plist */,
-				572BE1DC295B80B30034D52F /* GoogleService-Info.plist */,
+				572BE1E5295CC9C50034D52F /* GoogleService-Info.plist */,
 			);
 			path = Dollani;
 			sourceTree = "<group>";
@@ -408,7 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57D7AE2E2943D83D00EAEAB5 /* LaunchScreen.storyboard in Resources */,
-				572BE1DD295B80B30034D52F /* GoogleService-Info.plist in Resources */,
+				572BE1E6295CC9C60034D52F /* GoogleService-Info.plist in Resources */,
 				57D7AE2B2943D83D00EAEAB5 /* Assets.xcassets in Resources */,
 				57D7AE292943D83B00EAEAB5 /* Main.storyboard in Resources */,
 			);
