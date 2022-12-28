@@ -1109,6 +1109,7 @@
                                     <action selector="forgetpassword:" destination="e9g-yP-x1z" eventType="touchUpInside" id="LgL-y2-Lzp"/>
                                 </connections>
                             </button>
+
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="الرجاء ادخال البريد الالكتروني الخاص بك.سيتم ارسال رابط لإعادة تعيين كلمة المرور" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGn-2O-uCr">
                                 <rect key="frame" x="41" y="160" width="332" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
