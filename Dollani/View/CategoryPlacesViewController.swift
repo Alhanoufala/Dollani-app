@@ -20,8 +20,9 @@ class CategoryPlacesViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func fetchData(){
+        
       
-        Firestore.firestore().collection("categories ").getDocuments { snapshot, error in
+        Firestore.firestore().collection("categories").getDocuments { snapshot, error in
             if  error != nil {
                 print(error!.localizedDescription)
             }

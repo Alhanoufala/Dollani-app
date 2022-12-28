@@ -13,6 +13,9 @@
 		560D5D7A2959747A000F39FF /* EditCGprofileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560D5D792959747A000F39FF /* EditCGprofileViewController.swift */; };
 		56D4FC24294E91C5004E4998 /* VIprofileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4FC23294E91C5004E4998 /* VIprofileViewController.swift */; };
 		56D4FC26294E9749004E4998 /* CGprofileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4FC25294E9749004E4998 /* CGprofileViewController.swift */; };
+		572BE1DD295B80B30034D52F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 572BE1DC295B80B30034D52F /* GoogleService-Info.plist */; };
+		572BE1E2295B88F80034D52F /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE1E1295B88F80034D52F /* PushNotificationManager.swift */; };
+		572BE1E4295B8D930034D52F /* PushNotificationSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE1E3295B8D930034D52F /* PushNotificationSender.swift */; };
 		574E708E2955EE570064C5FB /* AskForHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574E708D2955EE570064C5FB /* AskForHelpViewController.swift */; };
 		574E709029563E150064C5FB /* AskForhelpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574E708F29563E150064C5FB /* AskForhelpTableViewCell.swift */; };
 		574E709229565FC30064C5FB /* CGHelpRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574E709129565FC20064C5FB /* CGHelpRequestsViewController.swift */; };
@@ -34,7 +37,6 @@
 		57D7AE452943D83D00EAEAB5 /* DollaniUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D7AE442943D83D00EAEAB5 /* DollaniUITestsLaunchTests.swift */; };
 		57D7AE532943DB0900EAEAB5 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D7AE522943DB0900EAEAB5 /* SignupViewController.swift */; };
 		57D7AE552943E5F300EAEAB5 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D7AE542943E5F300EAEAB5 /* SelectionViewController.swift */; };
-		57D7AE572943E7DF00EAEAB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57D7AE562943E7DE00EAEAB5 /* GoogleService-Info.plist */; };
 		57E8D22629454FE600B26DDC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 57E8D22529454FE600B26DDC /* FirebaseAuth */; };
 		57E8D22829454FE600B26DDC /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 57E8D22729454FE600B26DDC /* FirebaseDatabase */; };
 		57E8D22A29454FE600B26DDC /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 57E8D22929454FE600B26DDC /* FirebaseDatabaseSwift */; };
@@ -89,6 +91,10 @@
 		560D5D792959747A000F39FF /* EditCGprofileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCGprofileViewController.swift; sourceTree = "<group>"; };
 		56D4FC23294E91C5004E4998 /* VIprofileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIprofileViewController.swift; sourceTree = "<group>"; };
 		56D4FC25294E9749004E4998 /* CGprofileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGprofileViewController.swift; sourceTree = "<group>"; };
+		572BE1DC295B80B30034D52F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		572BE1DE295B885E0034D52F /* Dollani.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dollani.entitlements; sourceTree = "<group>"; };
+		572BE1E1295B88F80034D52F /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
+		572BE1E3295B8D930034D52F /* PushNotificationSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationSender.swift; sourceTree = "<group>"; };
 		574E708D2955EE570064C5FB /* AskForHelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskForHelpViewController.swift; sourceTree = "<group>"; };
 		574E708F29563E150064C5FB /* AskForhelpTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskForhelpTableViewCell.swift; sourceTree = "<group>"; };
 		574E709129565FC20064C5FB /* CGHelpRequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGHelpRequestsViewController.swift; sourceTree = "<group>"; };
@@ -114,7 +120,6 @@
 		57D7AE442943D83D00EAEAB5 /* DollaniUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DollaniUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		57D7AE522943DB0900EAEAB5 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		57D7AE542943E5F300EAEAB5 /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
-		57D7AE562943E7DE00EAEAB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		57E8D235294A2B6800B26DDC /* VIHomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIHomePageViewController.swift; sourceTree = "<group>"; };
 		79387F9C294F3D3F009DE768 /* ForgetPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassViewController.swift; sourceTree = "<group>"; };
 		799EA94B295B4E410011E27E /* NFCHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCHelper.swift; sourceTree = "<group>"; };
@@ -160,6 +165,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		572BE1E0295B88B40034D52F /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				572BE1E1295B88F80034D52F /* PushNotificationManager.swift */,
+				572BE1E3295B8D930034D52F /* PushNotificationSender.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		57C9B21129548F31000A60D7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,15 +209,17 @@
 		57D7AE202943D83B00EAEAB5 /* Dollani */ = {
 			isa = PBXGroup;
 			children = (
+				572BE1DE295B885E0034D52F /* Dollani.entitlements */,
 				57D7AE212943D83B00EAEAB5 /* AppDelegate.swift */,
 				57D7AE232943D83B00EAEAB5 /* SceneDelegate.swift */,
+				572BE1E0295B88B40034D52F /* Notification */,
 				57C9B21129548F31000A60D7 /* Model */,
 				57D7AE512943DABC00EAEAB5 /* View */,
 				57D7AE272943D83B00EAEAB5 /* Main.storyboard */,
 				57D7AE2C2943D83D00EAEAB5 /* LaunchScreen.storyboard */,
 				57D7AE2A2943D83D00EAEAB5 /* Assets.xcassets */,
 				57D7AE2F2943D83D00EAEAB5 /* Info.plist */,
-				57D7AE562943E7DE00EAEAB5 /* GoogleService-Info.plist */,
+				572BE1DC295B80B30034D52F /* GoogleService-Info.plist */,
 			);
 			path = Dollani;
 			sourceTree = "<group>";
@@ -392,7 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57D7AE2E2943D83D00EAEAB5 /* LaunchScreen.storyboard in Resources */,
-				57D7AE572943E7DF00EAEAB5 /* GoogleService-Info.plist in Resources */,
+				572BE1DD295B80B30034D52F /* GoogleService-Info.plist in Resources */,
 				57D7AE2B2943D83D00EAEAB5 /* Assets.xcassets in Resources */,
 				57D7AE292943D83B00EAEAB5 /* Main.storyboard in Resources */,
 			);
@@ -465,6 +481,7 @@
 				57D7AE552943E5F300EAEAB5 /* SelectionViewController.swift in Sources */,
 				57C9B20E29546F80000A60D7 /* ContactViewController.swift in Sources */,
 				574E709229565FC30064C5FB /* CGHelpRequestsViewController.swift in Sources */,
+				572BE1E4295B8D930034D52F /* PushNotificationSender.swift in Sources */,
 				560D5D7A2959747A000F39FF /* EditCGprofileViewController.swift in Sources */,
 				57D7AE262943D83B00EAEAB5 /* LoginViewController.swift in Sources */,
 				57D7AE222943D83B00EAEAB5 /* AppDelegate.swift in Sources */,
@@ -475,6 +492,7 @@
 				574E709029563E150064C5FB /* AskForhelpTableViewCell.swift in Sources */,
 				57C9B21329548F5B000A60D7 /* User.swift in Sources */,
 				799EA94C295B4E410011E27E /* NFCHelper.swift in Sources */,
+				572BE1E2295B88F80034D52F /* PushNotificationManager.swift in Sources */,
 				57D7AE532943DB0900EAEAB5 /* SignupViewController.swift in Sources */,
 				57A29C5B2959F5D500BC87C7 /* NavigationViewController.swift in Sources */,
 				010B57552957571600542D83 /* FavoritesListViewController.swift in Sources */,
@@ -667,13 +685,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Dollani/Dollani.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 54SLGA23R8;
+				DEVELOPMENT_TEAM = CLV36V2NAS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Dollani/Info.plist;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "App would like to use your bluetooth for communication purposes";
 				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "App would like to use your bluetooth for communication purposes";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We'll show you cool things near you in the app. With the \"always\" option,\n    we can also alert you via notifications if you don't have the app open.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We'll show you cool things near you in the app, and alert you via\n    notifications if you don't have the app open.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We'll show you cool things near you in the app.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -684,7 +706,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Dollani.Dollani2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dollani1.Dollani;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -698,13 +720,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Dollani/Dollani.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 54SLGA23R8;
+				DEVELOPMENT_TEAM = CLV36V2NAS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Dollani/Info.plist;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "App would like to use your bluetooth for communication purposes";
 				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "App would like to use your bluetooth for communication purposes";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We'll show you cool things near you in the app. With the \"always\" option,\n    we can also alert you via notifications if you don't have the app open.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We'll show you cool things near you in the app, and alert you via\n    notifications if you don't have the app open.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We'll show you cool things near you in the app.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -715,7 +741,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Dollani.Dollani2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dollani1.Dollani;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

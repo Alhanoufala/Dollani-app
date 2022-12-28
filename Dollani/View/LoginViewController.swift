@@ -56,7 +56,8 @@ class LoginViewController: UIViewController , UITextFieldDelegate {
                            }
                            else {
                                if(snapshot?.count != 0){
-                                
+                                   let pushManager = PushNotificationManager()
+                                     pushManager.registerForPushNotifications()
                                 category = snapshot?.documents.first?.get("category") as! String
                                    print(category)
                                    

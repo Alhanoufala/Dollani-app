@@ -30,6 +30,7 @@ class AskForHelpViewController: UIViewController,ObservableObject {
         
     }
     
+    
     func getCGEmails() {
         let user = Auth.auth().currentUser
         let VIEmail = user?.email
@@ -93,13 +94,30 @@ class AskForHelpViewController: UIViewController,ObservableObject {
     func sendHelpButtonTapped(sender:UIButton){
         let rowIndex = sender.tag
         let user = Auth.auth().currentUser
-   
+        
+       
+
         //get the request info
         let CGName = CGUsers[rowIndex].name
         let CGEmail = CGUsers[rowIndex].email
         let CGPhoneNum = CGUsers[rowIndex].phoneNum
         let VIEmail =  user?.email
-       
+        var token = ""
+        print(CGEmail + "email")
+        Firestore.firestore().collection("users").whereField("email",isEqualTo:CGEmail).getDocuments { snapshot, error in
+                   if  error != nil {
+                       print(error!.localizedDescription)
+                   }
+               
+                   else{
+                       token = snapshot?.documents.first?.get("fcmToken") as? String ?? ""
+                       let sender = PushNotificationSender()
+                      
+                      sender.sendPushNotification(to:token, title: "طلب مساعدة جديد ", body: "قام احد جهات الاتصال بارسال طلب مساعدة ")
+                   }
+               }
+
+      
         Firestore.firestore().collection("helpRequests").document(VIEmail!+"-"+CGEmail).setData(["CGName" : CGName,"CGEmail":CGEmail,"CGPhoneNum":CGPhoneNum,"VIEmail":VIEmail!,"VIName":VIName,"VIPhoneNum":VIPhoneNum,"status":"new"])
             
          //alert
