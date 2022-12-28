@@ -28,7 +28,7 @@ class PushNotificationManager: NSObject, MessagingDelegate, UNUserNotificationCe
             UIApplication.shared.registerUserNotificationSettings(settings)
         }
         UIApplication.shared.registerForRemoteNotifications()
-       // updateFirestorePushTokenIfNeeded()
+       updateFirestorePushTokenIfNeeded()
     }
     func updateFirestorePushTokenIfNeeded() {
         print((Auth.auth().currentUser?.email!)!)
