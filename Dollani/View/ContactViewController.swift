@@ -69,7 +69,7 @@ class ContactViewController: UIViewController,ObservableObject {
         
         
         // add the buttons/actions to the view controller
-        let cancelAction = UIAlertAction(title: "الغاء", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "الغاء", style: .default, handler: nil)
         let saveAction = UIAlertAction(title: "اضافة", style: .default) { _ in
             let user = Auth.auth().currentUser
             
@@ -86,6 +86,11 @@ class ContactViewController: UIViewController,ObservableObject {
                 else {
                     let CGEmailListBefore = snapshot!.documents.first!.get("CGEmail") as! [String] 
                     self.CGEmailList.append(contentsOf: CGEmailListBefore )
+                    if(self.CGEmailList.contains((user?.email!)!)){
+                        let innerAlert = UIAlertController(title: nil, message:"جهة الاتصال موجوده سابقاً", preferredStyle: .alert)
+                        innerAlert.addAction(UIAlertAction(title:  "الغاء", style: .default, handler:nil))
+                        self.present(innerAlert, animated: true, completion: nil)
+                    }
                         self.CGEmailList.append((user?.email!)!)
                     Firestore.firestore().collection("users").document(VIemail).setData(["CGEmail": self.CGEmailList], merge: true) { error in
                         if  error != nil {
