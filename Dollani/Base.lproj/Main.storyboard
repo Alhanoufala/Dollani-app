@@ -593,6 +593,32 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZa-dY-aok">
+                                <rect key="frame" x="48" y="527" width="137" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="إلغاء التفضيل"/>
+                                <connections>
+                                    <action selector="removeFav:" destination="sf2-Pe-c4q" eventType="touchUpInside" id="jm8-hR-the"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H55-OZ-cl0">
+                                <rect key="frame" x="220" y="527" width="137" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="بدء الطريق"/>
+                                <connections>
+                                    <action selector="startNavigation:" destination="sf2-Pe-c4q" eventType="touchUpInside" id="5A3-F7-ysl"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJ1-RQ-iOK">
+                                <rect key="frame" x="48" y="318" width="309" height="181"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94484026830000001" green="0.95035396220000001" blue="0.96689504380000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7xv-bE-rle"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -607,7 +633,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fy0-Qs-0yD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2183" y="3387"/>
+            <point key="canvasLocation" x="2182.608695652174" y="3386.3839285714284"/>
         </scene>
         <!--EditV Iprofile View Controller-->
         <scene sceneID="7So-jT-p4U">
@@ -1109,7 +1135,6 @@
                                     <action selector="forgetpassword:" destination="e9g-yP-x1z" eventType="touchUpInside" id="LgL-y2-Lzp"/>
                                 </connections>
                             </button>
-
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="الرجاء ادخال البريد الالكتروني الخاص بك.سيتم ارسال رابط لإعادة تعيين كلمة المرور" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGn-2O-uCr">
                                 <rect key="frame" x="41" y="160" width="332" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
