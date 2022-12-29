@@ -94,6 +94,9 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
 override func prepare(for segue: UIStoryboardSegue, sender: Any? ){
            if let destination = segue.destination as? placeDetailsViewController{
                destination.place = ":))"
+//               destination.place = favPlaceList[indexPath.row]
+//               destination.index = IndexPath
+
            }
        }
 
