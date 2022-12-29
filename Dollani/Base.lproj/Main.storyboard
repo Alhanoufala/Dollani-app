@@ -533,10 +533,10 @@
             </objects>
             <point key="canvasLocation" x="1857.9710144927537" y="1989.5089285714284"/>
         </scene>
-        <!--List Places View Controller-->
+        <!--PlacessVI View Controller-->
         <scene sceneID="Iy3-lE-sE4">
             <objects>
-                <viewController storyboardIdentifier="placesList" id="KQc-5a-9YF" customClass="listPlacesViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="placesList" id="KQc-5a-9YF" customClass="PlacessVIViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ANa-0C-3lX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -572,6 +572,9 @@
                             <constraint firstItem="cIu-BI-der" firstAttribute="top" secondItem="kUf-Fu-KNZ" secondAttribute="top" id="ute-ev-1PF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="cIu-BI-der" id="7Pi-xp-AH5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9G1-Xu-JgC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

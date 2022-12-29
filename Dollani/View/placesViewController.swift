@@ -1,5 +1,5 @@
 //
-//  PlacesViewController.swift
+//  placesViewController.swift
 //  Dollani
 //
 //  Created by Layan Alwadie on 05/06/1444 AH.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PlacesViewController: UIViewController {
+class placesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +16,6 @@ class PlacesViewController: UIViewController {
     }
     
 
-    @IBOutlet weak var tableView: UITableView!
-   
+    
+
 }
