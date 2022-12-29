@@ -51,6 +51,7 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "placeCell", for: indexPath)
+        cell.textLabel?.textAlignment = .right
         cell.textLabel?.text = PlaceList[indexPath.row].name
         return cell
         
