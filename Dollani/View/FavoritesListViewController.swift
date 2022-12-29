@@ -73,34 +73,26 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
             self.tableView.reloadData()
         }
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favPlaceList.count
     }
-    @IBAction func forwardTapped(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "details")
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
-
-    }
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 80.0
-//    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favListCell", for: indexPath)
         cell.textLabel?.textAlignment = .right
         cell.textLabel?.text = favPlaceList[indexPath.row]
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60.0
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "Favdetails", sender: self)
      
     }
-    
-    
-    
-
+   
 override func prepare(for segue: UIStoryboardSegue, sender: Any? ){
            if let destination = segue.destination as? placeDetailsViewController{
                destination.place = ":))"
@@ -109,6 +101,14 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any? ){
 
            }
        }
+   
+    @IBAction func forwardTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "details")
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+
+    }
 
     @IBAction func backButtonTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

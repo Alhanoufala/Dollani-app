@@ -557,7 +557,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qKN-AS-dgk">
-                                <rect key="frame" x="0.0" y="27" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="38" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="تفاصيل الموقع " id="d7F-AU-FkC">
@@ -579,7 +579,7 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZa-dY-aok">
-                                <rect key="frame" x="52" y="466" width="137" height="44"/>
+                                <rect key="frame" x="56" y="497" width="137" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="إلغاء التفضيل"/>
@@ -587,15 +587,8 @@
                                     <action selector="removeFav:" destination="sf2-Pe-c4q" eventType="touchUpInside" id="jm8-hR-the"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVz-4z-cFZ">
-                                <rect key="frame" x="43" y="287" width="328" height="171"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H55-OZ-cl0">
-                                <rect key="frame" x="218" y="466" width="137" height="44"/>
+                                <rect key="frame" x="222" y="497" width="137" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="بدء الطريق"/>
@@ -603,6 +596,13 @@
                                     <action selector="startNavigation:" destination="sf2-Pe-c4q" eventType="touchUpInside" id="5A3-F7-ysl"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVz-4z-cFZ">
+                                <rect key="frame" x="43" y="299" width="328" height="171"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7xv-bE-rle"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1275,19 +1275,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NYs-0u-qxc">
-                                <rect key="frame" x="0.0" y="136" width="422" height="726"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NYs-0u-qxc">
+                                <rect key="frame" x="-21" y="126" width="435" height="736"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="favListCell" id="ADk-j8-xYB">
-                                        <rect key="frame" x="0.0" y="50" width="422" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="favListCell" rowHeight="69" id="ADk-j8-xYB">
+                                        <rect key="frame" x="0.0" y="50" width="435" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ADk-j8-xYB" id="IMp-Ig-xzC">
-                                            <rect key="frame" x="0.0" y="0.0" width="422" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="435" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hv-oZ-Oh6">
-                                                    <rect key="frame" x="18" y="5" width="40" height="34"/>
+                                                    <rect key="frame" x="8" y="0.0" width="70" height="58"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
@@ -1304,17 +1304,20 @@
                                 <rect key="frame" x="0.0" y="82" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="المفضلة" id="Hqs-bQ-c8J">
-                                        <barButtonItem key="rightBarButtonItem" image="arrow.up.heart" catalog="system" style="plain" id="VnM-xU-acu">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="bpi-sT-tud">
-                                                <rect key="frame" x="294" y="4.5" width="100" height="35"/>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="LrZ-7d-5Iu">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="1h3-BX-hbk">
+                                                <rect key="frame" x="344.5" y="4.5" width="49.5" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <rect key="contentStretch" x="0.10000000000000001" y="0.14999999999999999" width="1" height="1"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="arrow.forward" catalog="system"/>
                                                 <connections>
-                                                    <action selector="backButtonTapped:" destination="Jas-Q3-Xt4" eventType="touchUpInside" id="2C9-XZ-YDF"/>
+                                                    <action selector="backButtonTapped:" destination="sf2-Pe-c4q" eventType="touchUpInside" id="YTV-NG-6Vn"/>
+                                                    <action selector="backButtonTapped:" destination="Jas-Q3-Xt4" eventType="touchUpInside" id="YtN-8G-AA4"/>
                                                 </connections>
                                             </button>
+                                            <connections>
+                                                <action selector="backTapped:" destination="sf2-Pe-c4q" id="FQz-rx-RA9"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -1338,7 +1341,7 @@
                     <navigationItem key="navigationItem" id="FMR-JS-EsC"/>
                     <connections>
                         <outlet property="tableView" destination="NYs-0u-qxc" id="ua0-Jb-piF"/>
-                        <segue destination="sf2-Pe-c4q" kind="showDetail" identifier="Favdetails" id="idr-A3-QVI"/>
+                        <segue destination="sf2-Pe-c4q" kind="presentation" identifier="Favdetails" modalPresentationStyle="fullScreen" id="idr-A3-QVI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D9R-gY-z6P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1541,7 +1544,6 @@
         <image name="Logout" width="24" height="24"/>
         <image name="arrow.forward" catalog="system" width="128" height="95"/>
         <image name="arrow.right" catalog="system" width="128" height="95"/>
-        <image name="arrow.up.heart" catalog="system" width="128" height="107"/>
         <image name="backgroundCG" width="414" height="896"/>
         <image name="bell" catalog="system" width="125" height="128"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
