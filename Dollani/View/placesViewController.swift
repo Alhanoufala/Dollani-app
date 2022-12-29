@@ -6,17 +6,39 @@
 //
 
 import UIKit
+import Firebase
 
-class placesViewController: UIViewController {
-
+class placesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
+    var PlaceList  = [String] ()
+    var db = Firestore.firestore()
+    
+
+    override func viewWillAppear(_ animated: Bool) {
+        <#code#>
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "placeCell", for: indexPath)
+        cell.textLabel?.text = "la"
+        return cell
+        
+    }
     
-
+    @IBAction func backButten(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "places")
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
+    
     
 
 }

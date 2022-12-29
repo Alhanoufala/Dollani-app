@@ -556,10 +556,16 @@
                                 </prototypes>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Qi-W4-q6r">
-                                <rect key="frame" x="-1" y="48" width="414" height="44"/>
+                                <rect key="frame" x="-2" y="48" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="قائمة الاماكن" id="hRl-0n-0gt"/>
+                                    <navigationItem title="قائمة الاماكن" id="hRl-0n-0gt">
+                                        <barButtonItem key="rightBarButtonItem" image="arrow.right" catalog="system" id="G2W-tY-qZv">
+                                            <connections>
+                                                <action selector="backButten:" destination="KQc-5a-9YF" id="UCL-QD-L8a"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -1046,7 +1052,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FoY-w8-j0p">
-                                <rect key="frame" x="-13" y="48" width="412" height="44"/>
+                                <rect key="frame" x="-14" y="48" width="412" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="جهات الاتصال" id="cdk-iq-AQb">
@@ -1457,13 +1463,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kJ5-hh-wUh">
-                                <rect key="frame" x="-6" y="48" width="417" height="44"/>
+                                <rect key="frame" x="-6" y="48" width="416" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="تعديل بيانات الحساب" id="YEt-c0-Erx">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="6IW-9o-eng">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="a7l-85-vWQ">
-                                                <rect key="frame" x="305" y="4.5" width="92" height="35"/>
+                                                <rect key="frame" x="304" y="4.5" width="92" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system" title=""/>
