@@ -20,16 +20,26 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewWillAppear(_ animated: Bool) {
         db.collection("users").whereField("email",isEqualTo: Auth.auth().currentUser!.email!).getDocuments { [self] snapshot, error in
             if  error != nil {
-                print(error!.localizedDescription)
+                //                print(error.localizedDescription)}
             }
             else{
                 favPlaceList = snapshot?.documents.first?.get("favPlace") as! [String]
+                if ( favPlaceList.count == 0 ){
+                    let alert = UIAlertController(title: "نعتذر", message:"لم تقم بإضافة اماكن الى المفضلة", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title:  "تم", style: .default, handler: { (_) -> Void in
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let vc = storyboard.instantiateViewController(identifier: "VIcontainer")
+                        vc.modalPresentationStyle = .overFullScreen
+                        present(vc, animated: true)
+                    }))
+                                    present(alert, animated: true, completion: nil)
+
+              
+                }
                 fetchData()
                 
             }
-            if (error == nil) {
-                print("no fav places :)")
-            }
+           
         }}
     
     

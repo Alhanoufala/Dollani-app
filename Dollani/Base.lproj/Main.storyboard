@@ -556,8 +556,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qKN-AS-dgk">
-                                <rect key="frame" x="0.0" y="92" width="414" height="44"/>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qKN-AS-dgk">
+                                <rect key="frame" x="0.0" y="27" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="تفاصيل الموقع " id="d7F-AU-FkC">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="m1y-Le-egp">
@@ -578,7 +579,7 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZa-dY-aok">
-                                <rect key="frame" x="48" y="527" width="137" height="44"/>
+                                <rect key="frame" x="52" y="466" width="137" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="إلغاء التفضيل"/>
@@ -586,8 +587,15 @@
                                     <action selector="removeFav:" destination="sf2-Pe-c4q" eventType="touchUpInside" id="jm8-hR-the"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVz-4z-cFZ">
+                                <rect key="frame" x="43" y="287" width="328" height="171"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H55-OZ-cl0">
-                                <rect key="frame" x="220" y="527" width="137" height="44"/>
+                                <rect key="frame" x="218" y="466" width="137" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="بدء الطريق"/>
@@ -595,31 +603,12 @@
                                     <action selector="startNavigation:" destination="sf2-Pe-c4q" eventType="touchUpInside" id="5A3-F7-ysl"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVz-4z-cFZ">
-                                <rect key="frame" x="315.5" y="314" width="41.5" height="20.5"/>
-                                <color key="backgroundColor" red="0.94484026830000001" green="0.95035396220000001" blue="0.96689504380000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7xv-bE-rle"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="7xv-bE-rle" firstAttribute="trailing" secondItem="IVz-4z-cFZ" secondAttribute="trailing" constant="57" id="1jZ-QU-47F"/>
-                            <constraint firstItem="IVz-4z-cFZ" firstAttribute="top" secondItem="qKN-AS-dgk" secondAttribute="bottom" id="AkJ-Bh-IOb"/>
-                            <constraint firstItem="IVz-4z-cFZ" firstAttribute="top" secondItem="qKN-AS-dgk" secondAttribute="bottom" constant="178" id="KJV-ex-9fu"/>
-                            <constraint firstItem="qKN-AS-dgk" firstAttribute="leading" secondItem="7xv-bE-rle" secondAttribute="leading" id="Lqe-C8-Fx0"/>
-                            <constraint firstItem="qKN-AS-dgk" firstAttribute="top" secondItem="7xv-bE-rle" secondAttribute="top" id="RJN-Td-doO"/>
-                            <constraint firstItem="qKN-AS-dgk" firstAttribute="trailing" secondItem="7xv-bE-rle" secondAttribute="trailing" id="Rcu-HT-R7l"/>
-                            <constraint firstItem="qKN-AS-dgk" firstAttribute="trailing" secondItem="7xv-bE-rle" secondAttribute="trailing" id="SlG-on-2dl"/>
-                            <constraint firstItem="qKN-AS-dgk" firstAttribute="top" secondItem="7xv-bE-rle" secondAttribute="top" id="Tbg-Ka-njR"/>
-                            <constraint firstItem="7xv-bE-rle" firstAttribute="trailing" secondItem="IVz-4z-cFZ" secondAttribute="trailing" constant="57" id="Y9Y-xN-zAU"/>
-                            <constraint firstItem="qKN-AS-dgk" firstAttribute="leading" secondItem="7xv-bE-rle" secondAttribute="leading" id="ZEv-6M-H2q"/>
-                            <constraint firstItem="IVz-4z-cFZ" firstAttribute="top" secondItem="qKN-AS-dgk" secondAttribute="bottom" constant="178" id="zeT-Pz-HQD"/>
-                        </constraints>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="bkz-lG-QBw"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="placeLabel" destination="IVz-4z-cFZ" id="yOs-hv-dhw"/>
@@ -1349,7 +1338,7 @@
                     <navigationItem key="navigationItem" id="FMR-JS-EsC"/>
                     <connections>
                         <outlet property="tableView" destination="NYs-0u-qxc" id="ua0-Jb-piF"/>
-                        <segue destination="sf2-Pe-c4q" kind="show" identifier="Favdetails" id="idr-A3-QVI"/>
+                        <segue destination="sf2-Pe-c4q" kind="showDetail" identifier="Favdetails" id="idr-A3-QVI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D9R-gY-z6P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

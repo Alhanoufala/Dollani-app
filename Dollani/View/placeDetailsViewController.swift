@@ -22,6 +22,8 @@ class placeDetailsViewController: UIViewController {
         super.viewDidLoad()
      
         placeLabel.text = "\(place)"
+        placeLabel.layer.borderWidth = 7
+        placeLabel.layer.borderColor =  UIColor(red: 43/255.0, green: 66/255.0, blue: 143/255.0, alpha: 255.0/255.0).cgColor
     }
 //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return 1
