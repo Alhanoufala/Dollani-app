@@ -62,11 +62,13 @@ class CategoryPlacesViewController: UIViewController, UITableViewDelegate, UITab
         present(vc, animated: true)
     }
     
+    
     @IBAction func forwardButton(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "listPlaces")
+        let vc = storyboard.instantiateViewController(identifier: "placesList")
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
+
     }
     
    

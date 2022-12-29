@@ -49,6 +49,7 @@
 		79387F9D294F3D3F009DE768 /* ForgetPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79387F9C294F3D3F009DE768 /* ForgetPassViewController.swift */; };
 		799EA94C295B4E410011E27E /* NFCHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EA94B295B4E410011E27E /* NFCHelper.swift */; };
 		8B6644F02957BEBB00A8D6BB /* CategoryPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6644EF2957BEBB00A8D6BB /* CategoryPlacesViewController.swift */; };
+		8B6ECE86295E098A0082B1D1 /* listPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6ECE85295E098A0082B1D1 /* listPlacesViewController.swift */; };
 		8BF2D74E294BCDB900DEAB42 /* CGcontainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D74D294BCDB900DEAB42 /* CGcontainerViewController.swift */; };
 		8BF2D750294BCDE500DEAB42 /* VIcontainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D74F294BCDE500DEAB42 /* VIcontainerViewController.swift */; };
 		C85692CC7D7D504E8369499C /* libPods-Dollani.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD53EE2B259A0F3FBFBE2718 /* libPods-Dollani.a */; };
@@ -124,6 +125,7 @@
 		79387F9C294F3D3F009DE768 /* ForgetPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassViewController.swift; sourceTree = "<group>"; };
 		799EA94B295B4E410011E27E /* NFCHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCHelper.swift; sourceTree = "<group>"; };
 		8B6644EF2957BEBB00A8D6BB /* CategoryPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPlacesViewController.swift; sourceTree = "<group>"; };
+		8B6ECE85295E098A0082B1D1 /* listPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listPlacesViewController.swift; sourceTree = "<group>"; };
 		8BF2D74D294BCDB900DEAB42 /* CGcontainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGcontainerViewController.swift; sourceTree = "<group>"; };
 		8BF2D74F294BCDE500DEAB42 /* VIcontainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIcontainerViewController.swift; sourceTree = "<group>"; };
 		98725C481496125BECD738A4 /* Pods-Dollani.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dollani.release.xcconfig"; path = "Target Support Files/Pods-Dollani/Pods-Dollani.release.xcconfig"; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				0132FD9629587FDE0069C7D9 /* placeDetailsViewController.swift */,
 				560D5D792959747A000F39FF /* EditCGprofileViewController.swift */,
 				57A29C5A2959F5D500BC87C7 /* NavigationViewController.swift */,
+				8B6ECE85295E098A0082B1D1 /* listPlacesViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				560D5D7A2959747A000F39FF /* EditCGprofileViewController.swift in Sources */,
 				57D7AE262943D83B00EAEAB5 /* LoginViewController.swift in Sources */,
 				57D7AE222943D83B00EAEAB5 /* AppDelegate.swift in Sources */,
+				8B6ECE86295E098A0082B1D1 /* listPlacesViewController.swift in Sources */,
 				8BF2D750294BCDE500DEAB42 /* VIcontainerViewController.swift in Sources */,
 				57E8D236294A2B6800B26DDC /* VIHomePageViewController.swift in Sources */,
 				574E708E2955EE570064C5FB /* AskForHelpViewController.swift in Sources */,
