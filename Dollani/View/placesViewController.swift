@@ -15,7 +15,7 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
 
     override func viewWillAppear(_ animated: Bool) {
-        <#code#>
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
