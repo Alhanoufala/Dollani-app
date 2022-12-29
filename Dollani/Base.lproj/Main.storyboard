@@ -1306,12 +1306,11 @@
                                     <navigationItem title="المفضلة" id="Hqs-bQ-c8J">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="LrZ-7d-5Iu">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="1h3-BX-hbk">
-                                                <rect key="frame" x="344.5" y="4.5" width="49.5" height="35"/>
+                                                <rect key="frame" x="307" y="0.0" width="87" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="arrow.forward" catalog="system"/>
                                                 <connections>
-                                                    <action selector="backButtonTapped:" destination="sf2-Pe-c4q" eventType="touchUpInside" id="YTV-NG-6Vn"/>
                                                     <action selector="backButtonTapped:" destination="Jas-Q3-Xt4" eventType="touchUpInside" id="YtN-8G-AA4"/>
                                                 </connections>
                                             </button>
