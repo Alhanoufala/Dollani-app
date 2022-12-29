@@ -48,6 +48,7 @@
 		57E8D236294A2B6800B26DDC /* VIHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E8D235294A2B6800B26DDC /* VIHomePageViewController.swift */; };
 		79387F9D294F3D3F009DE768 /* ForgetPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79387F9C294F3D3F009DE768 /* ForgetPassViewController.swift */; };
 		799EA94C295B4E410011E27E /* NFCHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EA94B295B4E410011E27E /* NFCHelper.swift */; };
+		8B0CB30D295E5A3500AF5DA8 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0CB30C295E5A3500AF5DA8 /* Place.swift */; };
 		8B6644F02957BEBB00A8D6BB /* CategoryPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6644EF2957BEBB00A8D6BB /* CategoryPlacesViewController.swift */; };
 		8B6ECE8E295E0E5D0082B1D1 /* placesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6ECE8D295E0E5D0082B1D1 /* placesViewController.swift */; };
 		8BF2D74E294BCDB900DEAB42 /* CGcontainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D74D294BCDB900DEAB42 /* CGcontainerViewController.swift */; };
@@ -124,6 +125,7 @@
 		57E8D235294A2B6800B26DDC /* VIHomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIHomePageViewController.swift; sourceTree = "<group>"; };
 		79387F9C294F3D3F009DE768 /* ForgetPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassViewController.swift; sourceTree = "<group>"; };
 		799EA94B295B4E410011E27E /* NFCHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCHelper.swift; sourceTree = "<group>"; };
+		8B0CB30C295E5A3500AF5DA8 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		8B6644EF2957BEBB00A8D6BB /* CategoryPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPlacesViewController.swift; sourceTree = "<group>"; };
 		8B6ECE8D295E0E5D0082B1D1 /* placesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = placesViewController.swift; sourceTree = "<group>"; };
 		8BF2D74D294BCDB900DEAB42 /* CGcontainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGcontainerViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				57C9B21229548F5B000A60D7 /* User.swift */,
 				57BA58282957148000EABF66 /* HelpRequest.swift */,
 				799EA94B295B4E410011E27E /* NFCHelper.swift */,
+				8B0CB30C295E5A3500AF5DA8 /* Place.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				574E709029563E150064C5FB /* AskForhelpTableViewCell.swift in Sources */,
 				57C9B21329548F5B000A60D7 /* User.swift in Sources */,
 				799EA94C295B4E410011E27E /* NFCHelper.swift in Sources */,
+				8B0CB30D295E5A3500AF5DA8 /* Place.swift in Sources */,
 				572BE1E2295B88F80034D52F /* PushNotificationManager.swift in Sources */,
 				57D7AE532943DB0900EAEAB5 /* SignupViewController.swift in Sources */,
 				57A29C5B2959F5D500BC87C7 /* NavigationViewController.swift in Sources */,
