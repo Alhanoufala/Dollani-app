@@ -51,6 +51,7 @@
 		8B0CB30D295E5A3500AF5DA8 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0CB30C295E5A3500AF5DA8 /* Place.swift */; };
 		8B6644F02957BEBB00A8D6BB /* CategoryPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6644EF2957BEBB00A8D6BB /* CategoryPlacesViewController.swift */; };
 		8B6ECE8E295E0E5D0082B1D1 /* placesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6ECE8D295E0E5D0082B1D1 /* placesViewController.swift */; };
+		8BD582F8295E63600049BD52 /* VIPlacesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD582F7295E63600049BD52 /* VIPlacesDetailViewController.swift */; };
 		8BF2D74E294BCDB900DEAB42 /* CGcontainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D74D294BCDB900DEAB42 /* CGcontainerViewController.swift */; };
 		8BF2D750294BCDE500DEAB42 /* VIcontainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D74F294BCDE500DEAB42 /* VIcontainerViewController.swift */; };
 		C85692CC7D7D504E8369499C /* libPods-Dollani.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD53EE2B259A0F3FBFBE2718 /* libPods-Dollani.a */; };
@@ -128,6 +129,7 @@
 		8B0CB30C295E5A3500AF5DA8 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		8B6644EF2957BEBB00A8D6BB /* CategoryPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPlacesViewController.swift; sourceTree = "<group>"; };
 		8B6ECE8D295E0E5D0082B1D1 /* placesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = placesViewController.swift; sourceTree = "<group>"; };
+		8BD582F7295E63600049BD52 /* VIPlacesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPlacesDetailViewController.swift; sourceTree = "<group>"; };
 		8BF2D74D294BCDB900DEAB42 /* CGcontainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGcontainerViewController.swift; sourceTree = "<group>"; };
 		8BF2D74F294BCDE500DEAB42 /* VIcontainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIcontainerViewController.swift; sourceTree = "<group>"; };
 		98725C481496125BECD738A4 /* Pods-Dollani.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dollani.release.xcconfig"; path = "Target Support Files/Pods-Dollani/Pods-Dollani.release.xcconfig"; sourceTree = "<group>"; };
@@ -265,13 +267,14 @@
 				574E708F29563E150064C5FB /* AskForhelpTableViewCell.swift */,
 				574E709129565FC20064C5FB /* CGHelpRequestsViewController.swift */,
 				57BA582A2957229A00EABF66 /* HelpRequestTableViewCell.swift */,
+				8B6ECE8D295E0E5D0082B1D1 /* placesViewController.swift */,
 				560D5D7529596092000F39FF /* EditVIprofileViewController.swift */,
 				010B57542957571600542D83 /* FavoritesListViewController.swift */,
 				8B6644EF2957BEBB00A8D6BB /* CategoryPlacesViewController.swift */,
 				0132FD9629587FDE0069C7D9 /* placeDetailsViewController.swift */,
 				560D5D792959747A000F39FF /* EditCGprofileViewController.swift */,
 				57A29C5A2959F5D500BC87C7 /* NavigationViewController.swift */,
-				8B6ECE8D295E0E5D0082B1D1 /* placesViewController.swift */,
+				8BD582F7295E63600049BD52 /* VIPlacesDetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				57BA582D29572C8400EABF66 /* ContactTableViewCell.swift in Sources */,
 				57BA582B2957229A00EABF66 /* HelpRequestTableViewCell.swift in Sources */,
 				8B6644F02957BEBB00A8D6BB /* CategoryPlacesViewController.swift in Sources */,
+				8BD582F8295E63600049BD52 /* VIPlacesDetailViewController.swift in Sources */,
 				56D4FC24294E91C5004E4998 /* VIprofileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
