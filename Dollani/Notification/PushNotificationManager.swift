@@ -4,11 +4,12 @@
 //
 //  Created by Alhanouf Alawwad on 03/06/1444 AH.
 //
+import UIKit
 import Firebase
 import FirebaseFirestore
 import FirebaseMessaging
-import UIKit
 import UserNotifications
+
 
 class PushNotificationManager: NSObject, MessagingDelegate, UNUserNotificationCenterDelegate {
    
@@ -32,11 +33,11 @@ class PushNotificationManager: NSObject, MessagingDelegate, UNUserNotificationCe
     }
     func updateFirestorePushTokenIfNeeded() {
         print((Auth.auth().currentUser?.email!)!)
-        
-        if let token = Messaging.messaging().fcmToken {
+    
+       if let token = Messaging.messaging().fcmToken {
             let usersRef = Firestore.firestore().collection("users").document((Auth.auth().currentUser?.email!)!)
             usersRef.setData(["fcmToken": token], merge: true)
-        }
+       }
     }
     func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingDelegate) {
         print(remoteMessage.description)

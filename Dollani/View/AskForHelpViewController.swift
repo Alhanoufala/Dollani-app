@@ -63,26 +63,26 @@ class AskForHelpViewController: UIViewController,ObservableObject,UINavigationBa
     
     func fetchData() {
         print(CGEmailList)
-        
-        Firestore.firestore().collection("users").whereField("email", in: CGEmailList).addSnapshotListener { (querySnapshot, error) in
-            guard let documents = querySnapshot?.documents else {
-                print("No documents")
-                return
-            }
-            
-            self.CGUsers = documents.map { (queryDocumentSnapshot) -> User in
-                let data = queryDocumentSnapshot.data()
-                let name = data["name"] as? String ?? ""
-                let email = data["email"] as? String ?? ""
-                let phoneNum = data["phoneNum"] as? String ?? ""
-                let category = data["category"] as? String ?? ""
+        if(CGEmailList.count != 0){
+            Firestore.firestore().collection("users").whereField("email", in: CGEmailList).addSnapshotListener { (querySnapshot, error) in
+                guard let documents = querySnapshot?.documents else {
+                    print("No documents")
+                    return
+                }
                 
-                
-                return User(name: name, email: email,phoneNum: phoneNum,category:category)
+                self.CGUsers = documents.map { (queryDocumentSnapshot) -> User in
+                    let data = queryDocumentSnapshot.data()
+                    let name = data["name"] as? String ?? ""
+                    let email = data["email"] as? String ?? ""
+                    let phoneNum = data["phoneNum"] as? String ?? ""
+                    let category = data["category"] as? String ?? ""
+                    
+                    
+                    return User(name: name, email: email,phoneNum: phoneNum,category:category)
+                }
+                self.tableView.reloadData()
             }
-            self.tableView.reloadData()
         }
-        
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
