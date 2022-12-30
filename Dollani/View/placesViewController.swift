@@ -65,5 +65,11 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     
-
+    @IBAction func toPlaceDeatils(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "VIPlaceDetail")
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
+    
 }

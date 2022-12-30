@@ -19,6 +19,10 @@ class VIPlacesDetailViewController: UIViewController {
     }
     
     @IBAction func backButtent(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "placesList")
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
     }
     
     @IBAction func addToFav(_ sender: Any) {
