@@ -8,7 +8,9 @@
 import UIKit
 import Firebase
 
-class placesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class placesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource ,UINavigationBarDelegate{
+    
+    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var tableView: UITableView!
     var nameP  = ""
     @Published var PlaceList = [Place]()
@@ -43,8 +45,12 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
          tableView.delegate = self
          tableView.dataSource = self
+         navBar.delegate = self
 
         // Do any additional setup after loading the view.
+    }
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+     return .topAttached
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return PlaceList.count

@@ -8,10 +8,11 @@
 import UIKit
 import Firebase
 
-class ContactViewController: UIViewController,ObservableObject {
+class ContactViewController: UIViewController,ObservableObject,UINavigationBarDelegate {
     @IBOutlet weak var tableView: UITableView!
     
-   @Published var users = [User]()
+    @IBOutlet weak var navBar: UINavigationBar!
+    @Published var users = [User]()
     private var db = Firestore.firestore()
     
     let user = Auth.auth().currentUser
@@ -26,7 +27,7 @@ class ContactViewController: UIViewController,ObservableObject {
         super.viewDidLoad()
         tableView.delegate =  self
         tableView.dataSource = self
-        
+        navBar.delegate = self
         
            }
 
@@ -131,6 +132,10 @@ class ContactViewController: UIViewController,ObservableObject {
         let vc = storyboard.instantiateViewController(identifier: "CGcontainer")
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
+    }
+    
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+     return .topAttached
     }
 }
 

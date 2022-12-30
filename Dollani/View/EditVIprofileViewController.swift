@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import SwiftUI
 
-class EditVIprofileViewController: UIViewController, UITextFieldDelegate {
+class EditVIprofileViewController: UIViewController, UITextFieldDelegate,UINavigationBarDelegate {
     //Text fields
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var phoneNum: UITextField!
@@ -21,7 +21,8 @@ class EditVIprofileViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nameError: UILabel!
     @IBOutlet weak var phoneNumError: UILabel!
 
-/*
+    @IBOutlet weak var navBar: UINavigationBar!
+    /*
     @IBOutlet weak var name: UITextView!
     
     
@@ -33,7 +34,7 @@ class EditVIprofileViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         name.delegate = self
         phoneNum.delegate = self
-        
+        navBar.delegate = self
         //Alignment
         name.textAlignment = .right
         phoneNum.textAlignment = .right
@@ -188,6 +189,9 @@ class EditVIprofileViewController: UIViewController, UITextFieldDelegate {
         let vc = storyboard.instantiateViewController(identifier: "VIprofile")
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
+    }
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+     return .topAttached
     }
     
     // Do any additional setup after loading the view.

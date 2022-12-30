@@ -9,10 +9,11 @@
 import UIKit
 import Firebase
 
-class placeDetailsViewController: UIViewController {
+class placeDetailsViewController: UIViewController,UINavigationBarDelegate {
     @Published var users = [User]()
     var db = Firestore.firestore()
     
+    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var placeLabel: UILabel!
     var place =  " "
     var index = 0
@@ -20,7 +21,7 @@ class placeDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        navBar.delegate = self
         placeLabel.text = "\(place)"
         placeLabel.layer.borderWidth = 7
         placeLabel.layer.borderColor =  UIColor(red: 43/255.0, green: 66/255.0, blue: 143/255.0, alpha: 255.0/255.0).cgColor
@@ -74,6 +75,10 @@ class placeDetailsViewController: UIViewController {
         let vc = storyboard.instantiateViewController(identifier: "FavList")
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
+    }
+    
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+     return .topAttached
     }
    
     @IBOutlet weak var details: UITableView!

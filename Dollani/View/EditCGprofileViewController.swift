@@ -8,7 +8,8 @@
 import UIKit
 import Firebase
 
-class EditCGprofileViewController: UIViewController {
+class EditCGprofileViewController: UIViewController,UINavigationBarDelegate {
+    @IBOutlet weak var navBar: UINavigationBar!
     
     var name: String?
 
@@ -22,6 +23,7 @@ class EditCGprofileViewController: UIViewController {
  */
     override func viewDidLoad() {
         super.viewDidLoad()
+        navBar.delegate = self
         /*
         name.textAlignment = .right
         phoneNum.textAlignment = .right
@@ -61,6 +63,9 @@ class EditCGprofileViewController: UIViewController {
                
        
     }
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+     return .topAttached
+    }
     
    
    
@@ -84,12 +89,7 @@ class EditCGprofileViewController: UIViewController {
     }
     
     
-    @IBAction func backButton(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "CGprofile")
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
-    }
+
     
     // Do any additional setup after loading the view.
     }

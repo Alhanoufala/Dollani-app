@@ -7,12 +7,13 @@
 
 import UIKit
 
-class VIPlacesDetailViewController: UIViewController {
+class VIPlacesDetailViewController: UIViewController,UINavigationBarDelegate {
+    @IBOutlet weak var navBar: UINavigationBar!
     var place =  " "
     @IBOutlet weak var DetailLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navBar.delegate = self
         DetailLabel.text = "\(place)"
         DetailLabel.layer.borderWidth = 7
         DetailLabel.layer.borderColor =  UIColor(red: 43/255.0, green: 66/255.0, blue: 143/255.0, alpha: 255.0/255.0).cgColor
@@ -29,5 +30,8 @@ class VIPlacesDetailViewController: UIViewController {
     }
     
     @IBAction func startNavigation(_ sender: Any) {
+    }
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+     return .topAttached
     }
 }

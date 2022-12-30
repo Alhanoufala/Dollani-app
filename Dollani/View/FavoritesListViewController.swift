@@ -8,8 +8,9 @@
 import UIKit
 import Firebase
 
-class FavoritesListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FavoritesListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UINavigationBarDelegate {
    
+    @IBOutlet weak var navBar: UINavigationBar!
     
     @IBOutlet weak var tableView: UITableView!
     @Published var users = [User]()
@@ -47,6 +48,7 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        navBar.delegate = self
     }
     
     
@@ -115,6 +117,9 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any? ){
         let vc = storyboard.instantiateViewController(identifier: "VIcontainer")
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
+    }
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+     return .topAttached
     }
   
 }

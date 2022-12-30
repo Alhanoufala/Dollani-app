@@ -8,10 +8,11 @@
 import UIKit
 import Firebase
 
-class CategoryPlacesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CategoryPlacesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UINavigationBarDelegate {
     var listOfCategory  = [String] ()
     var db = Firestore.firestore()
 
+    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,8 +41,11 @@ class CategoryPlacesViewController: UIViewController, UITableViewDelegate, UITab
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-     
+        navBar.delegate = self
         // Do any additional setup after loading the view.
+    }
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+     return .topAttached
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listOfCategory.count

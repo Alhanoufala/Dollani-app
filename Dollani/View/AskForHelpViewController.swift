@@ -9,9 +9,10 @@ import Foundation
 import UIKit
 import Firebase
 
-class AskForHelpViewController: UIViewController,ObservableObject {
+class AskForHelpViewController: UIViewController,ObservableObject,UINavigationBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var navBar: UINavigationBar!
     @Published var CGUsers = [User]()
     var CGEmailList = [String] ()
     var VIPhoneNum = ""
@@ -25,7 +26,7 @@ class AskForHelpViewController: UIViewController,ObservableObject {
         // Do any additional setup after loading the view.
         tableView.delegate =  self
         tableView.dataSource = self
-        
+        navBar.delegate = self
         
         
     }
@@ -127,6 +128,11 @@ class AskForHelpViewController: UIViewController,ObservableObject {
             
             
         }
+    
+    
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+     return .topAttached
+    }
     }
     
 
