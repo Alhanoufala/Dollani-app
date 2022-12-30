@@ -28,14 +28,14 @@ class ForgetPassViewController: UIViewController {
         
         auth.sendPasswordReset(withEmail: email.text!) { (error)  in
             if let error = error {
-                let alert = UIAlertController(title: "Error", message: "لم تدخل بريدك الالكتروني بالشكل الصحيح", preferredStyle: .alert)
+                let alert = UIAlertController(title: "خطأ", message: "لم تدخل بريدك الالكتروني بالشكل الصحيح", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "حسنًا", style: UIAlertAction.Style.default, handler: nil))
                 
                 self.present(alert, animated: true, completion: nil)
                 
                 return
             }
-            let alert = UIAlertController(title: "Success", message: "تم ارسال الرابط لبريدك الالكتروني", preferredStyle: .alert)
+            let alert = UIAlertController(title: "", message: "تم ارسال الرابط لبريدك الالكتروني", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "حسنًا", style: UIAlertAction.Style.default, handler: nil))
             
             self.present(alert, animated: true, completion: nil)
