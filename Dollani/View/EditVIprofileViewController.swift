@@ -178,7 +178,7 @@ class EditVIprofileViewController: UIViewController, UITextFieldDelegate,UINavig
     @IBAction func cancelTapped(_ sender: Any) {
         
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "VIprofile")
+            let vc = storyboard.instantiateViewController(identifier: "VIcontainer")
             vc.modalPresentationStyle = .overFullScreen
             present(vc, animated: true)
     }
@@ -186,7 +186,7 @@ class EditVIprofileViewController: UIViewController, UITextFieldDelegate,UINavig
     
     @IBAction func backButton(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "VIprofile")
+        let vc = storyboard.instantiateViewController(identifier: "VIcontainer")
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }
