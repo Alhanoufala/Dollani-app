@@ -7,9 +7,13 @@
 
 import UIKit
 import Firebase
+import CoreNFC
 
-class VIHomePageViewController: UIViewController {
-
+class VIHomePageViewController: UIViewController , NFCNDEFReaderSessionDelegate {
+  
+    
+    @IBOutlet weak var NFCmsg: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -33,5 +37,33 @@ class VIHomePageViewController: UIViewController {
         let vc = storyboard.instantiateViewController(identifier: "askForHelp")
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
+    }
+    
+    var nfcSession: NFCNDEFReaderSession?
+    var word = "none"
+    @IBAction func nfcreaderbtn(_ sender: Any) {
+        nfcSession = NFCNDEFReaderSession.init(delegate: self, queue: nil, invalidateAfterFirstRead: true)
+        nfcSession?.begin()
+         
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+      super.didReceiveMemoryWarning()
+      // Dispose of any resources that can be recreated.
+    }
+    func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
+        print("the session was invalidated: \(error.localizedDescription)")
+    }
+    
+    func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
+        var result = ""
+        for payload in messages[0].records{
+            result += String.init(data: payload.payload.advanced(by: 3), encoding: .utf8) ?? "format not supported"
+        }
+        
+        DispatchQueue.main.async {
+            self.NFCmsg.text = result
+        }
     }
 }
