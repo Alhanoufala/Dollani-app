@@ -522,10 +522,6 @@
                                     <action selector="signupClicked:" destination="Zbf-s3-05P" eventType="touchUpInside" id="EwB-6r-xHr"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Dolanilogo 1" translatesAutoresizingMaskIntoConstraints="NO" id="5GN-Je-8Co">
-                                <rect key="frame" x="98" y="56" width="218" height="272"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wbe-ce-LwY">
                                 <rect key="frame" x="72" y="585" width="270" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -551,22 +547,15 @@
                                     <action selector="nfcreaderbtn:" destination="2mQ-sa-5fA" eventType="touchUpInside" id="BP1-oX-9op"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbl-Ng-8IF">
-                                <rect key="frame" x="34" y="347" width="346" height="57"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Dolanilogo 1" translatesAutoresizingMaskIntoConstraints="NO" id="5GN-Je-8Co">
+                                <rect key="frame" x="98" y="74" width="218" height="272"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                <color key="textColor" red="0.1889090836" green="0.25569909810000002" blue="0.54120320079999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vYw-Bb-2IU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="الرئيسية" id="UrG-EW-omf"/>
-                    <connections>
-                        <outlet property="NFCmsg" destination="Cbl-Ng-8IF" id="7R6-fP-0fh"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RM4-Ur-u5X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

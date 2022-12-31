@@ -48,6 +48,10 @@ class VIHomePageViewController: UIViewController , NFCNDEFReaderSessionDelegate 
         
     }
     
+    @objc func didTapReadNFC(){
+        
+    }
+    
     override func didReceiveMemoryWarning() {
       super.didReceiveMemoryWarning()
       // Dispose of any resources that can be recreated.
@@ -63,7 +67,13 @@ class VIHomePageViewController: UIViewController , NFCNDEFReaderSessionDelegate 
         }
         
         DispatchQueue.main.async {
-            self.NFCmsg.text = result
+         //   self.NFCmsg.text = result
+            let alert = UIAlertController(title: "", message: result , preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "حسنًا", style: UIAlertAction.Style.default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
         }
+        
+        
     }
 }
