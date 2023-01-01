@@ -588,7 +588,7 @@
                                                     <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
                                                     <connections>
                                                         <action selector="toPlaceDeatils:" destination="KQc-5a-9YF" eventType="touchUpInside" id="qzO-r1-HGg"/>
-                                                        <segue destination="n7o-pT-5yB" kind="show" id="T8w-Kx-diN"/>
+                                                        <segue destination="n7o-pT-5yB" kind="show" identifier="goToDetails" id="T8w-Kx-diN"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1519,7 +1519,7 @@
                                                     <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
                                                     <connections>
                                                         <action selector="forwardButton:" destination="ciS-L7-x05" eventType="touchUpInside" id="Rh2-1p-brn"/>
-                                                        <segue destination="KQc-5a-9YF" kind="show" id="PNb-Y1-Utf"/>
+                                                        <segue destination="KQc-5a-9YF" kind="show" identifier="goToListOfPlaces" id="PNb-Y1-Utf"/>
                                                     </connections>
                                                 </button>
                                             </subviews>

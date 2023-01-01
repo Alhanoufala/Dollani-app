@@ -77,5 +77,12 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       
+        if let deatil = segue.destination as? VIPlacesDetailViewController {
+            deatil.place =  PlaceList[0].name
+            
+        }
+    }
     
 }
