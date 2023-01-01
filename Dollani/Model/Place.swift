@@ -12,7 +12,5 @@ struct Place:Identifiable{
     var name:String
     var cat:String
    
-
-    
 }
 

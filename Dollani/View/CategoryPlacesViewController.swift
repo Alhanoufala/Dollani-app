@@ -11,6 +11,7 @@ import Firebase
 class CategoryPlacesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UINavigationBarDelegate {
     var listOfCategory  = [String] ()
     var db = Firestore.firestore()
+    var Index: IndexPath? = nil
 
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var tableView: UITableView!
@@ -58,6 +59,10 @@ class CategoryPlacesViewController: UIViewController, UITableViewDelegate, UITab
         return cell
     }
  
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        Index = indexPath
+    }
     
     @IBAction func backButton(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -68,16 +73,16 @@ class CategoryPlacesViewController: UIViewController, UITableViewDelegate, UITab
     
     
     @IBAction func forwardButton(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "placesList")
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = storyboard.instantiateViewController(identifier: "placesList")
+//        vc.modalPresentationStyle = .overFullScreen
+//        present(vc, animated: true)
+        performSegue(withIdentifier: "goToListOfPlaces", sender: self)
 
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let placesList = segue.destination as? placesViewController{
-            placesList.cate = "قاعات دراسية"
-            
+            placesList.category = listOfCategory[Index!.row]
         }
     }
     

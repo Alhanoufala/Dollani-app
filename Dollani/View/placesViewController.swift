@@ -12,8 +12,8 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var tableView: UITableView!
-    var nameP  = ""
-    var cate  = ""
+    var category  = ""
+    var Index: IndexPath? = nil
     @Published var PlaceList = [Place]()
 
     var db = Firestore.firestore()
@@ -24,7 +24,7 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     func fetchData() {
         
-            Firestore.firestore().collection("places").whereField("category", isEqualTo: "قاعات دراسية").addSnapshotListener { (querySnapshot, error) in
+            Firestore.firestore().collection("places").whereField("category", isEqualTo: category).addSnapshotListener { (querySnapshot, error) in
                 guard let documents = querySnapshot?.documents else {
                     print("No documents")
                     return
@@ -72,18 +72,29 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60.0
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        Index = indexPath
+    }
+
     
     
     @IBAction func toPlaceDeatils(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        /*let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "VIPlaceDetail")
         vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
+        present(vc, animated: true)*/
+        performSegue(withIdentifier: "goToDetails", sender: self)
+
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        
         if let deatil = segue.destination as? VIPlacesDetailViewController {
-            deatil.place =  PlaceList[0].name
+            deatil.place =  PlaceList[Index!.row].name
+            
             
         }
     }
