@@ -9,15 +9,13 @@ import UIKit
 import Firebase
 
 class FavoritesListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UINavigationBarDelegate {
-   
     @IBOutlet weak var navBar: UINavigationBar!
-    
     @IBOutlet weak var tableView: UITableView!
     @Published var users = [User]()
-    
     var favPlaceList  = [String] ()
     var db = Firestore.firestore()
-    
+    var Index: IndexPath? = nil
+
     override func viewWillAppear(_ animated: Bool) {
         db.collection("users").whereField("email",isEqualTo: Auth.auth().currentUser!.email!).getDocuments { [self] snapshot, error in
             if  error != nil {
@@ -91,24 +89,17 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "Favdetails", sender: self)
-     
+        Index = indexPath
     }
-   
-override func prepare(for segue: UIStoryboardSegue, sender: Any? ){
-           if let destination = segue.destination as? placeDetailsViewController{
-               destination.place = ":))"
-//               destination.place = favPlaceList[indexPath.row]
-//               destination.index = IndexPath
 
-           }
-       }
    
     @IBAction func forwardTapped(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "details")
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = storyboard.instantiateViewController(identifier: "details")
+//        vc.modalPresentationStyle = .overFullScreen
+//        present(vc, animated: true)
+        performSegue(withIdentifier: "Favdetails", sender: self)
+
 
     }
 
@@ -121,5 +112,11 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any? ){
     func position(for bar: UIBarPositioning) -> UIBarPosition {
      return .topAttached
     }
-  
+    override func prepare(for segue: UIStoryboardSegue, sender: Any? ){
+            if let destination = segue.destination as? placeDetailsViewController{
+                    destination.place = favPlaceList[Index!.row]
+                    destination.index = Index!.row
+
+            }
+    }
 }
