@@ -74,6 +74,12 @@ class CategoryPlacesViewController: UIViewController, UITableViewDelegate, UITab
         present(vc, animated: true)
 
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let placesList = segue.destination as? placesViewController{
+            placesList.cate = "قاعات دراسية"
+            
+        }
+    }
     
    
 

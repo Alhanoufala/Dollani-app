@@ -13,6 +13,7 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var tableView: UITableView!
     var nameP  = ""
+    var cate  = ""
     @Published var PlaceList = [Place]()
 
     var db = Firestore.firestore()
@@ -22,23 +23,25 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     func fetchData() {
+        
+            Firestore.firestore().collection("places").whereField("category", isEqualTo: "قاعات دراسية").addSnapshotListener { (querySnapshot, error) in
+                guard let documents = querySnapshot?.documents else {
+                    print("No documents")
+                    return
+                }
                 
-        Firestore.firestore().collection("places").whereField("category", isEqualTo: "قاعات دراسية").addSnapshotListener { (querySnapshot, error) in
-            guard let documents = querySnapshot?.documents else {
-                print("No documents")
-                return
+                self.PlaceList = documents.map { (queryDocumentSnapshot) -> Place in
+                    let data = queryDocumentSnapshot.data()
+                    let name = data["name"] as? String ?? ""
+                    let cat = data["category"] as? String ?? ""
+                    
+                    
+                    return Place(name: name, cat: cat)
+                }
+                self.tableView.reloadData()
             }
-            
-            self.PlaceList = documents.map { (queryDocumentSnapshot) -> Place in
-                let data = queryDocumentSnapshot.data()
-                let name = data["name"] as? String ?? ""
-                let cat = data["category"] as? String ?? ""
-                
-                
-                return Place(name: name, cat: cat)
-            }
-            self.tableView.reloadData()
-        }
+        
+       
         
     }
      override func viewDidLoad() {
