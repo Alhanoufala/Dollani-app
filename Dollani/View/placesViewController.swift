@@ -78,25 +78,22 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         Index = indexPath
-    }
-
-    
-    
-    @IBAction func toPlaceDeatils(_ sender: Any) {
-        /*let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "VIPlaceDetail")
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)*/
         performSegue(withIdentifier: "goToDetails", sender: self)
 
     }
+
+    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       
+
         if let deatil = segue.destination as? VIPlacesDetailViewController {
             deatil.place =  PlaceList[Index!.row].name
             
             
         }
     }
+    
+    
+
     
 }

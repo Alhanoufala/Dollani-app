@@ -27,7 +27,7 @@ class VIPlacesDetailViewController: UIViewController,UINavigationBarDelegate {
         super.viewDidLoad()
         navBar.delegate = self
         placeName.text = "\(place)"
-        DetailLabel.layer.borderWidth = 7
+        DetailLabel.layer.borderWidth = 4
         DetailLabel.layer.borderColor =  UIColor(red: 43/255.0, green: 66/255.0, blue: 143/255.0, alpha: 255.0/255.0).cgColor
         Firestore.firestore().collection("places").whereField("name",isEqualTo:place).getDocuments { [self] snapshot, error in
             if  error != nil {
@@ -45,11 +45,11 @@ class VIPlacesDetailViewController: UIViewController,UINavigationBarDelegate {
    
                                            
     @IBAction func backButtent(_ sender: Any) {
-        performSegue(withIdentifier: "goBack", sender: self)
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = storyboard.instantiateViewController(identifier: "placesList")
-//        vc.modalPresentationStyle = .overFullScreen
-//        present(vc, animated: true)
+        performSegue(withIdentifier: "BackToPlaces", sender: self)
+       /* let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "placesList")
+       vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)*/
 
         
     }
@@ -87,10 +87,5 @@ class VIPlacesDetailViewController: UIViewController,UINavigationBarDelegate {
     
     @IBAction func startNavigation(_ sender: Any) {
     }
-    func position(for bar: UIBarPositioning) -> UIBarPosition {
-     return .topAttached
-    }
-    @IBAction func toPlaces(sender: UIStoryboard){
-        
-    }
+    
 }

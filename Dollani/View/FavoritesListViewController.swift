@@ -90,6 +90,8 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         Index = indexPath
+        performSegue(withIdentifier: "Favdetails", sender: self)
+
     }
 
    
@@ -98,7 +100,7 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
 //        let vc = storyboard.instantiateViewController(identifier: "details")
 //        vc.modalPresentationStyle = .overFullScreen
 //        present(vc, animated: true)
-        performSegue(withIdentifier: "Favdetails", sender: self)
+//        performSegue(withIdentifier: "Favdetails", sender: self)
 
 
     }
