@@ -7,7 +7,6 @@
 
 import UIKit
 import Firebase
-import SwiftUI
 
 class EditVIprofileViewController: UIViewController, UITextFieldDelegate,UINavigationBarDelegate {
     //Text fields
@@ -22,29 +21,16 @@ class EditVIprofileViewController: UIViewController, UITextFieldDelegate,UINavig
     @IBOutlet weak var phoneNumError: UILabel!
 
     @IBOutlet weak var navBar: UINavigationBar!
-    /*
-    @IBOutlet weak var name: UITextView!
-    
-    
-    @IBOutlet weak var phoneNum: UITextView!
-    
-    @IBOutlet weak var email: UITextView!
- */
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         name.delegate = self
         phoneNum.delegate = self
         navBar.delegate = self
-        //Alignment
-        name.textAlignment = .right
-        phoneNum.textAlignment = .right
+        
         
         saveButton.isEnabled = false
-        /*
-        name.textAlignment = .right
-        phoneNum.textAlignment = .right
-        email.textAlignment = .right
-        */
+        
         retriveUserInfo()
     }
     func checkForValidForm()
@@ -162,16 +148,26 @@ class EditVIprofileViewController: UIViewController, UITextFieldDelegate,UINavig
     
 
     @IBAction func saveTapped(_ sender: Any) {
+        //get data
         guard let Name = name.text else {return}
         guard let Phone = phoneNum.text else {return}
+        //update
+        let user = Auth.auth().currentUser
+        if let user = user {
+            
+            let currentEmail = user.email
+            Firestore.firestore().collection("users").document(currentEmail!).updateData(["name":Name, "phoneNum":Phone]) }
+        //alert
+        let alert = UIAlertController(title: nil, message:"تم حفظ التغييرات بنجاج", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title:  "حسنًا", style: .default, handler:nil))
+       present(alert, animated: true, completion: nil)
         
-        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-        changeRequest?.displayName = Name
-        changeRequest?.displayName = Phone
-        changeRequest?.commitChanges { error in
-          // ...
-        }
-        
+        /*
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "VIcontainer")
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+        */
 
     }
     
