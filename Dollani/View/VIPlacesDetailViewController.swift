@@ -69,7 +69,12 @@ class VIPlacesDetailViewController: UIViewController,UINavigationBarDelegate {
             else{
                 favPlaceList = snapshot?.documents.first?.get("favPlace") as! [String]
             }
-            favPlaceList.append(place)
+            if (favPlaceList.contains(place)) {
+                let alert = UIAlertController(title: nil, message:"  الموقع مضاف للمفضلة مسبقًا", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title:  "تم", style: .default, handler: nil))
+                                present(alert, animated: true, completion: nil) }
+            else{
+            favPlaceList.append(place)}
             db.collection("users").whereField("email", isEqualTo: Auth.auth().currentUser!.email!).getDocuments { (result, error) in
                 if error == nil{
                     for document in result!.documents{
@@ -79,10 +84,16 @@ class VIPlacesDetailViewController: UIViewController,UINavigationBarDelegate {
                     }
                 }
             }
+                let alert = UIAlertController(title: nil, message:"  تم إضافة الموقع للمفضلة بنجاح", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title:  "تم", style: .default, handler: nil))
+                                present(alert, animated: true, completion: nil)
+
+          
             
  
             
         }
+        
     }
     
     @IBAction func startNavigation(_ sender: Any) {
