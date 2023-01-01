@@ -564,7 +564,7 @@
         <!--Places View Controller-->
         <scene sceneID="Iy3-lE-sE4">
             <objects>
-                <viewController storyboardIdentifier="placesList" id="KQc-5a-9YF" customClass="placesViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="placesList" modalPresentationStyle="fullScreen" id="KQc-5a-9YF" customClass="placesViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ANa-0C-3lX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -588,6 +588,7 @@
                                                     <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
                                                     <connections>
                                                         <action selector="toPlaceDeatils:" destination="KQc-5a-9YF" eventType="touchUpInside" id="qzO-r1-HGg"/>
+                                                        <segue destination="n7o-pT-5yB" kind="show" id="T8w-Kx-diN"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -612,6 +613,7 @@
                         <viewLayoutGuide key="safeArea" id="kUf-Fu-KNZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="94a-Qn-JfX"/>
                     <connections>
                         <outlet property="navBar" destination="9Qi-W4-q6r" id="No0-te-vIV"/>
                         <outlet property="tableView" destination="cIu-BI-der" id="DEW-ZH-gyp"/>
@@ -624,7 +626,7 @@
         <!--Places Detail View Controller-->
         <scene sceneID="44u-MP-6xe">
             <objects>
-                <viewController storyboardIdentifier="VIPlaceDetail" id="n7o-pT-5yB" customClass="VIPlacesDetailViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VIPlaceDetail" modalPresentationStyle="fullScreen" id="n7o-pT-5yB" customClass="VIPlacesDetailViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nJg-jo-AnG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -677,6 +679,7 @@
                         <viewLayoutGuide key="safeArea" id="joa-9q-VzU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="DZI-Pu-ZyP"/>
                     <connections>
                         <outlet property="DetailLabel" destination="1Gx-pU-wJO" id="bIJ-Oc-ovS"/>
                         <outlet property="navBar" destination="t4Q-bQ-Bdv" id="bOd-fI-B4c"/>
@@ -684,7 +687,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zmo-MT-rR2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3715.9420289855075" y="3446.6517857142858"/>
+            <point key="canvasLocation" x="4599" y="3384"/>
         </scene>
         <!--Place Details View Controller-->
         <scene sceneID="X5B-Fi-KpI">
@@ -1516,6 +1519,7 @@
                                                     <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
                                                     <connections>
                                                         <action selector="forwardButton:" destination="ciS-L7-x05" eventType="touchUpInside" id="Rh2-1p-brn"/>
+                                                        <segue destination="KQc-5a-9YF" kind="show" id="PNb-Y1-Utf"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
