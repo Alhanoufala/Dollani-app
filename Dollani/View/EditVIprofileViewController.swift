@@ -21,6 +21,9 @@ class EditVIprofileViewController: UIViewController, UITextFieldDelegate,UINavig
     @IBOutlet weak var phoneNumError: UILabel!
 
     @IBOutlet weak var navBar: UINavigationBar!
+    
+    //avatar
+    @IBOutlet weak var avatar: UIImageView!
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +35,7 @@ class EditVIprofileViewController: UIViewController, UITextFieldDelegate,UINavig
         saveButton.isEnabled = false
         
         retriveUserInfo()
+        setupAvatar()
     }
     func checkForValidForm()
         {
@@ -151,12 +155,37 @@ class EditVIprofileViewController: UIViewController, UITextFieldDelegate,UINavig
         //get data
         guard let Name = name.text else {return}
         guard let Phone = phoneNum.text else {return}
+        
         //update
         let user = Auth.auth().currentUser
         if let user = user {
             
             let currentEmail = user.email
-            Firestore.firestore().collection("users").document(currentEmail!).updateData(["name":Name, "phoneNum":Phone]) }
+            /*
+            Firestore.firestore().collection("users").whereField("email",isEqualTo:currentEmail!).getDocuments { snapshot, error in
+                if  error != nil {
+                           // ERROR
+                       }
+                       else {
+                           if(snapshot?.count != 0){
+                               
+                               
+                               let oldName = snapshot?.documents.first?.get("name") as! String
+                               let oldPhoneNum = snapshot?.documents.first?.get("phoneNum") as! String
+                               
+                                                              //update help request
+                               Firestore.firestore().collection("helpRequests").whereField("VIPhoneNum",isEqualTo:oldPhoneNum).updateData(["VIName":Name, "VIPhoneNum":Phone])
+                               
+                               Firestore.firestore().collection("helpRequests").whereField("CGPhoneNum",isEqualTo:oldPhoneNum).updateData(["CGName":Name, "CGPhoneNum":Phone])
+                               
+                           }
+                       }
+                   }
+             */
+            //update user collection
+            Firestore.firestore().collection("users").document(currentEmail!).updateData(["name":Name, "phoneNum":Phone])
+            
+        }
         //alert
         let alert = UIAlertController(title: nil, message:"تم حفظ التغييرات بنجاج", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title:  "حسنًا", style: .default, handler:nil))
@@ -190,5 +219,36 @@ class EditVIprofileViewController: UIViewController, UITextFieldDelegate,UINavig
      return .topAttached
     }
     
+    //Avatar
+    func setupAvatar(){
+        avatar.layer.cornerRadius=40
+        avatar.clipsToBounds = true
+        avatar.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(presentPicker))
+        avatar.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func presentPicker(){
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = true
+        picker.delegate = self
+        self.present(picker , animated: true, completion: nil)
+    }
+    
     // Do any additional setup after loading the view.
     }
+
+extension EditVIprofileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]){
+        if let imageSelected = info[UIImagePickerController.InfoKey.editedImage] as? UIImage{
+            avatar.image = imageSelected
+        }
+        if let imageOriginal = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            avatar.image = imageOriginal
+        }
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+}
