@@ -27,7 +27,7 @@ class VIHomePageViewController: UIViewController , NFCNDEFReaderSessionDelegate 
     
     @IBAction func navigationTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "places")
+        let vc = storyboard.instantiateViewController(identifier: "navigation")
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }

@@ -10,22 +10,25 @@ import EstimoteProximitySDK
 import CoreMotion
 import AudioToolbox
 import AVFoundation
+import CoreLocation
 
 class NavigationViewController: UIViewController {
     
-    /// Provides to create an instance of the CMMotionActivityManager.
+    // Provides to create an instance of the CMMotionActivityManager.
     private let activityManager = CMMotionActivityManager()
     /// Provides to create an instance of the CMPedometer.
-    private let pedometer = CMPedometer()
+private let pedometer = CMPedometer()
     
     let motionManager = CMMotionManager()
     // 1. Add a property to hold the Proximity Observer
        var proximityObserver: ProximityObserver!
+    private let manager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let cloudCredentials = CloudCredentials(appID: "dollani-1us",
-                                                  appToken: "7da1eb3f0c7caf075ba079e35e8e4da9")
+        locationManagerDidChangeAuthorization(manager)
+        let cloudCredentials = CloudCredentials(appID: "dollani-bi1",
+                                                  appToken: "b62b4121000e11265883334fe1a89e13")
         // 2. Create the Proximity Observer
                self.proximityObserver = ProximityObserver(
                    credentials: cloudCredentials,
@@ -33,10 +36,12 @@ class NavigationViewController: UIViewController {
                        print("proximity observer error: \(error)")
                })
  
-        let zone = ProximityZone(tag: "desks", range: .near)
+        let zone = ProximityZone(tag: "place", range: .far)
         zone.onEnter = { context in
-            let deskOwner = context.attachments["desk-owner"]
-            print("Welcome to \(String(describing: deskOwner))'s desk")
+            
+            let placeName = context.attachments["place-name"]
+          
+            print("Welcome to \(String(describing: placeName))")
         }
         zone.onExit = { _ in
             print("Bye bye, come again!")
@@ -45,32 +50,33 @@ class NavigationViewController: UIViewController {
         self.proximityObserver.startObserving([zone])
         
         activityManager.startActivityUpdates(to: OperationQueue.main) { (activity: CMMotionActivity?) in
-            guard let activity = activity else { return }
-            DispatchQueue.main.async {
-                if activity.stationary {
-                    print("Stationary")
-                } else if activity.walking {
+           guard let activity = activity else { return }
+           DispatchQueue.main.async {
+               if activity.stationary {
+                   print("Stationary")
+             
+               } else if activity.walking {
                     // With vibration
                   
                     AudioServicesPlaySystemSound(1352)
                     print("Walking")
                 } else if activity.running {
-                    AudioServicesPlaySystemSound(1352)
-                    print("Running")
+                   AudioServicesPlaySystemSound(1352)
+                print("Running")
                 } else if activity.automotive {
-                    print("Automotive")
-                }
+                   print("Automotive")
+               }
             }
         }
-        if CMPedometer.isStepCountingAvailable() {
-            pedometer.startUpdates(from: Date()) { pedometerData, error in
-                guard let pedometerData = pedometerData, error == nil else { return }
+       // if CMPedometer.isStepCountingAvailable() {
+           // pedometer.startUpdates(from: Date()) { pedometerData, error in
+              //  guard let pedometerData = pedometerData, error == nil else { return }
                 
-                DispatchQueue.main.async {
-                    print(pedometerData.numberOfSteps.intValue)
-                }
-            }
-        }
+//DispatchQueue.main.async {
+                    //print(pedometerData.numberOfSteps.intValue)
+               // }
+           // }
+      //  }
         
        
         
@@ -89,7 +95,25 @@ class NavigationViewController: UIViewController {
             //}
     //}
     
-    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        switch manager.authorizationStatus {
+        case .authorizedWhenInUse:  // Location services are available.
+           // enableLocationFeatures()
+            break
+            
+        case .restricted, .denied:  // Location services currently unavailable.
+           // disableLocationFeatures()
+            break
+            
+        case .notDetermined:        // Authorization not determined yet.
+           manager.requestWhenInUseAuthorization()
+            break
+            
+        default:
+            break
+        }
+    }
+
    
    
 }
