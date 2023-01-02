@@ -24,6 +24,14 @@ private let pedometer = CMPedometer()
        var proximityObserver: ProximityObserver!
     private let manager = CLLocationManager()
     
+    
+    @IBAction func backButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "VIcontainer")
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManagerDidChangeAuthorization(manager)

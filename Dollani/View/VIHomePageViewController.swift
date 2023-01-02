@@ -18,6 +18,12 @@ class VIHomePageViewController: UIViewController , NFCNDEFReaderSessionDelegate 
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    @IBAction func PlacesTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "places")
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
     @IBAction func FavListTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "FavList")
