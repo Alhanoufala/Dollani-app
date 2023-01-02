@@ -2,6 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>We'll show you cool things near you in the app.</string>
+
+    <!-- iOS 10 or earlier -->
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>We'll show you cool things near you in the app, and alert you via
+    notifications if you don't have the app open.</string>
+
+    <!-- iOS 11 -->
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>We'll show you cool things near you in the app. With the "always" option,
+    we can also alert you via notifications if you don't have the app open.</string>
     <key>NSMotionUsageDescription</key>
     <string>We are using motion usage in order to track your step count.</string>
 	<key>NFCReaderUsageDescription</key>
