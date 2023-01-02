@@ -83,4 +83,5 @@ class placeDetailsViewController: UIViewController,UINavigationBarDelegate {
         return .topAttached
     }
     
+    
 }

@@ -13,6 +13,7 @@ struct User:Identifiable{
     var email:String
     var phoneNum:String
     var category:String
+    var fcmToken:String?
     var CGEmail:[String]?
     var favPlace:[String]?
 

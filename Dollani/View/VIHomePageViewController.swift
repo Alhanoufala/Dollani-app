@@ -31,12 +31,6 @@ class VIHomePageViewController: UIViewController , NFCNDEFReaderSessionDelegate 
         present(vc, animated: true)
     }
     
-    @IBAction func navigationTapped(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "navigation")
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
-    }
     
     @IBAction func askForHelpTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

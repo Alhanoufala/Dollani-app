@@ -67,8 +67,8 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
                 let phoneNum = data["phoneNum"] as? String ?? ""
                 let category = data["category"] as? String ?? ""
                 let favPlace = data["favPlace"] as? [String] ?? []
-              
-                return User(name: name, email: email,phoneNum: phoneNum, category: category, favPlace: favPlace)
+                let fcmToken =  data["fcmToken"] as? String ?? ""
+                return User(name: name, email: email,phoneNum: phoneNum, category: category,fcmToken: fcmToken, favPlace: favPlace)
             }
             self.tableView.reloadData()
         }

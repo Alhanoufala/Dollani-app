@@ -77,8 +77,8 @@ class AskForHelpViewController: UIViewController,ObservableObject,UINavigationBa
                     let phoneNum = data["phoneNum"] as? String ?? ""
                     let category = data["category"] as? String ?? ""
                     
-                    
-                    return User(name: name, email: email,phoneNum: phoneNum,category:category)
+                    let fcmToken =  data["fcmToken"] as? String ?? ""
+                    return User(name: name, email: email,phoneNum: phoneNum,category:category,fcmToken: fcmToken)
                 }
                 self.tableView.reloadData()
             }

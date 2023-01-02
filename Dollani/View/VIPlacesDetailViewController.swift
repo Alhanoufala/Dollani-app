@@ -58,6 +58,10 @@ class VIPlacesDetailViewController: UIViewController,UINavigationBarDelegate {
         if let placesList = segue.destination as? placesViewController{
             placesList.category = cat
         }
+        if let placesList = segue.destination as? NavigationViewController{
+            placesList.destination = place
+        }
+        
     }
     
     @IBAction func addToFav(_ sender: Any) {
