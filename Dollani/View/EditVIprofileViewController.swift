@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
 
 class EditVIprofileViewController: UIViewController, UITextFieldDelegate,UINavigationBarDelegate {
     //Text fields
@@ -24,6 +25,7 @@ class EditVIprofileViewController: UIViewController, UITextFieldDelegate,UINavig
     
     //avatar
     @IBOutlet weak var avatar: UIImageView!
+    var image: UIImage? = nil
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -152,6 +154,17 @@ class EditVIprofileViewController: UIViewController, UITextFieldDelegate,UINavig
     
 
     @IBAction func saveTapped(_ sender: Any) {
+        //set image
+        guard let imageSelected = self.image else{
+            print("Avatar is nil")
+            return
+        }
+        
+        guard let imageData = imageSelected.jpegData(compressionQuality: 0.4) else{
+            return
+        }
+        
+    
         //get data
         guard let Name = name.text else {return}
         guard let Phone = phoneNum.text else {return}
@@ -182,8 +195,29 @@ class EditVIprofileViewController: UIViewController, UITextFieldDelegate,UINavig
                        }
                    }
              */
-            //update user collection
-            Firestore.firestore().collection("users").document(currentEmail!).updateData(["name":Name, "phoneNum":Phone])
+            
+            
+            //set image
+            let storageRef = Storage.storage().reference(forURL: "gs://dollani-app.appspot.com")
+            let storageProfileRef = storageRef.child("profile").child(user.uid)
+            
+            let metadata = StorageMetadata()
+            metadata.contentType = "image/jpg"
+            storageProfileRef.putData(imageData,metadata: metadata)
+            { (StorageMetadata, error) in
+                if error != nil{
+                    print(error?.localizedDescription)
+                    return
+                }
+                
+                storageProfileRef.downloadURL(completion: {(url, error) in
+                    if let metaImageUrl = url?.absoluteString{
+                        
+                        //update user collection
+                        Firestore.firestore().collection("users").document(currentEmail!).updateData(["name":Name, "phoneNum":Phone, "profilePhoto": metaImageUrl ])
+                    }
+                })
+            }
             
         }
         //alert
@@ -236,15 +270,27 @@ class EditVIprofileViewController: UIViewController, UITextFieldDelegate,UINavig
         self.present(picker , animated: true, completion: nil)
     }
     
+    //dismiss keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
     // Do any additional setup after loading the view.
     }
+
+
+
+
 
 extension EditVIprofileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]){
         if let imageSelected = info[UIImagePickerController.InfoKey.editedImage] as? UIImage{
+            image = imageSelected
             avatar.image = imageSelected
         }
         if let imageOriginal = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            image = imageOriginal
             avatar.image = imageOriginal
         }
         
