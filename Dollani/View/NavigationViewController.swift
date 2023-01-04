@@ -15,7 +15,7 @@ import Firebase
 
 class NavigationViewController: UIViewController ,UINavigationBarDelegate{
     @IBOutlet weak var directionLabel: UILabel!
-    @IBOutlet weak var lblFrame: UILabel!
+    
     @IBOutlet weak var navBar: UINavigationBar!
     var destination = ""
     var VIPhoneNum = ""
@@ -121,8 +121,6 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate{
         locationManagerDidChangeAuthorization(manager)
         getCGEmails()
        
-        lblFrame.layer.borderWidth = 4
-        lblFrame.layer.borderColor =  UIColor(red: 43/255.0, green: 66/255.0, blue: 143/255.0, alpha: 255.0/255.0).cgColor
         let cloudCredentials = CloudCredentials(appID: "dollani-bi1",
                                                 appToken: "b62b4121000e11265883334fe1a89e13")
         // 2. Create the Proximity Observer
@@ -141,7 +139,6 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate{
         }
         zone.onExit = { _ in
             self.directionLabel.text = "Bye bye, come again!"
-            
         }
         
         self.proximityObserver.startObserving([zone])
