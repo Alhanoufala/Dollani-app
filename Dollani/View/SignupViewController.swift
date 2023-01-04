@@ -330,7 +330,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate  {
             }
             else{
             
-                self.db.collection("users").document(Email).setData(["name" : Name,"phoneNum":Phone,"email":Email.lowercased(),"password":Password,"category":Category,"CGEmail":[], "favPlace": []])
+                self.db.collection("users").document(Email).setData(["name" : Name,"phoneNum":Phone,"email":Email.lowercased(),"password":Password,"category":Category,"CGEmail":[], "favPlace": [],"profilePhoto":"gs://dollani-app.appspot.com/profile/blank-profile-picture-973460__480.webp"])
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(identifier: "login")
                 vc.modalPresentationStyle = .overFullScreen

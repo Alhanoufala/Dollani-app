@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
 
 class CGHelpRequestsViewController: UIViewController {
     var deleteRequestIndexPath: IndexPath? = nil
@@ -44,9 +45,10 @@ class CGHelpRequestsViewController: UIViewController {
                 let VIPhoneNum = data["VIPhoneNum"] as? String ?? ""
                 let VIName = data["VIName"] as? String ?? ""
                 let status = data["status"] as? String ?? ""
+                let profilePhoto = data["VIProfilePhoto"] as? String ?? ""
                 
                 
-                return HelpRequest(CGEmail: CGEmail, CGName: CGName,CGPhoneNum: CGPhoneNum,VIEmail:VIEmail,VIName:VIName,VIPhoneNum:VIPhoneNum,status:status)
+                return HelpRequest(CGEmail: CGEmail, CGName: CGName,CGPhoneNum: CGPhoneNum,VIEmail:VIEmail,VIName:VIName,VIPhoneNum:VIPhoneNum,VIProfilePhoto:profilePhoto,status:status)
             }
             self.tableView.reloadData()
         }
@@ -152,13 +154,23 @@ extension CGHelpRequestsViewController : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "helpRequestCell", for: indexPath) as! HelpRequestTableViewCell
-       
+        if let  url = HelpRequests[indexPath.row].VIProfilePhoto{
+            let storageRef = Storage.storage().reference(forURL: url)
+            storageRef.downloadURL(completion: { (url, error) in
+                
+                let data = NSData(contentsOf: url!)
+                let image = UIImage(data: (data! as NSData) as Data)
+                
+              
+                cell.VIProfilePhoto.image = image
+                
+            })}
         cell.videoCallButton?.tag = indexPath.row
        cell.videoCallButton?.addTarget(self, action: #selector(videoCallButtonTapped), for: .touchUpInside)
-        cell.textLabel?.textAlignment = .right
+       
 
    
-        cell.textLabel?.text = "قام " + HelpRequests[indexPath.row].VIName + " بارسال طلب مساعدة"
+        cell.helpRequestLabel?.text = "قام " + HelpRequests[indexPath.row].VIName + " بارسال طلب مساعدة"
         return cell
     }
 }

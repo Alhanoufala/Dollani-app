@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
 
 class ContactViewController: UIViewController,ObservableObject,UINavigationBarDelegate {
     @IBOutlet weak var tableView: UITableView!
@@ -50,9 +51,10 @@ class ContactViewController: UIViewController,ObservableObject,UINavigationBarDe
                     let email = data["email"] as? String ?? ""
                     let phoneNum = data["phoneNum"] as? String ?? ""
                     let category = data["category"] as? String ?? ""
+                    let profilePic = data["profilePhoto"] as? String ?? ""
                   
                     
-                    return User(name: name, email: email,phoneNum: phoneNum,category:category)
+                    return User(name: name, email: email,phoneNum: phoneNum,category:category,profilePhoto: profilePic)
                 }
             self.tableView.reloadData()
             }
@@ -162,6 +164,17 @@ extension ContactViewController : UITableViewDataSource{
         
         cell.label?.textAlignment = .right
         cell.label?.text = users[indexPath.row].name
+        if let  url = users[indexPath.row].profilePhoto{
+            let storageRef = Storage.storage().reference(forURL: url)
+            storageRef.downloadURL(completion: { (url, error) in
+                
+                let data = NSData(contentsOf: url!)
+                let image = UIImage(data: (data! as NSData) as Data)
+                
+              
+                cell.profilePic.image = image
+                
+            })}
         return cell
     }
 }

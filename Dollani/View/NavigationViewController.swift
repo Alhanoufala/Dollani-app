@@ -18,8 +18,10 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate{
     
     @IBOutlet weak var navBar: UINavigationBar!
     var destination = ""
+    var destinationTag = ""
     var VIPhoneNum = ""
     var VIName = ""
+    var VIProfilePhoto = ""
     @Published var CGUsers = [User]()
     var CGEmailList = [String] ()
     // Provides to create an instance of the CMMotionActivityManager.
@@ -31,6 +33,13 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate{
     // 1. Add a property to hold the Proximity Observer
     var proximityObserver: ProximityObserver!
     private let manager = CLLocationManager()
+    func checkDestination(){
+        print(destination)
+        if(destination == "25G قاعة" ){
+            destinationTag = "room25"}
+        else if(destination == "G50 قاعة"){
+            destinationTag = "room50"}
+    }
     
     func getCGEmails() {
         let user = Auth.auth().currentUser
@@ -45,7 +54,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate{
                 CGEmailList = snapshot?.documents.first?.get("CGEmail") as! [String]
                 VIPhoneNum = snapshot?.documents.first?.get("phoneNum") as! String
                 VIName = snapshot?.documents.first?.get("name") as! String
-               
+                VIProfilePhoto = snapshot?.documents.first?.get("profilePhoto") as! String
                 fetchData()
                 
                 
@@ -106,7 +115,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate{
        
        
         for CGUser in CGUsers {
-            Firestore.firestore().collection("helpRequests").document((Auth.auth().currentUser?.email)!+"-"+CGUser.email).setData(["CGName" : CGUser.name,"CGEmail":CGUser.email,"CGPhoneNum":CGUser.phoneNum,"VIEmail":(Auth.auth().currentUser?.email)!,"VIName":VIName,"VIPhoneNum":VIPhoneNum,"status":"new"])
+            Firestore.firestore().collection("helpRequests").document((Auth.auth().currentUser?.email)!+"-"+CGUser.email).setData(["CGName" : CGUser.name,"CGEmail":CGUser.email,"CGPhoneNum":CGUser.phoneNum,"VIEmail":(Auth.auth().currentUser?.email)!,"VIName":VIName,"VIPhoneNum":VIPhoneNum,"status":"new","VIProfilePhoto":VIProfilePhoto])
             sender.sendPushNotification(to:CGUser.fcmToken!, title: "طلب مساعدة جديد ", body: "قام احد جهات الاتصال بارسال طلب مساعدة ")
         }
         //alert
@@ -118,6 +127,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.delegate = self
+        checkDestination()
         locationManagerDidChangeAuthorization(manager)
         getCGEmails()
        
@@ -129,20 +139,65 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate{
             onError: { error in
                 print("proximity observer error: \(error)")
             })
-        
+        navigateToDestination()
+     
+      //  movementDetected ()
+       
+    }
+    func navigateToDestination(){
         let zone = ProximityZone(tag: "room25", range: .near)
+        let zoneTag = zone.tag
+        let zone2 = ProximityZone(tag: "room50", range: .near)
+        let zoneTag2 = zone2.tag
+        print(zoneTag)
+        print(zoneTag2)
+        // first zone
         zone.onEnter = { context in
+            if(zoneTag == self.destinationTag ){
+             
+                    self.directionLabel.text = "لقد وصلت الى وجهتك"
+                
+                AudioServicesPlaySystemSound(1307)
+            }
+           
             
-            let placeName = context.attachments["place-name"] as? String ?? ""
+            else{
+               // let placeName = context.attachments["place-name"] as? String ?? ""
+           
+                    self.directionLabel.text = "امشي الى الامام ٨ متر"
+                
+            }
             
-            self.directionLabel.text =  "Welcome to \(placeName)"
         }
-        zone.onExit = { _ in
-            self.directionLabel.text = "Bye bye, come again!"
+        zone.onExit = {context in
+            self.directionLabel.text = ""
+        
+        }
+        // second zone
+        zone2.onEnter = { context in
+            if(zoneTag2 == self.destinationTag ){
+            
+                    self.directionLabel.text = "لقد وصلت الى وجهتك"
+                
+                AudioServicesPlaySystemSound(1307)
+            }
+           
+            
+            else{
+                //let placeName = context.attachments["place-name"] as? String ?? ""
+                
+                    self.directionLabel.text = "امشي الى الامام ٨ متر"
+                
+            }
+        }
+        zone2.onExit = {context in
+            self.directionLabel.text = ""
+        
         }
         
-        self.proximityObserver.startObserving([zone])
-        movementDetected ()
+      
+        
+        self.proximityObserver.startObserving([zone,zone2])
        
     }
     func movementDetected (){

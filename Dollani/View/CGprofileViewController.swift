@@ -7,13 +7,21 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
 
 class CGprofileViewController: UIViewController {
 
+    @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var name: UITextView!
     @IBOutlet weak var phoneNum: UITextView!
     @IBOutlet weak var email: UITextView!
     override func viewDidLoad() {
+        
+        profilePic?.layer.cornerRadius = (profilePic?.frame.size.width ?? 0.0) / 2
+        profilePic?.clipsToBounds = true
+        profilePic?.layer.borderWidth = 3.0
+        profilePic?.layer.borderColor = UIColor.white.cgColor
+        
         name.textAlignment = .right
         phoneNum.textAlignment = .right
         email.textAlignment = .right
@@ -37,6 +45,17 @@ class CGprofileViewController: UIViewController {
                                let userName = snapshot?.documents.first?.get("name") as! String
                                let userPhoneNum = snapshot?.documents.first?.get("phoneNum") as! String
                                let userEmail = snapshot?.documents.first?.get("email") as! String
+                               let profilePicUrl = snapshot?.documents.first?.get("profilePhoto") as! String
+                               //set profile pic
+                               let storageRef = Storage.storage().reference(forURL: profilePicUrl)
+                               storageRef.downloadURL(completion: { (url, error) in
+                                   
+                                   let data = NSData(contentsOf: url!)
+                                   let image = UIImage(data: (data! as NSData) as Data)
+                                   
+                                   
+                                   self.profilePic?.image = image
+                               })
                                
                                //Set textView
                                self.name.text = userName

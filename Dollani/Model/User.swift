@@ -14,6 +14,7 @@ struct User:Identifiable{
     var phoneNum:String
     var category:String
     var fcmToken:String?
+    var profilePhoto:String?
     var CGEmail:[String]?
     var favPlace:[String]?
 

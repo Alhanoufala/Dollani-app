@@ -15,6 +15,7 @@ struct HelpRequest:Identifiable{
     var VIEmail:String
     var VIName:String
     var VIPhoneNum:String
+    var VIProfilePhoto:String?
     var status:String
     
 }

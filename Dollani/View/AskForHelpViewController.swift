@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Firebase
+import FirebaseStorage
 
 class AskForHelpViewController: UIViewController,ObservableObject,UINavigationBarDelegate {
     
@@ -17,6 +18,7 @@ class AskForHelpViewController: UIViewController,ObservableObject,UINavigationBa
     var CGEmailList = [String] ()
     var VIPhoneNum = ""
     var VIName = ""
+    var VIProfilePhoto = ""
     override func viewWillAppear(_ animated: Bool) {
         getCGEmails()
       
@@ -46,7 +48,7 @@ class AskForHelpViewController: UIViewController,ObservableObject,UINavigationBa
                 print(CGEmailList)
                 VIPhoneNum = snapshot?.documents.first?.get("phoneNum") as! String
                 VIName = snapshot?.documents.first?.get("name") as! String
-               
+                VIProfilePhoto =  snapshot?.documents.first?.get("profilePhoto") as! String
                 fetchData()
                 
                 
@@ -78,7 +80,8 @@ class AskForHelpViewController: UIViewController,ObservableObject,UINavigationBa
                     let category = data["category"] as? String ?? ""
                     
                     let fcmToken =  data["fcmToken"] as? String ?? ""
-                    return User(name: name, email: email,phoneNum: phoneNum,category:category,fcmToken: fcmToken)
+                    let profilePic = data["profilePhoto"] as? String ?? ""
+                    return User(name: name, email: email,phoneNum: phoneNum,category:category,fcmToken: fcmToken,profilePhoto:profilePic)
                 }
                 self.tableView.reloadData()
             }
@@ -119,7 +122,7 @@ class AskForHelpViewController: UIViewController,ObservableObject,UINavigationBa
                }
 
       
-        Firestore.firestore().collection("helpRequests").document(VIEmail!+"-"+CGEmail).setData(["CGName" : CGName,"CGEmail":CGEmail,"CGPhoneNum":CGPhoneNum,"VIEmail":VIEmail!,"VIName":VIName,"VIPhoneNum":VIPhoneNum,"status":"new"])
+        Firestore.firestore().collection("helpRequests").document(VIEmail!+"-"+CGEmail).setData(["CGName" : CGName,"CGEmail":CGEmail,"CGPhoneNum":CGPhoneNum,"VIEmail":VIEmail!,"VIName":VIName,"VIPhoneNum":VIPhoneNum,"status":"new","VIProfilePhoto":VIProfilePhoto])
             
          //alert
         let alert = UIAlertController(title: nil, message:"تم ارسال الطلب بنجاج", preferredStyle: .alert)
@@ -158,10 +161,21 @@ extension AskForHelpViewController : UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactCellVi", for: indexPath) as! AskForhelpTableViewCell
        
         
-        cell.textLabel?.textAlignment = .right
-        cell.textLabel?.text = CGUsers[indexPath.row].name
+
+        cell.askForHelpLabel?.text = CGUsers[indexPath.row].name
         cell.sendHelp?.tag = indexPath.row
         cell.sendHelp?.addTarget(self, action: #selector(sendHelpButtonTapped), for: .touchUpInside)
+        if let  url = CGUsers[indexPath.row].profilePhoto{
+            let storageRef = Storage.storage().reference(forURL: url)
+            storageRef.downloadURL(completion: { (url, error) in
+                
+                let data = NSData(contentsOf: url!)
+                let image = UIImage(data: (data! as NSData) as Data)
+                
+              
+                cell.profilePic.image = image
+                
+            })}
         return cell
     }
     
