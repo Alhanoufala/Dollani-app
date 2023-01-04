@@ -414,7 +414,7 @@
             </objects>
             <point key="canvasLocation" x="1437.68115942029" y="-72.321428571428569"/>
         </scene>
-        <!--الحساب-->
+        <!--Iprofile View Controller-->
         <scene sceneID="wjK-jp-cad">
             <objects>
                 <viewController id="Hfu-Sl-xnB" customClass="VIprofileViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
@@ -488,7 +488,7 @@
                         <viewLayoutGuide key="safeArea" id="PoO-P6-Lq5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="الحساب" id="PCR-pI-7a3">
+                    <navigationItem key="navigationItem" id="PCR-pI-7a3">
                         <barButtonItem key="leftBarButtonItem" image="Logout" id="lCn-SO-QYx"/>
                     </navigationItem>
                     <connections>
@@ -617,13 +617,6 @@
                                     <action selector="startNavigation:" destination="n7o-pT-5yB" eventType="touchUpInside" id="T4a-ik-cZT"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jF2-Jv-dOw">
-                                <rect key="frame" x="79" y="225" width="271" height="241"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.1889090836" green="0.25569909810000002" blue="0.54120320079999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1XM-eb-FRm">
                                 <rect key="frame" x="54" y="554" width="137" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -636,6 +629,20 @@
                                     <action selector="finishTapped:" destination="Av7-H1-HhM" eventType="touchUpInside" id="XWa-Fd-bQb"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jF2-Jv-dOw">
+                                <rect key="frame" x="37" y="302" width="340" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIF-ac-40L">
+                                <rect key="frame" x="23" y="192" width="368" height="283"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0n4-39-vEE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -643,6 +650,7 @@
                     <navigationItem key="navigationItem" id="Dyz-rm-fPc"/>
                     <connections>
                         <outlet property="directionLabel" destination="jF2-Jv-dOw" id="5zb-xg-Iph"/>
+                        <outlet property="farmeLabel" destination="mIF-ac-40L" id="QbJ-PR-O5W"/>
                         <outlet property="navBar" destination="CN1-BW-Aep" id="lSv-5Q-C5H"/>
                     </connections>
                 </viewController>

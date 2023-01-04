@@ -15,7 +15,7 @@ import Firebase
 
 class NavigationViewController: UIViewController ,UINavigationBarDelegate{
     @IBOutlet weak var directionLabel: UILabel!
-    
+    @IBOutlet weak var farmeLabel: UILabel!
     @IBOutlet weak var navBar: UINavigationBar!
     var destination = ""
     var destinationTag = ""
@@ -127,6 +127,8 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.delegate = self
+        farmeLabel.layer.borderWidth = 4
+        farmeLabel.layer.borderColor =  UIColor(red: 43/255.0, green: 66/255.0, blue: 143/255.0, alpha: 255.0/255.0).cgColor
         checkDestination()
         locationManagerDidChangeAuthorization(manager)
         getCGEmails()
