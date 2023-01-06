@@ -13,7 +13,7 @@ import AVFoundation
 import CoreLocation
 import Firebase
 
-class NavigationViewController: UIViewController ,UINavigationBarDelegate{
+class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLocationManagerDelegate{
     @IBOutlet weak var directionLabel: UILabel!
     @IBOutlet weak var farmeLabel: UILabel!
     @IBOutlet weak var navBar: UINavigationBar!
@@ -22,6 +22,9 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate{
     var VIPhoneNum = ""
     var VIName = ""
     var VIProfilePhoto = ""
+    var inddorLocation = ""
+    var lat:Double!
+    var long:Double!
     @Published var CGUsers = [User]()
     var CGEmailList = [String] ()
     // Provides to create an instance of the CMMotionActivityManager.
@@ -115,7 +118,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate{
        
        
         for CGUser in CGUsers {
-            Firestore.firestore().collection("helpRequests").document((Auth.auth().currentUser?.email)!+"-"+CGUser.email).setData(["CGName" : CGUser.name,"CGEmail":CGUser.email,"CGPhoneNum":CGUser.phoneNum,"VIEmail":(Auth.auth().currentUser?.email)!,"VIName":VIName,"VIPhoneNum":VIPhoneNum,"status":"new","VIProfilePhoto":VIProfilePhoto])
+            Firestore.firestore().collection("helpRequests").document((Auth.auth().currentUser?.email)!+"-"+CGUser.email).setData(["CGName" : CGUser.name,"CGEmail":CGUser.email,"CGPhoneNum":CGUser.phoneNum,"VIEmail":(Auth.auth().currentUser?.email)!,"VIName":VIName,"VIPhoneNum":VIPhoneNum,"status":"new","VIProfilePhoto":VIProfilePhoto,"inddorLocation":inddorLocation,"lat":lat,"long":long])
             sender.sendPushNotification(to:CGUser.fcmToken!, title: "طلب مساعدة جديد ", body: "قام احد جهات الاتصال بارسال طلب مساعدة ")
         }
         //alert
@@ -126,11 +129,19 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestAlwaysAuthorization()
+
+        if CLLocationManager.locationServicesEnabled(){
+            manager.startUpdatingLocation()
+        }
+
         navBar.delegate = self
         farmeLabel.layer.borderWidth = 4
         farmeLabel.layer.borderColor =  UIColor(red: 43/255.0, green: 66/255.0, blue: 143/255.0, alpha: 255.0/255.0).cgColor
         checkDestination()
-        locationManagerDidChangeAuthorization(manager)
+      //  locationManagerDidChangeAuthorization(manager)
         getCGEmails()
        
         let cloudCredentials = CloudCredentials(appID: "dollani-bi1",
@@ -144,6 +155,9 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate{
         navigateToDestination()
      
       //  movementDetected ()
+        
+     
+           
        
     }
     func navigateToDestination(){
@@ -164,7 +178,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate{
            
             
             else{
-               // let placeName = context.attachments["place-name"] as? String ?? ""
+                self.inddorLocation = context.attachments["place-name"] as? String ?? ""
            
                     self.directionLabel.text = "امشي الى الامام ٨ متر"
                 
@@ -186,7 +200,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate{
            
             
             else{
-                //let placeName = context.attachments["place-name"] as? String ?? ""
+                self.inddorLocation = context.attachments["place-name"] as? String ?? ""
                 
                     self.directionLabel.text = "امشي الى الامام ٨ متر"
                 
@@ -224,6 +238,19 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate{
         }
         
     }
+    //MARK: - location delegate methods
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation :CLLocation = locations[0] as CLLocation
+      //Get the latitude and the longitude
+      lat =   userLocation.coordinate.latitude
+      long = userLocation.coordinate.longitude
+
+       
+            }
+ 
+
+    
+    
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         switch manager.authorizationStatus {
         case .authorizedWhenInUse:  // Location services are available.
@@ -242,6 +269,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate{
             break
         }
     }
+    //MARK: - Navigation bar delegate
     func position(for bar: UIBarPositioning) -> UIBarPosition {
      return .topAttached
     }
