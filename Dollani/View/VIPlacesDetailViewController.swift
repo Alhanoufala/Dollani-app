@@ -102,5 +102,9 @@ class VIPlacesDetailViewController: UIViewController,UINavigationBarDelegate {
     
     @IBAction func startNavigation(_ sender: Any) {
     }
+    //MARK: - Navigation bar delegate
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+     return .topAttached
+    }
     
 }
