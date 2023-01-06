@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
 
 class EditCGprofileViewController: UIViewController, UITextFieldDelegate,UINavigationBarDelegate {
     //Text fields
@@ -22,8 +23,17 @@ class EditCGprofileViewController: UIViewController, UITextFieldDelegate,UINavig
 
     @IBOutlet weak var navBar: UINavigationBar!
     
+    //avatar
+    @IBOutlet weak var avatar: UIImageView!
+    var image: UIImage? = nil
+    @IBOutlet weak var profilePic: UIImageView!
     
     override func viewDidLoad() {
+
+        profilePic?.layer.cornerRadius = (profilePic?.frame.size.width ?? 0.0) / 2
+                profilePic?.clipsToBounds = true
+                profilePic?.layer.borderWidth = 3.0
+                profilePic?.layer.borderColor = UIColor.white.cgColor
         super.viewDidLoad()
         name.delegate = self
         phoneNum.delegate = self
@@ -33,6 +43,7 @@ class EditCGprofileViewController: UIViewController, UITextFieldDelegate,UINavig
         saveButton.isEnabled = false
         
         retriveUserInfo()
+        setupAvatar()
     }
     func checkForValidForm()
         {
@@ -64,7 +75,20 @@ class EditCGprofileViewController: UIViewController, UITextFieldDelegate,UINavig
                         
                         //Set textView
                         self.name.text = userName
-                        self.phoneNum.text = userPhoneNum                           }
+                        self.phoneNum.text = userPhoneNum
+                        
+                        let profilePicUrl = snapshot?.documents.first?.get("profilePhoto") as! String
+                                                       //set profile pic
+                                                       let storageRef = Storage.storage().reference(forURL: profilePicUrl)
+                                                       storageRef.downloadURL(completion: { (url, error) in
+                                                           
+                                                           let data = NSData(contentsOf: url!)
+                                                           let image = UIImage(data: (data! as NSData) as Data)
+                                                           
+                                                           
+                                                           self.profilePic?.image = image
+                                                       })
+                    }
                 }
             }
             
@@ -142,6 +166,16 @@ class EditCGprofileViewController: UIViewController, UITextFieldDelegate,UINavig
         
         
         @IBAction func saveTapped(_ sender: Any) {
+            //set image
+            guard let imageSelected = self.image else{
+                print("Avatar is nil")
+                return
+            }
+            
+            guard let imageData = imageSelected.jpegData(compressionQuality: 0.4) else{
+                return
+            }
+
             //get data
             guard let Name = name.text else {return}
             guard let Phone = phoneNum.text else {return}
@@ -150,7 +184,52 @@ class EditCGprofileViewController: UIViewController, UITextFieldDelegate,UINavig
             if let user = user {
                 
                 let currentEmail = user.email
-                Firestore.firestore().collection("users").document(currentEmail!).updateData(["name":Name, "phoneNum":Phone]) }
+                /*
+                Firestore.firestore().collection("users").whereField("email",isEqualTo:currentEmail!).getDocuments { snapshot, error in
+                    if  error != nil {
+                               // ERROR
+                           }
+                           else {
+                               if(snapshot?.count != 0){
+                                   
+                                   
+                                   let oldName = snapshot?.documents.first?.get("name") as! String
+                                   let oldPhoneNum = snapshot?.documents.first?.get("phoneNum") as! String
+                                   
+                                                                  //update help request
+                                   Firestore.firestore().collection("helpRequests").whereField("VIPhoneNum",isEqualTo:oldPhoneNum).updateData(["VIName":Name, "VIPhoneNum":Phone])
+                                   
+                                   Firestore.firestore().collection("helpRequests").whereField("CGPhoneNum",isEqualTo:oldPhoneNum).updateData(["CGName":Name, "CGPhoneNum":Phone])
+                                   
+                               }
+                           }
+                       }
+                 */
+                
+                
+                //set image
+                let storageRef = Storage.storage().reference(forURL: "gs://dollani-app.appspot.com")
+                let storageProfileRef = storageRef.child("profile").child(user.uid)
+                
+                let metadata = StorageMetadata()
+                metadata.contentType = "image/jpg"
+                storageProfileRef.putData(imageData,metadata: metadata)
+                { (StorageMetadata, error) in
+                    if error != nil{
+                        print(error?.localizedDescription)
+                        return
+                    }
+                    
+                    storageProfileRef.downloadURL(completion: {(url, error) in
+                        if let metaImageUrl = url?.absoluteString{
+                            
+                            //update user collection
+                            Firestore.firestore().collection("users").document(currentEmail!).updateData(["name":Name, "phoneNum":Phone, "profilePhoto": metaImageUrl ])
+                        }
+                    })
+                }
+                
+            }
             //alert
             let alert = UIAlertController(title: nil, message:"تم حفظ التغييرات بنجاج", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title:  "حسنًا", style: .default, handler:nil))
@@ -184,5 +263,45 @@ class EditCGprofileViewController: UIViewController, UITextFieldDelegate,UINavig
         func position(for bar: UIBarPositioning) -> UIBarPosition {
          return .topAttached
         }
+    //Avatar
+    func setupAvatar(){
+        avatar.layer.cornerRadius=40
+        avatar.clipsToBounds = true
+        avatar.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(presentPicker))
+        avatar.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func presentPicker(){
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = true
+        picker.delegate = self
+        self.present(picker , animated: true, completion: nil)
+    }
+    
+    //dismiss keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
   // Do any additional setup after loading the view.
     }
+
+
+
+extension EditCGprofileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]){
+        if let imageSelected = info[UIImagePickerController.InfoKey.editedImage] as? UIImage{
+            image = imageSelected
+            avatar.image = imageSelected
+        }
+        if let imageOriginal = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            image = imageOriginal
+            avatar.image = imageOriginal
+        }
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+}

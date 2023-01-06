@@ -26,8 +26,14 @@ class EditVIprofileViewController: UIViewController, UITextFieldDelegate,UINavig
     //avatar
     @IBOutlet weak var avatar: UIImageView!
     var image: UIImage? = nil
+    @IBOutlet weak var profilePic: UIImageView!
    
     override func viewDidLoad() {
+        
+        profilePic?.layer.cornerRadius = (profilePic?.frame.size.width ?? 0.0) / 2
+                profilePic?.clipsToBounds = true
+                profilePic?.layer.borderWidth = 3.0
+                profilePic?.layer.borderColor = UIColor.white.cgColor
         super.viewDidLoad()
         name.delegate = self
         phoneNum.delegate = self
@@ -71,6 +77,17 @@ class EditVIprofileViewController: UIViewController, UITextFieldDelegate,UINavig
                                self.name.text = userName
                                self.phoneNum.text = userPhoneNum
                                 
+                               let profilePicUrl = snapshot?.documents.first?.get("profilePhoto") as! String
+                                                              //set profile pic
+                                                              let storageRef = Storage.storage().reference(forURL: profilePicUrl)
+                                                              storageRef.downloadURL(completion: { (url, error) in
+                                                                  
+                                                                  let data = NSData(contentsOf: url!)
+                                                                  let image = UIImage(data: (data! as NSData) as Data)
+                                                                  
+                                                                  
+                                                                  self.profilePic?.image = image
+                                                              })
                            }
                        }
                    }
