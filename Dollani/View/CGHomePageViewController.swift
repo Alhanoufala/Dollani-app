@@ -25,11 +25,6 @@ class CGHomePageViewController: UIViewController {
         present(vc, animated: true)
     }
     
-    @IBAction func mapTapped(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "map")
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
-    }
+    
     
 }

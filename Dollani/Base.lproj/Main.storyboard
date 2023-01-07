@@ -627,7 +627,7 @@
                                 <items>
                                     <navigationItem title="التنقل" id="bRg-4r-74I">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="4zM-BY-zp1">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="bcY-S6-R9g">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="bcY-S6-R9g">
                                                 <rect key="frame" x="294" y="5" width="100" height="34.5"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
@@ -719,7 +719,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9G1-Xu-JgC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4764" y="2693"/>
+            <point key="canvasLocation" x="4749" y="2847"/>
         </scene>
         <!--Places Detail View Controller-->
         <scene sceneID="44u-MP-6xe">
@@ -1207,7 +1207,7 @@
         <!--الإشعارات-->
         <scene sceneID="NKd-Tw-cyW">
             <objects>
-                <viewController id="2BZ-8v-oCW" customClass="CGHelpRequestsViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CGHelpRequests" id="2BZ-8v-oCW" customClass="CGHelpRequestsViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sos-lP-Buq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1225,21 +1225,31 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4qy-Nj-rD0">
-                                                    <rect key="frame" x="344" y="11" width="50" height="50"/>
+                                                    <rect key="frame" x="352" y="11" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sX9-AR-Uia">
-                                                    <rect key="frame" x="68" y="23" width="254" height="34"/>
+                                                    <rect key="frame" x="88" y="23" width="254" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pgo-AB-OEh">
-                                                    <rect key="frame" x="20" y="23" width="34" height="34"/>
+                                                    <rect key="frame" x="14" y="23" width="34" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="filled" image="video.circle.fill" catalog="system" cornerStyle="capsule"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8P-0E-xke">
+                                                    <rect key="frame" x="52" y="22" width="34" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" red="0.76894732603092786" green="0.24104290678213969" blue="0.22202687430121268" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="mappin.and.ellipse" catalog="system"/>
+                                                    <connections>
+                                                        <segue destination="fld-eb-bCX" kind="show" id="I3R-gi-q4c"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -1757,7 +1767,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rxe-e7-Jen" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3850.7246376811595" y="2692.6339285714284"/>
+            <point key="canvasLocation" x="3820" y="2847"/>
         </scene>
         <!--EditC Gprofile View Controller-->
         <scene sceneID="6sj-qM-jCW">
@@ -1876,38 +1886,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xks-tB-0ah" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5405.7971014492759" y="2175"/>
+            <point key="canvasLocation" x="4496" y="2184"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="TMi-3Z-Mh0">
             <objects>
                 <viewController storyboardIdentifier="map" id="fld-eb-bCX" customClass="MapViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vdV-G3-f6U">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pb1-GX-e8p">
                                 <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="الخريطة" id="MTI-Hq-Nun">
-                                        <barButtonItem key="rightBarButtonItem" image="arrow.forward" catalog="system" id="Ug7-1X-OUf">
-                                            <connections>
-                                                <action selector="BackButton:" destination="AG8-QF-Ukd" id="kPL-yk-CbP"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
+                                    <navigationItem title="الخريطة" id="MTI-Hq-Nun"/>
                                 </items>
                             </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="arv-Sm-kCm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Qr1-Df-7uw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5l-HK-T0M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="AG8-QF-Ukd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6192" y="2184"/>
+            <point key="canvasLocation" x="5361" y="2184"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KO5-wX-zQX">
@@ -1929,7 +1933,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vcl-gf-VeR"/>
+        <segue reference="PNb-Y1-Utf"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.1889090836" green="0.25569909810000002" blue="0.54120320079999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
@@ -1946,6 +1950,7 @@
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="id" width="1080" height="1920"/>
         <image name="map" catalog="system" width="128" height="112"/>
+        <image name="mappin.and.ellipse" catalog="system" width="117" height="128"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <image name="person.crop.circle.badge.plus" catalog="system" width="128" height="114"/>
