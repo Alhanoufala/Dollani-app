@@ -12,6 +12,7 @@ import FirebaseStorage
 class CGHelpRequestsViewController: UIViewController {
     var deleteRequestIndexPath: IndexPath? = nil
     @IBOutlet weak var tableView: UITableView!
+    var Index: IndexPath? = nil
     @Published var HelpRequests = [HelpRequest]()
     override func viewWillAppear(_ animated: Bool) {
         fetchData()
@@ -20,7 +21,7 @@ class CGHelpRequestsViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-       
+        
         
         // Do any additional setup after loading the view.
     }
@@ -46,9 +47,15 @@ class CGHelpRequestsViewController: UIViewController {
                 let VIName = data["VIName"] as? String ?? ""
                 let status = data["status"] as? String ?? ""
                 let profilePhoto = data["VIProfilePhoto"] as? String ?? ""
+                let lat = data["lat"] as? Double ?? 0
+                let lng = data["long"] as? Double ?? 0
+                let inddorLocation = data["inddorLocation"] as? String ?? ""
+
+
+
                 
                 
-                return HelpRequest(CGEmail: CGEmail, CGName: CGName,CGPhoneNum: CGPhoneNum,VIEmail:VIEmail,VIName:VIName,VIPhoneNum:VIPhoneNum,VIProfilePhoto:profilePhoto,status:status)
+                return HelpRequest(CGEmail: CGEmail, CGName: CGName,CGPhoneNum: CGPhoneNum,VIEmail:VIEmail,VIName:VIName,VIPhoneNum:VIPhoneNum,VIProfilePhoto:profilePhoto,status:status,lat:lat,lng:lng,inddorLocation:inddorLocation)
             }
             self.tableView.reloadData()
         }
@@ -69,7 +76,11 @@ class CGHelpRequestsViewController: UIViewController {
             
         }
     
-
+// Layan
+//    @IBAction func toMap(_ sender: Any) {
+//        performSegue(withIdentifier: "goToMap", sender: self)
+//
+//    }
     /*
     // MARK: - Navigation
 
@@ -173,5 +184,19 @@ extension CGHelpRequestsViewController : UITableViewDataSource{
         cell.helpRequestLabel?.text = "قام " + HelpRequests[indexPath.row].VIName + " بارسال طلب مساعدة"
         return cell
     }
+    
+    //Layan
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let destination = segue.destination as? mapViewController{
+//            destination.VIname = HelpRequests[Index!.row].VIName
+//            destination.VICurrentLocation = HelpRequests[Index!.row].inddorLocation
+//            destination.lat = HelpRequests[Index!.row].lat
+//            destination.lng = HelpRequests[Index!.row].lng
+//
+//
+//        }
+//    }
+    
+    
 }
 

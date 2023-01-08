@@ -17,6 +17,12 @@ struct HelpRequest:Identifiable{
     var VIPhoneNum:String
     var VIProfilePhoto:String?
     var status:String
+    var lat:Double
+    var lng:Double
+    var inddorLocation:String
+
+
+
     
 }
 
