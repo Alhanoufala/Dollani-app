@@ -23,6 +23,8 @@
 		57BA58292957148000EABF66 /* HelpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA58282957148000EABF66 /* HelpRequest.swift */; };
 		57BA582B2957229A00EABF66 /* HelpRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA582A2957229A00EABF66 /* HelpRequestTableViewCell.swift */; };
 		57BA582D29572C8400EABF66 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA582C29572C8400EABF66 /* ContactTableViewCell.swift */; };
+		57C8EBAF296C752E00A89EA9 /* PathMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C8EBAE296C752E00A89EA9 /* PathMapper.swift */; };
+		57C8EBB1296C79E900A89EA9 /* PathMapperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C8EBB0296C79E900A89EA9 /* PathMapperViewController.swift */; };
 		57C9B20E29546F80000A60D7 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C9B20D29546F7F000A60D7 /* ContactViewController.swift */; };
 		57C9B2102954806F000A60D7 /* CGHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C9B20F2954806E000A60D7 /* CGHomePageViewController.swift */; };
 		57C9B21329548F5B000A60D7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C9B21229548F5B000A60D7 /* User.swift */; };
@@ -106,6 +108,8 @@
 		57BA58282957148000EABF66 /* HelpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpRequest.swift; sourceTree = "<group>"; };
 		57BA582A2957229A00EABF66 /* HelpRequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpRequestTableViewCell.swift; sourceTree = "<group>"; };
 		57BA582C29572C8400EABF66 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		57C8EBAE296C752E00A89EA9 /* PathMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathMapper.swift; sourceTree = "<group>"; };
+		57C8EBB0296C79E900A89EA9 /* PathMapperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathMapperViewController.swift; sourceTree = "<group>"; };
 		57C9B20D29546F7F000A60D7 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		57C9B20F2954806E000A60D7 /* CGHomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGHomePageViewController.swift; sourceTree = "<group>"; };
 		57C9B21229548F5B000A60D7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -182,6 +186,16 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
+		57C8EBAD296C74DE00A89EA9 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				57A29C5A2959F5D500BC87C7 /* NavigationViewController.swift */,
+				57C8EBAE296C752E00A89EA9 /* PathMapper.swift */,
+				57C8EBB0296C79E900A89EA9 /* PathMapperViewController.swift */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
 		57C9B21129548F31000A60D7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +236,7 @@
 				57D7AE212943D83B00EAEAB5 /* AppDelegate.swift */,
 				57D7AE232943D83B00EAEAB5 /* SceneDelegate.swift */,
 				572BE1E0295B88B40034D52F /* Notification */,
+				57C8EBAD296C74DE00A89EA9 /* Navigator */,
 				57C9B21129548F31000A60D7 /* Model */,
 				57D7AE512943DABC00EAEAB5 /* View */,
 				57D7AE272943D83B00EAEAB5 /* Main.storyboard */,
@@ -275,7 +290,6 @@
 				8B6644EF2957BEBB00A8D6BB /* CategoryPlacesViewController.swift */,
 				0132FD9629587FDE0069C7D9 /* placeDetailsViewController.swift */,
 				560D5D792959747A000F39FF /* EditCGprofileViewController.swift */,
-				57A29C5A2959F5D500BC87C7 /* NavigationViewController.swift */,
 				8BD582F7295E63600049BD52 /* VIPlacesDetailViewController.swift */,
 				8BE8F598296AA2400000FDF5 /* mapViewController.swift */,
 			);
@@ -494,9 +508,11 @@
 				57C9B20E29546F80000A60D7 /* ContactViewController.swift in Sources */,
 				574E709229565FC30064C5FB /* CGHelpRequestsViewController.swift in Sources */,
 				572BE1E4295B8D930034D52F /* PushNotificationSender.swift in Sources */,
+				57C8EBAF296C752E00A89EA9 /* PathMapper.swift in Sources */,
 				560D5D7A2959747A000F39FF /* EditCGprofileViewController.swift in Sources */,
 				57D7AE262943D83B00EAEAB5 /* LoginViewController.swift in Sources */,
 				57D7AE222943D83B00EAEAB5 /* AppDelegate.swift in Sources */,
+				57C8EBB1296C79E900A89EA9 /* PathMapperViewController.swift in Sources */,
 				8B6ECE8E295E0E5D0082B1D1 /* placesViewController.swift in Sources */,
 				8BF2D750294BCDE500DEAB42 /* VIcontainerViewController.swift in Sources */,
 				57E8D236294A2B6800B26DDC /* VIHomePageViewController.swift in Sources */,

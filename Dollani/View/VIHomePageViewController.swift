@@ -38,6 +38,12 @@ class VIHomePageViewController: UIViewController , NFCNDEFReaderSessionDelegate 
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }
+    @IBAction func mapTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "PathMapperViewController")
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
     
     var nfcSession: NFCNDEFReaderSession?
     var word = "none"
