@@ -8,10 +8,10 @@
 import UIKit
 
 class VIcontainerViewController: UITabBarController {
-
+var index = 1
     override func viewDidLoad() {
         super.viewDidLoad()
-        selectedIndex = 1
+        selectedIndex = index
     
         // Do any additional setup after loading the view.
     }

@@ -96,6 +96,11 @@ class EditCGprofileViewController: UIViewController, UITextFieldDelegate,UINavig
             // ...
         }
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let container = segue.destination as? CGcontainerViewController{
+            container.index = 0
+        }
+    }
                
        
         @IBAction func nameField(_ sender: Any) {
@@ -266,8 +271,7 @@ class EditCGprofileViewController: UIViewController, UITextFieldDelegate,UINavig
         }
     //Avatar
     func setupAvatar(){
-        avatar.layer.cornerRadius=40
-        avatar.clipsToBounds = true
+        
         avatar.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(presentPicker))
         avatar.addGestureRecognizer(tapGesture)

@@ -26,14 +26,14 @@ class EditVIprofileViewController: UIViewController, UITextFieldDelegate,UINavig
     //avatar
     @IBOutlet weak var avatar: UIImageView!
     var image: UIImage? = nil
-    @IBOutlet weak var profilePic: UIImageView!
+   
    
     override func viewDidLoad() {
         
-        profilePic?.layer.cornerRadius = (profilePic?.frame.size.width ?? 0.0) / 2
-                profilePic?.clipsToBounds = true
-                profilePic?.layer.borderWidth = 3.0
-                profilePic?.layer.borderColor = UIColor.white.cgColor
+        avatar?.layer.cornerRadius = (avatar?.frame.size.width ?? 0.0) / 2
+        avatar?.clipsToBounds = true
+        avatar?.layer.borderWidth = 3.0
+        avatar?.layer.borderColor = UIColor.white.cgColor
         super.viewDidLoad()
         name.delegate = self
         phoneNum.delegate = self
@@ -88,7 +88,7 @@ class EditVIprofileViewController: UIViewController, UITextFieldDelegate,UINavig
                                                                   let image = UIImage(data: (data! as NSData) as Data)
                                                                   
                                                                   
-                                                                  self.profilePic?.image = image
+                                                                  self.avatar?.image = image
                                                               })
                            }
                        }
@@ -100,7 +100,11 @@ class EditVIprofileViewController: UIViewController, UITextFieldDelegate,UINavig
        
     }
     
-   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let container = segue.destination as? VIcontainerViewController{
+            container.index = 0
+        }
+    }
 
     
     @IBAction func nameField(_ sender: Any) {
@@ -262,20 +266,14 @@ class EditVIprofileViewController: UIViewController, UITextFieldDelegate,UINavig
     }
     
     
-    @IBAction func backButton(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "VIcontainer")
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
-    }
+    
     func position(for bar: UIBarPositioning) -> UIBarPosition {
      return .topAttached
     }
     
     //Avatar
     func setupAvatar(){
-        avatar.layer.cornerRadius=40
-        avatar.clipsToBounds = true
+       
         avatar.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(presentPicker))
         avatar.addGestureRecognizer(tapGesture)

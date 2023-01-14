@@ -8,10 +8,10 @@
 import UIKit
 
 class CGcontainerViewController: UITabBarController {
-
+var index = 2
     override func viewDidLoad() {
         super.viewDidLoad()
-       selectedIndex = 2
+       selectedIndex = index
         // Do any additional setup after loading the view.
     }
     

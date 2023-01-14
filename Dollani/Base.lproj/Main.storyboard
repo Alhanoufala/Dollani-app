@@ -438,7 +438,7 @@
             <objects>
                 <viewController id="Hfu-Sl-xnB" customClass="VIprofileViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jgu-II-h4G" customClass="VIprofileController">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="XrI-HL-tvi">
@@ -475,15 +475,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJ4-zu-Md6">
-                                <rect key="frame" x="153" y="549" width="142" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="تعديل البيانات"/>
-                                <connections>
-                                    <action selector="editTapped:" destination="Hfu-Sl-xnB" eventType="touchUpInside" id="BEU-J5-JXy"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="البريد الالكتروني :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2a4-nc-bbI">
                                 <rect key="frame" x="272" y="425" width="113" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -503,6 +494,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJ4-zu-Md6">
+                                <rect key="frame" x="136" y="546" width="142" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="تعديل البيانات"/>
+                                <connections>
+                                    <action selector="editTapped:" destination="Hfu-Sl-xnB" eventType="touchUpInside" id="BEU-J5-JXy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PoO-P6-Lq5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -526,14 +526,14 @@
             <objects>
                 <viewController id="2mQ-sa-5fA" customClass="VIHomePageViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vLc-Et-EZk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmN-ZT-FTm">
                                 <rect key="frame" x="72" y="389" width="270" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="الاماكن">
+                                <buttonConfiguration key="configuration" style="filled" title="الأماكن">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" red="0.1889090836" green="0.25569909810000002" blue="0.54120320079999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
@@ -542,7 +542,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wbe-ce-LwY">
-                                <rect key="frame" x="72" y="559" width="270" height="60"/>
+                                <rect key="frame" x="72" y="545" width="270" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="طلب مساعدة">
@@ -559,7 +559,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgt-5q-asi">
-                                <rect key="frame" x="72" y="478" width="270" height="61"/>
+                                <rect key="frame" x="72" y="466" width="270" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="المفضلة">
@@ -572,10 +572,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4M-u3-v2F">
-                                <rect key="frame" x="72" y="635" width="270" height="60"/>
+                                <rect key="frame" x="72" y="626" width="270" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="scan nfc ">
+                                <buttonConfiguration key="configuration" style="filled" title="قارئ الأماكن">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" red="0.1889090836" green="0.25569909810000002" blue="0.54120320079999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
@@ -754,20 +754,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cIu-BI-der">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cIu-BI-der">
                                 <rect key="frame" x="0.0" y="92" width="414" height="770"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="placeCell" id="2Bj-tG-cs9">
-                                        <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="50" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Bj-tG-cs9" id="ZVi-3X-dTY">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.left" catalog="system" id="x1W-TV-PH8">
-                                                    <rect key="frame" x="12" y="5.5" width="30" height="30"/>
+                                                    <rect key="frame" x="12" y="16.5" width="30" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -991,7 +991,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system" title=""/>
                                                 <connections>
-                                                    <action selector="backButton:" destination="My2-g9-063" eventType="touchUpInside" id="vna-k1-WOa"/>
+                                                    <segue destination="HEC-Yj-28L" kind="presentation" modalPresentationStyle="fullScreen" id="PDa-nR-dOC"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
@@ -1013,7 +1013,6 @@
                         <outlet property="navBar" destination="ihr-yF-ENK" id="Agf-FJ-h5Q"/>
                         <outlet property="phoneNum" destination="vdx-MO-7zW" id="ne2-i3-eqI"/>
                         <outlet property="phoneNumError" destination="d02-11-U2n" id="Q02-Mj-EWA"/>
-                        <outlet property="profilePic" destination="3AG-F7-gq6" id="tIu-Qk-bum"/>
                         <outlet property="saveButton" destination="C7q-yK-owo" id="zoH-9h-POG"/>
                     </connections>
                 </viewController>
@@ -1116,7 +1115,7 @@
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AVo-zg-gV8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.19262874129999999" green="0.25584411620000003" blue="0.53728133440000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1139,7 +1138,7 @@
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="dXP-9c-4fn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VGz-dH-LdO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.19262874129999999" green="0.25584411620000003" blue="0.53728133440000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1183,7 +1182,7 @@
                 <navigationController id="KEC-Kz-lL8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="الإشعارات" image="bell" catalog="system" id="LAK-Zs-qUu"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hrR-xP-g4w">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -1199,7 +1198,7 @@
             <objects>
                 <viewController storyboardIdentifier="CGHelpRequests" id="2BZ-8v-oCW" customClass="CGHelpRequestsViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sos-lP-Buq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vmH-51-TP1">
@@ -1268,7 +1267,7 @@
             <objects>
                 <viewController storyboardIdentifier="CGHomePage" id="JPr-Jm-jP6" customClass="CGHomePageViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rD7-c4-Rha">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="backgroundCG" translatesAutoresizingMaskIntoConstraints="NO" id="SMg-tI-aID">
@@ -1496,7 +1495,7 @@
                 <navigationController id="AhJ-7g-6Mb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="الرئيسية" image="house.fill" catalog="system" id="ySj-H3-QG9"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wh4-dV-euh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -1514,7 +1513,7 @@
                     <tabBarItem key="tabBarItem" title="الحساب" image="person.circle.fill" catalog="system" id="T1n-O7-4Ct"/>
                     <navigationItem key="navigationItem" id="E2j-Pg-VyG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EhN-O9-vbt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -1525,12 +1524,12 @@
             </objects>
             <point key="canvasLocation" x="4496" y="746"/>
         </scene>
-        <!--الحساب-->
+        <!--Gprofile View Controller-->
         <scene sceneID="lu0-hu-fam">
             <objects>
                 <viewController id="ZHc-2s-Jct" customClass="CGprofileViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N09-RT-rY1" customClass="VIprofileController">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="Gon-0t-scq">
@@ -1600,7 +1599,7 @@
                         <viewLayoutGuide key="safeArea" id="YQ4-Y3-veq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="الحساب" id="Pow-qN-lyR">
+                    <navigationItem key="navigationItem" id="Pow-qN-lyR">
                         <barButtonItem key="leftBarButtonItem" image="Logout" id="bj5-Bs-7Ia"/>
                     </navigationItem>
                     <connections>
@@ -1703,19 +1702,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bWV-O3-qIn">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bWV-O3-qIn">
                                 <rect key="frame" x="0.0" y="82" width="414" height="780"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="categoryCell" id="q3n-CO-I8a">
-                                        <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="50" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q3n-CO-I8a" id="GvZ-9k-YG9">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.left" catalog="system" id="oqn-iF-xui">
-                                                    <rect key="frame" x="13" y="5.5" width="30" height="30"/>
+                                                    <rect key="frame" x="20" y="16.5" width="30" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -1850,6 +1849,9 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system" title=""/>
+                                                <connections>
+                                                    <segue destination="ipR-CT-vpw" kind="modal" modalPresentationStyle="fullScreen" id="4vt-sc-ST1"/>
+                                                </connections>
                                             </button>
                                             <connections>
                                                 <action selector="backButton:" destination="37M-eN-tcg" id="ed7-Ob-Jia"/>
@@ -1886,11 +1888,11 @@
             <objects>
                 <viewController storyboardIdentifier="map" modalPresentationStyle="fullScreen" id="fld-eb-bCX" customClass="mapViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vdV-G3-f6U">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YME-Bz-ofy">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                         </subviews>
@@ -1932,8 +1934,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="4vt-sc-ST1"/>
         <segue reference="Hsk-Eh-1pk"/>
         <segue reference="iRj-2S-BBM"/>
+        <segue reference="PDa-nR-dOC"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.1889090836" green="0.25569909810000002" blue="0.54120320079999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
