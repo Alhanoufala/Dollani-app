@@ -23,6 +23,12 @@ class PathMapperViewController: UIViewController,UINavigationBarDelegate {
         container.addSubview(childView.view)
         // Do any additional setup after loading the view.
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any? ){
+            if let  places = segue.destination as? placesViewController{
+                places.category     = place.cat
+
+            }
+    }
     
     
     //MARK: - Navigation bar delegate

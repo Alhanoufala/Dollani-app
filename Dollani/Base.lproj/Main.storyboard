@@ -618,7 +618,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="arrow.forward" catalog="system"/>
                                                 <connections>
-                                                    <segue destination="KQc-5a-9YF" kind="presentation" identifier="" modalPresentationStyle="fullScreen" id="Hsk-Eh-1pk"/>
+                                                    <segue destination="KQc-5a-9YF" kind="presentation" identifier="backToList" modalPresentationStyle="fullScreen" id="Hsk-Eh-1pk"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
