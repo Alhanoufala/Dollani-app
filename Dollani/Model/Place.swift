@@ -8,9 +8,10 @@
 import Foundation
 struct Place:Identifiable{
     var id:String = UUID().uuidString
-
     var name:String
     var cat:String
+    var x:Int
+    var y:Int
    
 }
 

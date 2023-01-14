@@ -8,69 +8,69 @@
 import SwiftUI
 
 struct PathMapperContentView: View {
+    init(place:Place) {
+        self.selectedClassroom = Classroom(name: place.name, entrancePoint: CGPoint(x: place.x, y: place.y))
+        
+        if let route = self.shortestRouteTo(classroom: self.selectedClassroom) {
+            withAnimation {
+                self.resultDistance = route.distance
+                self.mapPathVertices = route.path
+                self.mapPathDrawnPercentage = 1
+            }
+        }
+    }
     // MARK: - Constants
 
-    let youAreHerePoint = CGPoint(x: 225, y: 350)
+    let youAreHerePoint =  CGPoint(x: 207, y: 415)
     
     /// ### 3B i. (Row 2) - list of hallways
     let hallways = [
         /// horizontal hallways
-        DirectionalHallway(start: CGPoint(x: 30, y: 50), end: CGPoint(x: 370, y: 50)),
-        DirectionalHallway(start: CGPoint(x: 370, y: 120), end: CGPoint(x: 225, y: 120)),
-        DirectionalHallway(start: CGPoint(x: 225, y: 120), end: CGPoint(x: 30, y: 120)),
-        DirectionalHallway(start: CGPoint(x: 30, y: 190), end: CGPoint(x: 225, y: 190)),
-        DirectionalHallway(start: CGPoint(x: 225, y: 190), end: CGPoint(x: 370, y: 190)),
-        DirectionalHallway(start: CGPoint(x: 370, y: 350), end: CGPoint(x: 225, y: 350)),
-        DirectionalHallway(start: CGPoint(x: 225, y: 350), end: CGPoint(x: 30, y: 350)),
-        
+       DirectionalHallway(start: CGPoint(x: 207, y: 240), end: CGPoint(x: 80, y: 240)),
+       DirectionalHallway(start: CGPoint(x: 80, y: 90), end: CGPoint(x: 200, y: 90)),
+     
+ 
         /// vertical hallways
-        DirectionalHallway(start: CGPoint(x: 30, y: 120), end: CGPoint(x: 30, y: 50)),
-        DirectionalHallway(start: CGPoint(x: 30, y: 190), end: CGPoint(x: 30, y: 120)),
-        DirectionalHallway(start: CGPoint(x: 30, y: 350), end: CGPoint(x: 30, y: 190)),
-        DirectionalHallway(start: CGPoint(x: 225, y: 190), end: CGPoint(x: 225, y: 120)),
-        DirectionalHallway(start: CGPoint(x: 225, y: 350), end: CGPoint(x: 225, y: 190)),
-        DirectionalHallway(start: CGPoint(x: 370, y: 50), end: CGPoint(x: 370, y: 120)),
-        DirectionalHallway(start: CGPoint(x: 370, y: 120), end: CGPoint(x: 370, y: 190)),
-        DirectionalHallway(start: CGPoint(x: 370, y: 190), end: CGPoint(x: 370, y: 350))
+        DirectionalHallway(start: CGPoint(x: 207, y: 415), end: CGPoint(x: 207, y: 240)),
+       DirectionalHallway(start: CGPoint(x: 80, y: 240), end: CGPoint(x: 80, y: 90)),
     ]
     
     /// list of classrooms
     let classrooms = [
-        Classroom(name: "PAC", entrancePoints: [CGPoint(x: 70, y: 190), CGPoint(x: 225, y: 240), CGPoint(x: 225, y: 300)]),
-        Classroom(name: "CAF", entrancePoints: [CGPoint(x: 225, y: 270), CGPoint(x: 270, y: 230)]),
-        Classroom(name: "101", entrancePoint: CGPoint(x: 90, y: 350)),
-        Classroom(name: "102", entrancePoint: CGPoint(x: 140, y: 350)),
-        Classroom(name: "103", entrancePoint: CGPoint(x: 190, y: 350)),
-        Classroom(name: "104", entrancePoint: CGPoint(x: 290, y: 350)),
-        Classroom(name: "105", entrancePoint: CGPoint(x: 340, y: 350)),
-        Classroom(name: "201", entrancePoint: CGPoint(x: 90, y: 190)),
-        Classroom(name: "202", entrancePoint: CGPoint(x: 140, y: 190)),
-        Classroom(name: "203", entrancePoint: CGPoint(x: 190, y: 190)),
-        Classroom(name: "204", entrancePoint: CGPoint(x: 290, y: 190)),
-        Classroom(name: "205", entrancePoint: CGPoint(x: 340, y: 190)),
-        Classroom(name: "301", entrancePoint: CGPoint(x: 90, y: 120)),
-        Classroom(name: "302", entrancePoint: CGPoint(x: 140, y: 120)),
-        Classroom(name: "303", entrancePoint: CGPoint(x: 190, y: 120)),
-        Classroom(name: "304", entrancePoint: CGPoint(x: 240, y: 120)),
-        Classroom(name: "305", entrancePoint: CGPoint(x: 290, y: 120)),
-        Classroom(name: "306", entrancePoint: CGPoint(x: 340, y: 120)),
-        Classroom(name: "401", entrancePoint: CGPoint(x: 90, y: 50)),
-        Classroom(name: "402", entrancePoint: CGPoint(x: 140, y: 50)),
-        Classroom(name: "403", entrancePoint: CGPoint(x: 190, y: 50)),
-        Classroom(name: "404", entrancePoint: CGPoint(x: 240, y: 50)),
-        Classroom(name: "405", entrancePoint: CGPoint(x: 290, y: 50)),
-        Classroom(name: "406", entrancePoint: CGPoint(x: 340, y: 50))
+       
+        
+        Classroom(name: "دورة مياة", entrancePoint: CGPoint(x: 207, y:400 )),
+        Classroom(name: "G2 قاعة", entrancePoint: CGPoint(x: 207, y: 375)),
+        Classroom(name: "G52 قاعة", entrancePoint: CGPoint(x: 207, y: 365)),
+        Classroom(name: "G1 قاعة", entrancePoint: CGPoint(x: 207, y: 340)),
+        Classroom(name: "G53 قاعة", entrancePoint: CGPoint(x: 207, y: 325)),
+        Classroom(name: "المصلى", entrancePoint: CGPoint(x: 207, y: 290)),
+        //---
+        Classroom(name: "G42 قاعة", entrancePoint: CGPoint(x: 80, y: 220)),
+        Classroom(name: "G38 قاعة", entrancePoint: CGPoint(x: 80, y: 205)),
+        Classroom(name: "G41 مدرج خديجة", entrancePoint: CGPoint(x: 80, y: 190)),
+        Classroom(name: "G40 قاعة", entrancePoint: CGPoint(x: 80, y: 160)),
+        Classroom(name: "G36 قاعة", entrancePoint: CGPoint(x: 80, y: 155)),
+        Classroom(name: "G37 قاعة", entrancePoint: CGPoint(x: 80, y: 125)),
+        Classroom(name: "G35 معمل", entrancePoint: CGPoint(x: 80, y: 90)),
+        
+        //---
+        Classroom(name: "G31 قاعة", entrancePoint: CGPoint(x: 105, y: 90)),
+        Classroom(name: "G30 قاعة", entrancePoint: CGPoint(x: 155, y: 90)),
+               
+
+       
     ]
     
     // MARK: - User Input Storage
 
-    @State var selectedClassroom = Classroom(name: "Tap here!", entrancePoints: [])
+    let selectedClassroom:Classroom
     
     // MARK: - Output Storage
 
-    @State var resultDistance = CGFloat(0)
-    @State var mapPathVertices = [Vertex]()
-    @State var mapPathDrawnPercentage = CGFloat(0)
+     var resultDistance = CGFloat(0)
+     var mapPathVertices = [Vertex]()
+     var mapPathDrawnPercentage = CGFloat(0)
     
     // MARK: - User Interface
 
@@ -80,7 +80,7 @@ struct PathMapperContentView: View {
             
         
             ZStack {
-                Image("Map-SVG").resizable() /// the map image (made by myself)
+                Image("Ground floor").resizable() /// the map image (made by myself)
                     
                 // MARK: - Visual Output, path drawn on top of map
 
@@ -96,35 +96,30 @@ struct PathMapperContentView: View {
                 .stroke(Color.blue, style: StrokeStyle(lineWidth: 6, lineCap: .round))
                 .shadow(color: Color.black.opacity(0.3), radius: 3)
             }
-            .frame(width: 400, height: 400)
-            .padding(.vertical, 20)
-            .background(Color(.secondarySystemBackground))
+            
             
             VStack {
                 HStack {
-                    Text("Select a classroom")
+                    Text("\(selectedClassroom.name)\n").lineLimit(2)
                     Spacer()
+Text("وجهتك المختارة:")
 
                     // MARK: - Text Input via dropdown
 
-                    Picker(selectedClassroom.name, selection: $selectedClassroom) {
-                        ForEach(classrooms, id: \.self) { classroom in
-                            Text(classroom.name)
-                        }
-                    }
-                    .pickerStyle(MenuPickerStyle())
+                  
                 }
-                .padding()
+                .padding(10)
                 .background(Color(.secondarySystemBackground))
                 .cornerRadius(16)
                 
                 // MARK: - Text Output, show the distance and approximate time needed
-
+                
                 if resultDistance != 0 {
                     HStack {
-                        Text("Result:").fontWeight(.bold)
+                        Text("\(numberToFeet(number: resultDistance)) قدم (~\(numberToMinutes(number: resultDistance)) دقيقة)")// Concatenate strings
+                    
                         Spacer()
-                        Text("\(numberToFeet(number: resultDistance)) feet (~\(numberToMinutes(number: resultDistance)) min)") /// Concatenate strings
+                        Text("المسافة:").fontWeight(.bold)
                     }
                     .padding()
                     .background(Color(.secondarySystemBackground))
@@ -132,22 +127,7 @@ struct PathMapperContentView: View {
                 }
                 
                 /// tap button to call main procedure
-                Button(action: {
-                    /// ### 3C ii. (Row 4) - call the procedure
-                    if let route = shortestRouteTo(classroom: selectedClassroom) {
-                        withAnimation {
-                            resultDistance = route.distance
-                            mapPathVertices = route.path
-                            mapPathDrawnPercentage = 1
-                        }
-                    }
-                }) {
-                    Text("Calculate")
-                        .foregroundColor(Color.white)
-                        .padding()
-                        .background(Color.green)
-                        .cornerRadius(16)
-                }
+              
             }
             .font(.system(size: 20, weight: .medium))
             .padding(.horizontal, 20)
@@ -155,13 +135,7 @@ struct PathMapperContentView: View {
             Spacer()
         }
         /// remove results if selected classroom changed
-        .onChange(of: selectedClassroom) { _ in
-            withAnimation {
-                resultDistance = 0
-                mapPathVertices.removeAll()
-                mapPathDrawnPercentage = 0
-            }
-        }
+        
     }
     
     // MARK: - Procedures
@@ -197,21 +171,7 @@ struct PathMapperContentView: View {
     
     /// ### 3C i. (Row 4) - main procedure, get shortest route (distance and path) to classroom
     func shortestRouteTo(classroom: Classroom) -> Route? {
-        /// **selection**
-        if classroom.name == "PAC" || classroom.name == "CAF" { /// classroom is either PAC or CAF
-            var currentShortestRoute = Route(distance: .infinity, path: [])
-            /// **iteration**
-            for entrancePoint in classroom.entrancePoints {
-                let vertices = getVerticesTo(destinationPoint: entrancePoint)
-                if
-                    let shortestRoute = ShortestRouteFromVertices(vertices: vertices, start: youAreHerePoint, end: entrancePoint),
-                    shortestRoute.distance < currentShortestRoute.distance
-                {
-                    currentShortestRoute = shortestRoute
-                }
-            }
-            return currentShortestRoute
-        } else if Int(classroom.name) != nil { /// classroom name is made of numbers (normal classroom)
+   if classroom != nil { /// classroom name is made of numbers (normal classroom)
             /// **sequencing**
             let vertices = getVerticesTo(destinationPoint: classroom.entrancePoint)
             if let shortestRoute = ShortestRouteFromVertices(vertices: vertices, start: youAreHerePoint, end: classroom.entrancePoint) {
@@ -339,11 +299,11 @@ struct DirectionalHallway {
 
 struct Classroom: Identifiable, Hashable {
     var name: String
-    var entrancePoints: [CGPoint] /// if PAC or CAF
     var entrancePoint: CGPoint /// normal classroom made of numbers (e.g. 403)
     
-    init(name: String, entrancePoints: [CGPoint]) { self.name = name; self.entrancePoints = entrancePoints; self.entrancePoint = .zero } /// no need for `entrancePoint`
-    init(name: String, entrancePoint: CGPoint) { self.name = name; self.entrancePoints = []; self.entrancePoint = entrancePoint } /// no need for `entrancePoints`
+   
+    
+    init(name: String, entrancePoint: CGPoint) { self.name = name;  self.entrancePoint = entrancePoint } 
     
     let id = UUID() /// boilerplate protocol requirements
     func hash(into hasher: inout Hasher) { hasher.combine(id) }

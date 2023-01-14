@@ -36,8 +36,8 @@ class placeDetailsViewController: UIViewController,UINavigationBarDelegate {
             }
             else{
                 categoryLabel.text = snapshot?.documents.first?.get("category") as! String
-                dis = snapshot?.documents.first?.get("distance") as! String
-                distance.text = "على بعد \(dis) متر"
+               // dis = snapshot?.documents.first?.get("distance") as! String
+               // distance.text = "على بعد \(dis) متر"
 
             }
         }

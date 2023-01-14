@@ -39,6 +39,8 @@ class EditVIprofileViewController: UIViewController, UITextFieldDelegate,UINavig
         phoneNum.delegate = self
         navBar.delegate = self
         
+        name.textAlignment = .right
+        phoneNum.textAlignment = .right
         
         saveButton.isEnabled = false
         

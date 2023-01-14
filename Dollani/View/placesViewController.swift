@@ -19,7 +19,7 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var db = Firestore.firestore()
     override func viewWillAppear(_ animated: Bool) {
         fetchData()
-       
+      
     }
 
     func fetchData() {
@@ -34,12 +34,15 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     let data = queryDocumentSnapshot.data()
                     let name = data["name"] as? String ?? ""
                     let cat = data["category"] as? String ?? ""
-                    
-                    
-                    return Place(name: name, cat: cat)
+                    let x = data["x"] as? Int ?? 0
+                    let y = data["y"] as? Int ?? 0
+            
+                    return Place(name: name, cat: cat,x:x,y:y)
+                
                 }
                 self.tableView.reloadData()
             }
+        tableView.reloadData()
         
        
         
@@ -49,9 +52,10 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
          tableView.delegate = self
          tableView.dataSource = self
          navBar.delegate = self
-
+         
+     }
         // Do any additional setup after loading the view.
-    }
+    
     func position(for bar: UIBarPositioning) -> UIBarPosition {
      return .topAttached
     }
@@ -59,6 +63,7 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return PlaceList.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      
         let cell = tableView.dequeueReusableCell(withIdentifier: "placeCell", for: indexPath)
         cell.textLabel?.textAlignment = .right
         cell.textLabel?.text = PlaceList[indexPath.row].name
@@ -86,8 +91,8 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
-        if let deatil = segue.destination as? VIPlacesDetailViewController {
-            deatil.place =  PlaceList[Index!.row].name
+        if let deatil = segue.destination as? PathMapperViewController {
+            deatil.place =  PlaceList[Index!.row]
             
             
         }

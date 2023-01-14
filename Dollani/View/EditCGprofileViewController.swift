@@ -38,7 +38,8 @@ class EditCGprofileViewController: UIViewController, UITextFieldDelegate,UINavig
         name.delegate = self
         phoneNum.delegate = self
         navBar.delegate = self
-        
+        name.textAlignment = .right
+        phoneNum.textAlignment = .right
         
         saveButton.isEnabled = false
         
