@@ -18,6 +18,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
     @IBOutlet weak var farmeLabel: UILabel!
     @IBOutlet weak var navBar: UINavigationBar!
     var path:[Vertex]!
+    var visited = [Bool]()
     var destination = ""
     var destinationTag = ""
     var VIPhoneNum = ""
@@ -26,6 +27,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
     var inddorLocation = ""
     var lat:Double!
     var long:Double!
+    var timer = Timer()
     @Published var CGUsers = [User]()
     var CGEmailList = [String] ()
     // Provides to create an instance of the CMMotionActivityManager.
@@ -43,6 +45,11 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
             destinationTag = "room25"}
         else if(destination == "G50 قاعة"){
             destinationTag = "room50"}
+    }
+    func setVisited(){
+        for i in stride(from: 0, to: path.count, by: 1) {
+            visited.append(false)
+        }
     }
     
     func getCGEmails() {
@@ -69,14 +76,41 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
             
         }
     }
+    @objc
     func getDirectionsFromPath(){
-        
+        var dis :Double
+     
         for i in stride(from: 0, to: path.count, by: 1) {
-          
-            print(path[i].point)
-            print(path[i].touchingHallways)
-            print(path[i].distance)
+          //same vertical hallway
+            if((path[i].point != path.last?.point )&&(path[i].point.x == path[i+1].point.x) &&  (visited[i] == false )){
+                dis =   DistanceFormula(from: path[i].point, to:path[i+1].point)
+                directionLabel.text?.append( "  استمر في المشي متر\(dis) الى الأمام")
+                directionLabel.text?.append("\n")
+               visited[i] = true
+            }
+                //same horizontal  hallway
+            else if((path[i].point != path.last?.point )&&(path[i].point.y == path[i+1].point.y) &&  (visited[i] == false )){
+                dis =   DistanceFormula(from: path[i].point, to:path[i+1].point)
+                directionLabel.text?.append( "  استمر في المشي متر\(dis) الى الأمام")
+                directionLabel.text?.append("\n")
+                visited[i] = true
+            }
+            else if(path[i].point == path.last?.point){
+                directionLabel.text?.append("لقد وصلت الى وجهتك")
+                //Stop the timer
+                timer.invalidate()
+               
+            }
+            
+            }
+    }
+        func DistanceFormula(from: CGPoint, to: CGPoint) -> CGFloat {
+            let squaredDistance = (from.x - to.x) * (from.x - to.x) + (from.y - to.y) * (from.y - to.y)
+            return sqrt(squaredDistance)
         }
+    func scheduledTimerWithTimeInterval(){
+        // Scheduling timer to Call the function "updateCounting" with the interval of 1 seconds
+        timer = Timer.scheduledTimer(timeInterval:4, target: self, selector: #selector(getDirectionsFromPath), userInfo: nil, repeats: true)
     }
     
     func fetchData() {
@@ -139,7 +173,8 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getDirectionsFromPath()
+        setVisited()
+        scheduledTimerWithTimeInterval()
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestAlwaysAuthorization()
