@@ -14,10 +14,12 @@ class PathMapperViewController: UIViewController,UINavigationBarDelegate {
     @IBOutlet weak var container: UIView!
     var place :Place!
     var favPlaceList  = [String] ()
+  var pethMapperObj :PathMapperContentView!
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.delegate = self
-    let childView = UIHostingController(rootView: PathMapperContentView(place: place))
+    pethMapperObj = PathMapperContentView(place: place)
+    let childView = UIHostingController(rootView: pethMapperObj)
         addChild(childView)
         childView.view.frame = container.bounds
         container.addSubview(childView.view)
@@ -26,8 +28,15 @@ class PathMapperViewController: UIViewController,UINavigationBarDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any? ){
             if let  places = segue.destination as? placesViewController{
                 places.category     = place.cat
-
+                
+                
             }
+        if let navigate = segue.destination as? NavigationViewController{
+            navigate.path     = pethMapperObj.mapPathVertices
+            
+            
+        }
+        
     }
     
     

@@ -17,6 +17,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
     @IBOutlet weak var directionLabel: UILabel!
     @IBOutlet weak var farmeLabel: UILabel!
     @IBOutlet weak var navBar: UINavigationBar!
+    var path:[Vertex]!
     var destination = ""
     var destinationTag = ""
     var VIPhoneNum = ""
@@ -66,6 +67,15 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
             }
             
             
+        }
+    }
+    func getDirectionsFromPath(){
+        
+        for i in stride(from: 0, to: path.count, by: 1) {
+          
+            print(path[i].point)
+            print(path[i].touchingHallways)
+            print(path[i].distance)
         }
     }
     
@@ -129,6 +139,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getDirectionsFromPath()
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestAlwaysAuthorization()
