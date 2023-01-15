@@ -79,22 +79,57 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
     @objc
     func getDirectionsFromPath(){
         var dis :Double
-     
+    
         for i in stride(from: 0, to: path.count, by: 1) {
+         
+         
           //same vertical hallway
             if((path[i].point != path.last?.point )&&(path[i].point.x == path[i+1].point.x) &&  (visited[i] == false )){
                 dis =   DistanceFormula(from: path[i].point, to:path[i+1].point)
-                directionLabel.text?.append( "  استمر في المشي متر\(dis) الى الأمام")
-                directionLabel.text?.append("\n")
+                //End of the hallway (left or  right)
+                if (path[i].previousHallway?.end) != nil {
+                    if(path[i].point == path[i].previousHallway?.end ){
+                        if(path[i+1].point.x < path[i].previousHallway!.end.x ){
+                            directionLabel.text?.append( "انعطف الى اليسار\n\n")
+                           
+                        }
+                        else{
+                            directionLabel.text?.append( "انعطف الى اليمين\n\n")
+                        }
+                    }
+                }
+             
+                directionLabel.text?.append( " استمر في المشي متر\(dis) الى الأمام\n\n")
+               
+                
                visited[i] = true
             }
                 //same horizontal  hallway
             else if((path[i].point != path.last?.point )&&(path[i].point.y == path[i+1].point.y) &&  (visited[i] == false )){
                 dis =   DistanceFormula(from: path[i].point, to:path[i+1].point)
-                directionLabel.text?.append( "  استمر في المشي متر\(dis) الى الأمام")
-                directionLabel.text?.append("\n")
+                //End of the hallway (left or  right)
+                if (path[i].previousHallway?.end) != nil {
+                    if(path[i].point == path[i].previousHallway?.end ){
+                        if(path[i+1].point.x < path[i].previousHallway!.end.x ){
+                            directionLabel.text?.append( "انعطف الى اليسار\n\n")
+                          
+                        }
+                        else{
+                            directionLabel.text?.append( "انعطف الى اليمين\n\n")
+                            
+                        }
+                    }
+                }
+                directionLabel.text?.append( " استمر في المشي متر\(dis) الى الأمام\n\n")
+              
+              
                 visited[i] = true
             }
+            
+               
+           
+            
+            
             else if(path[i].point == path.last?.point){
                 directionLabel.text?.append("لقد وصلت الى وجهتك")
                 //Stop the timer
@@ -110,7 +145,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
         }
     func scheduledTimerWithTimeInterval(){
         // Scheduling timer to Call the function "updateCounting" with the interval of 1 seconds
-        timer = Timer.scheduledTimer(timeInterval:4, target: self, selector: #selector(getDirectionsFromPath), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval:1, target: self, selector: #selector(getDirectionsFromPath), userInfo: nil, repeats: true)
     }
     
     func fetchData() {
