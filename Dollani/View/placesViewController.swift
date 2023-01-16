@@ -24,7 +24,7 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     func fetchData() {
         
-            Firestore.firestore().collection("places").whereField("category", isEqualTo: category).addSnapshotListener { (querySnapshot, error) in
+        Firestore.firestore().collection("places").whereField("category", isEqualTo: category).whereField("building", isEqualTo: "الحاسب").addSnapshotListener { (querySnapshot, error) in
                 guard let documents = querySnapshot?.documents else {
                     print("No documents")
                     return
