@@ -79,6 +79,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
     @objc
     func getDirectionsFromPath(){
         var dis :Double
+        var feets: String
     
         for i in stride(from: 0, to: path.count, by: 1) {
          
@@ -86,6 +87,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
           //same vertical hallway
             if((path[i].point != path.last?.point )&&(path[i].point.x == path[i+1].point.x) &&  (visited[i] == false )){
                 dis =   DistanceFormula(from: path[i].point, to:path[i+1].point)
+                feets = disToFeet(number: dis)
                 //End of the hallway (left or  right)
                 if (path[i].previousHallway?.end) != nil {
                     if(path[i].point == path[i].previousHallway?.end ){
@@ -99,7 +101,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
                     }
                 }
              
-                directionLabel.text?.append( " استمر في المشي متر\(dis) الى الأمام\n\n")
+                directionLabel.text?.append( " استمر في المشي خطوات\(feets) الى الأمام\n\n")
                
                 
                visited[i] = true
@@ -107,6 +109,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
                 //same horizontal  hallway
             else if((path[i].point != path.last?.point )&&(path[i].point.y == path[i+1].point.y) &&  (visited[i] == false )){
                 dis =   DistanceFormula(from: path[i].point, to:path[i+1].point)
+                feets = disToFeet(number: dis)
                 //End of the hallway (left or  right)
                 if (path[i].previousHallway?.end) != nil {
                     if(path[i].point == path[i].previousHallway?.end ){
@@ -120,7 +123,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
                         }
                     }
                 }
-                directionLabel.text?.append( " استمر في المشي متر\(dis) الى الأمام\n\n")
+                directionLabel.text?.append( " استمر في المشي خطوات\(feets) الى الأمام\n\n")
               
               
                 visited[i] = true
@@ -143,6 +146,14 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
             let squaredDistance = (from.x - to.x) * (from.x - to.x) + (from.y - to.y) * (from.y - to.y)
             return sqrt(squaredDistance)
         }
+    //from dis to feet
+    func disToFeet(number: CGFloat) -> String {
+        //let feetConversionFactor = CGFloat(1) / CGFloat(2) /// 1 pixel = half feet
+        let feet = number * 3.2808
+        let feetRounded = Int(feet) /// round to nearest integer
+        return "\(feetRounded)"
+    }
+
     func scheduledTimerWithTimeInterval(){
         // Scheduling timer to Call the function "updateCounting" with the interval of 1 seconds
         timer = Timer.scheduledTimer(timeInterval:1, target: self, selector: #selector(getDirectionsFromPath), userInfo: nil, repeats: true)
