@@ -172,6 +172,9 @@ class EditCGprofileViewController: UIViewController, UITextFieldDelegate,UINavig
         
         
         @IBAction func saveTapped(_ sender: Any) {
+            if(self.image == nil ){
+                self.image = self.avatar?.image
+            }
             //set image
             guard let imageSelected = self.image else{
                 print("Avatar is nil")
