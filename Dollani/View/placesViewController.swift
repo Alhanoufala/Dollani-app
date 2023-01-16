@@ -7,20 +7,26 @@
 
 import UIKit
 import Firebase
+import EstimoteProximitySDK
+import CoreLocation
 
-class placesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource ,UINavigationBarDelegate{
+class placesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource ,UINavigationBarDelegate,CLLocationManagerDelegate{
     
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var tableView: UITableView!
     var category  = ""
     var Index: IndexPath? = nil
     @Published var PlaceList = [Place]()
+    var source :CGPoint?
 
     var db = Firestore.firestore()
     override func viewWillAppear(_ animated: Bool) {
         fetchData()
       
     }
+    // 1. Add a property to hold the Proximity Observer
+    var proximityObserver: ProximityObserver!
+    private let manager = CLLocationManager()
 
     func fetchData() {
         
@@ -52,8 +58,63 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
          tableView.delegate = self
          tableView.dataSource = self
          navBar.delegate = self
+         manager.delegate = self
+         manager.desiredAccuracy = kCLLocationAccuracyBest
+         manager.requestAlwaysAuthorization()
+
+         if CLLocationManager.locationServicesEnabled(){
+             manager.startUpdatingLocation()
+         }
+         let cloudCredentials = CloudCredentials(appID: "dollani-bi1",
+                                                 appToken: "b62b4121000e11265883334fe1a89e13")
+         // 2. Create the Proximity Observer
+         self.proximityObserver = ProximityObserver(
+             credentials: cloudCredentials,
+             onError: { error in
+                 print("proximity observer error: \(error)")
+             })
+         setTheSource()
          
      }
+    func setTheSource(){
+        let zone1 = ProximityZone(tag: "place", range: .near)
+        let zone2 = ProximityZone(tag: "place", range: .near)
+        let zone3 = ProximityZone(tag: "place", range: .near)
+        let zone4 = ProximityZone(tag: "place", range: .near)
+        
+      
+       
+        // first zone
+        zone1.onEnter = { context in
+            self.source =  CGPoint(x:Int(context.attachments["x"] as! String)! , y:    Int(context.attachments["y"] as! String)!)
+         
+            
+            
+        }
+        
+        //Second zone
+        zone2.onEnter = { context in
+            self.source =  CGPoint(x:Int(context.attachments["x"] as! String)! , y:    Int(context.attachments["y"] as! String)!)
+        
+        }
+        //Third zone
+        zone3.onEnter = { context in
+            
+            self.source =  CGPoint(x:Int(context.attachments["x"] as! String)! , y:    Int(context.attachments["y"] as! String)!)
+        
+        }
+        //Fourth zone
+        zone4.onEnter = { context in
+            
+            self.source =  CGPoint(x:Int(context.attachments["x"] as! String)! , y:    Int(context.attachments["y"] as! String)!)
+        
+        }
+        
+      
+        
+        self.proximityObserver.startObserving([zone1,zone2,zone3,zone4])
+       
+    }
         // Do any additional setup after loading the view.
     
     func position(for bar: UIBarPositioning) -> UIBarPosition {
@@ -93,6 +154,7 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         if let deatil = segue.destination as? PathMapperViewController {
             deatil.place =  PlaceList[Index!.row]
+            deatil.source = source ??  CGPoint(x: 207, y: 415)
             
             
         }

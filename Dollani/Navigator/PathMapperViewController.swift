@@ -13,6 +13,7 @@ class PathMapperViewController: UIViewController,UINavigationBarDelegate {
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var container: UIView!
     var place :Place!
+    var source : CGPoint!
    
     @Published  var hallways = [DirectionalHallway]()
     var favPlaceList  = [String] ()
@@ -64,7 +65,7 @@ class PathMapperViewController: UIViewController,UINavigationBarDelegate {
                 return DirectionalHallway(start: start, end: end)
                 
             }
-            self.pethMapperObj = PathMapperContentView(place_: self.place,hallways_:self.hallways)
+            self.pethMapperObj = PathMapperContentView(place_: self.place,hallways_:self.hallways,source_:self.source )
             
             let childView = UIHostingController(rootView: self.pethMapperObj)
             self.addChild(childView)
