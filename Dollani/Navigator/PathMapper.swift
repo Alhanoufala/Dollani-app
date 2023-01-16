@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct PathMapperContentView: View {
-    init(place:Place) {
+    init(place:Place,classrooms:[Classroom]) {
+        self.classrooms = classrooms
         self.selectedClassroom = Classroom(name: place.name, entrancePoint: CGPoint(x: place.x, y: place.y))
         
         if let route = self.shortestRouteTo(classroom: self.selectedClassroom) {
@@ -36,32 +37,7 @@ struct PathMapperContentView: View {
     ]
     
     /// list of classrooms
-    let classrooms = [
-       
-        
-        Classroom(name: "دورة مياة", entrancePoint: CGPoint(x: 207, y:400 )),
-        Classroom(name: "G2 قاعة", entrancePoint: CGPoint(x: 207, y: 375)),
-        Classroom(name: "G52 قاعة", entrancePoint: CGPoint(x: 207, y: 365)),
-        Classroom(name: "G1 قاعة", entrancePoint: CGPoint(x: 207, y: 340)),
-        Classroom(name: "G53 قاعة", entrancePoint: CGPoint(x: 207, y: 325)),
-        Classroom(name: "المصلى", entrancePoint: CGPoint(x: 207, y: 290)),
-        //---
-        Classroom(name: "G42 قاعة", entrancePoint: CGPoint(x: 80, y: 220)),
-        Classroom(name: "G38 قاعة", entrancePoint: CGPoint(x: 80, y: 205)),
-        Classroom(name: "G41 مدرج خديجة", entrancePoint: CGPoint(x: 80, y: 190)),
-        Classroom(name: "G40 قاعة", entrancePoint: CGPoint(x: 80, y: 160)),
-        Classroom(name: "G36 قاعة", entrancePoint: CGPoint(x: 80, y: 155)),
-        Classroom(name: "G37 قاعة", entrancePoint: CGPoint(x: 80, y: 125)),
-        Classroom(name: "G35 معمل", entrancePoint: CGPoint(x: 80, y: 90)),
-        
-        //---
-        Classroom(name: "G31 قاعة", entrancePoint: CGPoint(x: 105, y: 90)),
-        Classroom(name: "G30 قاعة", entrancePoint: CGPoint(x: 155, y: 90)),
-               
-
-       
-    ]
-    
+    var classrooms = [Classroom]()
     // MARK: - User Input Storage
 
     let selectedClassroom:Classroom

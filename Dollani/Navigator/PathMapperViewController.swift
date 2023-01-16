@@ -13,12 +13,14 @@ class PathMapperViewController: UIViewController,UINavigationBarDelegate {
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var container: UIView!
     var place :Place!
+    @Published var PlaceList = [Place]()
+    @Published  var classrooms = [Classroom]()
     var favPlaceList  = [String] ()
   var pethMapperObj :PathMapperContentView!
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.delegate = self
-    pethMapperObj = PathMapperContentView(place: place)
+        pethMapperObj = PathMapperContentView(place: place,classrooms:classrooms)
     let childView = UIHostingController(rootView: pethMapperObj)
         addChild(childView)
         childView.view.frame = container.bounds
@@ -48,6 +50,36 @@ class PathMapperViewController: UIViewController,UINavigationBarDelegate {
         let touch = touches.first!
         let location = touch.location(in: self.view)
         print(location )
+    }
+    func getPlaces(){
+        Firestore.firestore().collection("places").whereField("building", isEqualTo: "الحاسب").addSnapshotListener { (querySnapshot, error) in
+            guard let documents = querySnapshot?.documents else {
+                print("No documents")
+                return
+            }
+            
+            self.PlaceList = documents.map { (queryDocumentSnapshot) -> Place in
+                let data = queryDocumentSnapshot.data()
+                let name = data["name"] as? String ?? ""
+                let cat = data["category"] as? String ?? ""
+                let x = data["x"] as? Int ?? 0
+                let y = data["y"] as? Int ?? 0
+                
+                return Place(name: name, cat: cat,x:x,y:y)
+                
+            }
+            
+            self.classrooms = self.PlaceList.map { (place) -> Classroom in
+                
+                let name = place.name
+                let entrancePoint  = CGPoint(x: place.x,y: place.y)
+                
+                
+                return Classroom(name: name,entrancePoint:entrancePoint )
+                
+            }
+            
+        }
     }
     @IBAction func addToFav(_ sender: Any) {
         let db = Firestore.firestore()
