@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct PathMapperContentView: View {
-    init(place:Place,classrooms:[Classroom]) {
-        self.classrooms = classrooms
-        self.selectedClassroom = Classroom(name: place.name, entrancePoint: CGPoint(x: place.x, y: place.y))
+    init(place_:Place,hallways_:[DirectionalHallway]) {
+        self.hallways = hallways_
+       
+        self.selectedClassroom = Classroom(name: place_.name, entrancePoint: CGPoint(x: place_.x, y: place_.y))
         
         if let route = self.shortestRouteTo(classroom: self.selectedClassroom) {
             withAnimation {
@@ -25,19 +26,9 @@ struct PathMapperContentView: View {
     let youAreHerePoint =  CGPoint(x: 207, y: 415)
     
     /// ### 3B i. (Row 2) - list of hallways
-    let hallways = [
-        /// horizontal hallways
-       DirectionalHallway(start: CGPoint(x: 207, y: 240), end: CGPoint(x: 80, y: 240)),
-       DirectionalHallway(start: CGPoint(x: 80, y: 90), end: CGPoint(x: 200, y: 90)),
-     
- 
-        /// vertical hallways
-        DirectionalHallway(start: CGPoint(x: 207, y: 415), end: CGPoint(x: 207, y: 240)),
-       DirectionalHallway(start: CGPoint(x: 80, y: 240), end: CGPoint(x: 80, y: 90)),
-    ]
-    
-    /// list of classrooms
-    var classrooms = [Classroom]()
+    var hallways = [DirectionalHallway]()
+       
+   
     // MARK: - User Input Storage
 
     let selectedClassroom:Classroom

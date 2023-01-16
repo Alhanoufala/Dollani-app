@@ -13,18 +13,15 @@ class PathMapperViewController: UIViewController,UINavigationBarDelegate {
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var container: UIView!
     var place :Place!
-    @Published var PlaceList = [Place]()
-    @Published  var classrooms = [Classroom]()
+   
+    @Published  var hallways = [DirectionalHallway]()
     var favPlaceList  = [String] ()
   var pethMapperObj :PathMapperContentView!
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.delegate = self
-        pethMapperObj = PathMapperContentView(place: place,classrooms:classrooms)
-    let childView = UIHostingController(rootView: pethMapperObj)
-        addChild(childView)
-        childView.view.frame = container.bounds
-        container.addSubview(childView.view)
+        getHallways()
+        
         // Do any additional setup after loading the view.
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any? ){
@@ -51,34 +48,31 @@ class PathMapperViewController: UIViewController,UINavigationBarDelegate {
         let location = touch.location(in: self.view)
         print(location )
     }
-    func getPlaces(){
-        Firestore.firestore().collection("places").whereField("building", isEqualTo: "الحاسب").addSnapshotListener { (querySnapshot, error) in
+    func getHallways(){
+        Firestore.firestore().collection("hallways").whereField("building", isEqualTo: "الحاسب").addSnapshotListener { (querySnapshot, error) in
             guard let documents = querySnapshot?.documents else {
                 print("No documents")
                 return
             }
             
-            self.PlaceList = documents.map { (queryDocumentSnapshot) -> Place in
+            self.hallways = documents.map { (queryDocumentSnapshot) -> DirectionalHallway in
                 let data = queryDocumentSnapshot.data()
-                let name = data["name"] as? String ?? ""
-                let cat = data["category"] as? String ?? ""
-                let x = data["x"] as? Int ?? 0
-                let y = data["y"] as? Int ?? 0
+                let start =  CGPoint(x: data["xStart"]as! Int,y: data["yStart"]as! Int)
+                let end = CGPoint(x: data["xEnd"]as! Int,y: data["yEnd"]as! Int)
+               
                 
-                return Place(name: name, cat: cat,x:x,y:y)
-                
-            }
-            
-            self.classrooms = self.PlaceList.map { (place) -> Classroom in
-                
-                let name = place.name
-                let entrancePoint  = CGPoint(x: place.x,y: place.y)
-                
-                
-                return Classroom(name: name,entrancePoint:entrancePoint )
+                return DirectionalHallway(start: start, end: end)
                 
             }
+            self.pethMapperObj = PathMapperContentView(place_: self.place,hallways_:self.hallways)
             
+            let childView = UIHostingController(rootView: self.pethMapperObj)
+            self.addChild(childView)
+            childView.view.frame = self.container.bounds
+            self.container.addSubview(childView.view)
+            
+            
+          
         }
     }
     @IBAction func addToFav(_ sender: Any) {
