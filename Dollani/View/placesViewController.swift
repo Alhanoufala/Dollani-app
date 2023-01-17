@@ -12,8 +12,14 @@ import CoreLocation
 
 class placesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource ,UINavigationBarDelegate,CLLocationManagerDelegate{
     
+    @IBOutlet weak var searchbar: UISearchBar!
+    
+    var search = [String]()
+    
     @IBOutlet weak var navBar: UINavigationBar!
+    
     @IBOutlet weak var tableView: UITableView!
+    
     var category  = ""
     var Index: IndexPath? = nil
     @Published var PlaceList = [Place]()
@@ -161,6 +167,11 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     
-
+   
     
+}
+extension UIViewController: UISearchBarDelegate{
+    public func searchBar(_ searchbar: UISearchBar ,  textDidChange searchText: String ){
+        
+    }
 }
