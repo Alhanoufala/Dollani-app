@@ -807,22 +807,12 @@
                     <navigationItem key="navigationItem" id="94a-Qn-JfX"/>
                     <connections>
                         <outlet property="navBar" destination="9Qi-W4-q6r" id="No0-te-vIV"/>
-                        <outlet property="searchDisplayController" destination="mTU-ac-A96" id="Kne-mz-tLC"/>
                         <outlet property="searchbar" destination="uFF-vj-YeY" id="i8P-n6-qKc"/>
                         <outlet property="tableView" destination="cIu-BI-der" id="DEW-ZH-gyp"/>
                         <segue destination="T7h-hH-4cw" kind="presentation" identifier="goToDetails" modalPresentationStyle="fullScreen" id="skX-gS-AgG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9G1-Xu-JgC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="mTU-ac-A96">
-                    <connections>
-                        <outlet property="delegate" destination="KQc-5a-9YF" id="A7k-tg-8tJ"/>
-                        <outlet property="searchBar" destination="uFF-vj-YeY" id="gF0-cL-dh7"/>
-                        <outlet property="searchContentsController" destination="KQc-5a-9YF" id="L75-BD-JyH"/>
-                        <outlet property="searchResultsDataSource" destination="KQc-5a-9YF" id="atJ-PX-mn1"/>
-                        <outlet property="searchResultsDelegate" destination="KQc-5a-9YF" id="Tks-6P-S8c"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="4747.826086956522" y="2846.6517857142858"/>
         </scene>
