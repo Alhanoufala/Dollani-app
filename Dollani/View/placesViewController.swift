@@ -64,6 +64,7 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
          tableView.delegate = self
          tableView.dataSource = self
+         searchbar.delegate = self
          navBar.delegate = self
          manager.delegate = self
          manager.desiredAccuracy = kCLLocationAccuracyBest
@@ -177,13 +178,13 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     
-  //  extension UIViewController: UISearchBarDelegate{
-        public func searchBar(_ searchbar: UISearchBar ,  textDidChange searchText: String ){
-            search = placeName.filter({$0.prefix(searchText.count) == searchText })
-            searching = true
-            tableView.reloadData()
-        }
-   // }
+  
     
 }
-
+extension placesViewController: UISearchBarDelegate{
+    public func searchBar(_ searchbar: UISearchBar ,  textDidChange searchText: String ){
+        search = placeName.filter({$0.prefix(searchText.count) == searchText })
+        searching = true
+        tableView.reloadData()
+    }
+}
