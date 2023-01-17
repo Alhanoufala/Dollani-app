@@ -15,7 +15,8 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var searchbar: UISearchBar!
     
     var search = [String]()
-    
+    @Published var placeName = [String]()
+    var searching = false
     @IBOutlet weak var navBar: UINavigationBar!
     
     @IBOutlet weak var tableView: UITableView!
@@ -48,7 +49,7 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     let cat = data["category"] as? String ?? ""
                     let x = data["x"] as? Int ?? 0
                     let y = data["y"] as? Int ?? 0
-            
+                    self.placeName.append(name)
                     return Place(name: name, cat: cat,x:x,y:y)
                 
                 }
@@ -127,13 +128,22 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
      return .topAttached
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return PlaceList.count
+        if searching{
+            return search.count
+        }else{
+            return placeName.count}
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       
         let cell = tableView.dequeueReusableCell(withIdentifier: "placeCell", for: indexPath)
         cell.textLabel?.textAlignment = .right
-        cell.textLabel?.text = PlaceList[indexPath.row].name
+        
+        if searching{
+            cell.textLabel?.text = search[indexPath.row]
+        }else{
+            cell.textLabel?.text = placeName[indexPath.row]
+        }
+        
         return cell
         
     }
@@ -167,11 +177,13 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     
-   
+  //  extension UIViewController: UISearchBarDelegate{
+        public func searchBar(_ searchbar: UISearchBar ,  textDidChange searchText: String ){
+            search = placeName.filter({$0.prefix(searchText.count) == searchText })
+            searching = true
+            tableView.reloadData()
+        }
+   // }
     
 }
-extension UIViewController: UISearchBarDelegate{
-    public func searchBar(_ searchbar: UISearchBar ,  textDidChange searchText: String ){
-        
-    }
-}
+
