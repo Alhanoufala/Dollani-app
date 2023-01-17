@@ -16,6 +16,8 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var search = [String]()
     @Published var placeName = [String]()
+    @Published var PlaceListSearch = [Place]()
+
     var searching = false
     @IBOutlet weak var navBar: UINavigationBar!
     
@@ -161,6 +163,7 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         Index = indexPath
+       
         performSegue(withIdentifier: "goToDetails", sender: self)
 
     }
@@ -169,22 +172,62 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
-        if let deatil = segue.destination as? PathMapperViewController {
-            deatil.place =  PlaceList[Index!.row]
+         let deatil = segue.destination as! PathMapperViewController
+        if PlaceListSearch.count != 0 {
+            deatil.place = PlaceListSearch[Index!.row]
+        }
+          
+            else{
+                deatil.place =  PlaceList[Index!.row]
+            }
+         
             deatil.source = source ??  CGPoint(x: 207, y: 415)
             
             
+        
+    }
+    func updateSearch(){
+        if(search.count < 10 && search.count != 0 ){
+            Firestore.firestore().collection("places").whereField("name",in:search).addSnapshotListener { (querySnapshot, error) in
+                guard let documents = querySnapshot?.documents else {
+                    print("No documents")
+                    return
+                }
+                
+                
+                self.PlaceListSearch = documents.map { (queryDocumentSnapshot) -> Place in
+                    let data = queryDocumentSnapshot.data()
+                    let name = data["name"] as? String ?? ""
+                    let cat = data["category"] as? String ?? ""
+                    let x = data["x"] as? Int ?? 0
+                    let y = data["y"] as? Int ?? 0
+                    
+                    
+                    return Place(name: name, cat: cat,x:x,y:y)
+                    
+                }
+                
+                
+            }
         }
     }
+        
+    }
+    
     
     
   
     
-}
+
+
 extension placesViewController: UISearchBarDelegate{
     public func searchBar(_ searchbar: UISearchBar ,  textDidChange searchText: String ){
         search = placeName.filter({$0.prefix(searchText.count) == searchText })
+        updateSearch()
         searching = true
         tableView.reloadData()
     }
+    
+
 }
+
