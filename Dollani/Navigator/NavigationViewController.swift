@@ -209,7 +209,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
        
         for CGUser in CGUsers {
             Firestore.firestore().collection("helpRequests").document((Auth.auth().currentUser?.email)!+"-"+CGUser.email).setData(["CGName" : CGUser.name,"CGEmail":CGUser.email,"CGPhoneNum":CGUser.phoneNum,"VIEmail":(Auth.auth().currentUser?.email)!,"VIName":VIName,"VIPhoneNum":VIPhoneNum,"status":"new","VIProfilePhoto":VIProfilePhoto,"inddorLocation":inddorLocation,"lat":lat,"long":long])
-            sender.sendPushNotification(to:CGUser.fcmToken!, title: "طلب مساعدة جديد ", body: "قام احد جهات الاتصال بارسال طلب مساعدة ")
+            sender.sendPushNotification(to:CGUser.fcmToken!, title: "دلني", body: "قام احد جهات الاتصال بارسال طلب مساعدة ")
         }
         //alert
         let alert = UIAlertController(title: nil, message:"تم ارسال الطلب بنجاج", preferredStyle: .alert)

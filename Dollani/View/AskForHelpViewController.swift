@@ -117,7 +117,7 @@ class AskForHelpViewController: UIViewController,ObservableObject,UINavigationBa
                        token = snapshot?.documents.first?.get("fcmToken") as? String ?? ""
                        let sender = PushNotificationSender()
                       
-                      sender.sendPushNotification(to:token, title: "طلب مساعدة جديد ", body: "قام احد جهات الاتصال بارسال طلب مساعدة ")
+                      sender.sendPushNotification(to:token, title: "دلني", body: "قام احد جهات الاتصال بارسال طلب مساعدة ")
                    }
                }
 
