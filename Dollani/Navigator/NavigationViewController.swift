@@ -39,13 +39,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
     // 1. Add a property to hold the Proximity Observer
     var proximityObserver: ProximityObserver!
     private let manager = CLLocationManager()
-    func checkDestination(){
-        print(destination)
-        if(destination == "25G قاعة" ){
-            destinationTag = "room25"}
-        else if(destination == "G50 قاعة"){
-            destinationTag = "room50"}
-    }
+    
     func setVisited(){
         for i in stride(from: 0, to: path.count, by: 1) {
             visited.append(false)
@@ -232,7 +226,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
         navBar.delegate = self
         farmeLabel.layer.borderWidth = 4
         farmeLabel.layer.borderColor =  UIColor(red: 43/255.0, green: 66/255.0, blue: 143/255.0, alpha: 255.0/255.0).cgColor
-        checkDestination()
+       
       //  locationManagerDidChangeAuthorization(manager)
         getCGEmails()
        
@@ -244,70 +238,54 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
             onError: { error in
                 print("proximity observer error: \(error)")
             })
-        navigateToDestination()
+        
      
-      //  movementDetected ()
+     
         
      
            
        
     }
-    func navigateToDestination(){
-        let zone = ProximityZone(tag: "room25", range: .near)
-        let zoneTag = zone.tag
-        let zone2 = ProximityZone(tag: "room50", range: .near)
-        let zoneTag2 = zone2.tag
-        print(zoneTag)
-        print(zoneTag2)
+    func vibrateOnTurns(){
+        let zone1 = ProximityZone(tag: "place", range: .near)
+        let zone2 = ProximityZone(tag: "place", range: .near)
+        let zone3 = ProximityZone(tag: "place", range: .near)
+        let zone4 = ProximityZone(tag: "place", range: .near)
+        
+      
+       
         // first zone
-        zone.onEnter = { context in
-            if(zoneTag == self.destinationTag ){
-             
-                    self.directionLabel.text = "لقد وصلت الى وجهتك"
-                
-                AudioServicesPlaySystemSound(1307)
-            }
+        zone1.onEnter = { context in
            
+            AudioServicesPlaySystemSound(1352)
             
-            else{
-                self.inddorLocation = context.attachments["place-name"] as? String ?? ""
-           
-                    self.directionLabel.text = "امشي الى الامام ٨ متر"
-                
-            }
             
         }
-        zone.onExit = {context in
-            self.directionLabel.text = ""
+        
+        //Second zone
+        zone2.onEnter = { context in
+            AudioServicesPlaySystemSound(1352)
         
         }
-        // second zone
-        zone2.onEnter = { context in
-            if(zoneTag2 == self.destinationTag ){
+        //Third zone
+        zone3.onEnter = { context in
+            AudioServicesPlaySystemSound(1352)
             
-                    self.directionLabel.text = "لقد وصلت الى وجهتك"
-                
-                AudioServicesPlaySystemSound(1307)
-            }
-           
-            
-            else{
-                self.inddorLocation = context.attachments["place-name"] as? String ?? ""
-                
-                    self.directionLabel.text = "امشي الى الامام ٨ متر"
-                
-            }
+        
         }
-        zone2.onExit = {context in
-            self.directionLabel.text = ""
+        //Fourth zone
+        zone4.onEnter = { context in
+            
+            AudioServicesPlaySystemSound(1352)
         
         }
         
       
         
-        self.proximityObserver.startObserving([zone,zone2])
+        self.proximityObserver.startObserving([zone1,zone2,zone3,zone4])
        
     }
+    
     func movementDetected (){
         activityManager.startActivityUpdates(to: OperationQueue.main) { (activity: CMMotionActivity?) in
             guard let activity = activity else { return }
