@@ -44,6 +44,7 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchData()
         tableView.dataSource = self
         tableView.delegate = self
         navBar.delegate = self
@@ -81,7 +82,6 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
         let cell = tableView.dequeueReusableCell(withIdentifier: "favListCell", for: indexPath)
         cell.textLabel?.textAlignment = .right
         cell.textLabel?.text = favPlaceList[indexPath.row]
-        cell.textLabel?.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
