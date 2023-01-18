@@ -222,7 +222,7 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
 extension placesViewController: UISearchBarDelegate{
     public func searchBar(_ searchbar: UISearchBar ,  textDidChange searchText: String ){
-        search = placeName.filter({$0.prefix(searchText.count) == searchText })
+        search = placeName.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased() })
         updateSearch()
         searching = true
         tableView.reloadData()
