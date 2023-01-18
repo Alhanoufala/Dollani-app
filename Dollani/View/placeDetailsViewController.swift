@@ -44,29 +44,39 @@ class placeDetailsViewController: UIViewController,UINavigationBarDelegate {
     }
 
     @IBAction func removeFav(_ sender: Any) {
-        let db = Firestore.firestore()
-        db.collection("users").whereField("email",isEqualTo: Auth.auth().currentUser!.email!).getDocuments { [self] snapshot, error in
-            if  error != nil {
-                print(error!.localizedDescription)
-            }
-            else{
-                favPlaceList = snapshot?.documents.first?.get("favPlace") as! [String]
-            }
-            favPlaceList.remove(at:index)
-            db.collection("users").whereField("email", isEqualTo: Auth.auth().currentUser!.email!).getDocuments { (result, error) in
-                if error == nil{
-                    for document in result!.documents{
-                        document.reference.updateData([
-                            "favPlace": favPlaceList
-                        ])
+        let alert = UIAlertController(title: nil, message:"هل تريد الغاء التفضيل ؟", preferredStyle: .alert)
+      
+     
+        let finishAction = UIAlertAction(title: "الغاء التفضيل", style: .destructive){_ in
+            Firestore.firestore().collection("users").whereField("email",isEqualTo: Auth.auth().currentUser!.email!).getDocuments { [self] snapshot, error in
+                if  error != nil {
+                    print(error!.localizedDescription)
+                }
+                else{
+                    favPlaceList = snapshot?.documents.first?.get("favPlace") as! [String]
+                }
+                favPlaceList.remove(at:index)
+                db.collection("users").whereField("email", isEqualTo: Auth.auth().currentUser!.email!).getDocuments { (result, error) in
+                    if error == nil{
+                        for document in result!.documents{
+                            document.reference.updateData([
+                                "favPlace": favPlaceList
+                            ])
+                        }
                     }
                 }
             }
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "FavList")
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true)
         }
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "FavList")
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
+        alert.addAction(finishAction)
+        alert.addAction(UIAlertAction(title:  "الغاء", style: .default, handler:nil))
+        present(alert, animated: true, completion: nil)
+        
+        
+       
     }
     
     @IBAction func startNavigation(_ sender: Any) {
