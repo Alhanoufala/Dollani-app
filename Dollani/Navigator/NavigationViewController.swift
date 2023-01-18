@@ -240,56 +240,18 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
             })
         
      
-     
+        movementDetected ()
         
      
            
        
     }
-    func vibrateOnTurns(){
-        let zone1 = ProximityZone(tag: "place", range: .near)
-        let zone2 = ProximityZone(tag: "place", range: .near)
-        let zone3 = ProximityZone(tag: "place", range: .near)
-        let zone4 = ProximityZone(tag: "place", range: .near)
-        
-      
-       
-        // first zone
-        zone1.onEnter = { context in
-           
-            AudioServicesPlaySystemSound(1352)
-            
-            
-        }
-        
-        //Second zone
-        zone2.onEnter = { context in
-            AudioServicesPlaySystemSound(1352)
-        
-        }
-        //Third zone
-        zone3.onEnter = { context in
-            AudioServicesPlaySystemSound(1352)
-            
-        
-        }
-        //Fourth zone
-        zone4.onEnter = { context in
-            
-            AudioServicesPlaySystemSound(1352)
-        
-        }
-        
-      
-        
-        self.proximityObserver.startObserving([zone1,zone2,zone3,zone4])
-       
-    }
+    
     
     func movementDetected (){
         activityManager.startActivityUpdates(to: OperationQueue.main) { (activity: CMMotionActivity?) in
             guard let activity = activity else { return }
-            DispatchQueue.main.async {
+           
                 if activity.stationary {
                     print("Stationary")
                     
@@ -304,7 +266,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
                 } else if activity.automotive {
                     print("Automotive")
                 }
-            }
+            
         }
         
     }
