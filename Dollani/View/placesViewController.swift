@@ -87,10 +87,10 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
          
      }
     func setTheSource(){
-        let zone1 = ProximityZone(tag: "place", range: .near)
-        let zone2 = ProximityZone(tag: "place", range: .near)
-        let zone3 = ProximityZone(tag: "place", range: .near)
-        let zone4 = ProximityZone(tag: "place", range: .near)
+        let zone1 = ProximityZone(tag: "place 1", range: .near)
+        let zone2 = ProximityZone(tag: "place 2", range: .near)
+        let zone3 = ProximityZone(tag: "place 3", range: .near)
+        let zone4 = ProximityZone(tag: "place 4", range: .near)
         
       
        

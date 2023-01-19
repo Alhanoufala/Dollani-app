@@ -41,9 +41,18 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
     private let manager = CLLocationManager()
     
     func setVisited(){
-        for i in stride(from: 0, to: path.count, by: 1) {
+        for _ in stride(from: 0, to: path.count, by: 1) {
             visited.append(false)
         }
+    }
+    func getIndex() ->Int{
+        for i in stride(from: 0, to: path.count, by: 1) {
+            if(   visited[i] == false){
+                return i
+            }
+           
+        }
+        return 0
     }
     
     func getCGEmails() {
@@ -71,13 +80,13 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
         }
     }
     @objc
-    func getDirectionsFromPath(){
+    func   getDirectionsFromPath(){
         var dis :Double
         var feets: String
-    
-        for i in stride(from: 0, to: path.count, by: 1) {
+        var str = ""
+       
          
-         
+        let i = getIndex()
           //same vertical hallway
             if((path[i].point != path.last?.point )&&(path[i].point.x == path[i+1].point.x) &&  (visited[i] == false )){
                 dis =   DistanceFormula(from: path[i].point, to:path[i+1].point)
@@ -86,19 +95,22 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
                 if (path[i].previousHallway?.end) != nil {
                     if(path[i].point == path[i].previousHallway?.end ){
                         if(path[i+1].point.x < path[i].previousHallway!.end.x ){
-                            directionLabel.text?.append( "انعطف الى اليسار\n\n")
-                           
+                          
+                           str =  "انعطف الى اليسار\n\n"
                         }
                         else{
-                            directionLabel.text?.append( "انعطف الى اليمين\n\n")
+                        
+                           str = "انعطف الى اليمين\n\n"
                         }
                     }
                 }
-             
-                directionLabel.text?.append( " استمر في المشي خطوات\(feets) الى الأمام\n\n")
                
-                
-               visited[i] = true
+                visited[i] = true
+                self.directionLabel.text = str + " استمر في المشي خطوات\(feets) الى الأمام\n\n"
+             
+            return
+             
+              
             }
                 //same horizontal  hallway
             else if((path[i].point != path.last?.point )&&(path[i].point.y == path[i+1].point.y) &&  (visited[i] == false )){
@@ -108,33 +120,46 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
                 if (path[i].previousHallway?.end) != nil {
                     if(path[i].point == path[i].previousHallway?.end ){
                         if(path[i+1].point.x < path[i].previousHallway!.end.x ){
-                            directionLabel.text?.append( "انعطف الى اليسار\n\n")
+                           
+                           str =  "انعطف الى اليسار\n\n"
+                           
                           
                         }
                         else{
-                            directionLabel.text?.append( "انعطف الى اليمين\n\n")
+                       
+                             str = "انعطف الى اليمين\n\n"
+                          
+                          
                             
                         }
                     }
                 }
-                directionLabel.text?.append( " استمر في المشي خطوات\(feets) الى الأمام\n\n")
-              
               
                 visited[i] = true
+                self.directionLabel.text = str + " استمر في المشي خطوات\(feets) الى الأمام\n\n"
+              
+                return
             }
             
                
            
-            
-            
-            else if(path[i].point == path.last?.point){
-                directionLabel.text?.append("لقد وصلت الى وجهتك")
+            else if((path[i].point == path.last?.point) &&  (visited[i] == false)){
+                visited[i] = true
+                                print( "لقد وصلت الى وجهتك")
+                self.directionLabel.text = "لقد وصلت الى وجهتك"
+               
+                return
+                
                 //Stop the timer
-                timer.invalidate()
+               // timer.invalidate()
                
             }
             
-            }
+           
+            
+            
+          
+        return
     }
         func DistanceFormula(from: CGPoint, to: CGPoint) -> CGFloat {
             let squaredDistance = (from.x - to.x) * (from.x - to.x) + (from.y - to.y) * (from.y - to.y)
@@ -214,7 +239,6 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
     override func viewDidLoad() {
         super.viewDidLoad()
         setVisited()
-        scheduledTimerWithTimeInterval()
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestAlwaysAuthorization()
@@ -239,13 +263,62 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
                 print("proximity observer error: \(error)")
             })
         
-     
-        movementDetected ()
+        updateTransition()
+      
         
      
            
        
     }
+    func  updateTransition(){
+        let zone1 = ProximityZone(tag: "place 1", range: .near)
+        let zone2 = ProximityZone(tag: "place 2", range: .near)
+        let zone3 = ProximityZone(tag: "place 3", range: .near)
+        let zone4 = ProximityZone(tag: "place 4", range: .near)
+        
+      
+       
+        // first zone
+        zone1.onEnter = { context in
+            AudioServicesPlaySystemSound(1352)
+         self.getDirectionsFromPath()
+         
+            
+            
+        }
+        
+        
+        //Second zone
+        zone2.onEnter = { context in
+            AudioServicesPlaySystemSound(1352)
+           self.getDirectionsFromPath()
+         
+        
+        }
+      
+        //Third zone
+        zone3.onEnter = { context in
+            AudioServicesPlaySystemSound(1352)
+         self.getDirectionsFromPath()
+         
+        
+        }
+       
+        //Fourth zone
+        zone4.onEnter = { context in
+            AudioServicesPlaySystemSound(1352)
+             self.getDirectionsFromPath()
+         
+        
+        }
+     
+        
+      
+        
+        self.proximityObserver.startObserving([zone1,zone2,zone3,zone4])
+        
+    }
+    
     
     
     func movementDetected (){
