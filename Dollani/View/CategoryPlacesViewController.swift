@@ -10,9 +10,16 @@ import Firebase
 
 class CategoryPlacesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UINavigationBarDelegate {
     var listOfCategory  = [String] ()
+    var listOfCategorySearch  = [String] ()
+    var search = [String]()
+    
+    var searching = false
+    
     var db = Firestore.firestore()
     var Index: IndexPath? = nil
 
+    @IBOutlet weak var searchbar: UISearchBar!
+    
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var tableView: UITableView!
     
@@ -42,6 +49,7 @@ class CategoryPlacesViewController: UIViewController, UITableViewDelegate, UITab
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        searchbar.delegate = self
         navBar.delegate = self
         // Do any additional setup after loading the view.
     }
@@ -49,13 +57,24 @@ class CategoryPlacesViewController: UIViewController, UITableViewDelegate, UITab
      return .topAttached
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listOfCategory.count
+        if searching{
+           return search.count
+        } else{
+            return listOfCategory.count
+        }
+       
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath)
         cell.textLabel?.textAlignment = .right
-        cell.textLabel?.text = listOfCategory[indexPath.row]
+        if searching {
+            cell.textLabel?.text = search[indexPath.row]
+        }
+        else{
+            cell.textLabel?.text = listOfCategory[indexPath.row]
+        }
+        
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -79,11 +98,41 @@ class CategoryPlacesViewController: UIViewController, UITableViewDelegate, UITab
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let placesList = segue.destination as? placesViewController{
+         let placesList = segue.destination as! placesViewController
+        if listOfCategorySearch.count != 0 {
+            placesList.category = listOfCategorySearch[Index!.row]
+        }
+        else{
             placesList.category = listOfCategory[Index!.row]
         }
+        
     }
     
-   
+    func updateSearch(){
+        if(search.count < 10 && search.count != 0 ){
+        Firestore.firestore().collection("categories").getDocuments { snapshot, error in
+            if  error != nil {
+                print(error!.localizedDescription)
+            }
+        
+            else{
+                self.listOfCategorySearch = snapshot?.documents.first?.get("categoriesP") as? [String] ?? []
+               
+                
+            }
+        }
+
+        }
+    }
+
+}
+extension CategoryPlacesViewController: UISearchBarDelegate{
+    public func searchBar(_ searchbar: UISearchBar ,  textDidChange searchText: String ){
+        search = listOfCategory.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased() })
+        updateSearch()
+        searching = true
+        tableView.reloadData()
+    }
+    
 
 }
