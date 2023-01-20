@@ -17,10 +17,11 @@ struct HelpRequest:Identifiable{
     var VIPhoneNum:String
     var VIProfilePhoto:String?
     var status:String
-    var x:Int
-    var y:Int
-    var inddorLocation:String
-
+    var sourcePoint:CGPoint?
+   var destinationName:String?
+   var destinationCat:String?
+   var destinationX:Int?
+   var destinationY:Int?
 
 
     

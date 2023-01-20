@@ -77,14 +77,18 @@ class CGHelpRequestsViewController: UIViewController {
                 let VIName = data["VIName"] as? String ?? ""
                 let status = data["status"] as? String ?? ""
                 let profilePhoto = data["VIProfilePhoto"] as? String ?? ""
-                let x = data["lat"] as? Double ?? 0
-                let y = data["long"] as? Double ?? 0
-                let inddorLocation = data["inddorLocation"] as? String ?? ""
-                self.source.append(CGPoint(x: data["xStart"]as! Int, y: data["xStart"]as! Int))
+                let destinationName = data["destinationName"] as? String ?? ""
+                                let destinationCat = data["destinationCat"] as? String ?? ""
+                                let destinationX = data["destinationX"] as? Int ?? 0
+                                let destinationY = data["destinationY"] as? Int ?? 0
+                let sourcePoint =  CGPoint(x:Int(exactly: data["xStart"]  as! Int)! , y:    Int(exactly: data["yStart"] as! Int)!)
+
+                 
+                self.source.append(sourcePoint)
                    
                
             
-                return HelpRequest(CGEmail: CGEmail, CGName: CGName,CGPhoneNum: CGPhoneNum,VIEmail:VIEmail,VIName:VIName,VIPhoneNum:VIPhoneNum,VIProfilePhoto:profilePhoto,status:status,x:Int(x),y:Int(y),inddorLocation:inddorLocation)
+                return HelpRequest(CGEmail: CGEmail, CGName: CGName,CGPhoneNum: CGPhoneNum,VIEmail:VIEmail,VIName:VIName,VIPhoneNum:VIPhoneNum,VIProfilePhoto:profilePhoto,status:status,sourcePoint:sourcePoint,destinationName:destinationName,destinationCat:destinationCat,destinationX:destinationX,destinationY:destinationY)
             }
             self.tableView.reloadData()
         }
