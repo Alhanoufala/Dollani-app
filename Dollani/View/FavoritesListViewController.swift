@@ -13,9 +13,15 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var tableView: UITableView!
     @Published var users = [User]()
     var favPlaceList  = [String] ()
+    var search = [String]()
+    var favPlaceListSearch  = [String] ()
+    var searching = false
+    
+    
     var db = Firestore.firestore()
     var Index: IndexPath? = nil
 
+    @IBOutlet weak var searchbar: UISearchBar!
     override func viewWillAppear(_ animated: Bool) {
         db.collection("users").whereField("email",isEqualTo: Auth.auth().currentUser!.email!).getDocuments { [self] snapshot, error in
             if  error != nil {
@@ -47,6 +53,7 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
         fetchData()
         tableView.dataSource = self
         tableView.delegate = self
+        searchbar.delegate = self
         navBar.delegate = self
     }
     
@@ -76,12 +83,18 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return favPlaceList.count
+        if searching{
+            return search.count
+        }else{
+            return favPlaceList.count}
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favListCell", for: indexPath)
         cell.textLabel?.textAlignment = .right
-        cell.textLabel?.text = favPlaceList[indexPath.row]
+        if searching{
+            cell.textLabel?.text = search[indexPath.row]
+        } else {
+            cell.textLabel?.text = favPlaceList[indexPath.row] }
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -121,4 +134,14 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
 
             }
     }
+}
+extension FavoritesListViewController: UISearchBarDelegate{
+    public func searchBar(_ searchbar: UISearchBar ,  textDidChange searchText: String ){
+        search = favPlaceList.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased() })
+     //   updateSearch()
+        searching = true
+        tableView.reloadData()
+    }
+    
+
 }
