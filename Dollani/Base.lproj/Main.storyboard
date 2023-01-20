@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
-        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -699,7 +698,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CN1-BW-Aep">
-                                <rect key="frame" x="-3" y="48" width="414" height="44"/>
+                                <rect key="frame" x="-4" y="48" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="التنقل" id="bRg-4r-74I">
@@ -756,7 +755,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uFF-vj-YeY">
-                                <rect key="frame" x="0.0" y="92" width="416" height="56"/>
+                                <rect key="frame" x="-1" y="92" width="416" height="56"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
@@ -768,7 +767,7 @@
                                 </connections>
                             </searchBar>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Qi-W4-q6r">
-                                <rect key="frame" x="-4" y="48" width="420" height="44"/>
+                                <rect key="frame" x="-5" y="48" width="420" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="قائمة الاماكن" id="hRl-0n-0gt">
@@ -1084,7 +1083,7 @@
                                 </prototypes>
                             </tableView>
                             <navigationBar contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ie-lm-ODW">
-                                <rect key="frame" x="-3" y="36" width="414" height="44"/>
+                                <rect key="frame" x="-3" y="36" width="413" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="    طلب المساعدة     " id="nzu-bO-VfC">
@@ -1098,7 +1097,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="63I-vY-p5Y">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Bav-H1-wCt">
-                                                <rect key="frame" x="294" y="4.5" width="100" height="35"/>
+                                                <rect key="frame" x="293" y="4.5" width="100" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system"/>
@@ -1253,7 +1252,7 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="mappin.and.ellipse" catalog="system"/>
                                                     <connections>
-                                                        <segue destination="fld-eb-bCX" kind="show" id="I3R-gi-q4c"/>
+                                                        <segue destination="Gcv-gm-9Tl" kind="presentation" identifier="goToCurrentLoc" modalPresentationStyle="fullScreen" id="NWM-Ig-Wrc"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1326,7 +1325,7 @@
                                 <color key="tintColor" red="0.6867702819" green="0.74241515160000005" blue="0.55557672069999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3b6-ch-dFd">
-                                <rect key="frame" x="184" y="71" width="188" height="44"/>
+                                <rect key="frame" x="183" y="71" width="189" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.82352948189999997" green="0.86666667460000002" blue="0.94901961089999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.1215686351" green="0.20784312490000001" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1387,7 +1386,7 @@
                                 </prototypes>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FoY-w8-j0p">
-                                <rect key="frame" x="-1" y="48" width="414" height="44"/>
+                                <rect key="frame" x="-1" y="48" width="413" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="جهات الاتصال" id="cdk-iq-AQb">
@@ -1404,7 +1403,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="LFO-ku-HKf">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="F3d-h5-P9H">
-                                                <rect key="frame" x="289" y="4.5" width="105" height="35"/>
+                                                <rect key="frame" x="288" y="4.5" width="105" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system"/>
@@ -1739,7 +1738,7 @@
                                 </prototypes>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gUg-AT-MBh">
-                                <rect key="frame" x="0.0" y="38" width="411" height="44"/>
+                                <rect key="frame" x="0.0" y="38" width="410" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="الاماكن" id="nlu-ti-QCS">
@@ -1856,7 +1855,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kJ5-hh-wUh">
-                                <rect key="frame" x="-1" y="48" width="413" height="44"/>
+                                <rect key="frame" x="-2" y="48" width="413" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="تعديل بيانات الحساب" id="YEt-c0-Erx">
@@ -1900,34 +1899,44 @@
             </objects>
             <point key="canvasLocation" x="4496" y="2184"/>
         </scene>
-        <!--Map View Controller-->
-        <scene sceneID="TMi-3Z-Mh0">
+        <!--Current Loc View Controller-->
+        <scene sceneID="u0t-Se-EcK">
             <objects>
-                <viewController storyboardIdentifier="map" modalPresentationStyle="fullScreen" id="fld-eb-bCX" customClass="mapViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vdV-G3-f6U">
+                <viewController storyboardIdentifier="CGPathMapperViewController" id="Gcv-gm-9Tl" customClass="CGCurrentLocViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nqo-u5-FPu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YME-Bz-ofy">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <standardMapConfiguration key="preferredConfiguration"/>
-                            </mapView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="arB-2z-BGH">
+                                <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="الموقع الحالي للمرافق" id="2ds-eh-2AL"/>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lz2-71-1hA">
+                                <rect key="frame" x="0.0" y="92" width="414" height="651"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="arv-Sm-kCm"/>
+                        <viewLayoutGuide key="safeArea" id="R4F-ZF-bLy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="YME-Bz-ofy" firstAttribute="top" secondItem="vdV-G3-f6U" secondAttribute="top" id="NSb-pc-i4g"/>
-                            <constraint firstItem="YME-Bz-ofy" firstAttribute="leading" secondItem="vdV-G3-f6U" secondAttribute="leading" id="WIc-wn-3jF"/>
-                            <constraint firstAttribute="trailing" secondItem="YME-Bz-ofy" secondAttribute="trailing" id="hAl-ry-8f4"/>
-                            <constraint firstAttribute="bottom" secondItem="YME-Bz-ofy" secondAttribute="bottom" id="hJQ-h2-Egd"/>
+                            <constraint firstItem="lz2-71-1hA" firstAttribute="leading" secondItem="R4F-ZF-bLy" secondAttribute="leading" id="1kZ-Ls-vkQ"/>
+                            <constraint firstItem="R4F-ZF-bLy" firstAttribute="bottom" secondItem="lz2-71-1hA" secondAttribute="bottom" id="8Gd-WO-sLM"/>
+                            <constraint firstItem="lz2-71-1hA" firstAttribute="centerX" secondItem="Nqo-u5-FPu" secondAttribute="centerX" id="Dv9-6O-yTK"/>
+                            <constraint firstItem="lz2-71-1hA" firstAttribute="top" secondItem="Nqo-u5-FPu" secondAttribute="top" constant="92" id="I4w-EO-AN6"/>
+                            <constraint firstItem="lz2-71-1hA" firstAttribute="trailing" secondItem="arB-2z-BGH" secondAttribute="trailing" id="Vuf-sq-r0Q"/>
+                            <constraint firstItem="R4F-ZF-bLy" firstAttribute="bottom" secondItem="lz2-71-1hA" secondAttribute="bottom" id="i35-Az-9Mg"/>
+                            <constraint firstItem="lz2-71-1hA" firstAttribute="top" secondItem="arB-2z-BGH" secondAttribute="bottom" id="rtz-tz-Ay2"/>
+                            <constraint firstItem="lz2-71-1hA" firstAttribute="leading" secondItem="arB-2z-BGH" secondAttribute="leading" id="tTu-5z-rcT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Qr1-Df-7uw"/>
+                    <navigationItem key="navigationItem" id="2mT-nl-2j8"/>
                     <connections>
-                        <outlet property="mapView" destination="YME-Bz-ofy" id="kpc-PP-zPb"/>
+                        <outlet property="container" destination="lz2-71-1hA" id="wnv-lJ-tnk"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5l-HK-T0M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pNV-mv-t0N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5361" y="2184"/>
         </scene>
@@ -1952,7 +1961,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="4vt-sc-ST1"/>
-        <segue reference="39J-ng-Pgm"/>
+        <segue reference="Hsk-Eh-1pk"/>
         <segue reference="iRj-2S-BBM"/>
         <segue reference="PDa-nR-dOC"/>
     </inferredMetricsTieBreakers>

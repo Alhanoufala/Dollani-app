@@ -12,10 +12,13 @@ import FirebaseStorage
 class CGHelpRequestsViewController: UIViewController {
     var deleteRequestIndexPath: IndexPath? = nil
     @IBOutlet weak var tableView: UITableView!
+    var source = [CGPoint]()
     var Index: IndexPath? = nil
     @Published var HelpRequests = [HelpRequest]()
+    @Published var PlaceList = [Place]()
     override func viewWillAppear(_ animated: Bool) {
         fetchData()
+        getPlace()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,33 @@ class CGHelpRequestsViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    func getPlace(){
+        let user = Auth.auth().currentUser
+        let CGEmail = user?.email
+
+
+        Firestore.firestore().collection("helpRequests").whereField("CGEmail", isEqualTo: CGEmail!).whereField("status", isEqualTo: "new").addSnapshotListener { (querySnapshot, error) in
+            guard let documents = querySnapshot?.documents else {
+                print("No documents")
+                return
+            }
+
+            self.PlaceList = documents.map { (queryDocumentSnapshot) -> Place in
+                let data = queryDocumentSnapshot.data()
+                let x = data["destinationX"] as? Int ?? 0
+                let y = data["destinationY"] as? Int ?? 0
+                let destinationName = data["destinationName"] as? String ?? ""
+                let destinationCat = data["destinationCat"] as? String ?? ""
+
+
+
+             return Place(name: destinationName, cat: destinationCat, x: x, y: y)
+            }
+            self.tableView.reloadData()
+        }
+          
+    }
+    
     
     func fetchData() {
         let user = Auth.auth().currentUser
@@ -47,15 +77,14 @@ class CGHelpRequestsViewController: UIViewController {
                 let VIName = data["VIName"] as? String ?? ""
                 let status = data["status"] as? String ?? ""
                 let profilePhoto = data["VIProfilePhoto"] as? String ?? ""
-                let lat = data["lat"] as? Double ?? 0
-                let lng = data["long"] as? Double ?? 0
+                let x = data["lat"] as? Double ?? 0
+                let y = data["long"] as? Double ?? 0
                 let inddorLocation = data["inddorLocation"] as? String ?? ""
-
-
-
-                
-                
-                return HelpRequest(CGEmail: CGEmail, CGName: CGName,CGPhoneNum: CGPhoneNum,VIEmail:VIEmail,VIName:VIName,VIPhoneNum:VIPhoneNum,VIProfilePhoto:profilePhoto,status:status,lat:lat,lng:lng,inddorLocation:inddorLocation)
+                self.source.append(CGPoint(x: data["xStart"]as! Int, y: data["xStart"]as! Int))
+                   
+               
+            
+                return HelpRequest(CGEmail: CGEmail, CGName: CGName,CGPhoneNum: CGPhoneNum,VIEmail:VIEmail,VIName:VIName,VIPhoneNum:VIPhoneNum,VIProfilePhoto:profilePhoto,status:status,x:Int(x),y:Int(y),inddorLocation:inddorLocation)
             }
             self.tableView.reloadData()
         }
@@ -185,18 +214,21 @@ extension CGHelpRequestsViewController : UITableViewDataSource{
         return cell
     }
     
-    //Layan
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let destination = segue.destination as? mapViewController{
-//            destination.VIname = HelpRequests[Index!.row].VIName
-//            destination.VICurrentLocation = HelpRequests[Index!.row].inddorLocation
-//            destination.lat = HelpRequests[Index!.row].lat
-//            destination.lng = HelpRequests[Index!.row].lng
-//
-//
-//        }
-//    }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+         let deatil = segue.destination as! CGCurrentLocViewController
+        if PlaceList.count != 0 {
+            deatil.place =  PlaceList[Index!.row]
+            
+            
+            deatil.source = source[Index!.row]}
+        else {
+            print("error")
+        }
+            
+            
+        
+    }
     
 }
 

@@ -53,7 +53,8 @@
 		8B0CB30D295E5A3500AF5DA8 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0CB30C295E5A3500AF5DA8 /* Place.swift */; };
 		8B6644F02957BEBB00A8D6BB /* CategoryPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6644EF2957BEBB00A8D6BB /* CategoryPlacesViewController.swift */; };
 		8B6ECE8E295E0E5D0082B1D1 /* placesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6ECE8D295E0E5D0082B1D1 /* placesViewController.swift */; };
-		8BE8F599296AA2400000FDF5 /* mapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE8F598296AA2400000FDF5 /* mapViewController.swift */; };
+		8BD41430297A0C99007B4D1F /* CGCurrentLocViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD4142F297A0C99007B4D1F /* CGCurrentLocViewController.swift */; };
+		8BD41434297A0DFB007B4D1F /* CGpathMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD41433297A0DFB007B4D1F /* CGpathMapper.swift */; };
 		8BF2D74E294BCDB900DEAB42 /* CGcontainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D74D294BCDB900DEAB42 /* CGcontainerViewController.swift */; };
 		8BF2D750294BCDE500DEAB42 /* VIcontainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D74F294BCDE500DEAB42 /* VIcontainerViewController.swift */; };
 		C85692CC7D7D504E8369499C /* libPods-Dollani.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD53EE2B259A0F3FBFBE2718 /* libPods-Dollani.a */; };
@@ -133,7 +134,8 @@
 		8B0CB30C295E5A3500AF5DA8 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		8B6644EF2957BEBB00A8D6BB /* CategoryPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPlacesViewController.swift; sourceTree = "<group>"; };
 		8B6ECE8D295E0E5D0082B1D1 /* placesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = placesViewController.swift; sourceTree = "<group>"; };
-		8BE8F598296AA2400000FDF5 /* mapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapViewController.swift; sourceTree = "<group>"; };
+		8BD4142F297A0C99007B4D1F /* CGCurrentLocViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGCurrentLocViewController.swift; sourceTree = "<group>"; };
+		8BD41433297A0DFB007B4D1F /* CGpathMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGpathMapper.swift; sourceTree = "<group>"; };
 		8BF2D74D294BCDB900DEAB42 /* CGcontainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGcontainerViewController.swift; sourceTree = "<group>"; };
 		8BF2D74F294BCDE500DEAB42 /* VIcontainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIcontainerViewController.swift; sourceTree = "<group>"; };
 		98725C481496125BECD738A4 /* Pods-Dollani.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dollani.release.xcconfig"; path = "Target Support Files/Pods-Dollani/Pods-Dollani.release.xcconfig"; sourceTree = "<group>"; };
@@ -288,7 +290,8 @@
 				8B6644EF2957BEBB00A8D6BB /* CategoryPlacesViewController.swift */,
 				0132FD9629587FDE0069C7D9 /* placeDetailsViewController.swift */,
 				560D5D792959747A000F39FF /* EditCGprofileViewController.swift */,
-				8BE8F598296AA2400000FDF5 /* mapViewController.swift */,
+				8BD4142F297A0C99007B4D1F /* CGCurrentLocViewController.swift */,
+				8BD41433297A0DFB007B4D1F /* CGpathMapper.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -512,6 +515,8 @@
 				57C8EBB1296C79E900A89EA9 /* PathMapperViewController.swift in Sources */,
 				8B6ECE8E295E0E5D0082B1D1 /* placesViewController.swift in Sources */,
 				8BF2D750294BCDE500DEAB42 /* VIcontainerViewController.swift in Sources */,
+				8BD41434297A0DFB007B4D1F /* CGpathMapper.swift in Sources */,
+				8BD41430297A0C99007B4D1F /* CGCurrentLocViewController.swift in Sources */,
 				57E8D236294A2B6800B26DDC /* VIHomePageViewController.swift in Sources */,
 				574E708E2955EE570064C5FB /* AskForHelpViewController.swift in Sources */,
 				8BF2D74E294BCDB900DEAB42 /* CGcontainerViewController.swift in Sources */,
@@ -520,7 +525,6 @@
 				799EA94C295B4E410011E27E /* NFCHelper.swift in Sources */,
 				8B0CB30D295E5A3500AF5DA8 /* Place.swift in Sources */,
 				572BE1E2295B88F80034D52F /* PushNotificationManager.swift in Sources */,
-				8BE8F599296AA2400000FDF5 /* mapViewController.swift in Sources */,
 				57D7AE532943DB0900EAEAB5 /* SignupViewController.swift in Sources */,
 				57A29C5B2959F5D500BC87C7 /* NavigationViewController.swift in Sources */,
 				010B57552957571600542D83 /* FavoritesListViewController.swift in Sources */,
