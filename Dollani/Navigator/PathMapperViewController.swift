@@ -34,6 +34,7 @@ class PathMapperViewController: UIViewController,UINavigationBarDelegate {
         if let navigate = segue.destination as? NavigationViewController{
             navigate.path     = pethMapperObj.mapPathVertices
             
+            navigate.destinationPlace = place
             
         }
         

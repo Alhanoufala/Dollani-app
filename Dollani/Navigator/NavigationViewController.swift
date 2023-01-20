@@ -19,23 +19,15 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
     @IBOutlet weak var navBar: UINavigationBar!
     var path:[Vertex]!
     var visited = [Bool]()
-    var destination = ""
-    var destinationTag = ""
+    var destinationPlace:Place!
+    var sourcePoint:CGPoint!
     var VIPhoneNum = ""
     var VIName = ""
     var VIProfilePhoto = ""
-    var inddorLocation = ""
-    var lat:Double!
-    var long:Double!
-    var timer = Timer()
+   
     @Published var CGUsers = [User]()
     var CGEmailList = [String] ()
-    // Provides to create an instance of the CMMotionActivityManager.
-    private let activityManager = CMMotionActivityManager()
-    /// Provides to create an instance of the CMPedometer.
-    private let pedometer = CMPedometer()
     
-    let motionManager = CMMotionManager()
     // 1. Add a property to hold the Proximity Observer
     var proximityObserver: ProximityObserver!
     private let manager = CLLocationManager()
@@ -54,6 +46,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
         }
         return 0
     }
+    
     
     func getCGEmails() {
         let user = Auth.auth().currentUser
@@ -79,7 +72,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
             
         }
     }
-    @objc
+ 
     func   getDirectionsFromPath(){
         var dis :Double
         var feets: String
@@ -145,14 +138,11 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
            
             else if((path[i].point == path.last?.point) &&  (visited[i] == false)){
                 visited[i] = true
-                                print( "لقد وصلت الى وجهتك")
+                              
                 self.directionLabel.text = "لقد وصلت الى وجهتك"
                
                 return
-                
-                //Stop the timer
-               // timer.invalidate()
-               
+              
             }
             
            
@@ -173,11 +163,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
         return "\(feetRounded)"
     }
 
-    func scheduledTimerWithTimeInterval(){
-        // Scheduling timer to Call the function "updateCounting" with the interval of 1 seconds
-        timer = Timer.scheduledTimer(timeInterval:1, target: self, selector: #selector(getDirectionsFromPath), userInfo: nil, repeats: true)
-    }
-    
+
     func fetchData() {
     
         if(CGEmailList.count != 0){
@@ -227,7 +213,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
        
        
         for CGUser in CGUsers {
-            Firestore.firestore().collection("helpRequests").document((Auth.auth().currentUser?.email)!+"-"+CGUser.email).setData(["CGName" : CGUser.name,"CGEmail":CGUser.email,"CGPhoneNum":CGUser.phoneNum,"VIEmail":(Auth.auth().currentUser?.email)!,"VIName":VIName,"VIPhoneNum":VIPhoneNum,"status":"new","VIProfilePhoto":VIProfilePhoto,"inddorLocation":inddorLocation,"lat":lat,"long":long])
+            Firestore.firestore().collection("helpRequests").document((Auth.auth().currentUser?.email)!+"-"+CGUser.email).setData(["CGName" : CGUser.name,"CGEmail":CGUser.email,"CGPhoneNum":CGUser.phoneNum,"VIEmail":(Auth.auth().currentUser?.email)!,"VIName":VIName,"VIPhoneNum":VIPhoneNum,"status":"new","VIProfilePhoto":VIProfilePhoto,"destinationName":destinationPlace.name,"destinationCat":destinationPlace.cat,"destinationX":destinationPlace.x,"destinationY":destinationPlace.y,"xStart":sourcePoint.x,"yStart":sourcePoint.y])
             sender.sendPushNotification(to:CGUser.fcmToken!, title: "دلني", body: "قام احد جهات الاتصال بارسال طلب مساعدة ")
         }
         //alert
@@ -239,6 +225,8 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
     override func viewDidLoad() {
         super.viewDidLoad()
         setVisited()
+        getCGEmails()
+        
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestAlwaysAuthorization()
@@ -251,8 +239,8 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
         farmeLabel.layer.borderWidth = 4
         farmeLabel.layer.borderColor =  UIColor(red: 43/255.0, green: 66/255.0, blue: 143/255.0, alpha: 255.0/255.0).cgColor
        
-      //  locationManagerDidChangeAuthorization(manager)
-        getCGEmails()
+  
+       
        
         let cloudCredentials = CloudCredentials(appID: "dollani-bi1",
                                                 appToken: "b62b4121000e11265883334fe1a89e13")
@@ -282,6 +270,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
         zone1.onEnter = { context in
             AudioServicesPlaySystemSound(1352)
          self.getDirectionsFromPath()
+            self.sourcePoint =  CGPoint(x:Int(context.attachments["x"] as! String)! , y:    Int(context.attachments["y"] as! String)!)
          
             
             
@@ -292,6 +281,8 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
         zone2.onEnter = { context in
             AudioServicesPlaySystemSound(1352)
            self.getDirectionsFromPath()
+            self.sourcePoint =  CGPoint(x:Int(context.attachments["x"] as! String)! , y:    Int(context.attachments["y"] as! String)!)
+         
          
         
         }
@@ -300,6 +291,8 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
         zone3.onEnter = { context in
             AudioServicesPlaySystemSound(1352)
          self.getDirectionsFromPath()
+            self.sourcePoint =  CGPoint(x:Int(context.attachments["x"] as! String)! , y:    Int(context.attachments["y"] as! String)!)
+         
          
         
         }
@@ -308,6 +301,8 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
         zone4.onEnter = { context in
             AudioServicesPlaySystemSound(1352)
              self.getDirectionsFromPath()
+            self.sourcePoint =  CGPoint(x:Int(context.attachments["x"] as! String)! , y:    Int(context.attachments["y"] as! String)!)
+         
          
         
         }
@@ -320,60 +315,6 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
     }
     
     
-    
-    func movementDetected (){
-        activityManager.startActivityUpdates(to: OperationQueue.main) { (activity: CMMotionActivity?) in
-            guard let activity = activity else { return }
-           
-                if activity.stationary {
-                    print("Stationary")
-                    
-                } else if activity.walking {
-                    // With vibration
-                    
-                    AudioServicesPlaySystemSound(1352)
-                    print("Walking")
-                } else if activity.running {
-                    AudioServicesPlaySystemSound(1352)
-                    print("Running")
-                } else if activity.automotive {
-                    print("Automotive")
-                }
-            
-        }
-        
-    }
-    //MARK: - location delegate methods
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let userLocation :CLLocation = locations[0] as CLLocation
-      //Get the latitude and the longitude
-      lat =   userLocation.coordinate.latitude
-      long = userLocation.coordinate.longitude
-
-       
-            }
- 
-
-    
-    
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        switch manager.authorizationStatus {
-        case .authorizedWhenInUse:  // Location services are available.
-            // enableLocationFeatures()
-            break
-            
-        case .restricted, .denied:  // Location services currently unavailable.
-            // disableLocationFeatures()
-            break
-            
-        case .notDetermined:        // Authorization not determined yet.
-            manager.requestWhenInUseAuthorization()
-            break
-            
-        default:
-            break
-        }
-    }
     //MARK: - Navigation bar delegate
     func position(for bar: UIBarPositioning) -> UIBarPosition {
      return .topAttached
