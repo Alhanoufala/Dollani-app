@@ -141,6 +141,13 @@ extension CGHelpRequestsViewController : UITableViewDelegate{
             confirmDelete(requestsToDelete: requestsToDelete)
         }
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        Index = indexPath
+       
+        performSegue(withIdentifier: "goToCurrentLoc", sender: self)
+
+    }
 
    
     func confirmDelete(requestsToDelete:HelpRequest) {

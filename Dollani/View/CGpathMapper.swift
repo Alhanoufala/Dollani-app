@@ -82,7 +82,7 @@ struct CGPathMapperContentView: View {
                 HStack {
                     Text("\(selectedClassroom.name)\n").lineLimit(2)
                     Spacer()
-Text("وجهتك المختارة:")
+Text("الوجهة المختارة:")
 
                     // MARK: - Text Input via dropdown
 
