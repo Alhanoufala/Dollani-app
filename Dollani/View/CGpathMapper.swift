@@ -78,11 +78,12 @@ struct CGPathMapperContentView: View {
             }
             
             
+            
             VStack {
                 HStack {
                     Text("\(selectedClassroom.name)\n").lineLimit(2)
                     Spacer()
-Text("الوجهة المختارة:")
+                    Text("الوجهة المختارة:").fontWeight(.bold)
 
                     // MARK: - Text Input via dropdown
 
@@ -106,8 +107,15 @@ Text("الوجهة المختارة:")
                     .cornerRadius(16)
                 }
                 
+                
                 /// tap button to call main procedure
-              
+                Text(" ")
+                Text(" ")
+                Text(" ")
+            }
+            VStack{
+                Text(" ")
+
             }
             .font(.system(size: 20, weight: .medium))
             .padding(.horizontal, 20)
