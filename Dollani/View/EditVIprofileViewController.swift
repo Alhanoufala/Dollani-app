@@ -201,27 +201,24 @@ class EditVIprofileViewController: UIViewController, UITextFieldDelegate,UINavig
         if let user = user {
             
             let currentEmail = user.email
-            /*
-            Firestore.firestore().collection("users").whereField("email",isEqualTo:currentEmail!).getDocuments { snapshot, error in
+        
+            
+            var CGEmail  = [String] ()
+            Firestore.firestore().collection("users").whereField("email",isEqualTo: Auth.auth().currentUser!.email!).getDocuments { [self] snapshot, error in
                 if  error != nil {
-                           // ERROR
+                    //                print(error.localizedDescription)}
+                }
+                else{
+                    CGEmail = snapshot?.documents.first?.get("CGEmail") as! [String]
+                    
+                    for i in 0..<CGEmail.count {
+                        Firestore.firestore().collection("helpRequests").document(Auth.auth().currentUser!.email! + "-" + CGEmail[i]).updateData(["VIName":Name, "VIPhoneNum":Phone])
+                        
+                        
+                    }
+                }
                        }
-                       else {
-                           if(snapshot?.count != 0){
-                               
-                               
-                               let oldName = snapshot?.documents.first?.get("name") as! String
-                               let oldPhoneNum = snapshot?.documents.first?.get("phoneNum") as! String
-                               
-                                                              //update help request
-                               Firestore.firestore().collection("helpRequests").whereField("VIPhoneNum",isEqualTo:oldPhoneNum).updateData(["VIName":Name, "VIPhoneNum":Phone])
-                               
-                               Firestore.firestore().collection("helpRequests").whereField("CGPhoneNum",isEqualTo:oldPhoneNum).updateData(["CGName":Name, "CGPhoneNum":Phone])
-                               
-                           }
-                       }
-                   }
-             */
+       
             
             
             //set image
