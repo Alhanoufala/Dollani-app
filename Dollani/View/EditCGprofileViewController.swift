@@ -234,6 +234,12 @@ class EditCGprofileViewController: UIViewController, UITextFieldDelegate,UINavig
                             
                             //update user collection
                             Firestore.firestore().collection("users").document(currentEmail!).updateData(["name":Name, "phoneNum":Phone, "profilePhoto": metaImageUrl ])
+                            
+                            
+                            //update helpRequests collection
+                            //let doc = Firestore.firestore().collection("helpRequests").whereField("VIEmail", isEqualTo: currentEmail)
+                            
+                            //Firestore.doc.updateData(["name":Name, "phoneNum":Phone, "profilePhoto": metaImageUrl ])
                         }
                     })
                 }
