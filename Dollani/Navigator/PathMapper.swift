@@ -52,6 +52,7 @@ struct PathMapperContentView: View {
                 Image("Ground floor").resizable() /// the map image (made by myself)
                     
                 // MARK: - Visual Output, path drawn on top of map
+                
 
                 Path { path in
                     if mapPathVertices.isEmpty == false {

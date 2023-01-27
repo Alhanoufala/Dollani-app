@@ -56,27 +56,28 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
            
         }}
     func retrivePlaces(){
-        
-        Firestore.firestore().collection("places").whereField("name",in:favPlaceListString).addSnapshotListener { (querySnapshot, error) in
-            guard let documents = querySnapshot?.documents else {
-                print("No documents")
-                return
-            }
-            
-            
-            self.favPlaceList = documents.map { (queryDocumentSnapshot) -> Place in
-                let data = queryDocumentSnapshot.data()
-                let name = data["name"] as? String ?? ""
-                let cat = data["category"] as? String ?? ""
-                let x = data["x"] as? Int ?? 0
-                let y = data["y"] as? Int ?? 0
-                self.favPlaceListName.append(name)
+        if(favPlaceListString.count < 10 && favPlaceListString.count != 0){
+            Firestore.firestore().collection("places").whereField("name",in:favPlaceListString).addSnapshotListener { (querySnapshot, error) in
+                guard let documents = querySnapshot?.documents else {
+                    print("No documents")
+                    return
+                }
                 
-                return Place(name: name, cat: cat,x:x,y:y)
+                
+                self.favPlaceList = documents.map { (queryDocumentSnapshot) -> Place in
+                    let data = queryDocumentSnapshot.data()
+                    let name = data["name"] as? String ?? ""
+                    let cat = data["category"] as? String ?? ""
+                    let x = data["x"] as? Int ?? 0
+                    let y = data["y"] as? Int ?? 0
+                    self.favPlaceListName.append(name)
+                    
+                    return Place(name: name, cat: cat,x:x,y:y)
+                    
+                }
+                
                 
             }
-            
-            
         }
     }
     
