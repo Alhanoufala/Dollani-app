@@ -110,9 +110,12 @@ struct CGPathMapperContentView: View {
                 
                 /// tap button to call main procedure
                
-                Text(" ")
-                Text(" ")
+               
             }
+//            VStack{
+//                Text(" ")
+//
+//            }
 //            VStack{
 //                Text(" ")
 //
