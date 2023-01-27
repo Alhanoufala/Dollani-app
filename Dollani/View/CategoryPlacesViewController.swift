@@ -109,20 +109,15 @@ class CategoryPlacesViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func updateSearch(){
-        if(search.count < 10 && search.count != 0 ){
-        Firestore.firestore().collection("categories").getDocuments { snapshot, error in
-            if  error != nil {
-                print(error!.localizedDescription)
-            }
-        
-            else{
-                self.listOfCategorySearch = snapshot?.documents.first?.get("categoriesP") as? [String] ?? []
-               
-                
+        self.listOfCategorySearch = []
+        for i in stride(from: 0, to: listOfCategory.count, by: 1) {
+            for j in stride(from: 0, to: search.count, by: 1){
+                if(listOfCategory[i] == search[j] ){
+                    self.listOfCategorySearch.append(listOfCategory[i])
+                }
             }
         }
-
-        }
+       
     }
 
 }

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		010B57552957571600542D83 /* FavoritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B57542957571600542D83 /* FavoritesListViewController.swift */; };
-		0132FD9729587FDE0069C7D9 /* placeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0132FD9629587FDE0069C7D9 /* placeDetailsViewController.swift */; };
 		560D5D7629596092000F39FF /* EditVIprofileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560D5D7529596092000F39FF /* EditVIprofileViewController.swift */; };
 		560D5D7A2959747A000F39FF /* EditCGprofileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560D5D792959747A000F39FF /* EditCGprofileViewController.swift */; };
 		56D4FC24294E91C5004E4998 /* VIprofileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4FC23294E91C5004E4998 /* VIprofileViewController.swift */; };
@@ -19,6 +18,8 @@
 		574E708E2955EE570064C5FB /* AskForHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574E708D2955EE570064C5FB /* AskForHelpViewController.swift */; };
 		574E709029563E150064C5FB /* AskForhelpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574E708F29563E150064C5FB /* AskForhelpTableViewCell.swift */; };
 		574E709229565FC30064C5FB /* CGHelpRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574E709129565FC20064C5FB /* CGHelpRequestsViewController.swift */; };
+		578D3BBE29834A9F0081D654 /* NavigationViewControllerFav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578D3BBD29834A9F0081D654 /* NavigationViewControllerFav.swift */; };
+		57976EEE29833E3800252CF0 /* PathMapperViewControllerFav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57976EED29833E3800252CF0 /* PathMapperViewControllerFav.swift */; };
 		57A29C5B2959F5D500BC87C7 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A29C5A2959F5D500BC87C7 /* NavigationViewController.swift */; };
 		57BA58292957148000EABF66 /* HelpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA58282957148000EABF66 /* HelpRequest.swift */; };
 		57BA582B2957229A00EABF66 /* HelpRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA582A2957229A00EABF66 /* HelpRequestTableViewCell.swift */; };
@@ -92,7 +93,6 @@
 
 /* Begin PBXFileReference section */
 		010B57542957571600542D83 /* FavoritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewController.swift; sourceTree = "<group>"; };
-		0132FD9629587FDE0069C7D9 /* placeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = placeDetailsViewController.swift; sourceTree = "<group>"; };
 		560D5D7529596092000F39FF /* EditVIprofileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVIprofileViewController.swift; sourceTree = "<group>"; };
 		560D5D792959747A000F39FF /* EditCGprofileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCGprofileViewController.swift; sourceTree = "<group>"; };
 		56D4FC23294E91C5004E4998 /* VIprofileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIprofileViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +104,8 @@
 		574E708D2955EE570064C5FB /* AskForHelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskForHelpViewController.swift; sourceTree = "<group>"; };
 		574E708F29563E150064C5FB /* AskForhelpTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskForhelpTableViewCell.swift; sourceTree = "<group>"; };
 		574E709129565FC20064C5FB /* CGHelpRequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGHelpRequestsViewController.swift; sourceTree = "<group>"; };
+		578D3BBD29834A9F0081D654 /* NavigationViewControllerFav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewControllerFav.swift; sourceTree = "<group>"; };
+		57976EED29833E3800252CF0 /* PathMapperViewControllerFav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathMapperViewControllerFav.swift; sourceTree = "<group>"; };
 		57A29C5A2959F5D500BC87C7 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		57BA58282957148000EABF66 /* HelpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpRequest.swift; sourceTree = "<group>"; };
 		57BA582A2957229A00EABF66 /* HelpRequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpRequestTableViewCell.swift; sourceTree = "<group>"; };
@@ -192,6 +194,8 @@
 				57A29C5A2959F5D500BC87C7 /* NavigationViewController.swift */,
 				57C8EBB42972DEF200A89EA9 /* PathMapper.swift */,
 				57C8EBB0296C79E900A89EA9 /* PathMapperViewController.swift */,
+				57976EED29833E3800252CF0 /* PathMapperViewControllerFav.swift */,
+				578D3BBD29834A9F0081D654 /* NavigationViewControllerFav.swift */,
 			);
 			path = Navigator;
 			sourceTree = "<group>";
@@ -288,7 +292,6 @@
 				560D5D7529596092000F39FF /* EditVIprofileViewController.swift */,
 				010B57542957571600542D83 /* FavoritesListViewController.swift */,
 				8B6644EF2957BEBB00A8D6BB /* CategoryPlacesViewController.swift */,
-				0132FD9629587FDE0069C7D9 /* placeDetailsViewController.swift */,
 				560D5D792959747A000F39FF /* EditCGprofileViewController.swift */,
 				8BD4142F297A0C99007B4D1F /* CGCurrentLocViewController.swift */,
 				8BD41433297A0DFB007B4D1F /* CGpathMapper.swift */,
@@ -503,7 +506,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0132FD9729587FDE0069C7D9 /* placeDetailsViewController.swift in Sources */,
 				57D7AE552943E5F300EAEAB5 /* SelectionViewController.swift in Sources */,
 				57C9B20E29546F80000A60D7 /* ContactViewController.swift in Sources */,
 				574E709229565FC30064C5FB /* CGHelpRequestsViewController.swift in Sources */,
@@ -513,6 +515,7 @@
 				57D7AE262943D83B00EAEAB5 /* LoginViewController.swift in Sources */,
 				57D7AE222943D83B00EAEAB5 /* AppDelegate.swift in Sources */,
 				57C8EBB1296C79E900A89EA9 /* PathMapperViewController.swift in Sources */,
+				57976EEE29833E3800252CF0 /* PathMapperViewControllerFav.swift in Sources */,
 				8B6ECE8E295E0E5D0082B1D1 /* placesViewController.swift in Sources */,
 				8BF2D750294BCDE500DEAB42 /* VIcontainerViewController.swift in Sources */,
 				8BD41434297A0DFB007B4D1F /* CGpathMapper.swift in Sources */,
@@ -535,6 +538,7 @@
 				57BA58292957148000EABF66 /* HelpRequest.swift in Sources */,
 				560D5D7629596092000F39FF /* EditVIprofileViewController.swift in Sources */,
 				57BA582D29572C8400EABF66 /* ContactTableViewCell.swift in Sources */,
+				578D3BBE29834A9F0081D654 /* NavigationViewControllerFav.swift in Sources */,
 				57BA582B2957229A00EABF66 /* HelpRequestTableViewCell.swift in Sources */,
 				8B6644F02957BEBB00A8D6BB /* CategoryPlacesViewController.swift in Sources */,
 				56D4FC24294E91C5004E4998 /* VIprofileViewController.swift in Sources */,

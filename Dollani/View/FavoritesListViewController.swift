@@ -7,45 +7,78 @@
 
 import UIKit
 import Firebase
-
-class FavoritesListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UINavigationBarDelegate {
+import EstimoteProximitySDK
+import CoreLocation
+class FavoritesListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UINavigationBarDelegate,CLLocationManagerDelegate {
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var tableView: UITableView!
     @Published var users = [User]()
-    var favPlaceList  = [String] ()
+    var favPlaceList  = [Place] ()
+    var favPlaceListString  = [String] ()
+    var favPlaceListName  = [String] ()
+
+    
     var search = [String]()
-    var favPlaceListSearch  = [String] ()
+    var favPlaceListSearch  = [Place] ()
     var searching = false
     
-    
+    var source :CGPoint?
     var db = Firestore.firestore()
     var Index: IndexPath? = nil
-
+    // 1. Add a property to hold the Proximity Observer
+    var proximityObserver: ProximityObserver!
+    private let manager = CLLocationManager()
     @IBOutlet weak var searchbar: UISearchBar!
     override func viewWillAppear(_ animated: Bool) {
+        
         db.collection("users").whereField("email",isEqualTo: Auth.auth().currentUser!.email!).getDocuments { [self] snapshot, error in
             if  error != nil {
                 //                print(error.localizedDescription)}
             }
             else{
-                favPlaceList = snapshot?.documents.first?.get("favPlace") as! [String]
-                if ( favPlaceList.count == 0 ){
+                favPlaceListString = snapshot?.documents.first?.get("favPlace") as! [String]
+                if ( favPlaceListString.count == 0 ){
                     let alert = UIAlertController(title: "نعتذر", message:"لم تقم بإضافة اماكن الى المفضلة", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title:  "تم", style: .default, handler: { (_) -> Void in
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                         let vc = storyboard.instantiateViewController(identifier: "VIcontainer")
                         vc.modalPresentationStyle = .overFullScreen
-                        present(vc, animated: true)
+                        self.present(vc, animated: true)
                     }))
                                     present(alert, animated: true, completion: nil)
 
               
                 }
+                retrivePlaces()
                 fetchData()
                 
             }
            
         }}
+    func retrivePlaces(){
+        
+        Firestore.firestore().collection("places").whereField("name",in:favPlaceListString).addSnapshotListener { (querySnapshot, error) in
+            guard let documents = querySnapshot?.documents else {
+                print("No documents")
+                return
+            }
+            
+            
+            self.favPlaceList = documents.map { (queryDocumentSnapshot) -> Place in
+                let data = queryDocumentSnapshot.data()
+                let name = data["name"] as? String ?? ""
+                let cat = data["category"] as? String ?? ""
+                let x = data["x"] as? Int ?? 0
+                let y = data["y"] as? Int ?? 0
+                self.favPlaceListName.append(name)
+                
+                return Place(name: name, cat: cat,x:x,y:y)
+                
+            }
+            
+            
+        }
+    }
     
     
     override func viewDidLoad() {
@@ -55,6 +88,22 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.delegate = self
         searchbar.delegate = self
         navBar.delegate = self
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestAlwaysAuthorization()
+
+        if CLLocationManager.locationServicesEnabled(){
+            manager.startUpdatingLocation()
+        }
+        let cloudCredentials = CloudCredentials(appID: "dollani-bi1",
+                                                appToken: "b62b4121000e11265883334fe1a89e13")
+        // 2. Create the Proximity Observer
+        self.proximityObserver = ProximityObserver(
+            credentials: cloudCredentials,
+            onError: { error in
+                print("proximity observer error: \(error)")
+            })
+        setTheSource()
     }
     
     
@@ -94,7 +143,7 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
         if searching{
             cell.textLabel?.text = search[indexPath.row]
         } else {
-            cell.textLabel?.text = favPlaceList[indexPath.row] }
+            cell.textLabel?.text = favPlaceList[indexPath.row].name }
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -103,20 +152,66 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         Index = indexPath
-        performSegue(withIdentifier: "Favdetails", sender: self)
+        performSegue(withIdentifier: "ToMap", sender: self)
 
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
-   
-    @IBAction func forwardTapped(_ sender: Any) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = storyboard.instantiateViewController(identifier: "details")
-//        vc.modalPresentationStyle = .overFullScreen
-//        present(vc, animated: true)
-//        performSegue(withIdentifier: "Favdetails", sender: self)
-
-
+         let deatil = segue.destination as! PathMapperViewControllerFav
+        if favPlaceListSearch.count != 0 {
+            deatil.place = favPlaceListSearch[Index!.row]
+        }
+          
+            else{
+                deatil.place =  favPlaceList[Index!.row]
+            }
+         
+        deatil.source = source ??  CGPoint(x: 207, y: 415)
+            
+            
+        
     }
+    func setTheSource(){
+        let zone1 = ProximityZone(tag: "place 1", range: .near)
+        let zone2 = ProximityZone(tag: "place 2", range: .near)
+        let zone3 = ProximityZone(tag: "place 3", range: .near)
+        let zone4 = ProximityZone(tag: "place 4", range: .near)
+        
+      
+       
+        // first zone
+        zone1.onEnter = { context in
+            self.source =  CGPoint(x:Int(context.attachments["x"] as! String)! , y:    Int(context.attachments["y"] as! String)!)
+         
+            
+            
+        }
+        
+        //Second zone
+        zone2.onEnter = { context in
+            self.source =  CGPoint(x:Int(context.attachments["x"] as! String)! , y:    Int(context.attachments["y"] as! String)!)
+        
+        }
+        //Third zone
+        zone3.onEnter = { context in
+            
+            self.source =  CGPoint(x:Int(context.attachments["x"] as! String)! , y:    Int(context.attachments["y"] as! String)!)
+        
+        }
+        //Fourth zone
+        zone4.onEnter = { context in
+            
+            self.source =  CGPoint(x:Int(context.attachments["x"] as! String)! , y:    Int(context.attachments["y"] as! String)!)
+        
+        }
+        
+      
+        
+        self.proximityObserver.startObserving([zone1,zone2,zone3,zone4])
+       
+    }
+
+ 
 
     @IBAction func backButtonTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -127,18 +222,44 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
     func position(for bar: UIBarPositioning) -> UIBarPosition {
      return .topAttached
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any? ){
-            if let destination = segue.destination as? placeDetailsViewController{
-                    destination.place = favPlaceList[Index!.row]
-                    destination.index = Index!.row
-
+    
+    
+ 
+    
+    func updateSearch(){
+        if(search.count < 10 && search.count != 0 ){
+            Firestore.firestore().collection("places").whereField("name",in:search).addSnapshotListener { (querySnapshot, error) in
+                guard let documents = querySnapshot?.documents else {
+                    print("No documents")
+                    return
+                }
+                
+                
+                self.favPlaceListSearch = documents.map { (queryDocumentSnapshot) -> Place in
+                    let data = queryDocumentSnapshot.data()
+                    let name = data["name"] as? String ?? ""
+                    let cat = data["category"] as? String ?? ""
+                    let x = data["x"] as? Int ?? 0
+                    let y = data["y"] as? Int ?? 0
+                    
+                    
+                    return Place(name: name, cat: cat,x:x,y:y)
+                    
+                }
+                
+                
             }
+        }
     }
-}
+        
+    }
+    
+    
+
 extension FavoritesListViewController: UISearchBarDelegate{
     public func searchBar(_ searchbar: UISearchBar ,  textDidChange searchText: String ){
-        search = favPlaceList.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased() })
-     //   updateSearch()
+        search = favPlaceListName.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased() })
+       updateSearch()
         searching = true
         tableView.reloadData()
     }

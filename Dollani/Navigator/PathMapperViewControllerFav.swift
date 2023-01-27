@@ -1,37 +1,49 @@
 //
-//  CGCurrentLocViewController.swift
+//  PathMapperViewControllerFav.swift
 //  Dollani
 //
-//  Created by Layan Alwadie on 27/06/1444 AH.
+//  Created by Alhanouf Alawwad on 05/07/1444 AH.
 //
 
 import UIKit
 import SwiftUI
 import Firebase
 
-class CGCurrentLocViewController: UIViewController,UINavigationBarDelegate {
+class PathMapperViewControllerFav: UIViewController,UINavigationBarDelegate {
+    @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var container: UIView!
     var place :Place!
     var source : CGPoint!
-    var pethMapperObj :CGPathMapperContentView!
+   
     @Published  var hallways = [DirectionalHallway]()
-    @IBOutlet weak var container: UIView!
-    @IBOutlet weak var navBar: UINavigationBar!
+    var favPlaceList  = [String] ()
+  var pethMapperObj :PathMapperContentView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        getHallways()
         navBar.delegate = self
+        getHallways()
+        
         // Do any additional setup after loading the view.
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any? ){
+        
+        
+        if let navigate = segue.destination as? NavigationViewControllerFav{
+            navigate.path     = pethMapperObj.mapPathVertices
+            
+            navigate.destinationPlace = place
+            navigate.sourcePoint = source
+            
+        }
+        
+    }
+    
+    
+    //MARK: - Navigation bar delegate
     func position(for bar: UIBarPositioning) -> UIBarPosition {
      return .topAttached
     }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first!
-        let location = touch.location(in: self.view)
-        print(location )
-    }
-    
-
+   
     func getHallways(){
         Firestore.firestore().collection("hallways").whereField("building", isEqualTo: "الحاسب").addSnapshotListener { (querySnapshot, error) in
             guard let documents = querySnapshot?.documents else {
@@ -48,7 +60,7 @@ class CGCurrentLocViewController: UIViewController,UINavigationBarDelegate {
                 return DirectionalHallway(start: start, end: end)
                 
             }
-            self.pethMapperObj = CGPathMapperContentView(place_: self.place,hallways_:self.hallways,source_:self.source )
+            self.pethMapperObj = PathMapperContentView(place_: self.place,hallways_:self.hallways,source_:self.source )
             
             let childView = UIHostingController(rootView: self.pethMapperObj)
             self.addChild(childView)
@@ -59,17 +71,6 @@ class CGCurrentLocViewController: UIViewController,UINavigationBarDelegate {
           
         }
     }
-   
+    
 
-    @IBAction func backButten(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "CGHelpRequests")
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let container = segue.destination as? CGcontainerViewController{
-            container.index = 1
-        }
-    }
 }

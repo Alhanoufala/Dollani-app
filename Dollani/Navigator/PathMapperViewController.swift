@@ -35,6 +35,7 @@ class PathMapperViewController: UIViewController,UINavigationBarDelegate {
             navigate.path     = pethMapperObj.mapPathVertices
             
             navigate.destinationPlace = place
+            navigate.sourcePoint = source
             
         }
         
