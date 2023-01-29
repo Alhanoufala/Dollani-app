@@ -221,7 +221,7 @@ class NavigationViewControllerFav: UIViewController ,UINavigationBarDelegate,CLL
         super.viewDidLoad()
         setVisited()
         getCGEmails()
-        
+        directionLabel.text = "أقترب من إحدى أجهزة ارسال البلوتوث لبدء التنقل "
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestAlwaysAuthorization()
