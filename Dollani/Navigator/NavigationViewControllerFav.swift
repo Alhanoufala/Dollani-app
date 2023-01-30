@@ -254,10 +254,10 @@ class NavigationViewControllerFav: UIViewController ,UINavigationBarDelegate,CLL
        
     }
     func  updateTransition(){
-        let zone1 = ProximityZone(tag: "place 1", range: .near)
-        let zone2 = ProximityZone(tag: "place 2", range: .near)
-        let zone3 = ProximityZone(tag: "place 3", range: .near)
-        let zone4 = ProximityZone(tag: "place 4", range: .near)
+        let zone1 = ProximityZone(tag: "place 1", range: .far)
+        let zone2 = ProximityZone(tag: "place 2", range: .far)
+        let zone3 = ProximityZone(tag: "place 3", range: .far)
+        let zone4 = ProximityZone(tag: "place 4", range: .far)
         
       
        
