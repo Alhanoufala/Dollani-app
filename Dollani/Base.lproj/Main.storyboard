@@ -736,12 +736,25 @@
                                     <action selector="finishTapped:" destination="Av7-H1-HhM" eventType="touchUpInside" id="XWa-Fd-bQb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIQ-Wr-yUX">
+                                <rect key="frame" x="143" y="710" width="137" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.18823529780000001" green="0.25490197539999998" blue="0.5411764979" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="قارئ الأماكن">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="nfcreaderbtn:" destination="Av7-H1-HhM" eventType="touchUpInside" id="VX1-IZ-416"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0n4-39-vEE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Dyz-rm-fPc"/>
                     <connections>
+                        <outlet property="NFCmsg" destination="fIQ-Wr-yUX" id="wUv-p7-7fH"/>
                         <outlet property="directionLabel" destination="jF2-Jv-dOw" id="5zb-xg-Iph"/>
                         <outlet property="farmeLabel" destination="mIF-ac-40L" id="QbJ-PR-O5W"/>
                         <outlet property="navBar" destination="CN1-BW-Aep" id="lSv-5Q-C5H"/>
