@@ -12,8 +12,12 @@ import AudioToolbox
 import AVFoundation
 import CoreLocation
 import Firebase
+import CoreNFC
 
-class NavigationViewControllerFav: UIViewController ,UINavigationBarDelegate,CLLocationManagerDelegate{
+class NavigationViewControllerFav: UIViewController ,UINavigationBarDelegate,CLLocationManagerDelegate , NFCNDEFReaderSessionDelegate {
+    
+    @IBOutlet weak var NFCmsg: UIButton!
+    
     @IBOutlet weak var directionLabel: UILabel!
     @IBOutlet weak var farmeLabel: UILabel!
     @IBOutlet weak var navBar: UINavigationBar!
@@ -325,7 +329,43 @@ class NavigationViewControllerFav: UIViewController ,UINavigationBarDelegate,CLL
      return .topAttached
     }
     
+    var nfcSession: NFCNDEFReaderSession?
+    var word = "none"
+    @IBAction func nfcreaderbtn(_ sender: Any) {
+        nfcSession = NFCNDEFReaderSession.init(delegate: self, queue: nil, invalidateAfterFirstRead: true)
+        nfcSession?.begin()
+         
+        
+    }
     
+    @objc func didTapReadNFC(){
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+      super.didReceiveMemoryWarning()
+      // Dispose of any resources that can be recreated.
+    }
+    func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
+        print("the session was invalidated: \(error.localizedDescription)")
+    }
+    
+    func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
+        var result = ""
+        for payload in messages[0].records{
+            result += String.init(data: payload.payload.advanced(by: 3), encoding: .utf8) ?? "format not supported"
+        }
+        
+        DispatchQueue.main.async {
+         //   self.NFCmsg.text = result
+            let alert = UIAlertController(title: "", message: result , preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "حسنًا", style: UIAlertAction.Style.default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        
+    }
 }
     
 
