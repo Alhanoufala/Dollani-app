@@ -54,6 +54,8 @@
 		8B0CB30D295E5A3500AF5DA8 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0CB30C295E5A3500AF5DA8 /* Place.swift */; };
 		8B6644F02957BEBB00A8D6BB /* CategoryPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6644EF2957BEBB00A8D6BB /* CategoryPlacesViewController.swift */; };
 		8B6ECE8E295E0E5D0082B1D1 /* placesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6ECE8D295E0E5D0082B1D1 /* placesViewController.swift */; };
+		8BC46D012989312300FBCD2D /* DollaniUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC46D002989312200FBCD2D /* DollaniUnitTests.swift */; };
+		8BC46D08298932E500FBCD2D /* loginTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC46D07298932E500FBCD2D /* loginTest.swift */; };
 		8BD41430297A0C99007B4D1F /* CGCurrentLocViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD4142F297A0C99007B4D1F /* CGCurrentLocViewController.swift */; };
 		8BD41434297A0DFB007B4D1F /* CGpathMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD41433297A0DFB007B4D1F /* CGpathMapper.swift */; };
 		8BF2D74E294BCDB900DEAB42 /* CGcontainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D74D294BCDB900DEAB42 /* CGcontainerViewController.swift */; };
@@ -70,6 +72,13 @@
 			remoteInfo = Dollani;
 		};
 		57D7AE3F2943D83D00EAEAB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 57D7AE162943D83B00EAEAB5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 57D7AE1D2943D83B00EAEAB5;
+			remoteInfo = Dollani;
+		};
+		8BC46D022989312300FBCD2D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 57D7AE162943D83B00EAEAB5 /* Project object */;
 			proxyType = 1;
@@ -136,6 +145,9 @@
 		8B0CB30C295E5A3500AF5DA8 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		8B6644EF2957BEBB00A8D6BB /* CategoryPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPlacesViewController.swift; sourceTree = "<group>"; };
 		8B6ECE8D295E0E5D0082B1D1 /* placesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = placesViewController.swift; sourceTree = "<group>"; };
+		8BC46CFE2989312200FBCD2D /* DollaniUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DollaniUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BC46D002989312200FBCD2D /* DollaniUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DollaniUnitTests.swift; sourceTree = "<group>"; };
+		8BC46D07298932E500FBCD2D /* loginTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginTest.swift; sourceTree = "<group>"; };
 		8BD4142F297A0C99007B4D1F /* CGCurrentLocViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGCurrentLocViewController.swift; sourceTree = "<group>"; };
 		8BD41433297A0DFB007B4D1F /* CGpathMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGpathMapper.swift; sourceTree = "<group>"; };
 		8BF2D74D294BCDB900DEAB42 /* CGcontainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGcontainerViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +182,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		57D7AE3B2943D83D00EAEAB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BC46CFB2989312200FBCD2D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -217,6 +236,7 @@
 				57D7AE202943D83B00EAEAB5 /* Dollani */,
 				57D7AE372943D83D00EAEAB5 /* DollaniTests */,
 				57D7AE412943D83D00EAEAB5 /* DollaniUITests */,
+				8BC46CFF2989312200FBCD2D /* DollaniUnitTests */,
 				57D7AE1F2943D83B00EAEAB5 /* Products */,
 				5AAA8DF16F64E76E4359F521 /* Pods */,
 				610A1497614439D3152752C7 /* Frameworks */,
@@ -229,6 +249,7 @@
 				57D7AE1E2943D83B00EAEAB5 /* Dollani.app */,
 				57D7AE342943D83D00EAEAB5 /* DollaniTests.xctest */,
 				57D7AE3E2943D83D00EAEAB5 /* DollaniUITests.xctest */,
+				8BC46CFE2989312200FBCD2D /* DollaniUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -316,6 +337,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8BC46CFF2989312200FBCD2D /* DollaniUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				8BC46D002989312200FBCD2D /* DollaniUnitTests.swift */,
+				8BC46D07298932E500FBCD2D /* loginTest.swift */,
+			);
+			path = DollaniUnitTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -385,6 +415,24 @@
 			productReference = 57D7AE3E2943D83D00EAEAB5 /* DollaniUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		8BC46CFD2989312200FBCD2D /* DollaniUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BC46D062989312300FBCD2D /* Build configuration list for PBXNativeTarget "DollaniUnitTests" */;
+			buildPhases = (
+				8BC46CFA2989312200FBCD2D /* Sources */,
+				8BC46CFB2989312200FBCD2D /* Frameworks */,
+				8BC46CFC2989312200FBCD2D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8BC46D032989312300FBCD2D /* PBXTargetDependency */,
+			);
+			name = DollaniUnitTests;
+			productName = DollaniUnitTests;
+			productReference = 8BC46CFE2989312200FBCD2D /* DollaniUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -403,6 +451,10 @@
 						TestTargetID = 57D7AE1D2943D83B00EAEAB5;
 					};
 					57D7AE3D2943D83D00EAEAB5 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 57D7AE1D2943D83B00EAEAB5;
+					};
+					8BC46CFD2989312200FBCD2D = {
 						CreatedOnToolsVersion = 14.1;
 						TestTargetID = 57D7AE1D2943D83B00EAEAB5;
 					};
@@ -427,6 +479,7 @@
 				57D7AE1D2943D83B00EAEAB5 /* Dollani */,
 				57D7AE332943D83D00EAEAB5 /* DollaniTests */,
 				57D7AE3D2943D83D00EAEAB5 /* DollaniUITests */,
+				8BC46CFD2989312200FBCD2D /* DollaniUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -451,6 +504,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		57D7AE3C2943D83D00EAEAB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BC46CFC2989312200FBCD2D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -562,6 +622,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8BC46CFA2989312200FBCD2D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BC46D012989312300FBCD2D /* DollaniUnitTests.swift in Sources */,
+				8BC46D08298932E500FBCD2D /* loginTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -574,6 +643,11 @@
 			isa = PBXTargetDependency;
 			target = 57D7AE1D2943D83B00EAEAB5 /* Dollani */;
 			targetProxy = 57D7AE3F2943D83D00EAEAB5 /* PBXContainerItemProxy */;
+		};
+		8BC46D032989312300FBCD2D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 57D7AE1D2943D83B00EAEAB5 /* Dollani */;
+			targetProxy = 8BC46D022989312300FBCD2D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -863,6 +937,42 @@
 			};
 			name = Release;
 		};
+		8BC46D042989312300FBCD2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CLV36V2NAS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.DollaniUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dollani.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Dollani";
+			};
+			name = Debug;
+		};
+		8BC46D052989312300FBCD2D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CLV36V2NAS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.DollaniUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dollani.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Dollani";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -898,6 +1008,15 @@
 			buildConfigurations = (
 				57D7AE4F2943D83D00EAEAB5 /* Debug */,
 				57D7AE502943D83D00EAEAB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BC46D062989312300FBCD2D /* Build configuration list for PBXNativeTarget "DollaniUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BC46D042989312300FBCD2D /* Debug */,
+				8BC46D052989312300FBCD2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
