@@ -85,7 +85,7 @@ struct PathMapperContentView: View {
                 HStack {
                     Text("\(selectedClassroom.name)\n").lineLimit(2)
                     Spacer()
-Text("وجهتك المختارة:")
+Text("وجهتك المختارة:").accessibility(label: Text("وجهتك المختارة:"))
 
                     // MARK: - Text Input via dropdown
 
@@ -102,7 +102,7 @@ Text("وجهتك المختارة:")
                         Text("\(numberToFeet(number: resultDistance)) قدم (~\(numberToMinutes(number: resultDistance)) دقيقة)")// Concatenate strings
                     
                         Spacer()
-                        Text("المسافة:").fontWeight(.bold)
+                        Text("المسافة:").fontWeight(.bold).accessibility(label: Text("المسافة:"))
                     }
                     .padding()
                     .background(Color(.secondarySystemBackground))
