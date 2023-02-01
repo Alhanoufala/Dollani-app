@@ -161,21 +161,21 @@ class NavigationViewControllerFav: UIViewController ,UINavigationBarDelegate,CLL
         }
     
     //from dis to feet
-    /*
+    
     func disToFeet(number: CGFloat) -> String {
         //let feetConversionFactor = CGFloat(1) / CGFloat(2) /// 1 pixel = half feet
-        let feet = number * 3.2808
+        let feet = number / 3
         let feetRounded = Int(feet) /// round to nearest integer
         return "\(feetRounded)"
-    }*/
-    
+    }
+    /*
     /// convert on-screen distance to feet
     func disToFeet(number: CGFloat) -> String {
         let feetConversionFactor = CGFloat(1) / CGFloat(2) /// 1 pixel = half feet
         let feet = number * feetConversionFactor
         let feetRounded = Int(feet) /// round to nearest integer
         return "\(feetRounded)"
-    }
+    }*/
 
 
     func fetchData() {
