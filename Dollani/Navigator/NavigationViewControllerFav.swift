@@ -93,17 +93,17 @@ class NavigationViewControllerFav: UIViewController ,UINavigationBarDelegate,CLL
                     if(path[i].point == path[i].previousHallway?.end ){
                         if(path[i+1].point.x < path[i].previousHallway!.end.x ){
                           
-                           str =  "انعطف الى اليسار\n\n"
+                           str =  "  انعطف الى اليسار ثم\n\n"
                         }
                         else{
                         
-                           str = "انعطف الى اليمين\n\n"
+                           str = "انعطف الى اليمين ثم\n\n"
                         }
                     }
                 }
                
                 visited[i] = true
-                self.directionLabel.text = str + " استمر في المشي خطوات\(feets) الى الأمام\n\n"
+                self.directionLabel.text = str + " استمر في المشي \(feets) خطوة الى الأمام\n\n"
              
             return
              
@@ -118,13 +118,13 @@ class NavigationViewControllerFav: UIViewController ,UINavigationBarDelegate,CLL
                     if(path[i].point == path[i].previousHallway?.end ){
                         if(path[i+1].point.x < path[i].previousHallway!.end.x ){
                            
-                           str =  "انعطف الى اليسار\n\n"
+                           str =  "انعطف الى اليسار ثم\n\n"
                            
                           
                         }
                         else{
                        
-                             str = "انعطف الى اليمين\n\n"
+                             str = "انعطف الى اليمين ثم\n\n"
                           
                           
                             
@@ -133,7 +133,7 @@ class NavigationViewControllerFav: UIViewController ,UINavigationBarDelegate,CLL
                 }
               
                 visited[i] = true
-                self.directionLabel.text = str + " استمر في المشي خطوات\(feets) الى الأمام\n\n"
+                self.directionLabel.text = str + " استمر في المشي \(feets) خطوة الى الأمام\n\n"
               
                 return
             }
@@ -164,7 +164,7 @@ class NavigationViewControllerFav: UIViewController ,UINavigationBarDelegate,CLL
     
     func disToFeet(number: CGFloat) -> String {
         //let feetConversionFactor = CGFloat(1) / CGFloat(2) /// 1 pixel = half feet
-        let feet = number / 3
+        let feet = number / 5
         let feetRounded = Int(feet) /// round to nearest integer
         return "\(feetRounded)"
     }
