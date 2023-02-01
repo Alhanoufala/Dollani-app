@@ -278,6 +278,8 @@ func stepsToArabic(feets: String) -> String{
             steps = steps + "٨"
         case "9":
             steps = steps + "٩"
+        case ".":
+            steps = steps + "."
         default:
             steps = steps + ""
         }
@@ -289,8 +291,11 @@ func stepsToArabic(feets: String) -> String{
 func numberToMinutes(number: CGFloat) -> String {
     let minuteConversionFactor = CGFloat(1) / CGFloat(276) /// average walking speed is 276 feet per minute
     let minutes = number * minuteConversionFactor
-    let minutesFormatted = String(format: "%.2f", minutes) /// format with 1 decimal place
-    return minutesFormatted
+    let minutesFormatted = String(format: "%.2f", minutes)
+    /// format with 1 decimal place
+    let arMin = String(minutesFormatted)
+    let arabicMin = stepsToArabic(feets: arMin)
+    return "\(arabicMin)"
 }
 
 // MARK: - Custom Data Types
