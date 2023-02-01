@@ -83,10 +83,9 @@ struct PathMapperContentView: View {
             
             VStack {
                 HStack {
-                    Text("\(selectedClassroom.name)\n").lineLimit(2).accessibility(label: Text("\(selectedClassroom.name)"))
+                    Text("\(selectedClassroom.name)\n").lineLimit(2)
                     Spacer()
-Text("وجهتك المختارة:").accessibility(label: Text("وجهتك المختارة:"))
-
+Text("وجهتك المختارة:")
                     // MARK: - Text Input via dropdown
 
                   
@@ -100,10 +99,10 @@ Text("وجهتك المختارة:").accessibility(label: Text("وجهتك ال�
                 
                 if resultDistance != 0 {
                     HStack {
-                        Text("\(numberToFeet(number: resultDistance)) قدم (~\(numberToMinutes(number: resultDistance)) دقيقة)").accessibility(label: Text("\(numberToFeet(number: resultDistance)) قدم (~\(numberToMinutes(number: resultDistance)) دقيقة)"))// Concatenate strings
+                        Text("\(numberToFeet(number: resultDistance)) قدم (~\(numberToMinutes(number: resultDistance)) دقيقة)")// Concatenate strings
                     
                         Spacer()
-                        Text("المسافة:").fontWeight(.bold).accessibility(label: Text("المسافة:"))
+                        Text("المسافة:").fontWeight(.bold)
                     }.accessibilityElement(children: .combine)
                     accessibilityLabel("المسافة:")
                     .padding()
