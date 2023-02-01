@@ -91,6 +91,7 @@ Text("وجهتك المختارة:").accessibility(label: Text("وجهتك ال�
 
                   
                 }.accessibilityElement(children: .combine)
+                accessibilityLabel("وجهتك المختارة: \(selectedClassroom.name)")
                 .padding(10)
                 .background(Color(.secondarySystemBackground))
                 .cornerRadius(16)
@@ -104,6 +105,7 @@ Text("وجهتك المختارة:").accessibility(label: Text("وجهتك ال�
                         Spacer()
                         Text("المسافة:").fontWeight(.bold).accessibility(label: Text("المسافة:"))
                     }.accessibilityElement(children: .combine)
+                    accessibilityLabel("المسافة:")
                     .padding()
                     .background(Color(.secondarySystemBackground))
                     .cornerRadius(16)
