@@ -249,7 +249,40 @@ func numberToFeet(number: CGFloat) -> String {
     //let feetConversionFactor = CGFloat(1) / CGFloat(2) /// 1 pixel = half feet
     let feet = number / 5
     let feetRounded = Int(feet) /// round to nearest integer
-    return "\(feetRounded)"
+    let arfeet = String(feetRounded)
+    let arabicSteps = stepsToArabic(feets: arfeet)
+    return "\(arabicSteps)"
+}
+
+func stepsToArabic(feets: String) -> String{
+    var steps = ""
+    for ch in feets {
+        switch ch{
+        case "0":
+            steps = steps + "٠"
+        case "1":
+            steps = steps + "١"
+        case "2":
+            steps = steps + "٢"
+        case "3":
+            steps = steps + "٣"
+        case "4":
+            steps = steps + "٤"
+        case "5":
+            steps = steps + "٥"
+        case "6":
+            steps = steps + "٦"
+        case "7":
+            steps = steps + "٧"
+        case "8":
+            steps = steps + "٨"
+        case "9":
+            steps = steps + "٩"
+        default:
+            steps = steps + ""
+        }
+    }
+    return "\(steps)"
 }
 
 /// convert on-screen distance to average walking duration

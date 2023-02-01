@@ -80,6 +80,7 @@ class NavigationViewControllerFav: UIViewController ,UINavigationBarDelegate,CLL
     func   getDirectionsFromPath(){
         var dis :Double
         var feets: String
+        var arabicSteps: String
         var str = ""
        
          
@@ -88,6 +89,7 @@ class NavigationViewControllerFav: UIViewController ,UINavigationBarDelegate,CLL
             if((path[i].point != path.last?.point )&&(path[i].point.x == path[i+1].point.x) &&  (visited[i] == false )){
                 dis =   DistanceFormula(from: path[i].point, to:path[i+1].point)
                 feets = disToFeet(number: dis)
+                arabicSteps = stepsToArabic(feets: feets)
                 //End of the hallway (left or  right)
                 if (path[i].previousHallway?.end) != nil {
                     if(path[i].point == path[i].previousHallway?.end ){
@@ -103,7 +105,7 @@ class NavigationViewControllerFav: UIViewController ,UINavigationBarDelegate,CLL
                 }
                
                 visited[i] = true
-                self.directionLabel.text = str + " استمر في المشي \(feets) خطوة الى الأمام\n\n"
+                self.directionLabel.text = str + " استمر في المشي \(arabicSteps) خطوة الى الأمام\n\n"
              
             return
              
@@ -113,6 +115,7 @@ class NavigationViewControllerFav: UIViewController ,UINavigationBarDelegate,CLL
             else if((path[i].point != path.last?.point )&&(path[i].point.y == path[i+1].point.y) &&  (visited[i] == false )){
                 dis =   DistanceFormula(from: path[i].point, to:path[i+1].point)
                 feets = disToFeet(number: dis)
+                arabicSteps = stepsToArabic(feets: feets)
                 //End of the hallway (left or  right)
                 if (path[i].previousHallway?.end) != nil {
                     if(path[i].point == path[i].previousHallway?.end ){
@@ -133,7 +136,7 @@ class NavigationViewControllerFav: UIViewController ,UINavigationBarDelegate,CLL
                 }
               
                 visited[i] = true
-                self.directionLabel.text = str + " استمر في المشي \(feets) خطوة الى الأمام\n\n"
+                self.directionLabel.text = str + " استمر في المشي \(arabicSteps) خطوة الى الأمام\n\n"
               
                 return
             }
@@ -168,14 +171,37 @@ class NavigationViewControllerFav: UIViewController ,UINavigationBarDelegate,CLL
         let feetRounded = Int(feet) /// round to nearest integer
         return "\(feetRounded)"
     }
-    /*
-    /// convert on-screen distance to feet
-    func disToFeet(number: CGFloat) -> String {
-        let feetConversionFactor = CGFloat(1) / CGFloat(2) /// 1 pixel = half feet
-        let feet = number * feetConversionFactor
-        let feetRounded = Int(feet) /// round to nearest integer
-        return "\(feetRounded)"
-    }*/
+    
+    func stepsToArabic(feets: String) -> String{
+        var steps = ""
+        for ch in feets {
+            switch ch{
+            case "0":
+                steps = steps + "٠"
+            case "1":
+                steps = steps + "١"
+            case "2":
+                steps = steps + "٢"
+            case "3":
+                steps = steps + "٣"
+            case "4":
+                steps = steps + "٤"
+            case "5":
+                steps = steps + "٥"
+            case "6":
+                steps = steps + "٦"
+            case "7":
+                steps = steps + "٧"
+            case "8":
+                steps = steps + "٨"
+            case "9":
+                steps = steps + "٩"
+            default:
+                steps = steps + ""
+            }
+        }
+        return "\(steps)"
+    }
 
 
     func fetchData() {
