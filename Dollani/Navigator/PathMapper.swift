@@ -90,7 +90,7 @@ Text("وجهتك المختارة:").accessibility(label: Text("وجهتك ال�
                     // MARK: - Text Input via dropdown
 
                   
-                }
+                }.accessibilityElement(children: .combine)
                 .padding(10)
                 .background(Color(.secondarySystemBackground))
                 .cornerRadius(16)
@@ -103,7 +103,7 @@ Text("وجهتك المختارة:").accessibility(label: Text("وجهتك ال�
                     
                         Spacer()
                         Text("المسافة:").fontWeight(.bold).accessibility(label: Text("المسافة:"))
-                    }
+                    }.accessibilityElement(children: .combine)
                     .padding()
                     .background(Color(.secondarySystemBackground))
                     .cornerRadius(16)
