@@ -85,12 +85,11 @@ struct PathMapperContentView: View {
                 HStack {
                     Text("\(selectedClassroom.name)\n").lineLimit(2)
                     Spacer()
-Text("وجهتك المختارة:")
+                    Text("وجهتك المختارة:")
                     // MARK: - Text Input via dropdown
-
                   
                 }.accessibilityElement(children: .combine)
-                accessibilityLabel("وجهتك المختارة: \(selectedClassroom.name)")
+                    .accessibilityLabel(Text("وجهتك المختارة: \(selectedClassroom.name)"))
                 .padding(10)
                 .background(Color(.secondarySystemBackground))
                 .cornerRadius(16)
@@ -104,7 +103,7 @@ Text("وجهتك المختارة:")
                         Spacer()
                         Text("المسافة:").fontWeight(.bold)
                     }.accessibilityElement(children: .combine)
-                    accessibilityLabel("المسافة:")
+                        .accessibilityLabel(Text("المسافة:"))
                     .padding()
                     .background(Color(.secondarySystemBackground))
                     .cornerRadius(16)
