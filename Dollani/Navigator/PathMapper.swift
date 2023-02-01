@@ -83,7 +83,7 @@ struct PathMapperContentView: View {
             
             VStack {
                 HStack {
-                    Text("\(selectedClassroom.name)\n").lineLimit(2)
+                    Text("\(selectedClassroom.name)\n").lineLimit(2).accessibility(label: Text("\(selectedClassroom.name)"))
                     Spacer()
 Text("وجهتك المختارة:").accessibility(label: Text("وجهتك المختارة:"))
 
@@ -99,7 +99,7 @@ Text("وجهتك المختارة:").accessibility(label: Text("وجهتك ال�
                 
                 if resultDistance != 0 {
                     HStack {
-                        Text("\(numberToFeet(number: resultDistance)) قدم (~\(numberToMinutes(number: resultDistance)) دقيقة)")// Concatenate strings
+                        Text("\(numberToFeet(number: resultDistance)) قدم (~\(numberToMinutes(number: resultDistance)) دقيقة)").accessibility(label: Text("\(numberToFeet(number: resultDistance)) قدم (~\(numberToMinutes(number: resultDistance)) دقيقة)"))// Concatenate strings
                     
                         Spacer()
                         Text("المسافة:").fontWeight(.bold).accessibility(label: Text("المسافة:"))
