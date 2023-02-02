@@ -26,14 +26,14 @@ class EditCGprofileViewController: UIViewController, UITextFieldDelegate,UINavig
     //avatar
     @IBOutlet weak var avatar: UIImageView!
     var image: UIImage? = nil
-    @IBOutlet weak var profilePic: UIImageView!
+    //@IBOutlet weak var profilePic: UIImageView!
     
     override func viewDidLoad() {
 
-        profilePic?.layer.cornerRadius = (profilePic?.frame.size.width ?? 0.0) / 2
-                profilePic?.clipsToBounds = true
-                profilePic?.layer.borderWidth = 3.0
-                profilePic?.layer.borderColor = UIColor.white.cgColor
+        avatar?.layer.cornerRadius = (avatar?.frame.size.width ?? 0.0) / 2
+        avatar?.clipsToBounds = true
+        avatar?.layer.borderWidth = 3.0
+        avatar?.layer.borderColor = UIColor.white.cgColor
         super.viewDidLoad()
         name.delegate = self
         phoneNum.delegate = self
@@ -87,7 +87,7 @@ class EditCGprofileViewController: UIViewController, UITextFieldDelegate,UINavig
                                                            let image = UIImage(data: (data! as NSData) as Data)
                                                            
                                                            
-                                                           self.profilePic?.image = image
+                                                           self.avatar?.image = image
                                                        })
                     }
                 }
@@ -240,7 +240,7 @@ class EditCGprofileViewController: UIViewController, UITextFieldDelegate,UINavig
                 
             }
             //alert
-            let alert = UIAlertController(title: nil, message:"تم حفظ التغييرات بنجاج", preferredStyle: .alert)
+            let alert = UIAlertController(title: nil, message:"تم حفظ التغييرات بنجاح", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title:  "حسنًا", style: .default, handler:nil))
            present(alert, animated: true, completion: nil)
             

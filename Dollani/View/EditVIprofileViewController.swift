@@ -245,7 +245,7 @@ class EditVIprofileViewController: UIViewController, UITextFieldDelegate,UINavig
             
         }
         //alert
-        let alert = UIAlertController(title: nil, message:"تم حفظ التغييرات بنجاج", preferredStyle: .alert)
+        let alert = UIAlertController(title: nil, message:"تم حفظ التغييرات بنجاح", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title:  "حسنًا", style: .default, handler:nil))
        present(alert, animated: true, completion: nil)
         
