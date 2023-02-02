@@ -102,7 +102,7 @@ class ContactViewController: UIViewController,ObservableObject,UINavigationBarDe
                         else{
                             self.tableView.reloadData()
                             let innerAlert = UIAlertController(title: nil, message:"تمت عملية الاضافة بنجاح", preferredStyle: .alert)
-                            innerAlert.addAction(UIAlertAction(title:  "الغاء", style: .default, handler:nil))
+                            innerAlert.addAction(UIAlertAction(title:  "حسنًا", style: .default, handler:nil))
                             self.present(innerAlert, animated: true, completion: nil)
                             
                           

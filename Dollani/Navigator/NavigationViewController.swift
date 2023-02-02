@@ -254,7 +254,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
         }
         //alert
         let alert = UIAlertController(title: nil, message:"تم ارسال الطلب بنجاج", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title:  "الغاء", style: .default, handler:nil))
+        alert.addAction(UIAlertAction(title:  "حسنًا", style: .default, handler:nil))
         present(alert, animated: true, completion: nil)
     }
     

@@ -325,7 +325,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate  {
                 if(e.localizedDescription  == "The email address is already in use by another account."){
                   //Alert message
                     let sendMailErrorAlert = UIAlertController(title: "خطأ", message: "يوجد حساب مسبق", preferredStyle: .alert)
-                        let cancelAction = UIAlertAction(title:"تم", style: .cancel, handler: nil)
+                        let cancelAction = UIAlertAction(title:"حسنًا", style: .cancel, handler: nil)
 
                         sendMailErrorAlert.addAction(cancelAction)
                     self.present(sendMailErrorAlert, animated: true, completion: nil)

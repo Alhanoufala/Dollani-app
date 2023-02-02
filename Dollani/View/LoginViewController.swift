@@ -41,7 +41,7 @@ class LoginViewController: UIViewController , UITextFieldDelegate {
                 print(e.localizedDescription)
                 //Alert message
                   let sendMailErrorAlert = UIAlertController(title: "خطأ", message: "البريد الإلكتروني أو كلمة المرور غير صحيحة", preferredStyle: .alert)
-                      let cancelAction = UIAlertAction(title:"تم", style: .cancel, handler: nil)
+                      let cancelAction = UIAlertAction(title:"حسنًا", style: .cancel, handler: nil)
 
                       sendMailErrorAlert.addAction(cancelAction)
                   self.present(sendMailErrorAlert, animated: true, completion: nil)

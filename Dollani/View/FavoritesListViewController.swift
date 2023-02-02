@@ -39,7 +39,7 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
                 favPlaceListString = snapshot?.documents.first?.get("favPlace") as! [String]
                 if ( favPlaceListString.count == 0 ){
                     let alert = UIAlertController(title: "نعتذر", message:"لم تقم بإضافة اماكن الى المفضلة", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title:  "تم", style: .default, handler: { (_) -> Void in
+                    alert.addAction(UIAlertAction(title:  "حسنًا", style: .default, handler: { (_) -> Void in
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                         let vc = storyboard.instantiateViewController(identifier: "VIcontainer")
                         vc.modalPresentationStyle = .overFullScreen

@@ -125,8 +125,8 @@ class AskForHelpViewController: UIViewController,ObservableObject,UINavigationBa
         Firestore.firestore().collection("helpRequests").document(VIEmail!+"-"+CGEmail).setData(["CGName" : CGName,"CGEmail":CGEmail,"CGPhoneNum":CGPhoneNum,"VIEmail":VIEmail!,"VIName":VIName,"VIPhoneNum":VIPhoneNum,"status":"new","VIProfilePhoto":VIProfilePhoto])
             
          //alert
-        let alert = UIAlertController(title: nil, message:"تم ارسال الطلب بنجاج", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title:  "الغاء", style: .default, handler:nil))
+        let alert = UIAlertController(title: nil, message:"تم ارسال الطلب بنجاح", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title:  "حسنًا", style: .default, handler:nil))
        present(alert, animated: true, completion: nil)
             
             

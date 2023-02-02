@@ -89,7 +89,7 @@ class PathMapperViewController: UIViewController,UINavigationBarDelegate {
             }
             if (favPlaceList.contains(place.name)) {
                 let alert = UIAlertController(title: nil, message:"  الموقع مضاف للمفضلة مسبقًا", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title:  "تم", style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title:  "حسنًا", style: .default, handler: nil))
                                 present(alert, animated: true, completion: nil) }
             else{
                 favPlaceList.append(place.name)}
@@ -102,8 +102,8 @@ class PathMapperViewController: UIViewController,UINavigationBarDelegate {
                     }
                 }
             }
-                let alert = UIAlertController(title: nil, message:"  تم إضافة الموقع للمفضلة بنجاح", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title:  "تم", style: .default, handler: nil))
+                let alert = UIAlertController(title: nil, message:"  تمت إضافة الموقع للمفضلة بنجاح", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title:  "حسنًا", style: .default, handler: nil))
                                 present(alert, animated: true, completion: nil)
 
           
