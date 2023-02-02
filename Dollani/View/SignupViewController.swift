@@ -249,10 +249,14 @@ class SignupViewController: UIViewController, UITextFieldDelegate  {
             {
                 return " يجب أن تحتوي كلمة المرور على رقم واحد على الأقل"
             }
-            if value.count > 12
+            if (containsLetters(value))
             {
+                return "يجب أن تحتوي كلمة المرور على حرف  واحد على الأقل"
+            }
+            if value.count > 12 {
                 return "الحد الاقصى ١٢ حرف"
             }
+          
             return nil
         }
     func containsDigit(_ value: String) -> Bool
@@ -262,19 +266,14 @@ class SignupViewController: UIViewController, UITextFieldDelegate  {
             return !predicate.evaluate(with: value)
         }
         
-        func containsLowerCase(_ value: String) -> Bool
+        func containsLetters(_ value: String) -> Bool
         {
-            let reqularExpression = ".*[a-z]+.*"
+            let reqularExpression = ".*[a-zA-Z]+.*"
             let predicate = NSPredicate(format: "SELF MATCHES %@", reqularExpression)
             return !predicate.evaluate(with: value)
         }
         
-        func containsUpperCase(_ value: String) -> Bool
-        {
-            let reqularExpression = ".*[A-Z]+.*"
-            let predicate = NSPredicate(format: "SELF MATCHES %@", reqularExpression)
-            return !predicate.evaluate(with: value)
-        }
+       
     
     @IBAction func confirmedPasswordChanged(_ sender: Any) {
         if let conformedPassword = conformedPassword.text
