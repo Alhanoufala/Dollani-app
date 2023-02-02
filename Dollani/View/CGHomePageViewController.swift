@@ -26,11 +26,5 @@ class CGHomePageViewController: UIViewController {
     }
     
     
-    @IBAction func helpReqTapped(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "CGHelpRequests")
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
-    }
-    
+   
 }
