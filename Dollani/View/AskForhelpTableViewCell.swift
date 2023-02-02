@@ -11,7 +11,7 @@ class AskForhelpTableViewCell: UITableViewCell {
 
     @IBOutlet weak var askForHelpLabel: UILabel!
     @IBOutlet weak var profilePic: UIImageView!
-    @IBOutlet weak var sendHelp: UIButton!
+   
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

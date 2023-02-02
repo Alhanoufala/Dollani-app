@@ -161,8 +161,7 @@ extension AskForHelpViewController : UITableViewDataSource{
         
 
         cell.askForHelpLabel?.text = CGUsers[indexPath.row].name
-        cell.sendHelp?.tag = indexPath.row
-        cell.sendHelp?.addTarget(self, action: #selector(sendHelpButtonTapped), for: .touchUpInside)
+        
         if let  url = CGUsers[indexPath.row].profilePhoto{
             let storageRef = Storage.storage().reference(forURL: url)
             storageRef.downloadURL(completion: { (url, error) in
