@@ -129,6 +129,11 @@ class EditCGprofileViewController: UIViewController, UITextFieldDelegate,UINavig
                 {
                     return "يجب ان يتكون الاسم من احرف فقط"
                 }
+                
+                if ( value.count > 20){
+                               return "الحد الاقصى ٢٠ حرف"
+                           }
+                
                
                 return nil    }
         
@@ -241,8 +246,13 @@ class EditCGprofileViewController: UIViewController, UITextFieldDelegate,UINavig
             }
             //alert
             let alert = UIAlertController(title: nil, message:"تم حفظ التغييرات بنجاح", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title:  "حسنًا", style: .default, handler:nil))
-           present(alert, animated: true, completion: nil)
+            alert.addAction(UIAlertAction(title:  "تم", style: .default, handler: { (_) -> Void in
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(identifier: "CGcontainer")
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }))
+                            present(alert, animated: true, completion: nil)
             
             /*
             let storyboard = UIStoryboard(name: "Main", bundle: nil)

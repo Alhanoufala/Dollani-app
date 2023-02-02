@@ -49,7 +49,7 @@ struct PathMapperContentView: View {
             
         
             ZStack {
-                Image("Ground floor").resizable() /// the map image (made by myself)
+                Image("مبنى كلية الحاسب الدور الأرضي").resizable() /// the map image (made by myself)
                     
                 // MARK: - Visual Output, path drawn on top of map
               

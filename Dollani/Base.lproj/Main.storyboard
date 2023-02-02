@@ -513,7 +513,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="PCR-pI-7a3">
-                        <barButtonItem key="leftBarButtonItem" image="Logout" id="lCn-SO-QYx"/>
+                        <barButtonItem key="leftBarButtonItem" title="تسجيل الخروج " image="تسجيل الخروج" id="lCn-SO-QYx"/>
                     </navigationItem>
                     <connections>
                         <outlet property="email" destination="BOI-0d-pEh" id="sXg-wc-H5r"/>
@@ -620,6 +620,7 @@
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="XKv-AK-I2g">
                                                 <rect key="frame" x="307" y="0.0" width="87" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="رجوع"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="arrow.forward" catalog="system"/>
                                                 <connections>
@@ -735,6 +736,7 @@
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="bcY-S6-R9g">
                                                 <rect key="frame" x="297" y="4.5" width="100" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="رجوع"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="arrow.forward" catalog="system"/>
                                                 <connections>
@@ -789,7 +791,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="قائمة الاماكن" id="hRl-0n-0gt">
-                                        <barButtonItem key="rightBarButtonItem" image="arrow.right" catalog="system" id="G2W-tY-qZv">
+                                        <barButtonItem key="rightBarButtonItem" title="رجوع" image="arrow.right" catalog="system" id="G2W-tY-qZv">
                                             <connections>
                                                 <action selector="backButten:" destination="KQc-5a-9YF" id="UCL-QD-L8a"/>
                                             </connections>
@@ -812,6 +814,9 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.left" catalog="system" id="x1W-TV-PH8">
                                                     <rect key="frame" x="12" y="16.5" width="30" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <accessibility key="accessibilityConfiguration" label="دخول">
+                                                        <bool key="isElement" value="YES"/>
+                                                    </accessibility>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -1007,14 +1012,6 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title=" مرافقيني" id="nzu-bO-VfC">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="kLd-l0-VeT">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="bd2-aK-imV">
-                                                <rect key="frame" x="20" y="4.5" width="92" height="35"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
-                                            </button>
-                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="63I-vY-p5Y">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Bav-H1-wCt">
                                                 <rect key="frame" x="287" y="4.5" width="100" height="35"/>
@@ -1152,6 +1149,9 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4qy-Nj-rD0">
                                                     <rect key="frame" x="352" y="11" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <accessibility key="accessibilityConfiguration" label="صورة العرض">
+                                                        <bool key="isElement" value="YES"/>
+                                                    </accessibility>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sX9-AR-Uia">
                                                     <rect key="frame" x="88" y="23" width="254" height="34"/>
@@ -1163,10 +1163,14 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mappin.and.ellipse" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="erY-b1-CxA">
                                                     <rect key="frame" x="49" y="22" width="36" height="37"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <accessibility key="accessibilityConfiguration" label="الموقع">
+                                                        <bool key="isElement" value="YES"/>
+                                                    </accessibility>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pgo-AB-OEh">
                                                     <rect key="frame" x="7" y="23" width="34" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <accessibility key="accessibilityConfiguration" label="مكالمة"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="filled" image="video.circle.fill" catalog="system" cornerStyle="capsule"/>
                                                 </button>
@@ -1518,7 +1522,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Pow-qN-lyR">
-                        <barButtonItem key="leftBarButtonItem" image="Logout" id="bj5-Bs-7Ia"/>
+                        <barButtonItem key="leftBarButtonItem" title="تسجيل الخروج" image="Logout" id="bj5-Bs-7Ia"/>
                     </navigationItem>
                     <connections>
                         <outlet property="email" destination="Tdz-be-SmZ" id="vfc-wG-K0a"/>
@@ -1582,6 +1586,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hv-oZ-Oh6">
                                                     <rect key="frame" x="8" y="0.0" width="70" height="58"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <accessibility key="accessibilityConfiguration" label="دخول"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
                                                 </button>
@@ -1630,7 +1635,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="الاماكن" id="nlu-ti-QCS">
-                                        <barButtonItem key="rightBarButtonItem" image="arrow.right" catalog="system" id="s6o-7q-icf">
+                                        <barButtonItem key="rightBarButtonItem" title="رجوع" image="arrow.right" catalog="system" id="s6o-7q-icf">
                                             <connections>
                                                 <action selector="backButton:" destination="ciS-L7-x05" id="tFY-lH-2J2"/>
                                             </connections>
@@ -1653,6 +1658,9 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.left" catalog="system" id="oqn-iF-xui">
                                                     <rect key="frame" x="20" y="16.5" width="30" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <accessibility key="accessibilityConfiguration" label="دخول">
+                                                        <bool key="isElement" value="YES"/>
+                                                    </accessibility>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -1813,7 +1821,7 @@
                                 <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="الموقع الحالي للكفيف" id="2ds-eh-2AL">
-                                        <barButtonItem key="rightBarButtonItem" image="arrow.right" catalog="system" id="BFc-ox-8QX">
+                                        <barButtonItem key="rightBarButtonItem" title="رجوع" image="arrow.right" catalog="system" id="BFc-ox-8QX">
                                             <connections>
                                                 <action selector="backButten:" destination="Gcv-gm-9Tl" id="2Mj-mg-7fP"/>
                                                 <segue destination="ipR-CT-vpw" kind="presentation" identifier="ToNotification" modalPresentationStyle="fullScreen" id="kPB-Dg-dZQ"/>
@@ -2049,6 +2057,7 @@
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="video.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="تسجيل الخروج" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
