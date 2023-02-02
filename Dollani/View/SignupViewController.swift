@@ -138,12 +138,14 @@ class SignupViewController: UIViewController, UITextFieldDelegate  {
             if(value == "" || value.trimmingCharacters(in: .whitespaces) == ""){
                 return "مطلوب"
             }
-            let set = CharacterSet(charactersIn: value)
-            if CharacterSet.decimalDigits.isSuperset(of: set)
+           
+            if ( !validateName( value: value))
             {
                 return "يجب ان يتكون الاسم من احرف فقط"
             }
-           
+            if ( value.count > 20){
+                return "الحد الاقصى ٢٠ حرف"
+            }
             return nil
         }
     @IBAction func phoneNumChanged(_ sender: Any) {
@@ -175,6 +177,12 @@ class SignupViewController: UIViewController, UITextFieldDelegate  {
            
             return nil
         }
+    func validateName(value: String) -> Bool {
+        let Name_REGEX = "^[\\p{Arabic}\\p{Latin}\\s]+$"
+        let NameTest = NSPredicate(format: "SELF MATCHES %@", Name_REGEX)
+        let result =  NameTest.evaluate(with: value)
+        return result
+    }
     func validatePhoneNum(value: String) -> Bool {
         let PHONE_REGEX = "^((05))[0-9]{8}$"
         let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
@@ -241,13 +249,9 @@ class SignupViewController: UIViewController, UITextFieldDelegate  {
             {
                 return " يجب أن تحتوي كلمة المرور على رقم واحد على الأقل"
             }
-            if containsLowerCase(value)
+            if value.count > 12
             {
-                return "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل"
-            }
-            if containsUpperCase(value)
-            {
-                return "يجب أن تحتوي كلمة المرور على حرف واحد كبير على الأقل"
+                return "الحد الاقصى ١٢ حرف"
             }
             return nil
         }

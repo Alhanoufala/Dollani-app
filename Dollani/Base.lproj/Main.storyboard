@@ -2024,11 +2024,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="IlY-ek-MC3"/>
         <segue reference="avW-Dk-12F"/>
         <segue reference="kPB-Dg-dZQ"/>
         <segue reference="39J-ng-Pgm"/>
-        <segue reference="gjW-dM-F8V"/>
+        <segue reference="iRj-2S-BBM"/>
         <segue reference="PDa-nR-dOC"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.1889090836" green="0.25569909810000002" blue="0.54120320079999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
