@@ -8,13 +8,13 @@
 import UIKit
 import Firebase
 
-class ForgetPassViewController: UIViewController {
+class ForgetPassViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var email: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        email.delegate = self
     }
     
     @IBAction func signUpTapped(_ sender: Any) {
@@ -53,4 +53,9 @@ class ForgetPassViewController: UIViewController {
             //               }
         }
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
 }
