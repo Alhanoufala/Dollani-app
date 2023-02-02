@@ -247,7 +247,7 @@ func ShortestRouteFromVertices(vertices: [Vertex], start: CGPoint, end: CGPoint)
 /// convert on-screen distance to feet
 func numberToFeet(number: CGFloat) -> String {
     //let feetConversionFactor = CGFloat(1) / CGFloat(2) /// 1 pixel = half feet
-    let feet = number / 5
+    let feet = number / 4
     let feetRounded = Int(feet) /// round to nearest integer
     let arfeet = String(feetRounded)
     let arabicSteps = stepsToArabic(feets: arfeet)

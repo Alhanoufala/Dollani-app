@@ -163,7 +163,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
     //from dis to feet
     func disToFeet(number: CGFloat) -> String {
         //let feetConversionFactor = CGFloat(1) / CGFloat(2) /// 1 pixel = half feet
-        let feet = number / 5
+        let feet = number / 4
         let feetRounded = Int(feet) /// round to nearest integer
         return "\(feetRounded)"
     }
@@ -295,10 +295,10 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
        
     }
     func  updateTransition(){
-        let zone1 = ProximityZone(tag: "place 1", range:  ProximityRange(desiredMeanTriggerDistance: 9.0)!)
+        let zone1 = ProximityZone(tag: "place 1", range:  ProximityRange(desiredMeanTriggerDistance: 3.0)!)
         let zone2 = ProximityZone(tag: "place 2", range:  ProximityRange(desiredMeanTriggerDistance: 9.0)!)
         let zone3 = ProximityZone(tag: "place 3", range:   ProximityRange(desiredMeanTriggerDistance: 9.0)!)
-        let zone4 = ProximityZone(tag: "place 4", range:   ProximityRange(desiredMeanTriggerDistance: 9.0)!)
+        let zone4 = ProximityZone(tag: "place 4", range:   ProximityRange(desiredMeanTriggerDistance: 3.0)!)
         
       
        
