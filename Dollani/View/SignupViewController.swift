@@ -243,7 +243,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate  {
             }
             if value.count < 8
             {
-                return "يجب أن تكون كلمة المرور ٨ أحرف على الأقل"
+                return "يجب أن تحتوي كلمة المرور على ٨ أحرف على الأقل"
             }
             if containsDigit(value)
             {
