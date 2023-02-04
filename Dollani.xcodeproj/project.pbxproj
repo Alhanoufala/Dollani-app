@@ -85,6 +85,7 @@
 		8BCC21E3298EBDFA00226797 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8BCC21E2298EBDFA00226797 /* FirebaseRemoteConfigSwift */; };
 		8BCC21E5298EBDFA00226797 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 8BCC21E4298EBDFA00226797 /* FirebaseStorage */; };
 		8BCC21E7298EBDFA00226797 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 8BCC21E6298EBDFA00226797 /* FirebaseStorageCombine-Community */; };
+		8BCC21E9298EC1A900226797 /* pathMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCC21E8298EC1A900226797 /* pathMapperTest.swift */; };
 		8BD41430297A0C99007B4D1F /* CGCurrentLocViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD4142F297A0C99007B4D1F /* CGCurrentLocViewController.swift */; };
 		8BD41434297A0DFB007B4D1F /* CGpathMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD41433297A0DFB007B4D1F /* CGpathMapper.swift */; };
 		8BF2D74E294BCDB900DEAB42 /* CGcontainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2D74D294BCDB900DEAB42 /* CGcontainerViewController.swift */; };
@@ -178,6 +179,7 @@
 		8BC46D002989312200FBCD2D /* DollaniUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DollaniUnitTests.swift; sourceTree = "<group>"; };
 		8BC46D07298932E500FBCD2D /* loginTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginTest.swift; sourceTree = "<group>"; };
 		8BCC21AD298EB54E00226797 /* signUpTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpTest.swift; sourceTree = "<group>"; };
+		8BCC21E8298EC1A900226797 /* pathMapperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pathMapperTest.swift; sourceTree = "<group>"; };
 		8BD4142F297A0C99007B4D1F /* CGCurrentLocViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGCurrentLocViewController.swift; sourceTree = "<group>"; };
 		8BD41433297A0DFB007B4D1F /* CGpathMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGpathMapper.swift; sourceTree = "<group>"; };
 		8BF2D74D294BCDB900DEAB42 /* CGcontainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGcontainerViewController.swift; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 			children = (
 				57D7AE382943D83D00EAEAB5 /* DollaniTests.swift */,
 				8BCC21AD298EB54E00226797 /* signUpTest.swift */,
+				8BCC21E8298EC1A900226797 /* pathMapperTest.swift */,
 			);
 			path = DollaniTests;
 			sourceTree = "<group>";
@@ -697,6 +700,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BCC21B1298EBD7300226797 /* SignupViewController.swift in Sources */,
+				8BCC21E9298EC1A900226797 /* pathMapperTest.swift in Sources */,
 				57D7AE392943D83D00EAEAB5 /* DollaniTests.swift in Sources */,
 				8BCC21AE298EB54E00226797 /* signUpTest.swift in Sources */,
 			);

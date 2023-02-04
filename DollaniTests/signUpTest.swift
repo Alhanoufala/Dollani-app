@@ -17,10 +17,18 @@ final class signUpTest: XCTestCase {
         sut = nil
     }
     
-    func testName(){
-        let test = sut.invalidName("")
-        XCTAssertEqual(test, "مطلوب")
+    func testvalidName(){
+        let test = sut.validateName(value: "sara")
+        XCTAssertEqual(test, false)
     }
-    
+    func testInvalidName(){
+        let test = sut.invalidName( "gfhhfhfhfhhfhfhfhfhfhfhfhfhfhhfjrkkfjffbnibogguuguuguguguuguguuguguguguguguguguguuuguguugugugugu")
+        XCTAssertEqual(test, "الحد الاقصى ٢٠ حرف")
+    }
+    func testEmail(){
+        let test = sut.invalidEmail("saara@gmail.com")
+      //  XCTAssertNotEqual(test, "")
+        XCTAssertTrue(test=="")
+    }
 
 }
