@@ -67,15 +67,29 @@ struct CGPathMapperContentView: View {
                 Path { path in
                     if mapPathVertices.isEmpty == false {
                         path.move(to: mapPathVertices.first!.point)
+                        
                         for vertex in mapPathVertices {
                             path.addLine(to: vertex.point)
                         }
                     }
                 }
-                .trim(from: 0, to: mapPathDrawnPercentage) /// animate path drawing
-                .stroke(Color.blue, style: StrokeStyle(lineWidth: 6, lineCap: .round))
-                .shadow(color: Color.black.opacity(0.3), radius: 3)
+                .trim(from: 0, to: 0.01) /// animate path drawing
+                .stroke(Color.red, style: StrokeStyle(lineWidth: 10, lineCap: .round))
+                .shadow(color: Color.black.opacity(0.3), radius: 3).overlay(
+                    Path { path in
+                        if mapPathVertices.isEmpty == false {
+                            path.move(to: mapPathVertices.first!.point)
+                            
+                            for vertex in mapPathVertices {
+                                path.addLine(to: vertex.point)
+                            }
+                        }
+                    }
+                        .trim(from: 0.02, to: mapPathDrawnPercentage)
+                    .stroke(Color.blue, style: StrokeStyle(lineWidth:6))
+                )
             }
+            
             
             
             
