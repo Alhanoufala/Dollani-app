@@ -81,7 +81,7 @@ class CGHelpRequestsViewController: UIViewController {
                                 let destinationCat = data["destinationCat"] as? String ?? ""
                                 let destinationX = data["destinationX"] as? Int ?? 0
                                 let destinationY = data["destinationY"] as? Int ?? 0
-                let sourcePoint =  CGPoint(x:Int(exactly: data["xStart"]  as! Int)! , y:    Int(exactly: data["yStart"] as! Int)!)
+                let sourcePoint =  CGPoint(x:Int(exactly: data["xStart"]  as? Int ?? 0)! , y:    Int( exactly: data["yStart"] as? Int ?? 0)!)
 
                  
                 self.source.append(sourcePoint)
