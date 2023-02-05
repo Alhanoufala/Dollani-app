@@ -54,8 +54,11 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
                 
             }
            
-        }}
+        }
+
+    }
     func retrivePlaces(){
+
         if(favPlaceListString.count < 10 && favPlaceListString.count != 0){
             Firestore.firestore().collection("places").whereField("name",in:favPlaceListString).addSnapshotListener { (querySnapshot, error) in
                 guard let documents = querySnapshot?.documents else {
@@ -85,6 +88,7 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
+
         tableView.dataSource = self
         tableView.delegate = self
         searchbar.delegate = self
@@ -165,6 +169,8 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
           
             else{
                 deatil.place =  favPlaceList[Index!.row]
+                deatil.index = Index!.row
+
             }
          
         deatil.source = source ??  CGPoint(x: 207, y: 415)
