@@ -49,6 +49,20 @@ class AskForHelpViewController: UIViewController,ObservableObject,UINavigationBa
                 VIPhoneNum = snapshot?.documents.first?.get("phoneNum") as! String
                 VIName = snapshot?.documents.first?.get("name") as! String
                 VIProfilePhoto =  snapshot?.documents.first?.get("profilePhoto") as! String
+                if ( CGEmailList.count == 0 ){
+                    let alert = UIAlertController(title: "نعتذر", message:"لا يوجد لديك قائمة مرافقين، الرجاء الطلب من مرافقك التسجيل في التطبيق واضافتك لقائمة الاتصال", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title:  "حسنًا", style: .default, handler: { (_) -> Void in
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let vc = storyboard.instantiateViewController(identifier: "VIcontainer")
+                        vc.modalPresentationStyle = .overFullScreen
+                        self.present(vc, animated: true)
+                    }))
+                                    present(alert, animated: true, completion: nil)
+
+              
+                }
+                
+                
                 fetchData()
                 
                 
