@@ -92,7 +92,11 @@ class PathMapperViewController: UIViewController,UINavigationBarDelegate {
                 alert.addAction(UIAlertAction(title:  "حسنًا", style: .default, handler: nil))
                                 present(alert, animated: true, completion: nil) }
             else{
-                favPlaceList.append(place.name)}
+
+                favPlaceList.append(place.name)
+                favPlaceList.sort()
+
+            }
             db.collection("users").whereField("email", isEqualTo: Auth.auth().currentUser!.email!).getDocuments { (result, error) in
                 if error == nil{
                     for document in result!.documents{

@@ -60,7 +60,7 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
     func retrivePlaces(){
 
         if(favPlaceListString.count < 10 && favPlaceListString.count != 0){
-            Firestore.firestore().collection("places").whereField("name",in:favPlaceListString).addSnapshotListener { (querySnapshot, error) in
+            Firestore.firestore().collection("places").whereField("name",in:favPlaceListString).order(by: "name").addSnapshotListener { (querySnapshot, error) in
                 guard let documents = querySnapshot?.documents else {
                     print("No documents")
                     return
