@@ -253,7 +253,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
             sender.sendPushNotification(to:CGUser.fcmToken!, title: "دلني", body: "قام احد جهات الاتصال بارسال طلب مساعدة ")
         }
         //alert
-        let alert = UIAlertController(title: nil, message:"تم ارسال الطلب بنجاج", preferredStyle: .alert)
+        let alert = UIAlertController(title: nil, message:"تم ارسال الطلب بنجاح", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title:  "حسنًا", style: .default, handler:nil))
         present(alert, animated: true, completion: nil)
     }
