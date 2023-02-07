@@ -382,15 +382,26 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
         for payload in messages[0].records{
             result += String.init(data: payload.payload.advanced(by: 3), encoding: .utf8) ?? "format not supported"
         }
-        
-        DispatchQueue.main.async {
-         //   self.NFCmsg.text = result
-            let alert = UIAlertController(title: "", message: result , preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "حسنًا", style: UIAlertAction.Style.default, handler: nil))
+        if(destinationPlace.name ==  result){
+            DispatchQueue.main.async {
+             //   self.NFCmsg.text = result
+                let alert = UIAlertController(title: "", message: "لقد وصلت الى وجهتك" , preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "حسنًا", style: UIAlertAction.Style.default, handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
+            }
             
-            self.present(alert, animated: true, completion: nil)
         }
         
+        else{
+            DispatchQueue.main.async {
+                //   self.NFCmsg.text = result
+                let alert = UIAlertController(title: "", message: "لم تصل الى الوجهة،امسح المكان المجاور" , preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "حسنًا", style: UIAlertAction.Style.default, handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
         
     }
 }
