@@ -103,7 +103,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
                 }
                
                 visited[i] = true
-                self.directionLabel.text = str + " استمر في المشي \(arabicSteps) خطوة الى الأمام\n\n"
+                self.directionLabel.text = str + " استمر في المشي الى الأمام\n\n"
              
             return
              
@@ -134,7 +134,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
                 }
               
                 visited[i] = true
-                self.directionLabel.text = str + " استمر في المشي \(arabicSteps) خطوة الى الأمام\n\n"
+                self.directionLabel.text = str + " استمر في المشي الى الأمام\n\n"
               
                 return
             }
@@ -257,12 +257,20 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
         alert.addAction(UIAlertAction(title:  "حسنًا", style: .default, handler:nil))
         present(alert, animated: true, completion: nil)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        //alert
+        let alert = UIAlertController(title: "تعليمات", message:"سوف يهتز الجهاز عند ظهور الاتجاهات", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title:  "حسنا", style: .default, handler:nil))
+        present(alert, animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setVisited()
         getCGEmails()
+        
         directionLabel.text = "أقترب من إحدى أجهزة ارسال البلوتوث لبدء التنقل "
+        
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestAlwaysAuthorization()

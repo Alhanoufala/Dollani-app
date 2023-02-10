@@ -88,8 +88,7 @@ struct PathMapperContentView: View {
                     Text("وجهتك المختارة:")
                     // MARK: - Text Input via dropdown
                   
-                }.accessibilityElement(children: .combine)
-                    .accessibilityLabel(Text("وجهتك المختارة: \(selectedClassroom.name)"))
+                }
                 .padding(10)
                 .background(Color(.secondarySystemBackground))
                 .cornerRadius(16)
@@ -98,12 +97,11 @@ struct PathMapperContentView: View {
                 
                 if resultDistance != 0 {
                     HStack {
-                        Text("\(numberToFeet(number: resultDistance)) قدم (~\(numberToMinutes(number: resultDistance)) دقيقة)")// Concatenate strings
+                        Text("\(numberToMinutes(number: resultDistance)) دقيقة")// Concatenate strings
                     
                         Spacer()
-                        Text("المسافة:").fontWeight(.bold)
-                    }.accessibilityElement(children: .combine)
-                        .accessibilityLabel(Text("المسافة:"))
+                        Text("الوقت المتوقع:").fontWeight(.bold)
+                    }
                     .padding()
                     .background(Color(.secondarySystemBackground))
                     .cornerRadius(16)
