@@ -257,12 +257,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
         alert.addAction(UIAlertAction(title:  "حسنًا", style: .default, handler:nil))
         present(alert, animated: true, completion: nil)
     }
-    override func viewWillAppear(_ animated: Bool) {
-        //alert
-        let alert = UIAlertController(title: "تعليمات", message:"سوف يهتز الجهاز عند ظهور الاتجاهات", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title:  "حسنا", style: .default, handler:nil))
-        present(alert, animated: true, completion: nil)
-    }
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
