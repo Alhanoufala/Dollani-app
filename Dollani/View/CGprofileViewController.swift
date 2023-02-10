@@ -108,6 +108,12 @@ class CGprofileViewController: UIViewController {
         present(vc, animated: true)
 
     }
+    @IBAction func CGHelp(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "CGpHelp")
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
     
     // Do any additional setup after loading the view.
     }

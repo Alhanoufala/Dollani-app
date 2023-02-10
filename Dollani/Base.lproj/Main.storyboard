@@ -9,6 +9,73 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Help View Controller-->
+        <scene sceneID="y6U-NT-cha">
+            <objects>
+                <viewController storyboardIdentifier="helpVI" id="Myn-bn-CNH" customClass="helpViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9qI-C8-8qQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="id" translatesAutoresizingMaskIntoConstraints="NO" id="B7t-HT-2jp">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="743"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="تعليمات استخدام تطبيق دلني " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DV9-QC-yj3">
+                                <rect key="frame" x="83" y="67" width="248" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.200240314" green="0.2558471262" blue="0.53728133440000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="تعليمات ذوي  الاعاقة البصرية " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4a-BX-1YL">
+                                <rect key="frame" x="156" y="255" width="248" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.200240314" green="0.2558471262" blue="0.53728133440000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="25" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOm-oh-J1d">
+                                <rect key="frame" x="0.0" y="305" width="404" height="496"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <mutableString key="text">١. يمكنك بدء التنقل من موقع الى موقع من خلال اختيار زر الاماكن في الرئيسية و تصنيف الموقع ومن ثم، اختيار اسم الموقع المراد الذهاب اليه 
+
+٢. عند التنقل سوف يتم هز الجهاز عند ظهور الاتجاهات، لذا يتوجب عليك ضغط الشاشه ليتمكن قارئ الشاشه من قرائتها. 
+
+٣. يمكنك طلب مساعدة من المرافقين المسجلين بالتطبيق من خلال ضغط زر طلب المساعدة وقت التنقل 
+
+٤. يوجد ايضًا خيار اضافة الموقع الى المفضلة لكي تتمكن من العثور عليه بشكل سرع عن طريق الضغط على المفضلة 
+
+٥. يمكنك معرفة قائمة مرافقينك عن طريق الضغط على زر مرافقيني 
+
+٦. يمكنك استخدام قارئ المعلومات من خلال الضغط على "قارئ الاماكن” في الرئيسية او في صفحة التنقل و وضع الهاتف على لوحة القاعات او المكاتب 
+
+٧. لتعديل البيانات الشخصية او للرجوع للتعليمات و قت الحاجة، يمكنك الضغط على الحساب الموجود في اسفل الشاشه، ومن ثم زر التعديل او التعليمات </mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fm3-AZ-ctG">
+                                <rect key="frame" x="135" y="805" width="145" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="تسجيل الدخول">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.1889090836" green="0.25569909810000002" blue="0.54120320079999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="VILogin:" destination="Myn-bn-CNH" eventType="touchUpInside" id="G3F-M4-YQm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0zr-Rh-0wJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gF3-L2-XEf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="450.72463768115944" y="793.52678571428567"/>
+        </scene>
         <!--Signup View Controller-->
         <scene sceneID="eia-na-1Cn">
             <objects>
@@ -500,12 +567,21 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJ4-zu-Md6">
-                                <rect key="frame" x="136" y="546" width="142" height="50"/>
+                                <rect key="frame" x="225" y="558" width="142" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="تعديل البيانات"/>
                                 <connections>
                                     <action selector="editTapped:" destination="Hfu-Sl-xnB" eventType="touchUpInside" id="BEU-J5-JXy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CfE-98-yd4">
+                                <rect key="frame" x="63" y="558" width="142" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="تعليمات التطبيق"/>
+                                <connections>
+                                    <action selector="helpVI:" destination="Hfu-Sl-xnB" eventType="touchUpInside" id="mpk-BX-5XL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -728,7 +804,7 @@
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CN1-BW-Aep">
-                                <rect key="frame" x="-2" y="48" width="417" height="44"/>
+                                <rect key="frame" x="-3" y="48" width="417" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="التنقل" id="bRg-4r-74I">
@@ -775,7 +851,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uFF-vj-YeY">
-                                <rect key="frame" x="-4" y="92" width="414" height="56"/>
+                                <rect key="frame" x="-4" y="92" width="413" height="56"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
@@ -1008,13 +1084,13 @@
                                 </prototypes>
                             </tableView>
                             <navigationBar contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ie-lm-ODW">
-                                <rect key="frame" x="3" y="36" width="408" height="44"/>
+                                <rect key="frame" x="3" y="36" width="407" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title=" مرافقيني" id="nzu-bO-VfC">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="63I-vY-p5Y">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Bav-H1-wCt">
-                                                <rect key="frame" x="288" y="4.5" width="100" height="35"/>
+                                                <rect key="frame" x="287" y="4.5" width="100" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" label="رجوع"/>
                                                 <state key="normal" title="Button"/>
@@ -1115,7 +1191,7 @@
                 <navigationController id="KEC-Kz-lL8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="الإشعارات" image="bell" catalog="system" id="LAK-Zs-qUu"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hrR-xP-g4w">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -1131,7 +1207,7 @@
             <objects>
                 <viewController storyboardIdentifier="CGHelpRequests" id="2BZ-8v-oCW" customClass="CGHelpRequestsViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sos-lP-Buq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vmH-51-TP1">
@@ -1202,7 +1278,7 @@
             <objects>
                 <viewController storyboardIdentifier="CGHomePage" id="JPr-Jm-jP6" customClass="CGHomePageViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rD7-c4-Rha">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="backgroundCG" translatesAutoresizingMaskIntoConstraints="NO" id="SMg-tI-aID">
@@ -1223,7 +1299,7 @@
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3b6-ch-dFd">
-                                <rect key="frame" x="170" y="71" width="191" height="44"/>
+                                <rect key="frame" x="169" y="71" width="191" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.82352948189999997" green="0.86666667460000002" blue="0.94901961089999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.1215686351" green="0.20784312490000001" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1288,7 +1364,7 @@
                                 </prototypes>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FoY-w8-j0p">
-                                <rect key="frame" x="-15" y="48" width="413" height="44"/>
+                                <rect key="frame" x="-16" y="48" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="جهات الاتصال" id="cdk-iq-AQb">
@@ -1305,7 +1381,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="LFO-ku-HKf" userLabel="رجوع">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="F3d-h5-P9H">
-                                                <rect key="frame" x="288" y="4.5" width="105" height="35"/>
+                                                <rect key="frame" x="289" y="4.5" width="105" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" label="رجوع"/>
                                                 <state key="normal" title="Button"/>
@@ -1414,7 +1490,7 @@
                 <navigationController id="AhJ-7g-6Mb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="الرئيسية" image="house.fill" catalog="system" id="ySj-H3-QG9"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wh4-dV-euh">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -1432,7 +1508,7 @@
                     <tabBarItem key="tabBarItem" title="الحساب" image="person.circle.fill" catalog="system" id="T1n-O7-4Ct"/>
                     <navigationItem key="navigationItem" id="E2j-Pg-VyG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EhN-O9-vbt">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -1448,13 +1524,22 @@
             <objects>
                 <viewController id="ZHc-2s-Jct" customClass="CGprofileViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N09-RT-rY1" customClass="VIprofileController">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="Gon-0t-scq">
                                 <rect key="frame" x="5" y="34" width="414" height="804"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTv-jY-0b4">
+                                <rect key="frame" x="15" y="44" width="142" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="تعليمات التطبيق"/>
+                                <connections>
+                                    <action selector="helpVI:" destination="Hfu-Sl-xnB" eventType="touchUpInside" id="jh1-r9-XM5"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="الاسم :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eP-JK-BKY">
                                 <rect key="frame" x="333" y="265" width="46" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1501,7 +1586,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1u9-ZD-vfX">
-                                <rect key="frame" x="137" y="564" width="142" height="50"/>
+                                <rect key="frame" x="252" y="562" width="142" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="تعديل البيانات"/>
@@ -1517,6 +1602,15 @@
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfU-Kn-rRi">
+                                <rect key="frame" x="74" y="562" width="142" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="تعليمات التطبيق"/>
+                                <connections>
+                                    <action selector="CGHelp:" destination="ZHc-2s-Jct" eventType="touchUpInside" id="MYL-Vb-9Ha"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YQ4-Y3-veq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1544,7 +1638,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bv7-Ml-jau">
-                                <rect key="frame" x="-5" y="88" width="418" height="44"/>
+                                <rect key="frame" x="-6" y="88" width="418" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -1623,7 +1717,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zkb-pw-aJO">
-                                <rect key="frame" x="2" y="99" width="410" height="44"/>
+                                <rect key="frame" x="2" y="99" width="409" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -1631,7 +1725,7 @@
                                 </connections>
                             </searchBar>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gUg-AT-MBh">
-                                <rect key="frame" x="-2" y="38" width="414" height="44"/>
+                                <rect key="frame" x="-2" y="38" width="413" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="الاماكن" id="nlu-ti-QCS">
@@ -1762,13 +1856,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kJ5-hh-wUh">
-                                <rect key="frame" x="-14" y="48" width="409" height="44"/>
+                                <rect key="frame" x="-15" y="48" width="410" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="تعديل بيانات الحساب" id="YEt-c0-Erx">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="6IW-9o-eng">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="a7l-85-vWQ">
-                                                <rect key="frame" x="297" y="4.5" width="92" height="35"/>
+                                                <rect key="frame" x="298" y="4.5" width="92" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" label="رجوع"/>
                                                 <state key="normal" title="Button"/>
@@ -2006,13 +2100,13 @@
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D58-Kj-5HY">
-                                <rect key="frame" x="-4" y="48" width="416" height="44"/>
+                                <rect key="frame" x="-5" y="48" width="417" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="التنقل" id="kgj-o7-hBl">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="RCx-6z-VgU">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="AyY-Te-2lk">
-                                                <rect key="frame" x="296" y="4.5" width="100" height="35"/>
+                                                <rect key="frame" x="297" y="4.5" width="100" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" label="رجوع"/>
                                                 <state key="normal" title="Button"/>
@@ -2041,13 +2135,203 @@
             </objects>
             <point key="canvasLocation" x="2069.5652173913045" y="3441.9642857142858"/>
         </scene>
+        <!--Help View Controller-->
+        <scene sceneID="FBp-zT-NV6">
+            <objects>
+                <viewController storyboardIdentifier="helpCG" id="Fbl-OZ-hdA" customClass="helpViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bsm-Qk-W3n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="id" translatesAutoresizingMaskIntoConstraints="NO" id="g1B-km-LOr">
+                                <rect key="frame" x="0.0" y="23" width="414" height="743"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="25" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8R1-JC-v9g">
+                                <rect key="frame" x="5" y="308" width="397" height="364"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <mutableString key="text">١. يمكنك الاطلاع على قائمة ذوي لعاقة البصرية المضافين لك من خلال الضغط على جهات الاتصال
+
+٢.  يمكنك اضافة معارفك من ذوي الاعاقة البصرية من خلال الضغط على علامة "+" في اعلى شاشة جهات الاتصال 
+
+٣. لرؤية الموقع الحالي لاحد جهات الاتصال عند طلب المساعدة او للاتصال يمكنك الضغط على ايقونة الاشعارات في اسفل الشاشة 
+
+٤. لتعديل البيانات الشخصية او للرجوع للتعليمات و قت الحاجة، يمكنك الضغط على الحساب الموجود في اسفل الشاشه، ومن ثم زر التعديل او التعليمات </mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="تعليمات المرافق " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjX-Rg-3nV">
+                                <rect key="frame" x="154" y="282" width="248" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.200240314" green="0.2558471262" blue="0.53728133440000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="تعليمات استخدام تطبيق دلني " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mye-QS-Sm6">
+                                <rect key="frame" x="83" y="65" width="248" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.200240314" green="0.2558471262" blue="0.53728133440000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Krq-wO-dHg">
+                                <rect key="frame" x="135" y="665" width="145" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="تسجيل الدخول">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.1889090836" green="0.25569909810000002" blue="0.54120320079999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="CGLogin:" destination="Fbl-OZ-hdA" eventType="touchUpInside" id="9nl-w9-sWn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Oqq-rr-zFq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LDB-CF-bdC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-249.27536231884059" y="793.52678571428567"/>
+        </scene>
+        <!--Profile Help View Controller-->
+        <scene sceneID="llf-hz-3Um">
+            <objects>
+                <viewController storyboardIdentifier="CGpHelp" id="Xrx-xR-hfg" customClass="profileHelpViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0ue-3y-cbL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="id" translatesAutoresizingMaskIntoConstraints="NO" id="Z3C-Lg-YyI">
+                                <rect key="frame" x="0.0" y="-26" width="414" height="743"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="25" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3v-tY-r8P">
+                                <rect key="frame" x="9" y="293" width="397" height="364"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <mutableString key="text">١. يمكنك الاطلاع على قائمة ذوي لعاقة البصرية المضافين لك من خلال الضغط على جهات الاتصال
+
+٢.  يمكنك اضافة معارفك من ذوي الاعاقة البصرية من خلال الضغط على علامة "+" في اعلى شاشة جهات الاتصال 
+
+٣. لرؤية الموقع الحالي لاحد جهات الاتصال عند طلب المساعدة او للاتصال يمكنك الضغط على ايقونة الاشعارات في اسفل الشاشة 
+
+٤. لتعديل البيانات الشخصية او للرجوع للتعليمات و قت الحاجة، يمكنك الضغط على الحساب الموجود في اسفل الشاشه، ومن ثم زر التعديل او التعليمات </mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="تعليمات المرافق " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVn-gd-gEp">
+                                <rect key="frame" x="146" y="237" width="248" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.200240314" green="0.2558471262" blue="0.53728133440000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fBy-39-eyK">
+                                <rect key="frame" x="0.0" y="34" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="تعليمات استخدام تطبيق دلني " id="fri-By-R9Z">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="5EQ-aH-ocI">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="zFT-JN-VNN">
+                                                <rect key="frame" x="345" y="0.0" width="49" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="رجوع"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system"/>
+                                            </button>
+                                            <connections>
+                                                <action selector="CGProfile:" destination="Xrx-xR-hfg" id="9ru-Jx-rnX"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fi1-vK-1QX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oaZ-jp-QPK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-414" y="1471"/>
+        </scene>
+        <!--Profile Help View Controller-->
+        <scene sceneID="wzi-2b-aGU">
+            <objects>
+                <viewController storyboardIdentifier="VIpHelp" id="jAD-aX-eGf" customClass="profileHelpViewController" customModule="Dollani" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="blu-Sh-dhJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="id" translatesAutoresizingMaskIntoConstraints="NO" id="vkj-l8-t0s">
+                                <rect key="frame" x="0.0" y="-31" width="414" height="743"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="25" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ei9-XE-E9Y">
+                                <rect key="frame" x="0.0" y="302" width="404" height="496"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <mutableString key="text">١. يمكنك بدء التنقل من موقع الى موقع من خلال اختيار زر الاماكن في الرئيسية و تصنيف الموقع ومن ثم، اختيار اسم الموقع المراد الذهاب اليه 
+
+٢. عند التنقل سوف يتم هز الجهاز عند ظهور الاتجاهات، لذا يتوجب عليك ضغط الشاشه ليتمكن قارئ الشاشه من قرائتها
+
+٣. يمكنك طلب مساعدة من المرافقين المسجلين بالتطبيق من خلال ضغط زر طلب المساعدة وقت التنقل 
+
+٤. يوجد ايضًا خيار اضافة الموقع الى المفضلة لكي تتمكن من العثور عليه بشكل سرع عن طريق الضغط على المفضلة 
+
+٥. يمكنك معرفة قائمة مرافقينك عن طريق الضغط على زر مرافقيني 
+
+٦. يمكنك استخدام قارئ المعلومات من خلال الضغط على "قارئ الاماكن” في الرئيسية او في صفحة التنقل و وضع الهاتف على لوحة القاعات او المكاتب 
+
+٧. لتعديل البيانات الشخصية او للرجوع للتعليمات و قت الحاجة، يمكنك الضغط على الحساب الموجود في اسفل الشاشه، ومن ثم زر التعديل او التعليمات </mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="تعليمات ذوي  الاعاقة البصرية " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TN9-Ub-N2f">
+                                <rect key="frame" x="146" y="246" width="248" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.200240314" green="0.2558471262" blue="0.53728133440000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9tu-3I-yWA">
+                                <rect key="frame" x="0.0" y="37" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="تعليمات استخدام تطبيق دلني " id="qK9-GM-rJf">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="wUY-Qd-uHm">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="bmv-0q-xnX">
+                                                <rect key="frame" x="345" y="0.0" width="49" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <accessibility key="accessibilityConfiguration" label="رجوع"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system"/>
+                                            </button>
+                                            <connections>
+                                                <action selector="ViProfile:" destination="jAD-aX-eGf" id="bFa-a3-uDp"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4tA-R3-Plb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kQW-12-Wvn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="300" y="1463"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ssq-T7-k3D"/>
         <segue reference="x21-WV-ry6"/>
-        <segue reference="kPB-Dg-dZQ"/>
-        <segue reference="39J-ng-Pgm"/>
-        <segue reference="gjW-dM-F8V"/>
+        <segue reference="sLD-gc-HR4"/>
+        <segue reference="Hsk-Eh-1pk"/>
+        <segue reference="iRj-2S-BBM"/>
         <segue reference="PDa-nR-dOC"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.1889090836" green="0.25569909810000002" blue="0.54120320079999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

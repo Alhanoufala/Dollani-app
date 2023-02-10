@@ -75,6 +75,14 @@ class VIprofileViewController: UIViewController {
     }
     
     
+    @IBAction func helpVI(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "VIpHelp")
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+
+    
+    }
     @IBAction func editTapped(_ sender: Any) {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "editProfile")

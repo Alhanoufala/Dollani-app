@@ -334,11 +334,23 @@ class SignupViewController: UIViewController, UITextFieldDelegate  {
             else{
             
                 self.db.collection("users").document(Email).setData(["name" : Name,"phoneNum":Phone,"email":Email.lowercased(),"password":Password,"category":Category,"CGEmail":[], "favPlace": [],"profilePhoto":"gs://dollani-app.appspot.com/profile/blank-profile-picture-973460__480.webp"])
+//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                let vc = storyboard.instantiateViewController(identifier: "login")
+//                vc.modalPresentationStyle = .overFullScreen
+//                self.present(vc, animated: true)
+//
+                if Category == "مرافق" {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewController(identifier: "login")
+                let vc = storyboard.instantiateViewController(identifier: "helpCG")
                 vc.modalPresentationStyle = .overFullScreen
-                self.present(vc, animated: true)
-                
+                    self.present(vc, animated: true)
+            }
+                else{
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(identifier: "helpVI")
+                vc.modalPresentationStyle = .overFullScreen
+                    self.present(vc, animated: true)}
+
                 self.name.text = ""
                 self.email.text = ""
                 self.phoneNum.text = ""

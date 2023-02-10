@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		010B57552957571600542D83 /* FavoritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B57542957571600542D83 /* FavoritesListViewController.swift */; };
+		01A261C42996E17400AD22C6 /* helpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A261C32996E17400AD22C6 /* helpViewController.swift */; };
+		01A261C62996EC3700AD22C6 /* profileHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A261C52996EC3700AD22C6 /* profileHelpViewController.swift */; };
 		560D5D7629596092000F39FF /* EditVIprofileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560D5D7529596092000F39FF /* EditVIprofileViewController.swift */; };
 		560D5D7A2959747A000F39FF /* EditCGprofileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560D5D792959747A000F39FF /* EditCGprofileViewController.swift */; };
 		56D4FC24294E91C5004E4998 /* VIprofileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4FC23294E91C5004E4998 /* VIprofileViewController.swift */; };
@@ -132,6 +134,8 @@
 
 /* Begin PBXFileReference section */
 		010B57542957571600542D83 /* FavoritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewController.swift; sourceTree = "<group>"; };
+		01A261C32996E17400AD22C6 /* helpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpViewController.swift; sourceTree = "<group>"; };
+		01A261C52996EC3700AD22C6 /* profileHelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileHelpViewController.swift; sourceTree = "<group>"; };
 		560D5D7529596092000F39FF /* EditVIprofileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVIprofileViewController.swift; sourceTree = "<group>"; };
 		560D5D792959747A000F39FF /* EditCGprofileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCGprofileViewController.swift; sourceTree = "<group>"; };
 		56D4FC23294E91C5004E4998 /* VIprofileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIprofileViewController.swift; sourceTree = "<group>"; };
@@ -377,6 +381,8 @@
 				560D5D792959747A000F39FF /* EditCGprofileViewController.swift */,
 				8BD4142F297A0C99007B4D1F /* CGCurrentLocViewController.swift */,
 				8BD41433297A0DFB007B4D1F /* CGpathMapper.swift */,
+				01A261C32996E17400AD22C6 /* helpViewController.swift */,
+				01A261C52996EC3700AD22C6 /* profileHelpViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -679,6 +685,7 @@
 				8B0CB30D295E5A3500AF5DA8 /* Place.swift in Sources */,
 				572BE1E2295B88F80034D52F /* PushNotificationManager.swift in Sources */,
 				57D7AE532943DB0900EAEAB5 /* SignupViewController.swift in Sources */,
+				01A261C62996EC3700AD22C6 /* profileHelpViewController.swift in Sources */,
 				57A29C5B2959F5D500BC87C7 /* NavigationViewController.swift in Sources */,
 				010B57552957571600542D83 /* FavoritesListViewController.swift in Sources */,
 				79387F9D294F3D3F009DE768 /* ForgetPassViewController.swift in Sources */,
@@ -687,6 +694,7 @@
 				56D4FC26294E9749004E4998 /* CGprofileViewController.swift in Sources */,
 				57BA58292957148000EABF66 /* HelpRequest.swift in Sources */,
 				560D5D7629596092000F39FF /* EditVIprofileViewController.swift in Sources */,
+				01A261C42996E17400AD22C6 /* helpViewController.swift in Sources */,
 				57BA582D29572C8400EABF66 /* ContactTableViewCell.swift in Sources */,
 				578D3BBE29834A9F0081D654 /* NavigationViewControllerFav.swift in Sources */,
 				57BA582B2957229A00EABF66 /* HelpRequestTableViewCell.swift in Sources */,
