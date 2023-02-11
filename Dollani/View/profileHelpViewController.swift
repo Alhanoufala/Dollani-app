@@ -17,16 +17,17 @@ class profileHelpViewController: UIViewController {
     }
 
 
-    @IBAction func CGProfile(_ sender: Any) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = storyboard.instantiateViewController(identifier: "VIpHelp")
-//        vc.modalPresentationStyle = .overFullScreen
-//        present(vc, animated: true)
+    @IBAction func CGback(_ sender: Any) {
+        
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "CGcontainer")
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true)
     }
-    @IBAction func ViProfile(_ sender: Any) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = storyboard.instantiateViewController(identifier: "VIpHelp")
-//        vc.modalPresentationStyle = .overFullScreen
-//        present(vc, animated: true)
+    @IBAction func Viback(_ sender: Any) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "VIcontainer")
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true)
     }
 }
