@@ -157,7 +157,6 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         Index = indexPath
-
         performSegue(withIdentifier: "ToMap", sender: self)
 
     }
@@ -165,12 +164,9 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
 
          let deatil = segue.destination as! PathMapperViewControllerFav
         if favPlaceListSearch.count != 0 {
-//
-                    deatil.place =  favPlaceListSearch[Index!.row]
-            deatil.index =    favPlaceListName.firstIndex(of: favPlaceListSearch[Index!.row].name)!}
-               
-            
-        
+            deatil.place = favPlaceListSearch[Index!.row]
+        }
+          
             else{
                 deatil.place =  favPlaceList[Index!.row]
                 deatil.index = Index!.row
