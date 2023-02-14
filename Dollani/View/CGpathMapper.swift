@@ -111,10 +111,10 @@ struct CGPathMapperContentView: View {
                 
                 if resultDistance != 0 {
                     HStack {
-                        Text("\(numberToFeet(number: resultDistance)) قدم (~\(numberToMinutes(number: resultDistance)) دقيقة)")// Concatenate strings
+                        Text("\(numberToMinutes(number: resultDistance)) دقيقة")// Concatenate strings
                     
                         Spacer()
-                        Text("المسافة:").fontWeight(.bold)
+                        Text("الوقت المتوقع:").fontWeight(.bold)
                     }
                     .padding()
                     .background(Color(.secondarySystemBackground))

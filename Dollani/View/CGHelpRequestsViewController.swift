@@ -231,7 +231,7 @@ extension CGHelpRequestsViewController : UITableViewDataSource{
         if PlaceList.count != 0 {
             deatil.place =  PlaceList[Index!.row]
             
-            
+            deatil.phoneNum =  HelpRequests[Index!.row].VIPhoneNum
             deatil.source = source[Index!.row]}
         else {
             print("error")

@@ -74,7 +74,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
             
         }
     }
- 
+    
     func   getDirectionsFromPath(){
         var dis :Double
         var feets: String
@@ -91,7 +91,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
                 //End of the hallway (left or  right)
                 if (path[i].previousHallway?.end) != nil {
                     if(path[i].point == path[i].previousHallway?.end ){
-                        if(path[i+1].point.x < path[i].previousHallway!.end.x ){
+                        if(path[i].point.y < path[i+1].point.y && path[i].point.y != 240 ){
                           
                            str =  "انعطف الى اليسار ثم\n\n"
                         }
@@ -117,15 +117,28 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
                 //End of the hallway (left or  right)
                 if (path[i].previousHallway?.end) != nil {
                     if(path[i].point == path[i].previousHallway?.end ){
-                        if(path[i+1].point.x < path[i].previousHallway!.end.x ){
+                        if(path[i].point.x < path[i+1].point.x  && path[i+1].point.x != 105 && path[i+1].point.x != 155  ){
                            
                            str =  "انعطف الى اليسار ثم\n\n"
                            
                           
                         }
                         else{
+                            if(path[i].point.x == 207 ){
+                                str =  "انعطف الى اليسار ثم\n\n"
+                                
+                            }
+                            else{
+                                str = "انعطف الى اليمين ثم\n\n"
+                            }
                        
-                             str = "انعطف الى اليمين ثم\n\n"
+                            if(path[i+1].point.x == 105 || path[i+1].point.x == 155 ){
+                                str = "انعطف الى اليمين ثم\n\n"
+                                
+                            }
+                            else{
+                                str =  "انعطف الى اليسار ثم\n\n"
+                            }
                           
                           
                             
@@ -263,9 +276,9 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
         super.viewDidLoad()
         setVisited()
         getCGEmails()
-        
+        printInfo()
         directionLabel.text = "أقترب من إحدى أجهزة ارسال البلوتوث لبدء التنقل "
-        
+       print( destinationPlace.name)
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestAlwaysAuthorization()
@@ -299,10 +312,10 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
     }
     func  updateTransition(){
         let zone1 = ProximityZone(tag: "place 1", range:  ProximityRange(desiredMeanTriggerDistance: 3.0)!)
-        let zone2 = ProximityZone(tag: "place 2", range:  ProximityRange(desiredMeanTriggerDistance: 9.0)!)
-        let zone3 = ProximityZone(tag: "place 3", range:   ProximityRange(desiredMeanTriggerDistance: 9.0)!)
+        let zone2 = ProximityZone(tag: "place 2", range:  ProximityRange(desiredMeanTriggerDistance: 3.0)!)
+        let zone3 = ProximityZone(tag: "place 3", range:   ProximityRange(desiredMeanTriggerDistance: 3.0)!)
         let zone4 = ProximityZone(tag: "place 4", range:   ProximityRange(desiredMeanTriggerDistance: 3.0)!)
-        
+        let zone5 = ProximityZone(tag: "place 5", range:   ProximityRange(desiredMeanTriggerDistance: 3.0)!)
       
        
         // first zone
@@ -345,11 +358,20 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
          
         
         }
+        //Fifth zone
+        zone5.onEnter = { context in
+            AudioServicesPlaySystemSound(1352)
+             self.getDirectionsFromPath()
+            self.sourcePoint =  CGPoint(x:Int(context.attachments["x"] as! String)! , y:    Int(context.attachments["y"] as! String)!)
+         
+         
+        
+        }
      
         
       
         
-        self.proximityObserver.startObserving([zone1,zone2,zone3,zone4])
+        self.proximityObserver.startObserving([zone1,zone2,zone3,zone4,zone5])
         
     }
     
@@ -385,7 +407,10 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
         for payload in messages[0].records{
             result += String.init(data: payload.payload.advanced(by: 3), encoding: .utf8) ?? "format not supported"
         }
-        if(destinationPlace.name ==  result){
+        print(result.count)
+        print(destinationPlace.name.count)
+        print(result)
+        if(destinationPlace.name.elementsEqual(result)){
             DispatchQueue.main.async {
              //   self.NFCmsg.text = result
                 let alert = UIAlertController(title: "", message: "لقد وصلت الى وجهتك" , preferredStyle: .alert)

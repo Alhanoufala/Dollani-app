@@ -13,6 +13,7 @@ class CGCurrentLocViewController: UIViewController,UINavigationBarDelegate {
     var place :Place!
     var source : CGPoint!
     var pethMapperObj :CGPathMapperContentView!
+    var phoneNum:String!
     @Published  var hallways = [DirectionalHallway]()
     @IBOutlet weak var container: UIView!
     @IBOutlet weak var navBar: UINavigationBar!
@@ -59,7 +60,16 @@ class CGCurrentLocViewController: UIViewController,UINavigationBarDelegate {
           
         }
     }
-   
+    
+    
+    @IBAction func videoCall(_ sender: Any) {
+        //Perform the call
+        
+        if let url = URL(string: "facetime://" + phoneNum ){
+            UIApplication.shared.open(url,options: [:],completionHandler: nil)
+        }
+    }
+    
 
     @IBAction func backButten(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

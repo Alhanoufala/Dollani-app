@@ -91,7 +91,7 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let zone2 = ProximityZone(tag: "place 2", range: ProximityRange(desiredMeanTriggerDistance: 5.0)!)
         let zone3 = ProximityZone(tag: "place 3", range: ProximityRange(desiredMeanTriggerDistance: 5.0)!)
         let zone4 = ProximityZone(tag: "place 4", range: ProximityRange(desiredMeanTriggerDistance: 5.0)!)
-        
+        let zone5 = ProximityZone(tag: "place 5", range: ProximityRange(desiredMeanTriggerDistance: 5.0)!)
       
        
         // first zone
@@ -119,10 +119,15 @@ class placesViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.source =  CGPoint(x:Int(context.attachments["x"] as! String)! , y:    Int(context.attachments["y"] as! String)!)
         
         }
+        zone5.onEnter = { context in
+            
+            self.source =  CGPoint(x:Int(context.attachments["x"] as! String)! , y:    Int(context.attachments["y"] as! String)!)
+        
+        }
         
       
         
-        self.proximityObserver.startObserving([zone1,zone2,zone3,zone4])
+        self.proximityObserver.startObserving([zone1,zone2,zone3,zone4,zone5])
        
     }
         // Do any additional setup after loading the view.
