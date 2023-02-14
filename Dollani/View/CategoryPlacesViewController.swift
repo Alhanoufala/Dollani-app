@@ -39,6 +39,7 @@ class CategoryPlacesViewController: UIViewController, UITableViewDelegate, UITab
             else{
                 print(self.listOfCategory.count)
                 self.listOfCategory = snapshot?.documents.first?.get("categoriesP") as? [String] ?? []
+                self.listOfCategory.removeLast()
                 self.tableView.reloadData()
                 
             }
