@@ -17,6 +17,7 @@ class CategoryPlacesViewController: UIViewController, UITableViewDelegate, UITab
     
     var db = Firestore.firestore()
     var Index: IndexPath? = nil
+    var i : Int!
 
     @IBOutlet weak var searchbar: UISearchBar!
     
@@ -39,7 +40,8 @@ class CategoryPlacesViewController: UIViewController, UITableViewDelegate, UITab
             else{
                 print(self.listOfCategory.count)
                 self.listOfCategory = snapshot?.documents.first?.get("categoriesP") as? [String] ?? []
-                self.listOfCategory.removeLast()
+                self.i =    self.listOfCategory.firstIndex(where: {$0 == "اخرى"})!
+                self.listOfCategory.remove(at: self.i)
                 self.tableView.reloadData()
                 
             }
