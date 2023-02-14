@@ -276,7 +276,6 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
         super.viewDidLoad()
         setVisited()
         getCGEmails()
-        printInfo()
         directionLabel.text = "أقترب من إحدى أجهزة ارسال البلوتوث لبدء التنقل "
        print( destinationPlace.name)
         manager.delegate = self
