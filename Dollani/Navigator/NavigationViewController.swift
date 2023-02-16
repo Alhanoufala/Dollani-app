@@ -157,7 +157,7 @@ class NavigationViewController: UIViewController ,UINavigationBarDelegate,CLLoca
             else if((path[i].point == path.last?.point) &&  (visited[i] == false)){
                 visited[i] = true
                               
-                self.directionLabel.text = "لقد وصلت الى وجهتك"
+                self.directionLabel.text = "لقد وصلت الى نطاق وجهتك ،امسح قارئ الأماكن للتأكد"
                
                 return
               
