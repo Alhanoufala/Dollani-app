@@ -1904,8 +1904,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="arB-2z-BGH">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="arB-2z-BGH">
                                 <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="الموقع الحالي للكفيف" id="2ds-eh-2AL">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="GZ3-SG-5Td">
@@ -1928,23 +1929,21 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lz2-71-1hA">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lz2-71-1hA">
                                 <rect key="frame" x="0.0" y="92" width="414" height="651"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ev3-uG-Cgj">
+                                <rect key="frame" x="59" y="751" width="316" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="R4F-ZF-bLy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="lz2-71-1hA" firstAttribute="leading" secondItem="R4F-ZF-bLy" secondAttribute="leading" id="1kZ-Ls-vkQ"/>
-                            <constraint firstItem="R4F-ZF-bLy" firstAttribute="bottom" secondItem="lz2-71-1hA" secondAttribute="bottom" id="8Gd-WO-sLM"/>
-                            <constraint firstItem="lz2-71-1hA" firstAttribute="centerX" secondItem="Nqo-u5-FPu" secondAttribute="centerX" id="Dv9-6O-yTK"/>
-                            <constraint firstItem="lz2-71-1hA" firstAttribute="top" secondItem="Nqo-u5-FPu" secondAttribute="top" constant="92" id="I4w-EO-AN6"/>
-                            <constraint firstItem="lz2-71-1hA" firstAttribute="trailing" secondItem="arB-2z-BGH" secondAttribute="trailing" id="Vuf-sq-r0Q"/>
-                            <constraint firstItem="R4F-ZF-bLy" firstAttribute="bottom" secondItem="lz2-71-1hA" secondAttribute="bottom" id="i35-Az-9Mg"/>
-                            <constraint firstItem="lz2-71-1hA" firstAttribute="top" secondItem="arB-2z-BGH" secondAttribute="bottom" id="rtz-tz-Ay2"/>
-                            <constraint firstItem="lz2-71-1hA" firstAttribute="leading" secondItem="arB-2z-BGH" secondAttribute="leading" id="tTu-5z-rcT"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2mT-nl-2j8"/>
                     <connections>
@@ -2339,7 +2338,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="x21-WV-ry6"/>
-        <segue reference="8da-db-j8r"/>
+        <segue reference="kPB-Dg-dZQ"/>
         <segue reference="Hsk-Eh-1pk"/>
         <segue reference="iRj-2S-BBM"/>
         <segue reference="doX-4d-HwG"/>
