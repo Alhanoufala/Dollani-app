@@ -9,25 +9,30 @@ import Foundation
 
 import UIKit
 
-class profileHelpViewController: UIViewController {
-
+class profileHelpViewController: UIViewController,UINavigationBarDelegate {
+    @IBOutlet weak var navBar: UINavigationBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        navBar.delegate = self
         // Do any additional setup after loading the view.
     }
-
-
-    @IBAction func CGback(_ sender: Any) {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "CG"){
+            if let container = segue.destination as? CGcontainerViewController{
+                container.index = 0
+            }
+        }
+        if (segue.identifier == "VI"){
+            
+            if let container = segue.destination as? VIcontainerViewController{
+                container.index = 0
+            }
+        }
         
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "CGcontainer")
-            vc.modalPresentationStyle = .overFullScreen
-            present(vc, animated: true)
     }
-    @IBAction func Viback(_ sender: Any) {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "VIcontainer")
-            vc.modalPresentationStyle = .overFullScreen
-            present(vc, animated: true)
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+     return .topAttached
     }
 }

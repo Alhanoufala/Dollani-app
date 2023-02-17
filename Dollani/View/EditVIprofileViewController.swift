@@ -251,10 +251,7 @@ class EditVIprofileViewController: UIViewController, UITextFieldDelegate,UINavig
         //alert
         let alert = UIAlertController(title: nil, message:"تم حفظ التغييرات بنجاح", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title:  "حسنًا", style: .default, handler: { (_) -> Void in
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "VIcontainer")
-            vc.modalPresentationStyle = .overFullScreen
-            self.present(vc, animated: true)
+            self.performSegue(withIdentifier: "goToProfile", sender: self)
         }))
                         present(alert, animated: true, completion: nil)
         
@@ -267,16 +264,7 @@ class EditVIprofileViewController: UIViewController, UITextFieldDelegate,UINavig
 
     }
     
-    @IBAction func cancelTapped(_ sender: Any) {
-        
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "VIcontainer")
-            vc.modalPresentationStyle = .overFullScreen
-            present(vc, animated: true)
-    }
-    
-    
-    
+
     func position(for bar: UIBarPositioning) -> UIBarPosition {
      return .topAttached
     }
