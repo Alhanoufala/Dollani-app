@@ -49,7 +49,9 @@ struct PathMapperContentView: View {
             
         
             ZStack {
-                Image("مبنى كلية الحاسب الدور الأرضي").resizable().accessibility(label: Text("الدور الأرضي في مبنى كلية الحاسب")) /// the map image (made by myself)
+                Image("مبنى كلية الحاسب الدور الأرضي").resizable().accessibilityHidden(true)
+                
+                /// the map image (made by myself)
                     
                 // MARK: - Visual Output, path drawn on top of map
               
