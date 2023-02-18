@@ -49,7 +49,7 @@ struct PathMapperContentView: View {
             
         
             ZStack {
-                Image("مبنى كلية الحاسب الدور الأرضي").resizable() /// the map image (made by myself)
+                Image("مبنى كلية الحاسب الدور الأرضي").resizable().accessibility(label: Text("الدور الأرضي في مبنى كلية الحاسب")) /// the map image (made by myself)
                     
                 // MARK: - Visual Output, path drawn on top of map
               
@@ -83,9 +83,9 @@ struct PathMapperContentView: View {
             
             VStack {
                 HStack {
-                    Text("\(selectedClassroom.name)\n").lineLimit(2)
+                    Text("\(selectedClassroom.name)\n").lineLimit(2).accessibility(label: Text("\(selectedClassroom.name)"))
                     Spacer()
-                    Text("وجهتك المختارة:")
+                    Text("وجهتك المختارة:").accessibility(label: Text("وجهتك المختارة"))
                     // MARK: - Text Input via dropdown
                   
                 }
@@ -97,10 +97,10 @@ struct PathMapperContentView: View {
                 
                 if resultDistance != 0 {
                     HStack {
-                        Text("\(numberToMinutes(number: resultDistance)) دقيقة")// Concatenate strings
+                        Text("\(numberToMinutes(number: resultDistance)) دقيقة").accessibility(label: Text("\(numberToMinutes(number: resultDistance)) دقيقة"))// Concatenate strings
                     
                         Spacer()
-                        Text("الوقت المتوقع:").fontWeight(.bold)
+                        Text("الوقت المتوقع:").fontWeight(.bold).accessibility(label: Text("الوقت المتوقع"))//
                     }
                     .padding()
                     .background(Color(.secondarySystemBackground))
