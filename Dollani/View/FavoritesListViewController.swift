@@ -270,6 +270,13 @@ class FavoritesListViewController: UIViewController, UITableViewDelegate, UITabl
 extension FavoritesListViewController: UISearchBarDelegate{
     public func searchBar(_ searchbar: UISearchBar ,  textDidChange searchText: String ){
         search = favPlaceListName.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased() })
+        if ( search.count == 0 ){
+            let alert = UIAlertController(title: "نعتذر", message: " لا يوجد مكان بهذا الاسم ", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "حسنًا", style: UIAlertAction.Style.default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+        }
+        
+        
        updateSearch()
         searching = true
         tableView.reloadData()
