@@ -691,7 +691,7 @@
                                 <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="الخريطة" id="CgN-uJ-rSt">
+                                    <navigationItem title="خريطة كلية الحاسب-الدور الأرضي" id="CgN-uJ-rSt">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="pfx-bL-63f">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="XKv-AK-I2g">
                                                 <rect key="frame" x="307" y="0.0" width="87" height="44"/>
@@ -1990,7 +1990,7 @@
                                 <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="الخريطة" id="nes-i0-lX8">
+                                    <navigationItem title="خريطة كلية الحاسب-الدور الأرضي" id="nes-i0-lX8">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="leP-9j-Dm8">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="KbK-kV-LJR">
                                                 <rect key="frame" x="307" y="0.0" width="87" height="44"/>
